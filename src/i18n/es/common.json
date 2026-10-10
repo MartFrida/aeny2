@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "about": "Nosotros",
+    "ourWork": "Nuestro trabajo",
+    "projects": "Proyectos",
+    "events": "Eventos",
+    "news": "Noticias",
+    "getInvolved": "Participa",
+    "contact": "Contacto",
+    "donate": "Donar"
+  },
+  "common": {
+    "learnMore": "Conoce más",
+    "supportAEINY": "Apoya a AEINY",
+    "supportKuri": "Apoya Kuri Chasqui 2026",
+    "readMore": "Leer más",
+    "eventDetails": "Detalles del evento",
+    "visitProject": "Visitar proyecto"
+  },
+  "home": {
+    "title": "AEINY",
+    "intro": "Alianza Ecuatoriana Internacional fortalece comunidades mediante la cultura, los derechos humanos, la educación y el apoyo a ecuatorianos y aliados en la diáspora.",
+    "headline": "Creando puentes para la cultura, los derechos y la comunidad.",
+    "ctaPrimary": "Explora nuestro trabajo",
+    "ctaSecondary": "Apoya a AEINY",
+    "cardTitle": "Nuestro enfoque",
+    "cardDescription": "Trabajamos en la intersección del cuidado comunitario, la herencia cultural y la participación cívica."
+  },
+  "about": {
+    "title": "Nosotros",
+    "intro": "AEINY es una organización sin fines de lucro basada en la solidaridad, la memoria cultural y el apoyo práctico para comunidades en Ecuador y en el exterior."
+  },
+  "ourWork": {
+    "title": "Nuestro trabajo",
+    "intro": "Nuestras iniciativas conectan a personas, familias e instituciones alrededor de la migración, la educación, la práctica cultural y el bienestar comunitario."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "intro": "Apoyamos iniciativas que fortalecen la vida comunitaria y preservan la identidad cultural."
+  },
+  "projectParque": {
+    "title": "Parque del Migrante",
+    "intro": "Una iniciativa centrada en la comunidad, arraigada en la pertenencia cultural, la memoria y el espacio público."
+  },
+  "events": {
+    "title": "Eventos",
+    "intro": "Encuentros públicos que conectan la cultura, la migración y la comunidad en Nueva York y más allá."
+  },
+  "eventKuri2026": {
+    "title": "KURI CHASQUI 2026",
+    "subtitle": "The Andes International Film Fest New York",
+    "dates": "8–15 de noviembre de 2026",
+    "organizer": "Organizador:",
+    "location": "Ubicación:",
+    "followup": "Una página básica del evento como primer hito público del nuevo sitio web de AEINY."
+  },
+  "eventKuri2023": {
+    "title": "Kuri Chasqui 2023",
+    "intro": "Una edición anterior del festival centrada en la cultura andina, el cine y la conexión comunitaria."
+  },
+  "news": {
+    "title": "Noticias y historias",
+    "intro": "Actualizaciones sobre nuestro trabajo comunitario, alianzas y programas culturales."
+  },
+  "getInvolved": {
+    "title": "Participa",
+    "intro": "Hay muchas formas de fortalecer la comunidad y apoyar la misión de AEINY."
+  },
+  "donate": {
+    "title": "Donar",
+    "intro": "Apoya el trabajo de AEINY y la próxima edición de Kuri Chasqui 2026."
+  },
+  "contact": {
+    "title": "Contacto",
+    "intro": "Recibimos consultas, alianzas y colaboraciones con organizaciones comunitarias y aliados."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "intro": "La página solicitada no existe."
+  },
+  "footer": {
+    "tagline": "AEINY conecta la cultura, la solidaridad y el cuidado comunitario entre Ecuador y Nueva York."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "about": "About",
+    "ourWork": "Our Work",
+    "projects": "Projects",
+    "events": "Events",
+    "news": "News",
+    "getInvolved": "Get Involved",
+    "contact": "Contact",
+    "donate": "Donate"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "supportAEINY": "Support AEINY",
+    "supportKuri": "Support Kuri Chasqui 2026",
+    "readMore": "Read more",
+    "eventDetails": "Event details",
+    "visitProject": "Visit project"
+  },
+  "home": {
+    "title": "AEINY",
+    "intro": "Alianza Ecuatoriana Internacional strengthens communities through culture, human rights work, education, and support for Ecuadorians and allies across the diaspora.",
+    "headline": "Building bridges for culture, rights, and community.",
+    "ctaPrimary": "Explore our work",
+    "ctaSecondary": "Support AEINY",
+    "cardTitle": "Our focus",
+    "cardDescription": "We work at the intersection of community care, cultural heritage, and civic participation."
+  },
+  "about": {
+    "title": "About us",
+    "intro": "AEINY is a nonprofit grounded in solidarity, cultural memory, and practical support for communities in Ecuador and abroad."
+  },
+  "ourWork": {
+    "title": "Our Work",
+    "intro": "Our initiatives connect people, families, and institutions around migration, education, cultural practice, and community wellness."
+  },
+  "projects": {
+    "title": "Projects",
+    "intro": "We support initiatives that strengthen community life and preserve cultural identity."
+  },
+  "projectParque": {
+    "title": "Parque del Migrante",
+    "intro": "A community-centered initiative rooted in cultural belonging, memory, and public space."
+  },
+  "events": {
+    "title": "Events",
+    "intro": "Public gatherings that connect culture, migration, and community in New York and beyond."
+  },
+  "eventKuri2026": {
+    "title": "KURI CHASQUI 2026",
+    "subtitle": "The Andes International Film Fest New York",
+    "dates": "November 8–15, 2026",
+    "organizer": "Organizer:",
+    "location": "Location:",
+    "followup": "A basic event page for the first public milestone of the new AEINY website."
+  },
+  "eventKuri2023": {
+    "title": "Kuri Chasqui 2023",
+    "intro": "A previous festival edition centered on Andean culture, cinema, and community connection."
+  },
+  "news": {
+    "title": "News & Stories",
+    "intro": "Updates from our community work, partnerships, and cultural programs."
+  },
+  "getInvolved": {
+    "title": "Get Involved",
+    "intro": "There are many ways to strengthen community and support AEINY's mission."
+  },
+  "donate": {
+    "title": "Donate",
+    "intro": "Support the work of AEINY and the next edition of Kuri Chasqui 2026."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "We welcome partnerships, inquiries, and collaborations with community organizations and allies."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "intro": "The page you requested does not exist."
+  },
+  "footer": {
+    "tagline": "AEINY connects culture, solidarity, and community care across Ecuador and New York."
+  }
+}
