@@ -12,14 +12,14 @@ export function Header() {
   const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[rgba(246,241,236,0.92)] backdrop-blur-md">
-      <Container className="relative flex items-center justify-between gap-3 py-4">
+    <header className="sticky top-0 z-50 border-b border-[rgba(255,255,255,0.08)] bg-[rgba(12,19,25,0.88)] text-white backdrop-blur-md">
+      <Container className="relative flex items-center justify-between gap-4 py-3.5">
         <div className="flex items-center gap-3">
-          <Link to={`/${language}`} className="flex items-center gap-2 text-[var(--foreground)]" aria-label="AEINY home">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary)] text-[var(--primary-foreground)]">
+          <Link to={`/${language}`} className="flex items-center gap-2 text-white" aria-label="AEINY home">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--accent)] text-[var(--surface-dark)] shadow-sm">
               <HeartHandshake size={18} />
             </span>
-            <span className="text-lg font-semibold tracking-[0.08em]">AEINY</span>
+            <span className="text-[0.8rem] font-semibold tracking-[0.18em] text-white">AEINY</span>
           </Link>
         </div>
 
@@ -28,7 +28,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <div className="hidden md:block">
-            <Button to={`/${language}/donate`} variant="primary">
+            <Button to={`/${language}/donate`} variant="primary" className="!bg-[var(--accent)] !text-[var(--surface-dark)] hover:!bg-[#d79d54]">
               {t('nav.donate')}
             </Button>
           </div>

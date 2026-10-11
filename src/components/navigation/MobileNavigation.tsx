@@ -31,7 +31,7 @@ export function MobileNavigation({ language }: MobileNavigationProps) {
     <div className="md:hidden">
       <button
         type="button"
-        className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[var(--border)] bg-white/60 text-[var(--foreground)]"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 bg-white/5 text-white"
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
@@ -40,18 +40,18 @@ export function MobileNavigation({ language }: MobileNavigationProps) {
       </button>
 
       {open ? (
-        <div className="absolute left-0 right-0 top-full border-b border-[var(--border)] bg-[var(--surface)] shadow-sm">
+        <div className="absolute left-0 right-0 top-full border-b border-white/10 bg-[var(--surface-dark)] shadow-lg">
           <nav className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
             {items.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
-                className="rounded-md px-2 py-2 text-base font-medium text-[var(--foreground)] hover:bg-[var(--background)]"
+                className="rounded-md px-2 py-2 text-base font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 {item.label}
               </Link>
             ))}
-            <Button to={`/${language}/donate`} className="mt-2 w-full">
+            <Button to={`/${language}/donate`} className="mt-2 w-full !bg-[var(--accent)] !text-[var(--surface-dark)]">
               {t('nav.donate')}
             </Button>
           </nav>
