@@ -19,7 +19,7 @@ export function DesktopNavigation({ language }: DesktopNavigationProps) {
   ]
 
   return (
-    <nav aria-label="Main navigation" className="hidden items-center gap-6 md:flex">
+    <nav aria-label="Main navigation" className="hidden items-center gap-6 lg:flex">
       {items.map((item) => (
         <Link key={item.href} to={item.href} className="text-sm font-medium text-white/75 transition hover:text-white">
           {item.label}

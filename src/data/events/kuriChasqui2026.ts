@@ -18,6 +18,47 @@ export type KuriChasqui2026Event = {
   featured: boolean
 }
 
+export type SponsorshipLevel = {
+  name: 'KURI' | 'ANTA' | 'RUMI'
+  levelKey: string
+  roleKey: string
+  benefitKeys: string[]
+}
+
+export const kuriChasquiPillars = [
+  { titleKey: 'rootsTitle', descriptionKey: 'rootsDescription' },
+  { titleKey: 'visibilityTitle', descriptionKey: 'visibilityDescription' },
+  { titleKey: 'memoryTitle', descriptionKey: 'memoryDescription' },
+  { titleKey: 'connectionTitle', descriptionKey: 'connectionDescription' },
+]
+
+export const kuriChasquiCeremony = [
+  { time: '19:30', titleKey: 'ceremonyWelcomeTitle', descriptionKey: 'ceremonyWelcomeDescription' },
+  { time: '20:00', titleKey: 'ceremonyAwardsTitle', descriptionKey: 'ceremonyAwardsDescription' },
+  { time: '21:15', titleKey: 'ceremonyToastTitle', descriptionKey: 'ceremonyToastDescription' },
+]
+
+export const kuriChasquiSponsorshipLevels: SponsorshipLevel[] = [
+  {
+    name: 'KURI',
+    levelKey: 'gold',
+    roleKey: 'presentingSponsor',
+    benefitKeys: ['kuriBenefit1', 'kuriBenefit2', 'kuriBenefit3', 'kuriBenefit4', 'kuriBenefit5'],
+  },
+  {
+    name: 'ANTA',
+    levelKey: 'silver',
+    roleKey: 'officialSponsor',
+    benefitKeys: ['antaBenefit1', 'antaBenefit2', 'antaBenefit3', 'antaBenefit4'],
+  },
+  {
+    name: 'RUMI',
+    levelKey: 'bronze',
+    roleKey: 'communityPartner',
+    benefitKeys: ['rumiBenefit1', 'rumiBenefit2', 'rumiBenefit3'],
+  },
+]
+
 export const kuriChasqui2026Event: KuriChasqui2026Event = {
   id: 'kuri-chasqui-2026',
   slug: 'kuri-chasqui-2026',

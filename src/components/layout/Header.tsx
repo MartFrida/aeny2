@@ -27,7 +27,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button to={`/${language}/donate`} variant="primary" className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!">
               {t('nav.donate')}
             </Button>
