@@ -20,14 +20,14 @@ export function AboutPage() {
       <Section>
         <Container className="grid gap-8 md:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-semibold tracking-[-0.04em] text-[var(--foreground)]">Mission & Vision</h2>
-            <p className="mt-4 text-[var(--muted)]">
+            <h2 className="text-3xl font-semibold tracking-[-0.04em] text-(--foreground)">Mission & Vision</h2>
+            <p className="mt-4 text-(--muted)">
               AEINY brings together cultural heritage, human rights advocacy, and community organizing to support people in Ecuador and across international communities.
             </p>
           </div>
           <div>
-            <h2 className="text-3xl font-semibold tracking-[-0.04em] text-[var(--foreground)]">Leadership</h2>
-            <p className="mt-4 text-[var(--muted)]">
+            <h2 className="text-3xl font-semibold tracking-[-0.04em] text-(--foreground)">Leadership</h2>
+            <p className="mt-4 text-(--muted)">
               Our work is shaped by community trust, partnership, and a long-term commitment to dignity, access, and belonging.
             </p>
           </div>

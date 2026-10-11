@@ -17,12 +17,12 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    'inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2'
+    'inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2'
 
   const variantClasses =
     variant === 'primary'
-      ? 'bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[#633427]'
-      : 'border border-[var(--border)] bg-transparent text-[var(--foreground)] hover:bg-white/60'
+      ? 'bg-(--primary) text-(--primary-foreground) hover:bg-[#633427]'
+      : 'border border-(--border) bg-transparent text-(--foreground) hover:bg-white/60'
 
   if (to) {
     return (

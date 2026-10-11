@@ -21,27 +21,27 @@ export function Footer() {
   const spanishPath = `/es${currentPath === '/' ? '' : currentPath}`
 
   return (
-    <footer className="border-t border-[var(--border)] bg-[#f7f1ea]">
+    <footer className="border-t border-(--border) bg-[#f7f1ea]">
       <Container className="grid gap-10 py-14 md:grid-cols-[1.1fr_0.9fr_0.8fr]">
         <div>
-          <p className="text-xl font-semibold tracking-[0.14em] text-[var(--foreground)]">AEINY</p>
-          <p className="mt-4 max-w-md text-sm leading-6 text-[var(--muted)]">{t('footer.tagline')}</p>
-          <div className="mt-6 flex items-center gap-4 text-sm text-[var(--muted)]">
-            <a href="https://www.facebook.com/alianzaecuatorianaIntofficial" target="_blank" rel="noreferrer" className="transition hover:text-[var(--foreground)]">
+          <p className="text-xl font-semibold tracking-[0.14em] text-(--foreground)">AEINY</p>
+          <p className="mt-4 max-w-md text-sm leading-6 text-(--muted)">{t('footer.tagline')}</p>
+          <div className="mt-6 flex items-center gap-4 text-sm text-(--muted)">
+            <a href="https://www.facebook.com/alianzaecuatorianaIntofficial" target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
               Facebook
             </a>
-            <a href="https://www.instagram.com/alianzaecuatorianaint/?hl=es" target="_blank" rel="noreferrer" className="transition hover:text-[var(--foreground)]">
+            <a href="https://www.instagram.com/alianzaecuatorianaint/?hl=es" target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
               Instagram
             </a>
           </div>
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">Navigation</p>
-          <ul className="mt-4 space-y-3 text-sm text-[var(--muted)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">Navigation</p>
+          <ul className="mt-4 space-y-3 text-sm text-(--muted)">
             {navigation.map((item) => (
               <li key={item.href}>
-                <Link to={item.href} className="transition hover:text-[var(--foreground)]">
+                <Link to={item.href} className="transition hover:text-(--foreground)">
                   {item.label}
                 </Link>
               </li>
@@ -50,19 +50,19 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">Featured</p>
-          <div className="mt-4 space-y-4 text-sm text-[var(--muted)]">
-            <Link to={`/${language}/events/kuri-chasqui-2026`} className="block font-medium text-[var(--foreground)] hover:text-[var(--primary)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">Featured</p>
+          <div className="mt-4 space-y-4 text-sm text-(--muted)">
+            <Link to={`/${language}/events/kuri-chasqui-2026`} className="block font-medium text-(--foreground) hover:text-(--primary)">
               Kuri Chasqui 2026
             </Link>
-            <Link to={`/${language}/donate`} className="inline-flex rounded-md bg-[var(--primary)] px-4 py-2.5 text-sm font-semibold text-[var(--primary-foreground)] transition hover:bg-[#4d4d3d]">
+            <Link to={`/${language}/donate`} className="inline-flex rounded-md bg-(--primary) px-4 py-2.5 text-sm font-semibold text-(--primary-foreground) transition hover:bg-[#4d4d3d]">
               {t('nav.donate')}
             </Link>
-            <div className="pt-3 border-t border-[var(--border)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">Languages</p>
-              <div className="mt-3 flex gap-4 text-sm text-[var(--muted)]">
-                <Link to={englishPath} className="hover:text-[var(--foreground)]">{t('common.english')}</Link>
-                <Link to={spanishPath} className="hover:text-[var(--foreground)]">{t('common.spanish')}</Link>
+            <div className="pt-3 border-t border-(--border)">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">Languages</p>
+              <div className="mt-3 flex gap-4 text-sm text-(--muted)">
+                <Link to={englishPath} className="hover:text-(--foreground)">{t('common.english')}</Link>
+                <Link to={spanishPath} className="hover:text-(--foreground)">{t('common.spanish')}</Link>
               </div>
             </div>
           </div>

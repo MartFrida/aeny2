@@ -16,7 +16,7 @@ export function Header() {
       <Container className="relative flex items-center justify-between gap-4 py-3.5">
         <div className="flex items-center gap-3">
           <Link to={`/${language}`} className="flex items-center gap-2 text-white" aria-label="AEINY home">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--accent)] text-[var(--surface-dark)] shadow-sm">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-(--accent) text-(--surface-dark) shadow-sm">
               <HeartHandshake size={18} />
             </span>
             <span className="text-[0.8rem] font-semibold tracking-[0.18em] text-white">AEINY</span>
@@ -28,7 +28,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <div className="hidden md:block">
-            <Button to={`/${language}/donate`} variant="primary" className="!bg-[var(--accent)] !text-[var(--surface-dark)] hover:!bg-[#d79d54]">
+            <Button to={`/${language}/donate`} variant="primary" className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!">
               {t('nav.donate')}
             </Button>
           </div>

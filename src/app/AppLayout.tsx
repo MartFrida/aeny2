@@ -18,7 +18,7 @@ export function AppLayout() {
   }, [i18n, location.pathname])
 
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+    <div className="min-h-screen bg-(--background) text-(--foreground)">
       <Header />
       <main>
         <Outlet />

@@ -40,7 +40,7 @@ export function MobileNavigation({ language }: MobileNavigationProps) {
       </button>
 
       {open ? (
-        <div className="absolute left-0 right-0 top-full border-b border-white/10 bg-[var(--surface-dark)] shadow-lg">
+        <div className="absolute left-0 right-0 top-full border-b border-white/10 bg-(--surface-dark) shadow-lg">
           <nav className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
             {items.map((item) => (
               <Link
@@ -51,7 +51,7 @@ export function MobileNavigation({ language }: MobileNavigationProps) {
                 {item.label}
               </Link>
             ))}
-            <Button to={`/${language}/donate`} className="mt-2 w-full !bg-[var(--accent)] !text-[var(--surface-dark)]">
+            <Button to={`/${language}/donate`} className="mt-2 w-full bg-(--accent)! text-(--surface-dark)!">
               {t('nav.donate')}
             </Button>
           </nav>

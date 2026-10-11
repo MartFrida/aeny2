@@ -10,7 +10,7 @@ export function ParqueDelMigrantePage() {
     <>
       <PageHero eyebrow="Project" title={t('projectParque.title')} intro={t('projectParque.intro')} />
       <Section>
-        <Container className="prose max-w-3xl text-[var(--muted)]">
+        <Container className="prose max-w-3xl text-(--muted)">
           <p>
             This project is part of AEINY’s broader effort to support community memory, belonging, and public cultural space.
           </p>

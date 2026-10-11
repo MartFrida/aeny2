@@ -20,9 +20,9 @@ export function OurWorkPage() {
       <Section>
         <Container className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {areas.map((area) => (
-            <article key={area} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6">
-              <h2 className="text-xl font-semibold text-[var(--foreground)]">{area}</h2>
-              <p className="mt-3 text-[var(--muted)]">
+            <article key={area} className="rounded-2xl border border-(--border) bg-(--surface) p-6">
+              <h2 className="text-xl font-semibold text-(--foreground)">{area}</h2>
+              <p className="mt-3 text-(--muted)">
                 Practical, community-driven programs that strengthen well-being, belonging, and opportunity.
               </p>
             </article>

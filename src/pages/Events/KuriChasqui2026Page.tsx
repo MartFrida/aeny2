@@ -15,13 +15,13 @@ export function KuriChasqui2026Page() {
       />
 
       <Section>
-        <Container className="max-w-3xl space-y-5 text-[var(--muted)]">
-          <p className="text-2xl font-medium text-[var(--foreground)]">{t('eventKuri2026.dates')}</p>
+        <Container className="max-w-3xl space-y-5 text-(--muted)">
+          <p className="text-2xl font-medium text-(--foreground)">{t('eventKuri2026.dates')}</p>
           <p>
-            <span className="font-semibold text-[var(--foreground)]">{t('eventKuri2026.organizer')}</span> Alianza Ecuatoriana Internacional
+            <span className="font-semibold text-(--foreground)">{t('eventKuri2026.organizer')}</span> Alianza Ecuatoriana Internacional
           </p>
           <p>
-            <span className="font-semibold text-[var(--foreground)]">{t('eventKuri2026.location')}</span> New York
+            <span className="font-semibold text-(--foreground)">{t('eventKuri2026.location')}</span> New York
           </p>
           <p>{t('eventKuri2026.followup')}</p>
         </Container>
