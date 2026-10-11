@@ -55,7 +55,7 @@ export function Footer() {
             <Link to={`/${language}/events/kuri-chasqui-2026`} className="block font-medium text-(--foreground) hover:text-(--primary)">
               Kuri Chasqui 2026
             </Link>
-            <Link to={`/${language}/donate`} className="inline-flex rounded-md bg-(--primary) px-4 py-2.5 text-sm font-semibold text-(--primary-foreground) transition hover:bg-[#4d4d3d]">
+            <Link to={`/${language}/donate`} className="inline-flex rounded-md bg-(--primary) px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#4d4d3d]">
               {t('nav.donate')}
             </Link>
             <div className="pt-3 border-t border-(--border)">
