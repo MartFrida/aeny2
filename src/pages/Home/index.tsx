@@ -38,7 +38,11 @@ export function HomePage() {
               <span className="block text-[var(--accent)]">{t('home.title').split('\n')[2]}</span>
             </h1>
 
-            <p className="mt-5 max-w-xl text-lg text-white/80 md:text-xl">{t('home.subtitle')}</p>
+            <p className="mt-5 max-w-xl text-sm font-semibold uppercase tracking-[0.12em] text-[var(--accent)] md:text-base">
+              {kuriChasqui2026Event.officialName}
+            </p>
+            <p className="mt-3 max-w-xl text-lg text-white/80 md:text-xl">{t('home.subtitle')}</p>
+            <p className="mt-3 max-w-xl text-base leading-7 text-white/70">{t('home.heroDescription')}</p>
 
             <div className="mt-7 grid gap-3 text-sm text-white/80 sm:grid-cols-2">
               <div className="rounded-full border border-white/15 bg-white/5 px-4 py-2.5 backdrop-blur-sm">
@@ -46,8 +50,12 @@ export function HomePage() {
                 <p className="mt-1 text-base text-white">{t('home.dateValue')}</p>
               </div>
               <div className="rounded-full border border-white/15 bg-white/5 px-4 py-2.5 backdrop-blur-sm">
-                <span className="font-semibold uppercase tracking-[0.14em] text-white/60">{t('home.locationLabel')}</span>
-                <p className="mt-1 text-base text-white">{t('home.locationValue')}</p>
+                <span className="font-semibold uppercase tracking-[0.14em] text-white/60">{t('home.timeLabel')}</span>
+                <p className="mt-1 text-base text-white">{t('home.timeValue')}</p>
+              </div>
+              <div className="rounded-full border border-white/15 bg-white/5 px-4 py-2.5 backdrop-blur-sm sm:col-span-2">
+                <span className="font-semibold uppercase tracking-[0.14em] text-white/60">{t('home.venueLabel')}</span>
+                <p className="mt-1 text-base text-white">{kuriChasqui2026Event.venue} · {t('home.heroLocation')}</p>
               </div>
             </div>
 
@@ -55,13 +63,19 @@ export function HomePage() {
               <Button to={festivalPath} className="!bg-[var(--accent)] !text-[var(--surface-dark)] hover:!bg-[#d79d54]">
                 {t('home.ctaPrimary')} <ArrowRight size={16} className="ml-2" />
               </Button>
+              <a
+                href={`mailto:${kuriChasqui2026Event.rsvpEmail}`}
+                className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface-dark)]"
+              >
+                {t('home.rsvpCta')}
+              </a>
               <Button to={donatePath} variant="secondary" className="border-white/20 bg-white/5 text-white hover:bg-white/10">
                 {t('home.ctaSecondary')}
               </Button>
             </div>
 
             <p className="mt-6 text-sm text-white/70">
-              {t('home.organizedBy')}: <span className="font-medium text-white">{kuriChasqui2026Event.organizer}</span>
+              {t('home.organizedBy')}: <span className="font-medium text-white">{kuriChasqui2026Event.organizer} &amp; {kuriChasqui2026Event.coOrganizer}</span>
             </p>
           </div>
 
@@ -132,6 +146,7 @@ export function HomePage() {
             <h2 className="mt-4 font-display text-4xl tracking-[-0.04em] text-[var(--foreground)] md:text-5xl">
               {t('home.festivalHeading')}
             </h2>
+            <p className="mt-4 max-w-xl text-lg leading-8 text-[var(--muted)]">{t('home.festivalDescription')}</p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
@@ -140,16 +155,18 @@ export function HomePage() {
               <p className="mt-3 text-xl font-semibold text-[var(--foreground)]">{t('home.festivalDatesValue')}</p>
             </div>
             <div className="rounded-2xl border border-[rgba(26,30,38,0.08)] bg-[rgba(255,255,255,0.35)] p-5">
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{t('home.festivalVenueLabel')}</p>
-              <p className="mt-3 text-xl font-semibold text-[var(--foreground)]">{kuriChasqui2026Event.venue}</p>
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{t('home.festivalTimeLabel')}</p>
+              <p className="mt-3 text-xl font-semibold text-[var(--foreground)]">{t('home.timeValue')}</p>
             </div>
             <div className="rounded-2xl border border-[rgba(26,30,38,0.08)] bg-[rgba(255,255,255,0.35)] p-5">
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{t('home.festivalLocationLabel')}</p>
-              <p className="mt-3 text-xl font-semibold text-[var(--foreground)]">{t('home.festivalLocationValue')}</p>
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{t('home.festivalVenueLabel')}</p>
+              <p className="mt-3 text-xl font-semibold text-[var(--foreground)]">{kuriChasqui2026Event.venue}</p>
+              <p className="mt-2 whitespace-pre-line text-sm leading-6 text-[var(--muted)]">{kuriChasqui2026Event.address}</p>
             </div>
             <div className="rounded-2xl border border-[rgba(26,30,38,0.08)] bg-[rgba(255,255,255,0.35)] p-5">
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{t('home.festivalOrganizerLabel')}</p>
-              <p className="mt-3 text-xl font-semibold text-[var(--foreground)]">{kuriChasqui2026Event.organizer}</p>
+              <p className="mt-3 text-lg font-semibold text-[var(--foreground)]">{kuriChasqui2026Event.organizer}</p>
+              <p className="mt-1 text-lg font-semibold text-[var(--foreground)]">{kuriChasqui2026Event.coOrganizer}</p>
             </div>
           </div>
         </Container>
@@ -208,12 +225,37 @@ export function HomePage() {
       <section className="bg-[var(--surface-dark)] text-white">
         <Container className="py-20 md:py-24">
           <div className="border-t border-white/10 pt-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">{t('home.supportLabel')}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">{t('home.cultureLabel')}</p>
             <h2 className="mt-6 max-w-3xl font-display text-5xl leading-[0.92] tracking-[-0.04em] text-white md:text-6xl">
               {t('home.cultureStatement')}
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">{t('home.cultureSupportingText')}</p>
+            <div className="mt-8 max-w-2xl border-l border-[var(--accent)] pl-5">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">{t('home.awardLabel')}</p>
+              <h3 className="mt-2 font-display text-2xl text-white">{t('home.awardTitle')}</h3>
+              <p className="mt-2 text-sm leading-6 text-white/70">{t('home.awardDescription')}</p>
+            </div>
           </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-[var(--border)] bg-[#e9dfd2]">
+        <Container className="flex flex-col gap-5 py-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">{t('home.rsvpTitle')}</p>
+            <a
+              href={`tel:${kuriChasqui2026Event.rsvpPhone.replace(/[^\d+]/g, '')}`}
+              className="mt-1 inline-block text-lg font-semibold text-[var(--foreground)] underline decoration-[var(--accent)] underline-offset-4"
+            >
+              {kuriChasqui2026Event.rsvpPhone}
+            </a>
+          </div>
+          <a
+            href={`mailto:${kuriChasqui2026Event.rsvpEmail}`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] underline decoration-[var(--accent)] underline-offset-4"
+          >
+            {kuriChasqui2026Event.rsvpEmail} <ArrowUpRight size={16} />
+          </a>
         </Container>
       </section>
 
