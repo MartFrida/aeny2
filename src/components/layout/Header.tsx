@@ -1,4 +1,3 @@
-import { HeartHandshake } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Container } from '../common/Container'
@@ -13,15 +12,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[rgba(255,255,255,0.08)] bg-[rgba(12,19,25,0.88)] text-white backdrop-blur-md">
-      <Container className="relative flex items-center justify-between gap-4 py-3.5">
-        <div className="flex items-center gap-3">
-          <Link to={`/${language}`} className="flex items-center gap-2 text-white" aria-label="AEINY home">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-(--accent) text-(--surface-dark) shadow-sm">
-              <HeartHandshake size={18} />
-            </span>
-            <span className="text-[0.8rem] font-semibold tracking-[0.18em] text-white">AEINY</span>
-          </Link>
-        </div>
+      <Container className="relative flex items-center justify-between gap-4 py-2.5">
+        <Link to="/" className="flex shrink-0 items-center" aria-label="Alianza Ecuatoriana Internacional — Home">
+          <img
+            src="/images/logo-aeiny.webp"
+            alt="Alianza Ecuatoriana Internacional"
+            className="h-12 w-auto object-contain sm:h-[54px] md:h-[68px]"
+            loading="eager"
+          />
+        </Link>
 
         <DesktopNavigation language={language} />
 
