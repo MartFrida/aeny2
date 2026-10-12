@@ -19,6 +19,12 @@ const areas = [
   { key: 'rights', icon: Scale },
   { key: 'culture', icon: Heart },
 ] as const
+const workPhotos = [
+  { src: 'workforce-classroom.webp', key: 'training', aspect: 'aspect-[4/3]', position: 'object-[center_40%]' },
+  { src: 'training-certificates.webp', key: 'certificates', aspect: 'aspect-[4/3]', position: 'object-center' },
+  { src: 'volunteer-outreach.webp', key: 'outreach', aspect: 'aspect-[4/3]', position: 'object-[center_40%]' },
+  { src: 'community-outreach-booth.webp', key: 'engagement', aspect: 'aspect-[4/3]', position: 'object-center' },
+] as const
 
 export function OurWorkPage() {
   const { t, i18n } = useTranslation()
@@ -57,19 +63,16 @@ export function OurWorkPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-xl">
-            <div aria-hidden="true" className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-white/15 bg-(--surface-dark)">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_24%,rgba(201,154,92,0.22),transparent_33%)]" />
-              <div className="absolute bottom-0 left-0 right-0 h-3/5 bg-linear-to-t from-(--surface-dark) to-transparent" />
-              <div className="absolute bottom-0 left-[7%] h-[42%] w-[20%] rounded-t-full border border-white/10 bg-(--primary)/60" />
-              <div className="absolute bottom-0 left-[29%] h-[57%] w-[24%] rounded-t-full border border-white/10 bg-(--primary)/70" />
-              <div className="absolute bottom-0 right-[7%] h-[47%] w-[27%] rounded-t-full border border-white/10 bg-(--accent)/45" />
-              <div className="absolute left-[44%] top-[21%] h-16 w-16 rounded-full border border-(--accent)/50 sm:h-20 sm:w-20" />
-              <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                <span className="h-px w-8 bg-(--accent)" />
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/85">
-                  {t('ourWork.heroVisualLabel')}
-                </span>
-              </div>
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[1.75rem] border border-white/15 bg-(--surface-dark)">
+              <img
+                src="/images/aeiny/community-aid.webp"
+                alt={t('ourWork.heroPhotoAlt')}
+                className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
+                width="960"
+                height="640"
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
             <p className="mt-3 text-right text-xs uppercase tracking-[0.16em] text-white/50">
               {t('ourWork.heroVisualCaption')}
@@ -114,6 +117,40 @@ export function OurWorkPage() {
         </Container>
       </section>
 
+      <section className="bg-(--surface) py-14 md:py-20">
+        <Container>
+          <div className="mb-9 max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
+              {t('ourWork.photosEyebrow')}
+            </p>
+            <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
+              {t('ourWork.photosTitle')}
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {workPhotos.map(({ src, key, aspect, position }) => (
+              <figure key={key} className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
+                <div className={`relative ${aspect} overflow-hidden bg-(--accent-soft)`}>
+                  <img
+                    src={`/images/aeiny/${src}`}
+                    alt={t(`ourWork.photo.${key}Alt`)}
+                    className={`absolute inset-0 h-full w-full object-cover ${position}`}
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption className="p-4">
+                  <h3 className="font-semibold text-(--foreground)">{t(`ourWork.photo.${key}Title`)}</h3>
+                  <p className="mt-2 text-sm leading-6 text-(--muted)">{t(`ourWork.photo.${key}Copy`)}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="overflow-hidden bg-(--surface-dark) py-14 text-white md:py-20">
         <Container>
           <div className="grid gap-9 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
@@ -145,16 +182,16 @@ export function OurWorkPage() {
               </Link>
             </div>
 
-            <div aria-hidden="true" className="relative min-h-64 overflow-hidden rounded-[1.75rem] border border-white/15 bg-(--surface-dark) sm:min-h-80">
-              <div className="absolute -right-10 -top-10 h-52 w-52 rounded-full border border-(--accent)/35" />
-              <div className="absolute right-8 top-8 h-32 w-32 rounded-full border border-white/10" />
-              <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-linear-to-t from-(--surface-dark) to-transparent" />
-              <div className="absolute bottom-0 left-[10%] h-[38%] w-[25%] rounded-t-full bg-(--primary)/65" />
-              <div className="absolute bottom-0 left-[36%] h-[53%] w-[27%] rounded-t-full bg-(--primary)/70" />
-              <div className="absolute bottom-0 right-[8%] h-[43%] w-[22%] rounded-t-full bg-(--accent)/45" />
-              <p className="absolute bottom-6 left-6 text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-                {t('ourWork.centerVisualLabel')}
-              </p>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-white/15 bg-(--surface-dark)">
+              <img
+                src="/images/aeiny/workforce-classroom.webp"
+                alt={t('ourWork.centerPhotoAlt')}
+                className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
+                width="960"
+                height="720"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </Container>

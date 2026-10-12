@@ -5,9 +5,9 @@ import { Container } from '../../components/common/Container'
 import { PageMetadata } from '../../components/common/PageMetadata'
 
 const communityMoments = [
-  { key: 'celebrations', icon: Sparkles },
-  { key: 'education', icon: UsersRound },
-  { key: 'generations', icon: Music2 },
+  { key: 'celebrations', icon: Sparkles, image: 'family-celebration.webp' },
+  { key: 'gatherings', icon: UsersRound, image: 'community-gathering.webp' },
+  { key: 'generations', icon: Music2, image: 'community-dinner.webp' },
 ] as const
 
 export function EventsPage() {
@@ -39,19 +39,16 @@ export function EventsPage() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/75">{t('events.heroIntro')}</p>
           </div>
-          <div aria-hidden="true" className="relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-[1.75rem] border border-white/15 bg-(--surface-dark)">
-            <div className="absolute -left-12 -top-10 h-[78%] w-[68%] rounded-b-[50%] rounded-tr-[50%] border border-(--accent)/35" />
-            <div className="absolute left-[13%] top-[14%] h-[65%] w-[58%] rounded-b-[50%] rounded-tr-[50%] border border-white/10 bg-(--accent)/5" />
-            <div className="absolute right-[13%] top-[19%] h-20 w-20 rounded-full bg-(--accent)/75 sm:h-24 sm:w-24" />
-            <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-linear-to-t from-(--surface-dark) to-transparent" />
-            <div className="absolute bottom-[16%] left-[13%] flex h-20 items-end gap-2 sm:h-24">
-              {[35, 57, 43, 80, 50, 66, 38, 71, 46].map((height, index) => (
-                <span key={index} className="w-2 rounded-t-full bg-(--accent)/70 sm:w-2.5" style={{ height: `${height}%` }} />
-              ))}
-            </div>
-            <p className="absolute bottom-6 right-6 text-right font-display text-xl text-white/85 sm:text-2xl">
-              {t('events.visualCaption')}
-            </p>
+          <div className="relative mx-auto aspect-[16/10] w-full max-w-xl overflow-hidden rounded-[1.75rem] border border-white/15 bg-(--surface-dark)">
+            <img
+              src="/images/aeiny/cultural-parade.webp"
+              alt={t('events.heroPhotoAlt')}
+              className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
+              width="960"
+              height="600"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
         </Container>
       </section>
@@ -59,14 +56,16 @@ export function EventsPage() {
       <section className="bg-(--background) py-14 md:py-20">
         <Container>
           <div className="grid gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-            <div aria-hidden="true" className="relative order-2 aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--background) lg:order-1">
-              <div className="absolute -left-[12%] bottom-0 h-[64%] w-[70%] rounded-t-full bg-(--primary)/55" />
-              <div className="absolute -right-[6%] bottom-0 h-[75%] w-[67%] rounded-t-full bg-(--accent)/50" />
-              <div className="absolute left-[24%] top-[12%] h-20 w-20 rounded-full border border-(--accent)/70 bg-(--accent)/35" />
-              <div className="absolute bottom-0 left-0 right-0 h-3 bg-(--surface-dark)/80" />
-              <p className="absolute bottom-6 left-6 font-display text-3xl text-white sm:text-4xl">
-                {t('events.featureVisualLabel')}
-              </p>
+            <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--background) lg:order-1">
+              <img
+                src="/images/aeiny/international-parade.webp"
+                alt={t('events.featurePhotoAlt')}
+                className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
+                width="960"
+                height="720"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
@@ -101,19 +100,32 @@ export function EventsPage() {
               {t('events.momentsTitle')}
             </h2>
           </div>
-          <div className="mt-9 grid gap-x-8 sm:grid-cols-3">
-            {communityMoments.map(({ key, icon: Icon }, index) => (
-              <article key={key} className="border-t border-(--border) py-6">
-                <div className="flex items-center justify-between">
-                  <Icon aria-hidden="true" size={21} strokeWidth={1.5} className="text-(--primary)" />
-                  <span className="font-display text-sm text-(--accent)">0{index + 1}</span>
+          <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {communityMoments.map(({ key, icon: Icon, image }, index) => (
+              <article key={key} className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
+                <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
+                  <img
+                    src={`/images/aeiny/${image}`}
+                    alt={t(`events.moment.${key}PhotoAlt`)}
+                    className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
+                    width="960"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-(--foreground)">
-                  {t(`events.moment.${key}Title`)}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-(--muted)">
-                  {t(`events.moment.${key}Copy`)}
-                </p>
+                <div className="p-5">
+                  <div className="flex items-center justify-between">
+                    <Icon aria-hidden="true" size={21} strokeWidth={1.5} className="text-(--primary)" />
+                    <span className="font-display text-sm text-(--accent)">0{index + 1}</span>
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold text-(--foreground)">
+                    {t(`events.moment.${key}Title`)}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-(--muted)">
+                    {t(`events.moment.${key}Copy`)}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

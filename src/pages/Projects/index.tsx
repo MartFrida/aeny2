@@ -2,7 +2,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   BookOpen,
-  GraduationCap,
   Landmark,
   Trees,
   UsersRound,
@@ -18,6 +17,12 @@ const elements = [
   { key: 'culture', icon: Landmark },
   { key: 'publicSpace', icon: Trees },
   { key: 'connection', icon: UsersRound },
+] as const
+const communityProjects = [
+  { src: 'food-assistance.webp', key: 'assistance', position: 'object-[center_40%]' },
+  { src: 'community-cleanup.webp', key: 'action', position: 'object-center' },
+  { src: 'electrical-training.webp', key: 'supplies', position: 'object-[center_40%]' },
+  { src: 'aid-distribution.webp', key: 'support', position: 'object-[center_45%]' },
 ] as const
 
 export function ProjectsPage() {
@@ -155,14 +160,58 @@ export function ProjectsPage() {
                 {t('projects.secondCta')} <ArrowRight size={16} />
               </Link>
             </div>
+            <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2">
+              <figure className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
+                <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
+                  <img
+                    src="/images/aeiny/workforce-classroom.webp"
+                    alt={t('projects.trainingPhoto.classroomAlt')}
+                    className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+                    width="960"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption className="p-4">
+                  <h3 className="font-semibold text-(--foreground)">{t('projects.trainingPhoto.classroomTitle')}</h3>
+                  <p className="mt-2 text-sm leading-6 text-(--muted)">{t('projects.trainingPhoto.classroomCopy')}</p>
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
+                <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
+                  <img
+                    src="/images/aeiny/safety-graduates.webp"
+                    alt={t('projects.trainingPhoto.graduatesAlt')}
+                    className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
+                    width="960"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption className="p-4">
+                  <h3 className="font-semibold text-(--foreground)">{t('projects.trainingPhoto.graduatesTitle')}</h3>
+                  <p className="mt-2 text-sm leading-6 text-(--muted)">{t('projects.trainingPhoto.graduatesCopy')}</p>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </Container>
       </section>
 
       <section className="border-y border-(--border) bg-(--background) py-14 md:py-20">
         <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div className="flex h-44 items-center justify-center rounded-[1.5rem] border border-(--border) bg-(--accent-soft) text-(--primary) sm:h-52">
-            <GraduationCap aria-hidden="true" size={66} strokeWidth={1} />
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] border border-(--border) bg-(--accent-soft)">
+            <img
+              src="/images/aeiny/training-certificates.webp"
+              alt={t('ourWork.photo.certificatesAlt')}
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              width="960"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
@@ -176,6 +225,41 @@ export function ProjectsPage() {
               <span className="font-semibold text-(--foreground)">{t('projects.trainingNoteLabel')} </span>
               {t('projects.trainingNote')}
             </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-(--surface) py-14 md:py-20">
+        <Container>
+          <div className="mb-9 max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
+              {t('projects.communityEyebrow')}
+            </p>
+            <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
+              {t('projects.communityTitle')}
+            </h2>
+            <p className="mt-4 leading-7 text-(--muted)">{t('projects.communityIntro')}</p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {communityProjects.map(({ src, key, position }) => (
+              <figure key={key} className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
+                <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
+                  <img
+                    src={`/images/aeiny/${src}`}
+                    alt={t(`projects.communityPhoto.${key}Alt`)}
+                    className={`absolute inset-0 h-full w-full object-cover ${position}`}
+                    width="960"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption className="p-5">
+                  <h3 className="text-lg font-semibold text-(--foreground)">{t(`projects.communityPhoto.${key}Title`)}</h3>
+                  <p className="mt-2 text-sm leading-6 text-(--muted)">{t(`projects.communityPhoto.${key}Copy`)}</p>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </Container>
       </section>
