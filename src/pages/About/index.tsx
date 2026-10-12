@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import {
   ArrowDown,
   ArrowRight,
@@ -105,7 +105,6 @@ function OrganizationMetadata({ language, title, description }: {
 export function AboutPage() {
   const { i18n, t } = useTranslation()
   const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
-  const [logoUnavailable, setLogoUnavailable] = useState(false)
   const prefix = `/${language}`
 
   return (
@@ -149,27 +148,19 @@ export function AboutPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-xl">
-            <div className="relative min-h-80 overflow-hidden rounded-[2rem] border border-white/15 bg-[#172b35] p-6 sm:min-h-96 sm:p-8">
-              <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_72%_25%,rgba(201,154,92,0.2),transparent_34%)]" />
-              <div aria-hidden="true" className="absolute bottom-0 left-0 right-0 h-2/5 bg-linear-to-t from-[#0b161d] to-transparent" />
-              <div aria-hidden="true" className="absolute bottom-0 left-[8%] h-[36%] w-[19%] rounded-t-[45%] border border-white/10 bg-(--primary)/55" />
-              <div aria-hidden="true" className="absolute bottom-0 left-[27%] h-[46%] w-[25%] rounded-t-[48%] border border-white/10 bg-[#79806a]/45" />
-              <div aria-hidden="true" className="absolute bottom-0 right-[7%] h-[31%] w-[28%] rounded-t-[50%] border border-white/10 bg-[#a5794d]/45" />
-              <div aria-hidden="true" className="absolute right-[13%] top-[17%] h-20 w-20 rounded-full border border-(--accent)/40 sm:h-28 sm:w-28" />
-              <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 sm:inset-x-8 sm:bottom-8">
-                <div className="max-w-xs">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--accent)">
-                    {t('about.heroVisualEyebrow')}
-                  </p>
-                  <p className="mt-2 font-display text-2xl leading-tight text-white sm:text-3xl">
-                    {t('about.heroVisualTitle')}
-                  </p>
-                </div>
-                <span aria-hidden="true" className="mb-1 h-px w-12 shrink-0 bg-(--accent)" />
-              </div>
+            <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-white/15 bg-[#172b35]">
+              <img
+                src="/images/aeiny/about/aeiny-team.webp"
+                alt={t('about.teamPhotoAlt')}
+                width="960"
+                height="960"
+                fetchPriority="high"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-contain"
+              />
             </div>
             <p className="mt-3 text-right text-xs uppercase tracking-[0.16em] text-white/55">
-              {t('about.heroVisualCaption')}
+              {t('about.teamPhotoCaption')}
             </p>
           </div>
         </Container>
@@ -179,25 +170,16 @@ export function AboutPage() {
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
           <div className="relative mx-auto w-full max-w-md">
             <div className="absolute -left-3 -top-3 h-24 w-24 rounded-tl-[2rem] border-l border-t border-(--accent)/70" />
-            <div className="relative flex min-h-72 items-center justify-center rounded-[1.75rem] border border-(--border) bg-(--surface) p-8">
-              {!logoUnavailable ? (
-                <img
-                  src="/images/logo-aei.jpg"
-                  alt={t('about.logoAlt')}
-                  width={640}
-                  height={640}
-                  loading="lazy"
-                  className="max-h-60 w-full object-contain"
-                  onError={() => setLogoUnavailable(true)}
-                />
-              ) : (
-                <div role="img" aria-label={t('about.logoPending')} className="text-center">
-                  <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-full border border-(--accent)/70 bg-(--background) font-display text-4xl tracking-[0.12em] text-(--primary)">
-                    AEI
-                  </div>
-                  <p className="mt-5 text-sm text-(--muted)">{t('about.logoPending')}</p>
-                </div>
-              )}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--surface)">
+              <img
+                src="/images/aeiny/about/our-story.webp"
+                alt={t('about.storyPhotoAlt')}
+                width="960"
+                height="720"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
+              />
             </div>
             <div className="absolute -bottom-4 -right-4 h-16 w-16 rounded-full border border-(--primary)/30 bg-(--accent-soft)" />
           </div>
@@ -228,20 +210,33 @@ export function AboutPage() {
               {t('about.missionHeading')}
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {(['mission', 'vision'] as const).map((key, index) => (
-              <article
-                key={key}
-                className={`rounded-[1.5rem] border p-7 md:p-9 ${index === 0 ? 'border-(--border) bg-(--background)' : 'border-(--primary)/25 bg-(--surface)'}`}
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
-                  {t(`about.${key}Label`)}
-                </p>
-                <p className="mt-5 max-w-xl font-display text-2xl leading-relaxed tracking-[-0.02em] text-(--foreground) md:text-3xl">
-                  {t(`about.${key}Copy`)}
-                </p>
-              </article>
-            ))}
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-(--border) bg-(--background)">
+              <img
+                src="/images/aeiny/about/our-mission.webp"
+                alt={t('about.missionPhotoAlt')}
+                width="960"
+                height="720"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+              />
+            </div>
+            <div className="grid gap-6">
+              {(['mission', 'vision'] as const).map((key, index) => (
+                <article
+                  key={key}
+                  className={`rounded-[1.5rem] border p-7 md:p-9 ${index === 0 ? 'border-(--border) bg-(--background)' : 'border-(--primary)/25 bg-(--surface)'}`}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
+                    {t(`about.${key}Label`)}
+                  </p>
+                  <p className="mt-5 max-w-xl font-display text-2xl leading-relaxed tracking-[-0.02em] text-(--foreground) md:text-3xl">
+                    {t(`about.${key}Copy`)}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
@@ -268,6 +263,27 @@ export function AboutPage() {
               </article>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-(--border) bg-(--surface) py-12 md:py-16">
+        <Container>
+          <figure className="overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--background)">
+            <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
+              <img
+                src="/images/aeiny/about/our-roots.webp"
+                alt={t('about.rootsPhotoAlt')}
+                width="960"
+                height="720"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              />
+            </div>
+            <figcaption className="px-5 py-4 text-sm leading-6 text-(--muted) sm:px-7">
+              {t('about.rootsPhotoCaption')}
+            </figcaption>
+          </figure>
         </Container>
       </section>
 
@@ -370,25 +386,38 @@ export function AboutPage() {
       <section className="border-t border-(--border) bg-(--surface) py-16 md:py-20">
         <Container>
           <div className="rounded-[2rem] bg-(--primary) px-6 py-12 text-white sm:px-10 md:px-14 md:py-16">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-3xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                  {t('about.finalEyebrow')}
-                </p>
-                <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] md:text-5xl">
-                  {t('about.finalTitle')}
-                </h2>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg">
-                  {t('about.finalDescription')}
-                </p>
+            <div className="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+              <div>
+                <div className="max-w-3xl">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                    {t('about.finalEyebrow')}
+                  </p>
+                  <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] md:text-5xl">
+                    {t('about.finalTitle')}
+                  </h2>
+                  <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg">
+                    {t('about.finalDescription')}
+                  </p>
+                </div>
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                  <Button to={`${prefix}/get-involved`} className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!">
+                    {t('about.finalParticipate')}
+                  </Button>
+                  <Button to={`${prefix}/donate`} variant="secondary" className="border-white/30 bg-white/5 text-white hover:bg-white/10">
+                    {t('about.finalSupport')}
+                  </Button>
+                </div>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <Button to={`${prefix}/get-involved`} className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!">
-                  {t('about.finalParticipate')}
-                </Button>
-                <Button to={`${prefix}/donate`} variant="secondary" className="border-white/30 bg-white/5 text-white hover:bg-white/10">
-                  {t('about.finalSupport')}
-                </Button>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-white/20 bg-(--surface-dark)">
+                <img
+                  src="/images/aeiny/about/community.webp"
+                  alt={t('about.communityPhotoAlt')}
+                  width="960"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+                />
               </div>
             </div>
           </div>
