@@ -1,29 +1,20 @@
-import {
-  ArrowRight,
-  ArrowUpRight,
-  BookOpen,
-  Landmark,
-  Trees,
-  UsersRound,
-} from 'lucide-react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Button } from '../../components/common/Button'
 import { Container } from '../../components/common/Container'
 import { PageMetadata } from '../../components/common/PageMetadata'
 
-const elements = [
-  { key: 'museum', icon: BookOpen },
-  { key: 'culture', icon: Landmark },
-  { key: 'publicSpace', icon: Trees },
-  { key: 'connection', icon: UsersRound },
+const projectImages = [
+  { file: 'parque-migrante-entrada.jpg', key: 'entrance' },
+  { file: 'parque-migrante-museo.jpg', key: 'museum' },
+  { file: 'parque-migrante-concha-acustica.jpg', key: 'amphitheater' },
+  { file: 'parque-migrante-pileta.jpg', key: 'fountain' },
+  { file: 'parque-migrante-guardiania.jpg', key: 'services' },
+  { file: 'parque-migrante-vista-aerea.jpg', key: 'aerial' },
 ] as const
-const communityProjects = [
-  { src: 'food-assistance.webp', key: 'assistance', position: 'object-[center_40%]' },
-  { src: 'community-cleanup.webp', key: 'action', position: 'object-center' },
-  { src: 'electrical-training.webp', key: 'supplies', position: 'object-[center_40%]' },
-  { src: 'aid-distribution.webp', key: 'support', position: 'object-[center_45%]' },
-] as const
+
+const objectives = ['migrant', 'projects', 'representation'] as const
 
 export function ProjectsPage() {
   const { t, i18n } = useTranslation()
@@ -36,231 +27,185 @@ export function ProjectsPage() {
         language={language}
         title={t('projects.seoTitle')}
         description={t('projects.seoDescription')}
-        canonicalPath="/projects"
+        canonicalPath={`${prefix}/projects`}
+        alternateLanguagePaths={{ en: '/en/projects', es: '/es/projects' }}
       />
 
-      <section className="relative overflow-hidden border-b border-(--border) bg-(--background)">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-80 rounded-full border border-(--primary)/15" />
-        <Container className="relative grid gap-10 py-14 md:py-18 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
-          <div className="max-w-2xl">
+      <section className="border-b border-(--border) bg-(--background) py-16 md:py-24">
+        <Container>
+          <div className="max-w-4xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
               {t('projects.eyebrow')}
             </p>
             <h1 className="mt-4 font-display text-5xl leading-[1.04] tracking-[-0.05em] text-(--foreground) md:text-6xl lg:text-7xl">
               {t('projects.heroTitle')}
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-(--muted)">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-(--muted)">
               {t('projects.heroIntro')}
             </p>
           </div>
-
-          <div aria-hidden="true" className="relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--background)">
-            <div className="absolute -left-12 bottom-0 h-[62%] w-[65%] rounded-[50%] bg-(--primary)/25" />
-            <div className="absolute -right-10 bottom-0 h-[72%] w-[73%] rounded-[50%] bg-(--primary)/40" />
-            <div className="absolute right-[17%] top-[13%] h-20 w-20 rounded-full bg-(--accent)/65" />
-            <div className="absolute bottom-[20%] left-[15%] h-[38%] w-[68%] border border-white/65 bg-(--surface)/50" />
-            <div className="absolute bottom-[20%] left-[15%] h-[10%] w-[68%] border-y border-white/65 bg-(--accent)/20" />
-            <div className="absolute bottom-0 left-0 right-0 h-5 bg-(--primary)" />
-            <span className="absolute bottom-6 left-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.17em] text-white">
-              <span className="h-px w-8 bg-(--accent)" />
-              {t('projects.visualLabel')}
-            </span>
-          </div>
         </Container>
       </section>
 
       <section className="bg-(--surface) py-14 md:py-20">
         <Container>
-          <div className="grid gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-            <div aria-hidden="true" className="relative order-2 aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--background) lg:order-1">
-              <div className="absolute -left-[8%] bottom-0 h-[58%] w-[60%] rounded-[50%] bg-(--primary)/35" />
-              <div className="absolute -right-[8%] bottom-0 h-[67%] w-[70%] rounded-[50%] bg-(--primary)/55" />
-              <div className="absolute right-[17%] top-[12%] h-16 w-16 rounded-full border border-(--accent)/70 bg-(--accent)/35" />
-              <div className="absolute bottom-[12%] left-[17%] flex h-[34%] w-[64%] items-center justify-center border border-white/70 bg-(--surface)/55">
-                <Landmark className="text-(--primary)/70" size={50} strokeWidth={1} />
+          <div className="grid gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
+            <figure className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
+              <div className="flex aspect-[4/3] items-center justify-center bg-white p-3 sm:p-6">
+                <img
+                  src="/images/aeiny/projects/parque-migrante-entrada.jpg"
+                  alt={t('projects.gallery.entrance')}
+                  className="max-h-full w-full object-contain"
+                  width="1078"
+                  height="611"
+                  fetchPriority="high"
+                  decoding="async"
+                />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-3 bg-(--primary)/80" />
-            </div>
+              <figcaption className="flex flex-wrap justify-between gap-2 border-t border-(--border) px-4 py-3 text-sm">
+                <span className="font-medium text-(--foreground)">{t('projects.gallery.entrance')}</span>
+                <span className="text-(--muted)">{t('projects.visualizationCaption')}</span>
+              </figcaption>
+            </figure>
 
-            <div className="order-1 lg:order-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-                {t('projects.featureEyebrow')}
-              </p>
-              <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-                {t('projects.featureTitle')}
-              </h2>
-              <div className="mt-5 space-y-4 leading-7 text-(--muted)">
-                <p>{t('projects.featureCopy1')}</p>
-                <p>{t('projects.featureCopy2')}</p>
-              </div>
-              <blockquote className="mt-7 border-l-2 border-(--accent) pl-5 font-display text-2xl leading-snug text-(--foreground) md:text-3xl">
-                {t('projects.pullQuote')}
-              </blockquote>
-              <Link
-                to={`${prefix}/projects/parque-del-migrante`}
-                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-(--primary) transition hover:text-(--foreground) focus-visible:rounded-sm"
-              >
-                {t('projects.featureCta')} <ArrowUpRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-y border-(--border) bg-(--background) py-14 md:py-20">
-        <Container>
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('projects.elementsEyebrow')}
-            </p>
-            <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('projects.elementsTitle')}
-            </h2>
-            <p className="mt-4 leading-7 text-(--muted)">{t('projects.elementsIntro')}</p>
-          </div>
-          <div className="mt-9 grid gap-x-10 sm:grid-cols-2">
-            {elements.map(({ key, icon: Icon }, index) => (
-              <article key={key} className="grid grid-cols-[2.75rem_1fr] gap-4 border-t border-(--border) py-6 md:py-7">
-                <span className="font-display text-sm text-(--accent)">0{index + 1}</span>
-                <div>
-                  <Icon aria-hidden="true" size={21} strokeWidth={1.5} className="text-(--primary)" />
-                  <h3 className="mt-3 text-lg font-semibold text-(--foreground)">{t(`projects.element.${key}Title`)}</h3>
-                  <p className="mt-2 text-sm leading-6 text-(--muted)">{t(`projects.element.${key}Copy`)}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-(--surface) py-14 md:py-20">
-        <Container>
-          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-                {t('projects.secondEyebrow')}
+                {t('projects.parqueEyebrow')}
               </p>
               <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-                {t('projects.secondTitle')}
+                {t('projects.parqueTitle')}
               </h2>
+              <p className="mt-5 text-lg leading-8 text-(--muted)">
+                {t('projects.parqueDescription')}
+              </p>
             </div>
-            <div className="max-w-3xl">
-              <p className="text-lg leading-8 text-(--muted)">{t('projects.secondCopy')}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {(['construction', 'safety', 'immigration', 'labor', 'identity', 'rights'] as const).map((topic) => (
-                  <span key={topic} className="rounded-full border border-(--border) px-3.5 py-1.5 text-xs text-(--muted)">
-                    {t(`projects.secondTopic.${topic}`)}
-                  </span>
-                ))}
-              </div>
-              <Link
-                to={`${prefix}/our-work`}
-                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-(--primary) transition hover:text-(--foreground) focus-visible:rounded-sm"
-              >
-                {t('projects.secondCta')} <ArrowRight size={16} />
-              </Link>
+          </div>
+
+          <div className="mt-14 md:mt-20">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3 border-b border-(--border) pb-4">
+              <h3 className="font-display text-2xl tracking-[-0.03em] text-(--foreground) md:text-3xl">
+                {t('projects.galleryTitle')}
+              </h3>
+              <p className="text-sm text-(--muted)">{t('projects.visualizationCaption')}</p>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2">
-              <figure className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
-                <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
-                  <img
-                    src="/images/aeiny/workforce-classroom.webp"
-                    alt={t('projects.trainingPhoto.classroomAlt')}
-                    className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
-                    width="960"
-                    height="720"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <figcaption className="p-4">
-                  <h3 className="font-semibold text-(--foreground)">{t('projects.trainingPhoto.classroomTitle')}</h3>
-                  <p className="mt-2 text-sm leading-6 text-(--muted)">{t('projects.trainingPhoto.classroomCopy')}</p>
-                </figcaption>
-              </figure>
-              <figure className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
-                <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
-                  <img
-                    src="/images/aeiny/safety-graduates.webp"
-                    alt={t('projects.trainingPhoto.graduatesAlt')}
-                    className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
-                    width="960"
-                    height="720"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <figcaption className="p-4">
-                  <h3 className="font-semibold text-(--foreground)">{t('projects.trainingPhoto.graduatesTitle')}</h3>
-                  <p className="mt-2 text-sm leading-6 text-(--muted)">{t('projects.trainingPhoto.graduatesCopy')}</p>
-                </figcaption>
-              </figure>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {projectImages.slice(1).map(({ file, key }) => (
+                <figure key={key} className="overflow-hidden rounded-xl border border-(--border) bg-(--background)">
+                  <div className="flex aspect-[4/3] items-center justify-center bg-white p-3">
+                    <img
+                      src={`/images/aeiny/projects/${file}`}
+                      alt={t(`projects.gallery.${key}`)}
+                      className="max-h-full w-full object-contain"
+                      width="1080"
+                      height="613"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="flex flex-wrap justify-between gap-2 border-t border-(--border) px-4 py-3 text-sm">
+                    <span className="font-medium text-(--foreground)">{t(`projects.gallery.${key}`)}</span>
+                    <span className="text-(--muted)">{t('projects.visualizationCaption')}</span>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
+          </div>
+
+          <div className="mt-10 flex flex-col gap-5 rounded-2xl border border-(--border) bg-(--background) p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div className="max-w-2xl">
+              <h3 className="font-display text-2xl tracking-[-0.03em] text-(--foreground) md:text-3xl">
+                {t('projects.supportTitle')}
+              </h3>
+              <p className="mt-3 leading-7 text-(--muted)">{t('projects.supportCopy')}</p>
+            </div>
+            <Button to={`${prefix}/get-involved`} className="shrink-0">
+              {t('projects.supportCta')} <ArrowUpRight size={16} className="ml-2" />
+            </Button>
           </div>
         </Container>
       </section>
 
       <section className="border-y border-(--border) bg-(--background) py-14 md:py-20">
-        <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] border border-(--border) bg-(--accent-soft)">
-            <img
-              src="/images/aeiny/training-certificates.webp"
-              alt={t('ourWork.photo.certificatesAlt')}
-              className="absolute inset-0 h-full w-full object-cover object-center"
-              width="960"
-              height="720"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('projects.trainingEyebrow')}
-            </p>
-            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) md:text-4xl">
-              {t('projects.trainingTitle')}
-            </h2>
-            <p className="mt-4 leading-7 text-(--muted)">{t('projects.trainingCopy')}</p>
-            <p className="mt-3 text-sm leading-6 text-(--muted)">
-              <span className="font-semibold text-(--foreground)">{t('projects.trainingNoteLabel')} </span>
-              {t('projects.trainingNote')}
-            </p>
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-start lg:gap-16">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
+                {t('projects.encuentroEyebrow')}
+              </p>
+              <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
+                {t('projects.encuentroTitle')}
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-(--muted)">
+                {t('projects.encuentroDescription')}
+              </p>
+              <h3 className="mt-10 font-display text-2xl tracking-[-0.03em] text-(--foreground)">
+                {t('projects.objectivesTitle')}
+              </h3>
+              <ol className="mt-3">
+                {objectives.map((objective, index) => (
+                  <li key={objective} className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-(--border) py-5">
+                    <span className="font-display text-sm text-(--accent)">0{index + 1}</span>
+                    <div>
+                      <h4 className="font-semibold text-(--foreground)">
+                        {t(`projects.objectives.${objective}Title`)}
+                      </h4>
+                      <p className="mt-1 text-sm leading-6 text-(--muted)">
+                        {t(`projects.objectives.${objective}Copy`)}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <Link
+                to={`${prefix}/events`}
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-(--primary) transition hover:text-(--foreground) focus-visible:rounded-sm"
+              >
+                {t('projects.eventsCta')} <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-[1.2fr_0.8fr] lg:grid-cols-1 xl:grid-cols-[1.1fr_0.9fr]">
+              <figure className="overflow-hidden rounded-2xl border border-(--border) bg-(--surface)">
+                <img
+                  src="/images/aeiny/projects/encuentro-cuencano-photo.jpg"
+                  alt={t('projects.eventPhotoAlt')}
+                  className="aspect-[4/3] w-full object-cover"
+                  width="1600"
+                  height="1200"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption className="px-4 py-3 text-sm leading-6 text-(--muted)">
+                  {t('projects.eventPhotoCaption')}
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-2xl border border-(--border) bg-(--surface)">
+                <img
+                  src="/images/aeiny/projects/encuentro-cuencano-archival-poster.jpg"
+                  alt={t('projects.archivalPosterAlt')}
+                  className="mx-auto max-h-[34rem] w-full object-contain"
+                  width="1414"
+                  height="2000"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption className="px-4 py-3 text-center text-sm text-(--muted)">
+                  {t('projects.archivalPosterCaption')}
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </Container>
       </section>
 
       <section className="bg-(--surface) py-14 md:py-20">
-        <Container>
-          <div className="mb-9 max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('projects.communityEyebrow')}
-            </p>
-            <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('projects.communityTitle')}
-            </h2>
-            <p className="mt-4 leading-7 text-(--muted)">{t('projects.communityIntro')}</p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {communityProjects.map(({ src, key, position }) => (
-              <figure key={key} className="overflow-hidden rounded-2xl border border-(--border) bg-(--background)">
-                <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
-                  <img
-                    src={`/images/aeiny/${src}`}
-                    alt={t(`projects.communityPhoto.${key}Alt`)}
-                    className={`absolute inset-0 h-full w-full object-cover ${position}`}
-                    width="960"
-                    height="720"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <figcaption className="p-5">
-                  <h3 className="text-lg font-semibold text-(--foreground)">{t(`projects.communityPhoto.${key}Title`)}</h3>
-                  <p className="mt-2 text-sm leading-6 text-(--muted)">{t(`projects.communityPhoto.${key}Copy`)}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+        <Container className="grid gap-6 border-l-2 border-(--accent) pl-6 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-12 md:pl-10">
+          <h2 className="max-w-md font-display text-3xl leading-tight tracking-[-0.04em] text-(--foreground) md:text-4xl">
+            {t('projects.connectionTitle')}
+          </h2>
+          <p className="max-w-3xl text-lg leading-8 text-(--muted)">
+            {t('projects.connectionCopy')}
+          </p>
         </Container>
       </section>
 
@@ -277,12 +222,12 @@ export function ProjectsPage() {
                 </h2>
                 <p className="mt-4 max-w-2xl leading-7 text-white/70">{t('projects.finalCopy')}</p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Button to={`${prefix}/donate`} className="bg-(--accent)! text-(--surface-dark)! hover:bg-(--accent)/90!">
-                  {t('projects.supportCta')}
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Button to={`${prefix}/get-involved`} className="bg-(--accent)! text-(--surface-dark)! hover:bg-(--accent)/90!">
+                  {t('projects.involvedCta')}
                 </Button>
-                <Button to={`${prefix}/get-involved`} variant="secondary" className="border-white/25 bg-white/5 text-white hover:bg-white/10">
-                  {t('projects.involvedCta')} <ArrowUpRight size={16} className="ml-2" />
+                <Button to={`${prefix}/contact`} variant="secondary" className="border-white/25 bg-white/5 text-white hover:bg-white/10">
+                  {t('projects.contactCta')}
                 </Button>
               </div>
             </div>
