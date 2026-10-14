@@ -4,13 +4,18 @@ import { Link, useParams } from 'react-router-dom'
 import { Container } from '../../components/common/Container'
 import { PageMetadata } from '../../components/common/PageMetadata'
 import { NotFoundPage } from '../NotFound'
-import { getFilmTypeTranslationKey, kuriChasqui2026Films } from '../../data/events/kuriChasquiCatalog'
+import {
+  getFilmPrimaryImage,
+  getFilmTypeTranslationKey,
+  kuriChasqui2026Films,
+} from '../../data/events/kuriChasquiCatalog'
 
 const publicFilmFields = [
   ['originalTitle', 'originalTitle'],
   ['year', 'year'],
   ['completionYear', 'completionYear'],
   ['duration', 'duration'],
+  ['genre', 'genre'],
   ['country', 'country'],
   ['location', 'location'],
   ['language', 'language'],
@@ -18,6 +23,7 @@ const publicFilmFields = [
   ['director', 'director'],
   ['screenplay', 'screenplay'],
   ['producer', 'producer'],
+  ['productionCompany', 'productionCompany'],
   ['production', 'production'],
   ['cast', 'cast'],
   ['cinematography', 'cinematography'],
@@ -39,6 +45,8 @@ export function KuriChasquiFilmDetailPage() {
   const pagePath = language === 'es' ? spanishPath : englishPath
   const synopsis = language === 'es' ? film.synopsisEs : film.synopsisEn
   const filmTypeTranslation = getFilmTypeTranslationKey(film.type)
+  const primaryImage = getFilmPrimaryImage(film)
+  const gallery = (film.gallery ?? []).filter((image) => image !== primaryImage)
   const detailFields = publicFilmFields.flatMap(([key, labelKey]) => {
     const value = film[key]
     if (value === null || value === undefined || value === '') return []
@@ -74,13 +82,11 @@ export function KuriChasquiFilmDetailPage() {
 
       <section className="bg-(--background)">
         <Container className="grid gap-10 py-12 md:py-16 lg:grid-cols-[0.8fr_1.2fr]">
-          {typeof film.poster === 'string' &&
-          film.poster.startsWith('/') &&
-          !film.poster.startsWith('//') ? (
+          {primaryImage ? (
             <img
-              src={film.poster}
+              src={primaryImage}
               alt={t('festival2026.filmImageAlt', { title: film.title })}
-              className="aspect-[3/4] w-full max-w-md object-contain"
+              className="aspect-[3/4] w-full max-w-md bg-[#e9dfd2] object-contain p-2"
             />
           ) : (
             <div className="flex aspect-[3/4] w-full max-w-md flex-col items-center justify-center gap-4 bg-[#e9dfd2] text-(--primary)">
@@ -117,6 +123,23 @@ export function KuriChasquiFilmDetailPage() {
           </div>
         </Container>
       </section>
+      {gallery.length > 0 ? (
+        <section className="border-t border-(--border) bg-(--surface)">
+          <Container className="py-12 md:py-16">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {gallery.map((image) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt={t('festival2026.filmGalleryImageAlt', { title: film.title })}
+                  className="aspect-[4/3] w-full bg-[#e9dfd2] object-contain p-2"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
     </>
   )
 }
