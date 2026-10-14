@@ -32,7 +32,9 @@ export function KuriChasquiFilmDetailPage() {
 
   if (!film) return <NotFoundPage />
 
-  const pagePath = `/${language}/events/kuri-chasqui-2026/films/${film.slug}`
+  const englishPath = `/en/events/festival-internacional-de-cine-andino-2026/films/${film.slug}`
+  const spanishPath = `/es/events/festival-internacional-de-cine-andino-2026/films/${film.slug}`
+  const pagePath = language === 'es' ? spanishPath : englishPath
   const filmTitle = film.details?.fullTitle ?? film.title
   const synopsis = film.details?.synopsisKey ? t(film.details.synopsisKey) : undefined
   const metadataDescription = synopsis ?? t('festival2026.detailComingSoon')
@@ -48,11 +50,12 @@ export function KuriChasquiFilmDetailPage() {
         title={`${filmTitle} | ${t('festival2026.selectionTitle')} | AEINY`}
         description={metadataDescription}
         canonicalPath={pagePath}
+        alternateLanguagePaths={{ en: englishPath, es: spanishPath }}
       />
       <section className="bg-(--surface-dark) text-white">
         <Container className="py-12 md:py-16">
           <Link
-            to={`/${language}/events/kuri-chasqui-2026#official-selection`}
+            to={`/${language}/events/festival-internacional-de-cine-andino-2026#official-selection`}
             className="inline-flex items-center gap-2 text-sm font-semibold text-white/75 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"
           >
             <ArrowLeft size={16} aria-hidden="true" />

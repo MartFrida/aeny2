@@ -1,12 +1,13 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom'
 import { AppLayout } from './AppLayout'
+import { LegacyFestivalRedirect, LegacyFilmRedirect } from './LegacyFestivalRedirect'
 import { HomePage } from '../pages/Home'
 import { AboutPage } from '../pages/About'
 import { OurWorkPage } from '../pages/OurWork'
 import { ProjectsPage } from '../pages/Projects'
 import { ParqueDelMigrantePage } from '../pages/Projects/ParqueDelMigrantePage'
 import { EventsPage } from '../pages/Events'
-import { KuriChasqui2026Page } from '../pages/Events/KuriChasqui2026Page'
+import { AndeanFilmFestival2026Page } from '../pages/Events/AndeanFilmFestival2026Page'
 import { KuriChasquiFilmDetailPage } from '../pages/Events/KuriChasquiFilmDetailPage'
 import { KuriChasqui2023Page } from '../pages/Events/KuriChasqui2023Page'
 import { NewsPage } from '../pages/News'
@@ -30,8 +31,16 @@ export const router = createBrowserRouter([
       { path: 'projects', element: <ProjectsPage /> },
       { path: 'projects/parque-del-migrante', element: <ParqueDelMigrantePage /> },
       { path: 'events', element: <EventsPage /> },
-      { path: 'events/kuri-chasqui-2026', element: <KuriChasqui2026Page /> },
-      { path: 'events/kuri-chasqui-2026/films/:slug', element: <KuriChasquiFilmDetailPage /> },
+      {
+        path: 'events/festival-internacional-de-cine-andino-2026',
+        element: <AndeanFilmFestival2026Page />,
+      },
+      {
+        path: 'events/festival-internacional-de-cine-andino-2026/films/:slug',
+        element: <KuriChasquiFilmDetailPage />,
+      },
+      { path: 'events/kuri-chasqui-2026', element: <LegacyFestivalRedirect /> },
+      { path: 'events/kuri-chasqui-2026/films/:slug', element: <LegacyFilmRedirect /> },
       { path: 'events/kuri-chasqui-2023', element: <KuriChasqui2023Page /> },
       { path: 'news', element: <NewsPage /> },
       { path: 'get-involved', element: <GetInvolvedPage /> },

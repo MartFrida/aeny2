@@ -11,7 +11,7 @@ export function HomePage() {
   const { i18n, t } = useTranslation()
   const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
 
-  const festivalPath = `/${language}/events/kuri-chasqui-2026`
+  const festivalPath = `/${language}/events/festival-internacional-de-cine-andino-2026`
   const donatePath = `/${language}/donate`
   const aboutPath = `/${language}/about`
   const projectPath = `/${language}/projects/parque-del-migrante`
@@ -38,9 +38,6 @@ export function HomePage() {
               <span className="block text-(--accent)">{t('home.title').split('\n')[2]}</span>
             </h1>
 
-            <p className="mt-5 max-w-xl text-sm font-semibold uppercase tracking-[0.12em] text-(--accent) md:text-base">
-              {kuriChasqui2026Event.officialName}
-            </p>
             <p className="mt-3 max-w-xl text-lg text-white/80 md:text-xl">{t('home.subtitle')}</p>
             <p className="mt-3 max-w-xl text-base leading-7 text-white/70">{t('home.heroDescription')}</p>
 
@@ -85,7 +82,7 @@ export function HomePage() {
             <div className="relative rounded-[1.4rem] bg-[#f3efe8] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.28)] ring-1 ring-white/20">
               <img
                 src={kuriChasqui2026Event.poster}
-                alt="Kuri Chasqui 2026 poster for The Andes International Film Fest New York"
+                alt={t('home.posterAlt')}
                 width={500}
                 height={700}
                 loading="eager"

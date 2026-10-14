@@ -60,11 +60,11 @@ export const kuriChasquiSponsorshipLevels: SponsorshipLevel[] = [
 ]
 
 export const kuriChasqui2026Event: KuriChasqui2026Event = {
-  id: 'kuri-chasqui-2026',
-  slug: 'kuri-chasqui-2026',
-  title: 'KURI CHASQUI 2026',
-  officialName: 'THE ANDES INTERNATIONAL FILM FEST NEW YORK 2026',
-  subtitle: 'The Andes International Film Fest New York',
+  id: 'festival-internacional-de-cine-andino-2026',
+  slug: 'festival-internacional-de-cine-andino-2026',
+  title: '1st International Andean Film Festival New York 2026',
+  officialName: '1st International Andean Film Festival New York 2026',
+  subtitle: 'Kuri Chasqui — The Golden Messenger',
   startDate: 'November 8',
   endDate: 'November 15, 2026',
   time: '14:00 / 2:00 PM',

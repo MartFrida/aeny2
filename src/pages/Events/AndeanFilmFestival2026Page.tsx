@@ -7,10 +7,12 @@ import { PageMetadata } from '../../components/common/PageMetadata'
 import type { KuriChasquiFilm } from '../../data/events/kuriChasquiFilms2026'
 import { kuriChasqui2026Films, kuriChasqui2026Founders } from '../../data/events/kuriChasquiFilms2026'
 
-export function KuriChasqui2026Page() {
+export function AndeanFilmFestival2026Page() {
   const { i18n, t } = useTranslation()
   const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
-  const path = `/${language}/events/kuri-chasqui-2026`
+  const englishPath = '/en/events/festival-internacional-de-cine-andino-2026'
+  const spanishPath = '/es/events/festival-internacional-de-cine-andino-2026'
+  const path = language === 'es' ? spanishPath : englishPath
 
   return (
     <>
@@ -19,6 +21,7 @@ export function KuriChasqui2026Page() {
         title={t('festival2026.seoTitle')}
         description={t('festival2026.seoDescription')}
         canonicalPath={path}
+        alternateLanguagePaths={{ en: englishPath, es: spanishPath }}
       />
 
       <section className="overflow-hidden bg-(--surface-dark) text-white">

@@ -24,7 +24,7 @@ export function DonatePage() {
           <div className="rounded-2xl border border-(--border) bg-(--surface) p-8">
             <h2 className="text-2xl font-semibold text-(--foreground)">{t('common.supportKuri')}</h2>
             <p className="mt-3 text-(--muted)">Support the next edition of the Andes International Film Fest New York.</p>
-            <Button to={`/${language}/events/kuri-chasqui-2026`} className="mt-6" variant="secondary">
+            <Button to={`/${language}/events/festival-internacional-de-cine-andino-2026`} className="mt-6" variant="secondary">
               {t('common.supportKuri')}
             </Button>
           </div>

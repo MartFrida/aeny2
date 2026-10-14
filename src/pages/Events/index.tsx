@@ -144,7 +144,7 @@ export function EventsPage() {
             <p className="mt-4 leading-7 text-(--muted)">{t('events.filmCopy')}</p>
             <p className="mt-4 text-sm font-semibold text-(--primary)">{t('events.filmDate')}</p>
           </div>
-          <Button to={`/${language}/events/kuri-chasqui-2026`} className="justify-self-start bg-(--primary) text-white hover:bg-(--primary)/90">
+          <Button to={`/${language}/events/festival-internacional-de-cine-andino-2026`} className="justify-self-start bg-(--primary) text-white hover:bg-(--primary)/90">
             {t('events.filmCta')} <ArrowRight size={16} className="ml-2" />
           </Button>
         </Container>

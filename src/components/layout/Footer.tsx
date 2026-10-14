@@ -61,8 +61,8 @@ export function Footer() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">Featured</p>
           <div className="mt-4 space-y-4 text-sm text-(--muted)">
-            <Link to={`/${language}/events/kuri-chasqui-2026`} className="block font-medium text-(--foreground) hover:text-(--primary)">
-              Kuri Chasqui 2026
+            <Link to={`/${language}/events/festival-internacional-de-cine-andino-2026`} className="block font-medium text-(--foreground) hover:text-(--primary)">
+              {t('festival2026.title')}
             </Link>
             <Link to={`/${language}/donate`} className="inline-flex rounded-md bg-(--primary) px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#4d4d3d]">
               {t('nav.donate')}
