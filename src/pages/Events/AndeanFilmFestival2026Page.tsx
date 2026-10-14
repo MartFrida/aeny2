@@ -1,11 +1,12 @@
-import { ArrowDown, ArrowRight, Clapperboard, Film, MoveUpRight } from 'lucide-react'
+import { ArrowDown, ArrowRight, Clapperboard } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Button } from '../../components/common/Button'
 import { Container } from '../../components/common/Container'
 import { PageMetadata } from '../../components/common/PageMetadata'
-import type { KuriChasquiFilm } from '../../data/events/kuriChasquiFilms2026'
-import { kuriChasqui2026Films, kuriChasqui2026Founders } from '../../data/events/kuriChasquiFilms2026'
+import { kuriChasqui2026Films } from '../../data/events/kuriChasquiCatalog'
+import { kuriChasqui2026Founders } from '../../data/events/kuriChasquiFounders2026'
+import { FilmCard } from './FilmCard'
 
 export function AndeanFilmFestival2026Page() {
   const { i18n, t } = useTranslation()
@@ -191,11 +192,10 @@ export function AndeanFilmFestival2026Page() {
           </div>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {kuriChasqui2026Films.map((film, index) => (
+            {kuriChasqui2026Films.map((film) => (
               <FilmCard
                 key={film.slug}
                 film={film}
-                index={index}
                 to={`${path}/films/${film.slug}`}
               />
             ))}
@@ -252,46 +252,5 @@ export function AndeanFilmFestival2026Page() {
         </Container>
       </section>
     </>
-  )
-}
-
-type FilmCardProps = {
-  film: KuriChasquiFilm
-  index: number
-  to: string
-}
-
-function FilmCard({ film, index, to }: FilmCardProps) {
-  const { t } = useTranslation()
-
-  return (
-    <Link
-      to={to}
-      className="group flex min-h-full flex-col border border-(--border) bg-(--background) transition-colors hover:border-(--primary)/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2"
-    >
-      <div className="flex aspect-[16/9] items-center justify-between bg-[#e9dfd2] px-6 py-5 text-(--primary)">
-        <Film size={30} strokeWidth={1.25} aria-hidden="true" />
-        <span className="text-xs font-semibold tracking-[0.15em]">
-          {String(index + 1).padStart(2, '0')}
-        </span>
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        {film.typeKey ? (
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-(--primary)">
-            {t(film.typeKey)}
-          </p>
-        ) : null}
-        <h3 className="mt-2 font-display text-xl leading-snug text-(--foreground)">{film.title}</h3>
-        {film.descriptionKey ? (
-          <p className="mt-3 line-clamp-3 text-sm leading-6 text-(--muted)">
-            {t(film.descriptionKey)}
-          </p>
-        ) : null}
-        <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-(--primary)">
-          {t('festival2026.filmDetails')}
-          <MoveUpRight size={15} aria-hidden="true" />
-        </span>
-      </div>
-    </Link>
   )
 }

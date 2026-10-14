@@ -1,0 +1,958 @@
+[
+  {
+    "id": 1,
+    "slug": "cueva-de-los-tayos",
+    "title": "Cueva de los Tayos",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-2",
+    "poster": null,
+    "originalTitle": "Expedición Cueva de los Tayos MMXVI",
+    "year": 2017,
+    "duration": "44:58",
+    "director": [
+      "Raúl Cabrera"
+    ],
+    "screenplay": [
+      "Raúl Cabrera"
+    ],
+    "production": [
+      "Nómada Media House",
+      "Ministerio de Turismo Ecuador"
+    ],
+    "cinematography": [
+      "Oswaldo Díaz"
+    ],
+    "editor": [
+      "Oswaldo Díaz"
+    ],
+    "format": "HD 2K",
+    "synopsisEs": "Expedición a la Cueva de los Tayos encabezada por Raúl Cabrera con especialistas de diferentes disciplinas.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 2,
+    "slug": "yo-vivo-libre-de-violencia",
+    "title": "Yo Vivo Libre de Violencia",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-1",
+    "poster": null,
+    "duration": "8 min",
+    "director": [
+      "Amaruk Kayshapanta"
+    ],
+    "screenplay": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Pachamama Producciones"
+    ],
+    "cast": [
+      "David Andrade",
+      "Elvis Estrella",
+      "Marco Molina",
+      "Amaruk Kayshapanta"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Cortometraje de sensibilización contra el maltrato y la violencia hacia las personas, especialmente las mujeres.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 3,
+    "slug": "extranos-seres",
+    "title": "Extraños Seres",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2",
+    "poster": null,
+    "year": 1990,
+    "completionYear": 2009,
+    "duration": "54 min",
+    "director": [
+      "Thomas Pfanne"
+    ],
+    "screenplay": [
+      "Thomas Pfanne"
+    ],
+    "production": [
+      "Pachamama Producciones"
+    ],
+    "producer": [
+      "Amaruk Kayshapanta"
+    ],
+    "language": [
+      "Alemán",
+      "Español (traducción)"
+    ],
+    "type": "fiction",
+    "format": "Digital",
+    "synopsisEs": "Ficción rodada en Ecuador que contrapone dos perspectivas sobre el llamado descubrimiento de América.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 4,
+    "slug": "dusshishik",
+    "title": "Dusshishik",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-3",
+    "poster": null,
+    "duration": "15 min",
+    "director": [
+      "Diego Llano"
+    ],
+    "production": [
+      "Autoproducción"
+    ],
+    "language": [
+      "Inglés",
+      "Apsaalooke"
+    ],
+    "type": "short-fiction",
+    "format": "HDCAM",
+    "synopsisEs": "Un joven de la nación Crow se alista en el ejército estadounidense mientras afronta tensiones familiares, identidad y tradiciones.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 5,
+    "slug": "illana",
+    "title": "Illana",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-4",
+    "poster": null,
+    "year": 2021,
+    "duration": "10 min",
+    "director": [
+      "David Andrade"
+    ],
+    "screenplay": [
+      "David Andrade"
+    ],
+    "production": [
+      "TodoActores.com",
+      "David Andrade"
+    ],
+    "cast": [
+      "Israel Novikov",
+      "Mayca Gallego",
+      "Jimena de la Torre",
+      "Hernán de la Torre",
+      "María Luisa Merlo"
+    ],
+    "type": "short-fiction",
+    "format": "4K",
+    "synopsisEs": "Unos niños intentan convencer a una antigua vecina de volver a vivir en su pueblo rural, recordando sus aventuras compartidas.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 6,
+    "slug": "identidades-culturales-migrantes",
+    "title": "Identidades Culturales Migrantes",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-5",
+    "poster": null,
+    "year": 2014,
+    "duration": "9:53",
+    "director": [
+      "Juan Diego Andrango"
+    ],
+    "editor": [
+      "Juan Diego Andrango"
+    ],
+    "country": [
+      "España"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Retrato documental de Amaruk Kayshapanta y la experiencia cultural de la migración kichwa salasaka en Barcelona.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "La ficha individual indica documental, aunque la presentación general lo describe como ficción."
+  },
+  {
+    "id": 7,
+    "slug": "canta-sing",
+    "title": "Canta (Sing)",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-6",
+    "poster": null,
+    "year": 2021,
+    "duration": "9:20",
+    "director": [
+      "David Andrade"
+    ],
+    "screenplay": [
+      "David Andrade"
+    ],
+    "production": [
+      "TodoActores.com"
+    ],
+    "cast": [
+      "Bárbara Muñoz",
+      "David Andrade"
+    ],
+    "type": "short-fiction",
+    "format": "1080p 16:9",
+    "synopsisEs": "Relato de ficción sobre los peligros de confiar en personas desconocidas en las redes sociales.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 8,
+    "slug": "tratar",
+    "title": "Tratar",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-7",
+    "poster": null,
+    "originalTitle": "Tratar (Human Trafficking)",
+    "year": 2020,
+    "duration": "5 min",
+    "director": [
+      "David Andrade"
+    ],
+    "screenplay": [
+      "David Andrade"
+    ],
+    "production": [
+      "TodoActores.com"
+    ],
+    "cast": [
+      "Carmen Sánchez",
+      "David Andrade",
+      "Anastasia Novikova",
+      "Eidy Atehortua",
+      "Elena Pak",
+      "Maica Gallego",
+      "Paula Martínez",
+      "Rocío Algora",
+      "Paul Girboam",
+      "Fabiám Barrios"
+    ],
+    "type": "short-fiction",
+    "format": "4K",
+    "synopsisEs": "Ficción basada en situaciones reales sobre el engaño y la explotación de mujeres y menores por redes de trata.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "La ficha individual indica ficción; en el índice aparece como documental."
+  },
+  {
+    "id": 9,
+    "slug": "abuelo-montana",
+    "title": "Abuelo Montaña",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-8",
+    "poster": null,
+    "year": 2021,
+    "duration": "10 min",
+    "country": [
+      "Perú"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Acompaña a Fernando Tisoc en su peregrinación a la montaña Pachatusan, en Cusco, y muestra rituales asociados a la tradición andina.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 10,
+    "slug": "morenada",
+    "title": "Morenada",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-9",
+    "poster": null,
+    "year": 2023,
+    "duration": "20 min",
+    "country": [
+      "Perú"
+    ],
+    "director": [
+      "Hans Matos Camac"
+    ],
+    "producer": [
+      "Eduardo Orcada Villalva"
+    ],
+    "cast": [
+      "Cristhian Esquivel",
+      "Herbert Corimanya",
+      "Gael Alania",
+      "Luz Danitza Vidalon"
+    ],
+    "type": "short-fiction",
+    "synopsisEs": "Cortometraje peruano de época sobre el legado cultural indígena y afroperuano.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "La ficha individual identifica un cortometraje de época, aunque el índice dice documental."
+  },
+  {
+    "id": 11,
+    "slug": "pachakuti-2012",
+    "title": "Pachakuti 2012",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-10",
+    "poster": null,
+    "originalTitle": "Pachakuti 2012, El Cambio",
+    "year": 2013,
+    "duration": "61 min",
+    "country": [
+      "Argentina",
+      "Bolivia"
+    ],
+    "director": [
+      "Carlos Santos"
+    ],
+    "screenplay": [
+      "Carlos Santos"
+    ],
+    "producer": [
+      "Carlos Santos"
+    ],
+    "cinematography": [
+      "Marcelo Encinas"
+    ],
+    "editor": [
+      "Diego Rodríguez"
+    ],
+    "music": [
+      "Los Churkis"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Documental sobre el encuentro del 21 de diciembre de 2012 en la Isla del Sol, Bolivia, y su significado como inicio simbólico de un nuevo ciclo.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 12,
+    "slug": "en-alas-del-intento",
+    "title": "En alas del intento",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-11",
+    "poster": null,
+    "duration": "26 min",
+    "director": [
+      "Carlos Santos"
+    ],
+    "screenplay": [
+      "Carlos Santos"
+    ],
+    "producer": [
+      "Roberto Kohanoff",
+      "Carlos Santos"
+    ],
+    "music": [
+      "Rodrigo Zapata"
+    ],
+    "cinematography": [
+      "María Claudia Bonilla"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Documental que revisa el mensaje de Silo, difundido desde Punta de Vacas en 1969, cinco décadas después.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 13,
+    "slug": "yachana-wasi-rurakkuna",
+    "title": "Yachana Wasi Rurakkuna",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-12",
+    "poster": null,
+    "originalTitle": "Yachana Wasi Rurakkuna — Los creadores del lugar del conocimiento",
+    "year": 2015,
+    "duration": "31:23",
+    "country": [
+      "Ecuador",
+      "Suiza"
+    ],
+    "language": [
+      "Kichwa"
+    ],
+    "subtitles": [
+      "Español",
+      "Inglés"
+    ],
+    "director": [
+      "Rudy Masaquiza"
+    ],
+    "producer": [
+      "Barbara Grass"
+    ],
+    "production": [
+      "Kausari Films"
+    ],
+    "cinematography": [
+      "Michael Feuz",
+      "Phillip Fuchs",
+      "Vinicio Barreno"
+    ],
+    "cast": [
+      "Fulgencio Masaquiza",
+      "Francisca Jerez"
+    ],
+    "type": "documentary",
+    "format": "DVCAM PAL",
+    "synopsisEs": "Personas de la comunidad Salasaka narran cómo impulsaron la creación de una escuela en los años ochenta pese a fuertes obstáculos.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 14,
+    "slug": "cantuna-la-pelicula",
+    "title": "Cantuña la película",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-13",
+    "poster": null,
+    "originalTitle": "Cantuña, la película",
+    "year": 2022,
+    "duration": "183 min",
+    "country": [
+      "Ecuador",
+      "España"
+    ],
+    "language": [
+      "Español"
+    ],
+    "subtitles": [
+      "Inglés"
+    ],
+    "director": [
+      "Juan José Peñafiel Layedra"
+    ],
+    "screenplay": [
+      "Juan José Peñafiel Layedra"
+    ],
+    "production": [
+      "Octavo arte films"
+    ],
+    "type": "fiction",
+    "synopsisEs": "Noelia viaja de Madrid a los Andes ecuatorianos tras experiencias que vincula con una vida pasada y la leyenda colonial de Cantuña.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 15,
+    "slug": "mariposas-de-sangre",
+    "title": "Mariposas de Sangre",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-14",
+    "poster": null,
+    "duration": "16 min",
+    "director": [
+      "Amaruk Kayshapanta"
+    ],
+    "screenplay": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Ayniruk Productions",
+      "Pachamama Producciones"
+    ],
+    "cast": [
+      "Marta Lopez",
+      "Sait Nouden"
+    ],
+    "cinematography": [
+      "Juan Carlos Yanes"
+    ],
+    "country": [
+      "España",
+      "Marruecos",
+      "Ecuador"
+    ],
+    "type": "short-fiction",
+    "synopsisEs": "Drama basado en hechos reales; la página de origen ofrece únicamente una sinopsis muy breve.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 16,
+    "slug": "the-last-trip",
+    "title": "The Last Trip",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-15",
+    "poster": null,
+    "duration": "2 min",
+    "director": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Ayniruk Producciones"
+    ],
+    "music": [
+      "Jamil Muzat"
+    ],
+    "country": [
+      "Colombia"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "experimental",
+    "synopsisEs": "Pieza conceptual que reflexiona sobre la vida y la certeza de la muerte.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 17,
+    "slug": "the-history-amazonas",
+    "title": "The History Amazonas",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-16",
+    "poster": null,
+    "originalTitle": "The history Amazonas",
+    "duration": "60 min",
+    "director": [
+      "K Choro Urto"
+    ],
+    "screenplay": [
+      "K Choro Urto"
+    ],
+    "producer": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Pachamama Producciones"
+    ],
+    "cinematography": [
+      "T Covus"
+    ],
+    "music": [
+      "Brankis"
+    ],
+    "cast": [
+      "Amaruk Kayshapanta",
+      "Killa Piedraita",
+      "David Andrade"
+    ],
+    "country": [
+      "España",
+      "Ecuador"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "fiction",
+    "synopsisEs": "Drama sobre seres humanos que buscan salvación en el Amazonas y sus historias.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "La portada general nombra otra productora; se prioriza la ficha individual."
+  },
+  {
+    "id": 18,
+    "slug": "amawtas-en-cataluna",
+    "title": "Amawtas en Cataluña",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-17",
+    "poster": null,
+    "year": 2023,
+    "duration": "45 min",
+    "director": [
+      "Amaruk Kayshapanta"
+    ],
+    "screenplay": [
+      "Amaruk Kayshapanta"
+    ],
+    "producer": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Pachamama Producciones",
+      "Ayniruk Producciones"
+    ],
+    "cast": [
+      "Wara Wara Markina",
+      "Eliana Cossio",
+      "Fernando Argeta",
+      "Amaruk Kayshapanta"
+    ],
+    "country": [
+      "España"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Trabajo documental vinculado a la investigación antropológica sobre los amawtas andinos y su presencia en Cataluña.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 19,
+    "slug": "el-oportuno-hacer",
+    "title": "El oportuno hacer",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-18",
+    "poster": null,
+    "originalTitle": "El oportuno hacer — El resurgir de Abya Yala",
+    "year": 2021,
+    "duration": "6:49",
+    "director": [
+      "Juan Diego Andrango"
+    ],
+    "editor": [
+      "Juan Diego Andrango"
+    ],
+    "country": [
+      "Ecuador"
+    ],
+    "type": "experimental-documentary",
+    "synopsisEs": "Documental experimental que evoca el resurgir de Abya Yala a través de imágenes y metáforas del territorio y la identidad.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 20,
+    "slug": "conoces-el-mar",
+    "title": "¿Conoces el mar?",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-19",
+    "poster": null,
+    "originalTitle": "¿Conoces el mar?",
+    "duration": "14:03",
+    "director": [
+      "Juan Carlos Aduviri"
+    ],
+    "producer": [
+      "Juan Carlos Aduviri",
+      "Yesenia Morales Gutiérrez"
+    ],
+    "cinematography": [
+      "Juan Carlos Aduviri"
+    ],
+    "editor": [
+      "Juan Carlos Aduviri"
+    ],
+    "music": [
+      "Elías Suntura"
+    ],
+    "country": [
+      "Bolivia"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Hilario Aduviri, un anciano aymara del altiplano boliviano, expresa su deseo de que Bolivia recupere una salida soberana al mar.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 21,
+    "slug": "diaspora-del-arte",
+    "title": "Diáspora del Arte",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-20",
+    "poster": null,
+    "year": 2020,
+    "duration": "49:39",
+    "director": [
+      "Amaruk Kayshapanta"
+    ],
+    "screenplay": [
+      "Amaruk Kayshapanta"
+    ],
+    "producer": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Ayniruk Producciones",
+      "Pachamama Producciones"
+    ],
+    "cinematography": [
+      "Amaruk Kayshapanta"
+    ],
+    "country": [
+      "España"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "documentary",
+    "format": "4K",
+    "synopsisEs": null,
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 22,
+    "slug": "muertepungo",
+    "title": "Muertepungo",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-21",
+    "poster": null,
+    "year": 2021,
+    "location": "Laguna de Muertepungo, Pintag, Ecuador",
+    "director": [
+      "Fernanda Noboa",
+      "Christian Gómez",
+      "Jonathan Andrade"
+    ],
+    "cinematography": [
+      "Christian Gómez",
+      "Jonathan Andrade"
+    ],
+    "music": [
+      "Jonathan Andrade"
+    ],
+    "production": [
+      "Komato Videodanza",
+      "Xerbero Studios"
+    ],
+    "type": "dance-film",
+    "synopsisEs": "Videodanza creada a partir de una investigación corporal inspirada en el chakra corona.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "La portada del festival dice producción chilena; la ficha sitúa la obra en Ecuador."
+  },
+  {
+    "id": 23,
+    "slug": "voz-migrante",
+    "title": "Voz Migrante",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-22",
+    "poster": null,
+    "year": 2021,
+    "duration": "3:56",
+    "director": [
+      "Andres Rocctagliata"
+    ],
+    "producer": [
+      "Andres Rocctagliata"
+    ],
+    "production": [
+      "Migrante Producciones"
+    ],
+    "country": [
+      "España",
+      "Chile"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Amaruk Kayshapanta comparte reflexiones sobre la identidad ancestral y la experiencia migratoria contemporánea en Europa.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 24,
+    "slug": "allpamanda",
+    "title": "Allpamanda",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-23",
+    "poster": null,
+    "year": 2019,
+    "duration": "10:22",
+    "director": [
+      "Yanda Montaguano",
+      "Samanta Castro"
+    ],
+    "country": [
+      "Ecuador"
+    ],
+    "language": [
+      "Kichwa Sapara"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Documental sobre una familia sápara en la Amazonía ecuatoriana y la preservación del tejido tradicional elaborado con corteza de ilanchama.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 25,
+    "slug": "alfaro-la-pelicula",
+    "title": "Alfaro la película",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-24",
+    "poster": null,
+    "duration": "90 min",
+    "country": [
+      "Ecuador"
+    ],
+    "type": null,
+    "synopsisEs": null,
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 26,
+    "slug": "karanakuy",
+    "title": "Karanakuy",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-25",
+    "poster": null,
+    "year": 2020,
+    "duration": "3 min",
+    "director": [
+      "Paula Espinoza"
+    ],
+    "screenplay": [
+      "Paula Espinoza"
+    ],
+    "cinematography": [
+      "Danny Guerra"
+    ],
+    "music": [
+      "Juan Esteban Gonzalez"
+    ],
+    "country": [
+      "Ecuador"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Corto documental sobre el apoyo comunitario y el intercambio de alimentos promovidos por la Fundación Inti Daquilema durante la pandemia.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "La página individual únicamente indica duración y origen; no confirma el formato «mini documental» del índice."
+  },
+  {
+    "id": 27,
+    "slug": "angelica",
+    "title": "Angélica",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-26",
+    "poster": null,
+    "year": 2008,
+    "duration": "93 min",
+    "director": [
+      "Carla Calderón"
+    ],
+    "producer": [
+      "Antonio Navarro",
+      "Carla Calderón"
+    ],
+    "screenplay": [
+      "Alanis Calderón"
+    ],
+    "music": [
+      "Walter Figueroa"
+    ],
+    "country": [
+      "Honduras"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": null,
+    "synopsisEs": null,
+    "reviewStatus": "needs-review",
+    "editorialNote": "El índice dice Angelica y documental, pero la ficha indica Angelina (Honduras, 93 min); confirmar título con los organizadores."
+  },
+  {
+    "id": 28,
+    "slug": "la-churona",
+    "title": "La Churona",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-27",
+    "poster": null,
+    "year": 2010,
+    "duration": "82 min",
+    "director": [
+      "María Cristina Carrillo Espinosa"
+    ],
+    "screenplay": [
+      "María Cristina Carrillo Espinosa"
+    ],
+    "producer": [
+      "María Cristina Carrillo Espinosa",
+      "Adolfo Álvaro"
+    ],
+    "production": [
+      "Corporación Ecuador para Largo",
+      "Lavorágine Producciones Cinematográficas"
+    ],
+    "country": [
+      "Ecuador",
+      "España"
+    ],
+    "language": [
+      "Castellano"
+    ],
+    "type": "documentary",
+    "synopsisEs": "Una réplica de la Virgen del Cisne llega a Madrid y provoca tensiones y encuentros que el documental utiliza para explorar la experiencia de la migración ecuatoriana.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "El índice coloca la referencia a María Cristina Carrillo cerca de Angelica; la ficha individual confirma que corresponde a La Churona."
+  },
+  {
+    "id": 29,
+    "slug": "las-munecas-rusas",
+    "title": "Las Muñecas Rusas",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-28",
+    "poster": null,
+    "year": 2012,
+    "duration": "10:53",
+    "director": [
+      "Amaruk Kayshapanta"
+    ],
+    "screenplay": [
+      "Amaruk Kayshapanta"
+    ],
+    "producer": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Pachamama Producciones"
+    ],
+    "cast": [
+      "Astrid Moller",
+      "Amaruk Kayshapanta"
+    ],
+    "country": [
+      "España",
+      "Ecuador"
+    ],
+    "language": [
+      "Español"
+    ],
+    "format": "4K",
+    "type": "short-fiction",
+    "synopsisEs": null,
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 30,
+    "slug": "pincho",
+    "title": "Pincho",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-29",
+    "poster": null,
+    "originalTitle": "Pinchos",
+    "duration": "1:56",
+    "director": [
+      "Amaruk Kayshapanta"
+    ],
+    "screenplay": [
+      "Amaruk Kayshapanta"
+    ],
+    "producer": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Audiovisual LP"
+    ],
+    "country": [
+      "España",
+      "Ecuador"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "short-film",
+    "synopsisEs": "Cortometraje de denuncia sobre la explotación laboral de las personas migrantes.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "El índice usa Pincho, la ficha técnica dice Pinchos; confirmar título oficial."
+  },
+  {
+    "id": 31,
+    "slug": "patrones-de-conducta",
+    "title": "Patrones de Conducta",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-30",
+    "poster": null,
+    "duration": "6:45",
+    "director": [
+      "Amaruk Kayshapanta"
+    ],
+    "screenplay": [
+      "Amaruk Kayshapanta"
+    ],
+    "producer": [
+      "Amaruk Kayshapanta"
+    ],
+    "production": [
+      "Ayniruk Films"
+    ],
+    "country": [
+      "España"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "experimental-documentary",
+    "format": "Full HD",
+    "synopsisEs": "Experimento audiovisual antropológico y sociológico con niños en distintas ciudades españolas sobre prejuicios y patrones de comportamiento.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "El índice dice cortometraje, la ficha especifica documental experimental."
+  },
+  {
+    "id": 32,
+    "slug": "los-yachaks",
+    "title": "Los Yachaks",
+    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-31",
+    "poster": null,
+    "originalTitle": "Los Yachaks del bosque frente a la pandemia",
+    "duration": "12 min",
+    "director": [
+      "Belén Iturralde",
+      "Juan Francisco Valdez"
+    ],
+    "screenplay": [
+      "Belén Iturralde"
+    ],
+    "producer": [
+      "Galo Semblantes"
+    ],
+    "production": [
+      "Non-Sequitur Films"
+    ],
+    "cinematography": [
+      "Juan Francisco Valdez"
+    ],
+    "country": [
+      "Ecuador"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "documentary",
+    "format": "4K",
+    "synopsisEs": "Desde la voz del sabio Urku, de Rukullakta, el documental presenta conocimientos de medicina natural utilizados durante la pandemia y la importancia de preservar la memoria ancestral amazónica.",
+    "reviewStatus": "needs-review",
+    "editorialNote": "El índice abrevia Los Yachaks; la ficha contiene el título largo."
+  }
+]

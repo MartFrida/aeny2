@@ -4,25 +4,27 @@ import { Link, useParams } from 'react-router-dom'
 import { Container } from '../../components/common/Container'
 import { PageMetadata } from '../../components/common/PageMetadata'
 import { NotFoundPage } from '../NotFound'
-import { kuriChasqui2026Films } from '../../data/events/kuriChasquiFilms2026'
+import { getFilmTypeTranslationKey, kuriChasqui2026Films } from '../../data/events/kuriChasquiCatalog'
 
-const fieldLabels: Record<string, string> = {
-  year: 'year',
-  filmed: 'filmed',
-  completed: 'completed',
-  duration: 'duration',
-  language: 'language',
-  director: 'director',
-  screenplay: 'screenplay',
-  producer: 'producer',
-  generalProducer: 'generalProducer',
-  production: 'production',
-  format: 'format',
-  cinematography: 'cinematography',
-  audience: 'audience',
-  genre: 'genre',
-  themes: 'themes',
-}
+const publicFilmFields = [
+  ['originalTitle', 'originalTitle'],
+  ['year', 'year'],
+  ['completionYear', 'completionYear'],
+  ['duration', 'duration'],
+  ['country', 'country'],
+  ['location', 'location'],
+  ['language', 'language'],
+  ['subtitles', 'subtitles'],
+  ['director', 'director'],
+  ['screenplay', 'screenplay'],
+  ['producer', 'producer'],
+  ['production', 'production'],
+  ['cast', 'cast'],
+  ['cinematography', 'cinematography'],
+  ['editor', 'editor'],
+  ['music', 'music'],
+  ['format', 'format'],
+] as const
 
 export function KuriChasquiFilmDetailPage() {
   const { i18n, t } = useTranslation()
@@ -35,20 +37,20 @@ export function KuriChasquiFilmDetailPage() {
   const englishPath = `/en/events/festival-internacional-de-cine-andino-2026/films/${film.slug}`
   const spanishPath = `/es/events/festival-internacional-de-cine-andino-2026/films/${film.slug}`
   const pagePath = language === 'es' ? spanishPath : englishPath
-  const filmTitle = film.details?.fullTitle ?? film.title
-  const synopsis = film.details?.synopsisKey ? t(film.details.synopsisKey) : undefined
-  const metadataDescription = synopsis ?? t('festival2026.detailComingSoon')
-  const detailFields = Object.entries(fieldLabels).filter(([key]) => {
-    const value = film.details?.[key as keyof NonNullable<typeof film.details>]
-    return typeof value === 'string' && value.length > 0
+  const synopsis = language === 'es' ? film.synopsisEs : film.synopsisEn
+  const filmTypeTranslation = getFilmTypeTranslationKey(film.type)
+  const detailFields = publicFilmFields.flatMap(([key, labelKey]) => {
+    const value = film[key]
+    if (value === null || value === undefined || value === '') return []
+    return [{ labelKey, value: Array.isArray(value) ? value.join(', ') : String(value) }]
   })
 
   return (
     <>
       <PageMetadata
         language={language}
-        title={`${filmTitle} | ${t('festival2026.selectionTitle')} | AEINY`}
-        description={metadataDescription}
+        title={`${film.title} | ${t('festival2026.selectionTitle')} | AEINY`}
+        description={synopsis ?? t('festival2026.seoDescription')}
         canonicalPath={pagePath}
         alternateLanguagePaths={{ en: englishPath, es: spanishPath }}
       />
@@ -65,17 +67,18 @@ export function KuriChasquiFilmDetailPage() {
             {t('festival2026.selectionLabel')}
           </p>
           <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight tracking-[-0.04em] text-white md:text-6xl">
-            {filmTitle}
+            {film.title}
           </h1>
-          <p className="mt-4 text-lg text-white/65">{film.title}</p>
         </Container>
       </section>
 
       <section className="bg-(--background)">
         <Container className="grid gap-10 py-12 md:py-16 lg:grid-cols-[0.8fr_1.2fr]">
-          {film.image ? (
+          {typeof film.poster === 'string' &&
+          film.poster.startsWith('/') &&
+          !film.poster.startsWith('//') ? (
             <img
-              src={film.image}
+              src={film.poster}
               alt={t('festival2026.filmImageAlt', { title: film.title })}
               className="aspect-[3/4] w-full max-w-md object-contain"
             />
@@ -88,31 +91,21 @@ export function KuriChasquiFilmDetailPage() {
             </div>
           )}
           <div>
-            {film.typeKey ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-(--primary)">
-                {t(film.typeKey)}
+            {filmTypeTranslation ? (
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-(--primary)">
+                {t(filmTypeTranslation)}
               </p>
             ) : null}
             {detailFields.length > 0 ? (
               <dl className="grid gap-x-8 sm:grid-cols-2">
-                {detailFields.map(([key]) => (
-                  <div key={key} className="border-b border-(--border) py-4">
+                {detailFields.map(({ labelKey, value }) => (
+                  <div key={labelKey} className="border-b border-(--border) py-4">
                     <dt className="text-xs font-semibold uppercase tracking-[0.13em] text-(--muted)">
-                      {t(`festival2026.fields.${fieldLabels[key]}`)}
+                      {t(`festival2026.fields.${labelKey}`)}
                     </dt>
-                    <dd className="mt-1 text-sm leading-6 text-(--foreground)">
-                      {film.details?.[key as keyof NonNullable<typeof film.details>]}
-                    </dd>
+                    <dd className="mt-1 text-sm leading-6 text-(--foreground)">{value}</dd>
                   </div>
                 ))}
-                {film.details?.cast?.length ? (
-                  <div className="border-b border-(--border) py-4 sm:col-span-2">
-                    <dt className="text-xs font-semibold uppercase tracking-[0.13em] text-(--muted)">
-                      {t('festival2026.fields.cast')}
-                    </dt>
-                    <dd className="mt-1 text-sm leading-6 text-(--foreground)">{film.details.cast.join(', ')}</dd>
-                  </div>
-                ) : null}
               </dl>
             ) : null}
             {synopsis ? (
@@ -120,9 +113,7 @@ export function KuriChasquiFilmDetailPage() {
                 <h2 className="font-display text-2xl text-(--foreground)">{t('festival2026.synopsis')}</h2>
                 <p className="mt-3 max-w-2xl text-base leading-7 text-(--muted)">{synopsis}</p>
               </div>
-            ) : (
-              <p className="mt-8 text-sm text-(--muted)">{t('festival2026.detailComingSoon')}</p>
-            )}
+            ) : null}
           </div>
         </Container>
       </section>
