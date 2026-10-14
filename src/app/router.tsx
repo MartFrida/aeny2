@@ -7,6 +7,7 @@ import { ProjectsPage } from '../pages/Projects'
 import { ParqueDelMigrantePage } from '../pages/Projects/ParqueDelMigrantePage'
 import { EventsPage } from '../pages/Events'
 import { KuriChasqui2026Page } from '../pages/Events/KuriChasqui2026Page'
+import { KuriChasquiFilmDetailPage } from '../pages/Events/KuriChasquiFilmDetailPage'
 import { KuriChasqui2023Page } from '../pages/Events/KuriChasqui2023Page'
 import { NewsPage } from '../pages/News'
 import { GetInvolvedPage } from '../pages/GetInvolved'
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
       { path: 'projects/parque-del-migrante', element: <ParqueDelMigrantePage /> },
       { path: 'events', element: <EventsPage /> },
       { path: 'events/kuri-chasqui-2026', element: <KuriChasqui2026Page /> },
+      { path: 'events/kuri-chasqui-2026/films/:slug', element: <KuriChasquiFilmDetailPage /> },
       { path: 'events/kuri-chasqui-2023', element: <KuriChasqui2023Page /> },
       { path: 'news', element: <NewsPage /> },
       { path: 'get-involved', element: <GetInvolvedPage /> },
