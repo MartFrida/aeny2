@@ -206,8 +206,6 @@ export function EventsPage() {
         </Container>
       </section>
 
-
-
       <section className="bg-(--surface-dark) py-14 text-white md:py-20">
         <Container className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div className="max-w-3xl">

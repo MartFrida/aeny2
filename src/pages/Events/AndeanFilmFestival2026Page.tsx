@@ -150,7 +150,7 @@ export function AndeanFilmFestival2026Page() {
           </div>
         </Container>
       </section>
-      
+
       {/* Founders Section */}
       <section id="festival-founders" className="bg-(--surface) scroll-mt-24">
         <Container className="py-14 md:py-20">
@@ -228,7 +228,7 @@ export function AndeanFilmFestival2026Page() {
                               {section.title}
                             </h4>
 
-                            <p className="mt-2 text-sm leading-7 text-(--muted)">
+                            <p className="mt-2 whitespace-pre-line text-sm leading-7 text-(--muted)">
                               {section.text}
                             </p>
                           </div>
