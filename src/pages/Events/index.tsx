@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/common/Button'
 import { Container } from '../../components/common/Container'
 import { PageMetadata } from '../../components/common/PageMetadata'
+import { kuriChasqui2026Event } from '../../data/events/kuriChasqui2026'
 
 const communityMoments = [
   { key: 'celebrations', icon: Sparkles, image: 'family-celebration.webp' },
@@ -23,6 +24,7 @@ export function EventsPage() {
         canonicalPath="/events"
       />
 
+{/* Hero Section */}
       <section className="relative isolate overflow-hidden bg-(--surface-dark) text-white">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -right-16 -top-24 h-96 w-96 rounded-full border border-(--accent)/25" />
@@ -53,6 +55,77 @@ export function EventsPage() {
         </Container>
       </section>
 
+      {/* Film Section */}
+<section className="overflow-hidden bg-(--background) py-14 md:py-20 lg:py-24">
+  <Container>
+    <div className="grid items-center gap-10 md:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] lg:gap-16 xl:gap-20">
+
+      {/* Content */}
+      <div className="order-1 max-w-3xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
+          {t('events.filmEyebrow')}
+        </p>
+
+        <h2 className="mt-3 max-w-2xl font-display text-3xl leading-[1.08] tracking-[-0.04em] text-(--foreground) sm:text-4xl lg:text-5xl">
+          {t('events.filmTitle')}
+        </h2>
+
+        <p className="mt-5 max-w-2xl text-base leading-7 text-(--muted) md:text-lg md:leading-8">
+          {t('events.filmCopy')}
+        </p>
+
+        <p className="mt-5 text-sm font-semibold text-(--primary) md:text-base">
+          {t('events.filmDate')}
+        </p>
+
+        <div className="mt-7">
+          <Button
+            to={`/${language}/events/festival-internacional-de-cine-andino-2026`}
+            className="w-full justify-center bg-(--primary) text-white hover:bg-(--primary)/90 sm:w-auto"
+          >
+            {t('events.filmCta')}
+            <ArrowRight
+              aria-hidden="true"
+              size={16}
+              className="ml-2 shrink-0"
+            />
+          </Button>
+        </div>
+      </div>
+
+      {/* Poster */}
+      <div className="relative order-2 mx-auto flex w-full max-w-[320px] items-center justify-center sm:max-w-[360px] md:max-w-[390px] lg:max-w-[420px]">
+
+        {/* Decorative circles */}
+        <div
+          aria-hidden="true"
+          className="absolute -left-5 top-[12%] hidden h-24 w-24 rounded-full border border-(--accent)/50 sm:block md:h-28 md:w-28 lg:-left-8"
+        />
+
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-5 -right-3 hidden h-20 w-20 rounded-full border border-(--primary)/15 sm:block md:h-24 md:w-24 lg:-right-6"
+        />
+
+        {/* Poster card */}
+        <div className="relative w-full rounded-[1.5rem] bg-[#f3efe8] p-2.5 shadow-[0_24px_60px_rgba(0,0,0,0.18)] ring-1 ring-black/5 sm:p-3 md:rounded-[1.75rem]">
+          <img
+            src={kuriChasqui2026Event.poster}
+            alt={t('home.posterAlt')}
+            width={500}
+            height={700}
+            loading="lazy"
+            decoding="async"
+            className="h-auto w-full rounded-[1rem] border border-[#d7d0c5] object-cover"
+          />
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</section>
+
+{/* Feature Section */}
       <section className="bg-(--background) py-14 md:py-20">
         <Container>
           <div className="grid gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
@@ -90,6 +163,7 @@ export function EventsPage() {
         </Container>
       </section>
 
+{/* Moments Section */}
       <section className="border-y border-(--border) bg-(--surface) py-14 md:py-20">
         <Container>
           <div className="max-w-2xl">
@@ -132,23 +206,7 @@ export function EventsPage() {
         </Container>
       </section>
 
-      <section className="bg-(--background) py-14 md:py-20">
-        <Container className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('events.filmEyebrow')}
-            </p>
-            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) md:text-4xl">
-              {t('events.filmTitle')}
-            </h2>
-            <p className="mt-4 leading-7 text-(--muted)">{t('events.filmCopy')}</p>
-            <p className="mt-4 text-sm font-semibold text-(--primary)">{t('events.filmDate')}</p>
-          </div>
-          <Button to={`/${language}/events/festival-internacional-de-cine-andino-2026`} className="justify-self-start bg-(--primary) text-white hover:bg-(--primary)/90">
-            {t('events.filmCta')} <ArrowRight size={16} className="ml-2" />
-          </Button>
-        </Container>
-      </section>
+
 
       <section className="bg-(--surface-dark) py-14 text-white md:py-20">
         <Container className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
