@@ -13,7 +13,7 @@ type FilmCardProps = {
 };
 
 export function FilmCard({ film, to }: FilmCardProps) {
-  const { i18n, t } = useTranslation();
+  const {  t } = useTranslation();
 
   const typeTranslation = getFilmTypeTranslationKey(film.type);
   const poster = getFilmPrimaryImage(film);
