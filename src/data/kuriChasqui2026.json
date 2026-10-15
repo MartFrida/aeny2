@@ -918,9 +918,9 @@
   },
   {
     "id": 27,
-    "slug": "angelica",
-    "title": "Angélica",
-    "poster": "/images/events/festival-andino-2026/films/angelica-poster.webp",
+    "slug": "angelina",
+    "title": "Angelina",
+    "poster": "/images/events/festival-andino-2026/films/angelina-poster.webp",
     "year": 2008,
     "duration": "93 min",
     "director": [
@@ -947,7 +947,7 @@
     "reviewStatus": "needs-review",
     "editorialNote": "El índice dice Angelica y documental, pero la ficha indica Angelina (Honduras, 93 min); confirmar título con los organizadores.",
     "gallery": [
-      "/images/events/festival-andino-2026/films/angelica.webp"
+      "/images/events/festival-andino-2026/films/angelina.webp"
     ],
     "synopsisEn": "A 2008 production from Honduras directed by Carla Calderón. The supplied catalogue alternately names it Angélica and Angelina; its plot synopsis is unavailable.",
     "synopsisNote": "Editorial description based on available metadata; narrative synopsis not verified."
@@ -1116,7 +1116,7 @@
   {
     "id": 32,
     "slug": "los-yachaks",
-    "title": "Los Yachaks",
+    "title": "Yachaks del bosque frente a la pandemia",
     "poster": "/images/events/festival-andino-2026/films/los-yachaks-poster.webp",
     "originalTitle": "Los Yachaks del bosque frente a la pandemia",
     "duration": "12 min",

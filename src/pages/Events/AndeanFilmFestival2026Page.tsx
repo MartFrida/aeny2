@@ -8,6 +8,7 @@ import { FestivalSchedule } from "../../components/festival/FestivalSchedule";
 import { kuriChasqui2026Films } from "../../data/events/kuriChasquiCatalog";
 import { kuriChasqui2026Founders } from "../../data/events/kuriChasquiFounders2026";
 import { FilmCard } from "./FilmCard";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 
 export function AndeanFilmFestival2026Page() {
   const { i18n, t } = useTranslation();
@@ -149,6 +150,114 @@ export function AndeanFilmFestival2026Page() {
           </div>
         </Container>
       </section>
+      
+      {/* Founders Section */}
+      <section id="festival-founders" className="bg-(--surface) scroll-mt-24">
+        <Container className="py-14 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
+              {t("festival2026.foundersLabel")}
+            </p>
+
+            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
+              {t("festival2026.foundersTitle")}
+            </h2>
+          </div>
+
+          <div className="mt-9 grid items-start gap-6 lg:grid-cols-2">
+            {kuriChasqui2026Founders.map((founder) => {
+              const content = founder.content[language];
+
+              return (
+                <article
+                  key={founder.id}
+                  className="min-w-0 overflow-hidden rounded-xl border border-(--border) bg-(--background)"
+                >
+                  {/* Portrait */}
+                  <div className="relative aspect-square w-full overflow-hidden bg-[#e9dfd2]">
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      loading="lazy"
+                      width={800}
+                      height={800}
+                      className="h-full w-full object-cover object-center"
+                    />
+                  </div>
+
+                  {/* Biography */}
+                  <div className="p-5 sm:p-7 md:p-8">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-(--primary)">
+                      {content.role}
+                    </p>
+
+                    <h3 className="mt-3 font-display text-2xl tracking-tight text-(--foreground) sm:text-3xl">
+                      {founder.name}
+                    </h3>
+
+                    <p className="mt-2 text-sm font-medium text-(--primary)">
+                      {content.subtitle}
+                    </p>
+
+                    <div className="my-6 h-px w-full bg-(--border)" />
+
+                    <p className="text-sm leading-7 text-(--muted) sm:text-base">
+                      {content.bio}
+                    </p>
+
+                    {/* Expandable details */}
+                    <details className="group mt-6 border-t border-(--border) pt-5">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-(--primary) [&::-webkit-details-marker]:hidden">
+                        <span>
+                          {language === "es"
+                            ? "Trayectoria y reconocimientos"
+                            : "Experience and Recognition"}
+                        </span>
+
+                        <ChevronDown
+                          size={18}
+                          aria-hidden="true"
+                          className="shrink-0 transition-transform duration-200 group-open:rotate-180"
+                        />
+                      </summary>
+
+                      <div className="space-y-5 pt-6">
+                        {content.sections.map((section) => (
+                          <div key={section.title}>
+                            <h4 className="font-semibold text-(--foreground)">
+                              {section.title}
+                            </h4>
+
+                            <p className="mt-2 text-sm leading-7 text-(--muted)">
+                              {section.text}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+
+                    {/* Wikipedia */}
+                    {founder.wikipedia && (
+                      <a
+                        href={founder.wikipedia[language]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-7 inline-flex items-center gap-2 rounded-md border border-(--primary) px-5 py-3 text-sm font-semibold text-(--primary) transition-colors hover:bg-(--primary) hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"
+                      >
+                        {language === "es"
+                          ? "Biografía en Wikipedia"
+                          : "Read on Wikipedia"}
+
+                        <ArrowUpRight size={16} aria-hidden="true" />
+                      </a>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
 
       {/* Awards Section */}
       <section id="kuri-chasqui-awards" className="bg-[#e9dfd2] scroll-mt-24">
@@ -207,38 +316,6 @@ export function AndeanFilmFestival2026Page() {
               </li>
             ))}
           </ul>
-        </Container>
-      </section>
-
-      {/* Founders Section */}
-      <section className="bg-(--surface)">
-        <Container className="py-14 md:py-20">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">
-              {t("festival2026.foundersLabel")}
-            </p>
-            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t("festival2026.foundersTitle")}
-            </h2>
-          </div>
-          <div className="mt-9 grid gap-5 md:grid-cols-2">
-            {kuriChasqui2026Founders.map((founder) => (
-              <article
-                key={founder.name}
-                className="border-t border-(--border) bg-(--background) p-6 md:p-8"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-(--primary)">
-                  {t(founder.roleKey)}
-                </p>
-                <h3 className="mt-3 font-display text-2xl text-(--foreground) md:text-3xl">
-                  {founder.name}
-                </h3>
-                <p className="mt-3 max-w-xl leading-7 text-(--muted)">
-                  {t(founder.bioKey)}
-                </p>
-              </article>
-            ))}
-          </div>
         </Container>
       </section>
 
