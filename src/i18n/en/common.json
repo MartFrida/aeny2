@@ -415,6 +415,46 @@
     "donateCta": "Support AEINY",
     "contactCta": "Contact Us"
   },
+  "festivalSchedule2026": {
+    "eyebrow": "Kuri Chasqui · November 2026",
+    "title": "Festival Schedule",
+    "dateRange": "November 8–15, 2026",
+    "dayTabsLabel": "Festival schedule by day",
+    "viewSchedule": "View Festival Schedule",
+    "specialScreening": "Special screening",
+    "viewFilmCard": "Go to the film card for {{title}}",
+    "days": {
+      "opening": "Opening Day",
+      "shortFilms": "Short Films",
+      "november10": "November 10",
+      "november11": "November 11",
+      "november12": "November 12",
+      "november13": "November 13",
+      "november14": "November 14",
+      "closing": "Closing Day"
+    },
+    "types": {
+      "film": "Film",
+      "forum": "Forum",
+      "discussion": "Discussion",
+      "opening": "Opening event",
+      "ceremony": "Awards ceremony",
+      "closing": "Festival closing"
+    },
+    "activities": {
+      "opening": "Official opening, forum and gathering with organizers, producers and directors",
+      "participantForum": "Forum and conversation with participants",
+      "directorForum": "Forum with directors, producers and organizers",
+      "audienceForum": "Forum and conversation with the audience",
+      "filmmakerForum": "Forum with filmmakers and organizers",
+      "directorMeeting": "Meeting with directors and producers",
+      "filmmakerAudienceMeeting": "Meeting with filmmakers and audience",
+      "filmDiscussion": "Film discussion and forum",
+      "finalMeeting": "Final gathering with directors, producers, participants and organizers",
+      "awardsCeremony": "Kuri Chasqui 2026 Awards Ceremony",
+      "festivalClosing": "Official closing of the Kuri Chasqui 2026 Festival"
+    }
+  },
   "kuri2026Page": {
     "seoTitle": "1st International Andean Film Festival New York 2026 | Kuri Chasqui Awards | AEINY",
     "seoDescription": "Discover the 1st International Andean Film Festival New York 2026 and the Kuri Chasqui Awards, celebrating Andean cinema, identity, memory and culture.",

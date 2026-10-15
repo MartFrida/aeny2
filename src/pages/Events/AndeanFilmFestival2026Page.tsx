@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/common/Button";
 import { Container } from "../../components/common/Container";
 import { PageMetadata } from "../../components/common/PageMetadata";
+import { FestivalSchedule } from "../../components/festival/FestivalSchedule";
 import { kuriChasqui2026Films } from "../../data/events/kuriChasquiCatalog";
 import { kuriChasqui2026Founders } from "../../data/events/kuriChasquiFounders2026";
 import { FilmCard } from "./FilmCard";
@@ -58,6 +59,13 @@ export function AndeanFilmFestival2026Page() {
               >
                 {t("festival2026.aboutAwards")}
               </a>
+              <a
+                href="#festival-program"
+                className="inline-flex items-center justify-center rounded-md border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
+              >
+                {t("festivalSchedule2026.viewSchedule")}
+                <ArrowDown size={16} className="ml-2" />
+              </a>
             </div>
           </div>
 
@@ -81,6 +89,8 @@ export function AndeanFilmFestival2026Page() {
           </figure>
         </Container>
       </section>
+
+      <FestivalSchedule />
 
       {/* Official Selection Films */}
       <section id="official-selection" className="bg-(--surface) scroll-mt-24">

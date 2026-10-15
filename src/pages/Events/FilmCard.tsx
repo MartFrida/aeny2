@@ -32,7 +32,8 @@ export function FilmCard({ film, to }: FilmCardProps) {
   return (
     <Link
       to={to}
-      className="group flex min-h-full flex-col border border-(--border) bg-(--background) transition-colors hover:border-(--primary)/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2"
+      id={`festival-film-${film.id}`}
+      className="group flex min-h-full scroll-mt-24 flex-col border border-(--border) bg-(--background) transition-colors hover:border-(--primary)/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2"
     >
       {poster ? (
         <img
