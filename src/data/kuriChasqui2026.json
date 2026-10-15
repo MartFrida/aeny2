@@ -3,7 +3,6 @@
     "id": 1,
     "slug": "cueva-de-los-tayos",
     "title": "Cueva de los Tayos",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-2",
     "poster": "/images/events/festival-andino-2026/films/cueva-de-los-tayos-poster.webp",
     "originalTitle": "Expedición Cueva de los Tayos MMXVI",
     "year": 2017,
@@ -30,13 +29,13 @@
       "Nómada Media House",
       "Ministerio de Turismo Ecuador"
     ],
-    "reviewStatus": "source-transcribed"
+    "reviewStatus": "source-transcribed",
+    "synopsisEn": "Raúl Cabrera leads a multidisciplinary team on an expedition to Ecuador’s Cueva de los Tayos."
   },
   {
     "id": 2,
     "slug": "yo-vivo-libre-de-violencia",
     "title": "Yo Vivo Libre de Violencia",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-1",
     "poster": "/images/events/festival-andino-2026/films/yo-vivo-libre-de-violencia-poster.webp",
     "duration": "8 min",
     "director": [
@@ -66,13 +65,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/yo-vivo-libre-de-violencia.webp"
-    ]
+    ],
+    "synopsisEn": "A short documentary raising awareness of abuse and violence, particularly violence against women."
   },
   {
     "id": 3,
     "slug": "extranos-seres",
     "title": "Extraños Seres",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2",
     "poster": "/images/events/festival-andino-2026/films/extranos-seres-poster.webp",
     "year": 1990,
     "completionYear": 2009,
@@ -106,13 +105,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/extranos-seres.webp"
-    ]
+    ],
+    "synopsisEn": "A fictional film shot in Ecuador that contrasts two perspectives on the so-called discovery of America."
   },
   {
     "id": 4,
     "slug": "dusshishik",
     "title": "Dusshishik",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-3",
     "poster": "/images/events/festival-andino-2026/films/dusshishik-poster.webp",
     "duration": "15 min",
     "director": [
@@ -132,13 +131,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/dusshishik.webp"
-    ]
+    ],
+    "synopsisEn": "A young man from the Crow Nation enlists in the U.S. military while confronting family tensions and questions of identity and tradition."
   },
   {
     "id": 5,
     "slug": "illana",
     "title": "Illana",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-4",
     "poster": "/images/events/festival-andino-2026/films/illana-poster.webp",
     "year": 2021,
     "duration": "10 min",
@@ -169,13 +168,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/illana.webp"
-    ]
+    ],
+    "synopsisEn": "A group of children tries to persuade a former neighbor to return to their rural village by recalling the adventures they shared."
   },
   {
     "id": 6,
     "slug": "identidades-culturales-migrantes",
     "title": "Identidades Culturales Migrantes",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-5",
     "poster": "/images/events/festival-andino-2026/films/identidades-culturales-migrantes-poster.webp",
     "year": 2014,
     "duration": "9:53",
@@ -195,14 +194,14 @@
     "editorialNote": "La ficha individual indica documental, aunque la presentación general lo describe como ficción.",
     "gallery": [
       "/images/events/festival-andino-2026/films/identidades-culturales-migrantes.webp"
-    ]
+    ],
+    "synopsisEn": "A documentary portrait of Amaruk Kayshapanta and the cultural experience of Kichwa Salasaka migration in Barcelona."
   },
   {
     "id": 7,
     "slug": "canta-sing",
     "title": "Canta (Sing)",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-6",
-    "poster": null,
+    "poster": "/images/events/festival-andino-2026/films/canta-sing-poster.webp",
     "year": 2021,
     "duration": "9:20",
     "director": [
@@ -225,13 +224,13 @@
     "productionCompany": [
       "TodoActores.com"
     ],
-    "reviewStatus": "source-transcribed"
+    "reviewStatus": "source-transcribed",
+    "synopsisEn": "A fictional short film exploring the dangers of trusting strangers on social media."
   },
   {
     "id": 8,
     "slug": "tratar",
     "title": "Tratar",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-7",
     "poster": "/images/events/festival-andino-2026/films/tratar-poster.webp",
     "originalTitle": "Tratar (Human Trafficking)",
     "year": 2020,
@@ -268,13 +267,13 @@
     "editorialNote": "La ficha individual indica ficción; en el índice aparece como documental.",
     "gallery": [
       "/images/events/festival-andino-2026/films/tratar.webp"
-    ]
+    ],
+    "synopsisEn": "Inspired by real-life situations, this fictional short film addresses the deception and exploitation of women and minors by human trafficking networks."
   },
   {
     "id": 9,
     "slug": "abuelo-montana",
     "title": "Abuelo Montaña",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-8",
     "poster": "/images/events/festival-andino-2026/films/abuelo-montana-poster.webp",
     "year": 2021,
     "duration": "10 min",
@@ -290,13 +289,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/abuelo-montana.webp"
-    ]
+    ],
+    "synopsisEn": "The documentary follows Fernando Tisoc on a pilgrimage to Mount Pachatusan near Cusco, exploring rituals associated with Andean traditions."
   },
   {
     "id": 10,
     "slug": "morenada",
     "title": "Morenada",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-9",
     "poster": "/images/events/festival-andino-2026/films/morenada-poster.webp",
     "year": 2023,
     "duration": "20 min",
@@ -322,13 +321,13 @@
     "editorialNote": "La página individual ofrece una presentación de producción y elenco, no una sinopsis de la trama; el índice y la ficha también difieren en la clasificación del filme.",
     "gallery": [
       "/images/events/festival-andino-2026/films/morenada.webp"
-    ]
+    ],
+    "synopsisEn": "A Peruvian period short film exploring Indigenous and Afro-Peruvian cultural heritage."
   },
   {
     "id": 11,
     "slug": "pachakuti-2012",
     "title": "Pachakuti 2012",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-10",
     "poster": "/images/events/festival-andino-2026/films/pachakuti-2012-poster.webp",
     "originalTitle": "Pachakuti 2012, El Cambio",
     "year": 2013,
@@ -362,13 +361,13 @@
     "editorialNote": "La fuente distingue 2012 como año de rodaje y 2013 como año de edición y postproducción; el registro conserva 2013 como año existente.",
     "gallery": [
       "/images/events/festival-andino-2026/films/pachakuti-2012.webp"
-    ]
+    ],
+    "synopsisEn": "A documentary about the gathering held on December 21, 2012, on Bolivia’s Island of the Sun and its symbolic meaning as the beginning of a new cycle."
   },
   {
     "id": 12,
     "slug": "en-alas-del-intento",
     "title": "En alas del intento",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-11",
     "poster": "/images/events/festival-andino-2026/films/en-alas-del-intento.webp",
     "duration": "26 min",
     "director": [
@@ -393,13 +392,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/en-alas-del-intento.webp"
-    ]
+    ],
+    "synopsisEn": "A documentary revisiting the message delivered by Silo at Punta de Vacas in 1969, five decades later."
   },
   {
     "id": 13,
     "slug": "yachana-wasi-rurakkuna",
     "title": "Yachana Wasi Rurakkuna",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-12",
     "poster": "/images/events/festival-andino-2026/films/yachana-wasi-rurakkuna.webp",
     "originalTitle": "Yachana Wasi Rurakkuna — Los creadores del lugar del conocimiento",
     "year": 2015,
@@ -447,13 +446,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/yachana-wasi-rurakkuna.webp"
-    ]
+    ],
+    "synopsisEn": "Members of the Salasaka community recount how they worked to establish a school in the 1980s despite significant obstacles."
   },
   {
     "id": 14,
     "slug": "cantuna-la-pelicula",
     "title": "Cantuña la película",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-13",
     "poster": "/images/events/festival-andino-2026/films/cantuna-la-pelicula-poster.webp",
     "originalTitle": "Cantuña, la película",
     "year": 2022,
@@ -490,13 +489,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/cantuna-la-pelicula.webp"
-    ]
+    ],
+    "synopsisEn": "After experiences she associates with a past life and the colonial legend of Cantuña, Noelia travels from Madrid to the Ecuadorian Andes."
   },
   {
     "id": 15,
     "slug": "mariposas-de-sangre",
     "title": "Mariposas de Sangre",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-14",
     "poster": "/images/events/festival-andino-2026/films/mariposas-de-sangre-poster.webp",
     "duration": "16 min",
     "director": [
@@ -527,13 +526,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/mariposas-de-sangre.webp"
-    ]
+    ],
+    "synopsisEn": "A drama inspired by true events. The available source offers only a brief description and does not provide further plot details."
   },
   {
     "id": 16,
     "slug": "the-last-trip",
     "title": "The Last Trip",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-15",
     "poster": "/images/events/festival-andino-2026/films/the-last-trip-poster.webp",
     "duration": "2 min",
     "director": [
@@ -557,13 +556,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/the-last-trip.webp"
-    ]
+    ],
+    "synopsisEn": "A conceptual short film reflecting on life and the certainty of death."
   },
   {
     "id": 17,
     "slug": "the-history-amazonas",
     "title": "The History Amazonas",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-16",
     "poster": "/images/events/festival-andino-2026/films/the-history-amazonas-poster.webp",
     "originalTitle": "The history Amazonas",
     "duration": "60 min",
@@ -607,13 +606,13 @@
     "editorialNote": "La portada general nombra otra productora; se prioriza la ficha individual.",
     "gallery": [
       "/images/events/festival-andino-2026/films/the-history-amazonas.webp"
-    ]
+    ],
+    "synopsisEn": "A drama about people seeking salvation in the Amazon and the stories they carry."
   },
   {
     "id": 18,
     "slug": "amawtas-en-cataluna",
     "title": "Amawtas en Cataluña",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-17",
     "poster": "/images/events/festival-andino-2026/films/amawtas-en-cataluna-poster.webp",
     "year": 2023,
     "duration": "45 min",
@@ -652,13 +651,13 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/amawtas-en-cataluna.webp"
-    ]
+    ],
+    "synopsisEn": "A documentary connected to anthropological research into Andean amawtas and their presence in Catalonia."
   },
   {
     "id": 19,
     "slug": "el-oportuno-hacer",
     "title": "El oportuno hacer",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-18",
     "poster": "/images/events/festival-andino-2026/films/el-oportuno-hacer-poster.webp",
     "originalTitle": "El oportuno hacer — El resurgir de Abya Yala",
     "year": 2021,
@@ -678,14 +677,14 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/el-oportuno-hacer.webp"
-    ]
+    ],
+    "synopsisEn": "An experimental documentary evoking the resurgence of Abya Yala through images and metaphors of land and identity."
   },
   {
     "id": 20,
     "slug": "conoces-el-mar",
     "title": "¿Conoces el mar?",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-19",
-    "poster": null,
+    "poster": "/images/events/festival-andino-2026/films/conocer-el-mar-poster.webp",
     "originalTitle": "¿Conoces el mar?",
     "duration": "14:03",
     "director": [
@@ -710,13 +709,13 @@
     "type": "documentary",
     "synopsisEs": "Hilario Aduviri, un anciano aymara del altiplano boliviano, expresa su deseo de que Bolivia recupere una salida soberana al mar.",
     "genre": "Documental",
-    "reviewStatus": "source-transcribed"
+    "reviewStatus": "source-transcribed",
+    "synopsisEn": "Hilario Aduviri, an Aymara elder from Bolivia’s highlands, expresses his wish for Bolivia to regain sovereign access to the sea."
   },
   {
     "id": 21,
     "slug": "diaspora-del-arte",
     "title": "Diáspora del Arte",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-20",
     "poster": "/images/events/festival-andino-2026/films/diaspora-del-arte-poster.webp",
     "year": 2020,
     "duration": "49:39",
@@ -744,7 +743,7 @@
     ],
     "type": "documentary",
     "format": "4K",
-    "synopsisEs": null,
+    "synopsisEs": "Documental de autor dirigido por Amaruk Kayshapanta y producido en España en 2020. La fuente disponible no incluye una sinopsis detallada de su contenido.",
     "genre": "Cine de autor; cine documental",
     "productionCompany": [
       "Ayniruk Producciones",
@@ -754,13 +753,14 @@
     "editorialNote": "La página individual publica ficha técnica, pero no incluye sinopsis.",
     "gallery": [
       "/images/events/festival-andino-2026/films/diaspora-del-arte.webp"
-    ]
+    ],
+    "synopsisEn": "A documentary by Amaruk Kayshapanta, produced in Spain in 2020, presented as auteur cinema. A detailed plot synopsis is not available in the supplied source.",
+    "synopsisNote": "Editorial description based on available metadata; narrative synopsis not verified."
   },
   {
     "id": 22,
     "slug": "muertepungo",
     "title": "Muertepungo",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-21",
     "poster": "/images/events/festival-andino-2026/films/muertepungo-poster.webp",
     "year": 2021,
     "location": "Laguna de Muertepungo, Pintag, Ecuador",
@@ -788,13 +788,13 @@
     "editorialNote": "La portada del festival dice producción chilena; la ficha sitúa la obra en Ecuador y su texto de sinopsis queda incompleto en la fuente.",
     "gallery": [
       "/images/events/festival-andino-2026/films/muertepungo.webp"
-    ]
+    ],
+    "synopsisEn": "A dance film developed from movement research inspired by the crown chakra."
   },
   {
     "id": 23,
     "slug": "voz-migrante",
     "title": "Voz Migrante",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-22",
     "poster": "/images/events/festival-andino-2026/films/voz-migrante-poster.webp",
     "year": 2021,
     "duration": "3:56",
@@ -833,7 +833,6 @@
     "id": 24,
     "slug": "allpamanda",
     "title": "Allpamanda",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-23",
     "poster": "/images/events/festival-andino-2026/films/allpamanda-poster.webp",
     "year": 2019,
     "duration": "10:22",
@@ -860,31 +859,32 @@
     "reviewStatus": "source-transcribed",
     "gallery": [
       "/images/events/festival-andino-2026/films/allpamanda.webp"
-    ]
+    ],
+    "synopsisEn": "A documentary about a Sápara family in the Ecuadorian Amazon and the preservation of traditional weaving made from ilanchama bark."
   },
   {
     "id": 25,
     "slug": "alfaro-la-pelicula",
     "title": "Alfaro la película",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-24",
     "poster": "/images/events/festival-andino-2026/films/alfaro-la-pelicula-poster.webp",
     "duration": "90 min",
     "country": [
       "Ecuador"
     ],
     "type": null,
-    "synopsisEs": null,
+    "synopsisEs": "Largometraje ecuatoriano de 90 minutos, clasificado para todos los públicos. La fuente disponible no proporciona información sobre su argumento.",
     "reviewStatus": "needs-review",
     "editorialNote": "La página individual solo publica duración, clasificación para todo público y producción en Ecuador; no incluye sinopsis.",
     "gallery": [
       "/images/events/festival-andino-2026/films/alfaro-la-pelicula.webp"
-    ]
+    ],
+    "synopsisEn": "An Ecuadorian feature film with a running time of 90 minutes, listed as suitable for all audiences. The supplied source does not provide a plot synopsis.",
+    "synopsisNote": "Editorial description based on available metadata; narrative synopsis not verified."
   },
   {
     "id": 26,
     "slug": "karanakuy",
     "title": "Karanakuy",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-25",
     "poster": "/images/events/festival-andino-2026/films/karanakuy-poster.webp",
     "year": 2020,
     "duration": "3 min",
@@ -913,13 +913,13 @@
     "editorialNote": "La página individual únicamente indica duración y origen; no confirma el formato «mini documental» del índice.",
     "gallery": [
       "/images/events/festival-andino-2026/films/karanakuy.webp"
-    ]
+    ],
+    "synopsisEn": "A short documentary about community support and food sharing organized by the Inti Daquilema Foundation during the pandemic."
   },
   {
     "id": 27,
     "slug": "angelica",
     "title": "Angélica",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-26",
     "poster": "/images/events/festival-andino-2026/films/angelica-poster.webp",
     "year": 2008,
     "duration": "93 min",
@@ -943,18 +943,19 @@
       "Español"
     ],
     "type": null,
-    "synopsisEs": null,
+    "synopsisEs": "Producción hondureña de 2008 dirigida por Carla Calderón. El catálogo presenta una discrepancia entre los títulos «Angélica» y «Angelina» y no incluye una sinopsis argumental.",
     "reviewStatus": "needs-review",
     "editorialNote": "El índice dice Angelica y documental, pero la ficha indica Angelina (Honduras, 93 min); confirmar título con los organizadores.",
     "gallery": [
       "/images/events/festival-andino-2026/films/angelica.webp"
-    ]
+    ],
+    "synopsisEn": "A 2008 production from Honduras directed by Carla Calderón. The supplied catalogue alternately names it Angélica and Angelina; its plot synopsis is unavailable.",
+    "synopsisNote": "Editorial description based on available metadata; narrative synopsis not verified."
   },
   {
     "id": 28,
     "slug": "la-churona",
     "title": "La Churona",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-27",
     "poster": "/images/events/festival-andino-2026/films/la-churona-poster.webp",
     "year": 2010,
     "duration": "82 min",
@@ -990,13 +991,13 @@
     "editorialNote": "El índice coloca la referencia a María Cristina Carrillo cerca de Angelica; la ficha individual confirma que corresponde a La Churona.",
     "gallery": [
       "/images/events/festival-andino-2026/films/la-churona.webp"
-    ]
+    ],
+    "synopsisEn": "The arrival in Madrid of a replica of the Virgin of El Cisne sparks tensions and encounters through which this documentary explores Ecuadorian migration."
   },
   {
     "id": 29,
     "slug": "las-munecas-rusas",
     "title": "Las Muñecas Rusas",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-28",
     "poster": "/images/events/festival-andino-2026/films/las-munecas-rusas-poster.webp",
     "year": 2012,
     "duration": "10:53",
@@ -1025,7 +1026,7 @@
     ],
     "format": "4K",
     "type": "short-fiction",
-    "synopsisEs": null,
+    "synopsisEs": "Cortometraje de ficción dirigido por Amaruk Kayshapanta y producido por Pachamama Producciones. La fuente disponible no ofrece detalles sobre su argumento.",
     "genre": "Cortometraje",
     "productionCompany": [
       "Pachamama Producciones"
@@ -1034,13 +1035,14 @@
     "editorialNote": "La página individual publica ficha técnica, pero no incluye sinopsis.",
     "gallery": [
       "/images/events/festival-andino-2026/films/las-munecas-rusas.webp"
-    ]
+    ],
+    "synopsisEn": "A short fictional film directed by Amaruk Kayshapanta, produced by Pachamama Producciones. The supplied source does not describe the plot.",
+    "synopsisNote": "Editorial description based on available metadata; narrative synopsis not verified."
   },
   {
     "id": 30,
     "slug": "pincho",
     "title": "Pincho",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-29",
     "poster": "/images/events/festival-andino-2026/films/pincho-poster.webp",
     "originalTitle": "Pinchos",
     "duration": "1:56",
@@ -1073,13 +1075,13 @@
     "editorialNote": "El índice usa Pincho, la ficha técnica dice Pinchos; confirmar título oficial.",
     "gallery": [
       "/images/events/festival-andino-2026/films/pincho.webp"
-    ]
+    ],
+    "synopsisEn": "A short film denouncing the labor exploitation of migrants."
   },
   {
     "id": 31,
     "slug": "patrones-de-conducta",
     "title": "Patrones de Conducta",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-30",
     "poster": "/images/events/festival-andino-2026/films/patrones-de-conducta-poster.webp",
     "duration": "6:45",
     "director": [
@@ -1108,13 +1110,13 @@
     "editorialNote": "El índice dice cortometraje, la ficha especifica documental experimental.",
     "gallery": [
       "/images/events/festival-andino-2026/films/patrones-de-conducta.webp"
-    ]
+    ],
+    "synopsisEn": "An anthropological and sociological audiovisual experiment involving children in several Spanish cities, examining prejudice and patterns of behavior."
   },
   {
     "id": 32,
     "slug": "los-yachaks",
     "title": "Los Yachaks",
-    "sourceUrl": "https://infoccandino.wixsite.com/ccandino/about-2-31",
     "poster": "/images/events/festival-andino-2026/films/los-yachaks-poster.webp",
     "originalTitle": "Los Yachaks del bosque frente a la pandemia",
     "duration": "12 min",
@@ -1154,6 +1156,49 @@
     "editorialNote": "El índice abrevia Los Yachaks; la ficha contiene el título largo.",
     "gallery": [
       "/images/events/festival-andino-2026/films/los-yachaks.webp"
-    ]
+    ],
+    "synopsisEn": "Through the voice of Urku, a wise elder from Rukullakta, this documentary explores traditional natural-medicine knowledge used during the pandemic and the importance of preserving Amazonian ancestral memory."
+  },
+  {
+    "id": 33,
+    "slug": "addictus",
+    "title": "Addictus",
+    "poster": "/images/events/festival-andino-2026/films/addictus-poster.webp",
+    "originalTitle": "Addictus",
+    "duration": "87 min",
+    "director": [
+      "David Andrade"
+    ],
+    "screenplay": [
+      "David Andrade"
+    ],
+    "producer": [
+      "Production: RMM, SL"
+    ],
+    "production": [
+      "RMM, S.L."
+    ],
+    "cinematography": [
+      ""
+    ],
+    "country": [
+      "España"
+    ],
+    "language": [
+      "Español"
+    ],
+    "type": "fiction",
+    "format": "4K",
+    "synopsisEs": "Drama que aborda las adicciones y sus orígenes, desde el maltrato en el hogar y la estigmatización social hasta los problemas vinculados con las pandillas y las redes sociales. También trata el suicidio y propone una mirada empática hacia quienes sufren en soledad.",
+    "genre": [
+      "Drama",
+      "Cine educativo"
+    ],
+    "productionCompany": [
+      "RMM, S.L."
+    ],
+    "reviewStatus": "needs-review",
+    "editorialNote": "La ficha individual indica ficción; en el índice aparece como documental.",
+    "synopsisEn": "This drama explores addiction and its roots, addressing domestic abuse, social stigma, gang-related issues and the influence of social media. It also examines suicide and calls for empathy toward people who suffer in isolation."
   }
 ]

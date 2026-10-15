@@ -19,6 +19,7 @@ export function HomePage() {
 
   return (
     <>
+    {/* Hero Section */}
       <section className="relative overflow-hidden bg-(--surface-dark) text-white">
         <div className="absolute inset-0 opacity-80">
           <div className="absolute inset-x-0 top-0 h-full bg-[radial-gradient(circle_at_top_left,rgba(201,154,92,0.16),transparent_28%)]" />
@@ -93,6 +94,7 @@ export function HomePage() {
         </Container>
       </section>
 
+{/* Intro Section */}
       <section className="border-b border-(--border) bg-(--background)">
         <Container className="py-20 md:py-24">
           <div className="max-w-4xl">

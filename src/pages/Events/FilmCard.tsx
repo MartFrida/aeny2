@@ -15,7 +15,7 @@ type FilmCardProps = {
 export function FilmCard({ film, to }: FilmCardProps) {
   const { i18n, t } = useTranslation()
   const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
-  const synopsis = language === 'es' ? film.synopsisEs : film.synopsisEn
+  // const synopsis = language === 'es' ? film.synopsisEs : film.synopsisEn
   const typeTranslation = getFilmTypeTranslationKey(film.type)
   const poster = getFilmPrimaryImage(film)
   const countries = film.country?.filter(Boolean).join(', ')
@@ -56,14 +56,14 @@ export function FilmCard({ film, to }: FilmCardProps) {
             {line}
           </p>
         ))}
-        {synopsis ? (
+        {/* {synopsis ? (
           <div className="mt-3">
             <h4 className="text-xs font-semibold uppercase tracking-[0.12em] text-(--foreground)">
               {t('festival2026.synopsis')}
             </h4>
             <p className="mt-1 line-clamp-3 text-sm leading-6 text-(--muted)">{synopsis}</p>
           </div>
-        ) : null}
+        ) : null} */}
         <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-(--primary)">
           {t('festival2026.viewFilm')}
           <MoveUpRight size={15} aria-hidden="true" />
