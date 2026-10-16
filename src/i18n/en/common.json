@@ -148,113 +148,163 @@
     "finalSupport": "Support our mission"
   },
   "ourWork": {
-    "title": "Our Work",
-    "intro": "Our initiatives connect people, families, and institutions around migration, education, cultural practice, and community wellness.",
-    "seoTitle": "Our Work | Alianza Ecuatoriana Internacional",
-    "seoDescription": "Discover how Alianza Ecuatoriana Internacional supports immigrant families and workers through education, community resources, cultural identity and advocacy.",
-    "eyebrow": "Our work",
-    "heroTitle": "Building opportunity. Strengthening community.",
-    "heroIntro": "Alianza Ecuatoriana Internacional works alongside immigrant families, workers and communities to expand access to education, practical support, cultural connection and opportunities to build a stronger future.",
-    "heroPhotoAlt": "AEINY volunteers sharing essential supplies with community members.",
-    "heroVisualCaption": "Community support in action",
-    "exploreCta": "Explore our work",
-    "pillarsEyebrow": "What we do",
-    "pillarsTitle": "Rooted in everyday needs",
-    "pillarsIntro": "Our work grows from the everyday needs of the community — from education and workplace preparation to immigrant guidance, cultural identity and the defense of dignity and rights.",
+    "seoTitle": "Our Work | Community Support & Education | AEINY",
+    "seoDescription": "Explore how AEINY supports immigrant communities through human rights, education, cultural heritage and community wellbeing.",
+    "heroEyebrow": "What we do",
+    "heroTitle": "Supporting people. Strengthening communities.",
+    "heroDescription": "AEINY brings together community support, education, cultural heritage and initiatives for wellbeing to help immigrant communities navigate challenges and build opportunities.",
+    "heroPrimary": "Explore our work",
+    "heroSecondary": "Contact us",
+    "heroPhotoAlt": "Community members gather together at an AEINY event.",
+    "approachEyebrow": "Our approach",
+    "approachTitle": "Knowledge, connection and dignity.",
+    "approachCopy": "For immigrant communities, access to reliable information, opportunities to learn and a sense of belonging can make a meaningful difference. AEINY connects these needs through community-based work shaped by lived experience and cultural identity.",
+    "areasEyebrow": "Our areas of work",
+    "areasTitle": "Supporting people and strengthening community",
     "area": {
-      "educationTitle": "Education & Workforce Training",
-      "educationCopy": "We help community members gain practical knowledge and skills that can open doors to safer work and greater economic opportunity. Through Centro Comunitario Andino, programs include construction-related education and workplace safety training.",
-      "supportTitle": "Immigrant & Community Support",
-      "supportCopy": "For immigrants building a new life in the United States, reliable information matters. AEINY connects community members with guidance related to immigration, work, local resources and everyday challenges.",
-      "rightsTitle": "Rights & Dignity",
-      "rightsCopy": "AEINY's community work is rooted in the belief that immigrants and workers deserve information, respect and the ability to understand and defend their rights.",
-      "cultureTitle": "Culture & Identity",
-      "cultureCopy": "Keeping culture alive is also a form of community building. Through gatherings, traditions and cultural initiatives, AEINY creates spaces where Ecuadorian identity can be shared across generations and with the wider Latino community."
+      "support": {
+        "eyebrow": "Community support",
+        "title": "Migrant Support & Human Rights",
+        "lead": "Access to information is essential for protecting rights and making informed decisions.",
+        "copy": "AEINY's community work addresses issues relevant to immigrants, workers and families, including migration, labor rights, discrimination and participation in civic life. The organization supports awareness, community connections and access to information.",
+        "photoAlt": "Community members receive donated supplies through an AEINY community support effort.",
+        "highlights": {
+          "rights": "Immigrant and labor rights information",
+          "guidance": "Community guidance and connections",
+          "discrimination": "Awareness of discrimination and human rights",
+          "participation": "Civic and community participation"
+        }
+      },
+      "education": {
+        "eyebrow": "Opportunity through learning",
+        "title": "Education & Training",
+        "lead": "Practical learning can open doors to safer work and greater independence.",
+        "copy": "Education and professional preparation are important parts of AEINY's community work. Through Centro Comunitario Andino, the organization has offered learning opportunities, including construction-industry safety training and information relevant to workers and families.",
+        "photoAlt": "Participants attend a workforce training class.",
+        "highlights": {
+          "construction": "Construction safety education",
+          "osha": "OSHA-related training",
+          "workplace": "Workplace safety awareness",
+          "learning": "Practical learning opportunities"
+        }
+      },
+      "culture": {
+        "eyebrow": "Living heritage",
+        "title": "Culture & Heritage",
+        "lead": "Cultural identity is a living connection between people, places and generations.",
+        "copy": "AEINY has supported public cultural initiatives that celebrate Ecuadorian and Andean traditions. Through community gatherings, artistic expression and cultural exchange, the organization creates opportunities to preserve heritage and strengthen belonging.",
+        "photoAlt": "Community members take part in an Ecuadorian cultural parade.",
+        "highlights": {
+          "heritage": "Ecuadorian and Andean heritage",
+          "arts": "Traditional arts and cultural expression",
+          "participation": "Community participation",
+          "generations": "Intergenerational cultural connections"
+        }
+      },
+      "wellbeing": {
+        "eyebrow": "Wellbeing",
+        "title": "Community Health & Wellbeing",
+        "lead": "Healthy communities grow through connection, participation and care.",
+        "copy": "AEINY's community history includes initiatives that encourage physical activity, collective participation and awareness of wellbeing. Activities such as the historical El Chasqui run-walk demonstrate how cultural identity and healthy living can come together.",
+        "photoAlt": "Community members take part in a group activity promoting connection and wellbeing.",
+        "highlights": {
+          "healthyLiving": "Healthy lifestyle awareness",
+          "activity": "Physical activity",
+          "families": "Family and community participation",
+          "connection": "Wellbeing through connection"
+        }
+      }
     },
-    "photosEyebrow": "People and programs",
-    "photosTitle": "Learning, support and community outreach",
-    "photo": {
-      "trainingTitle": "Practical skills training",
-      "trainingAlt": "AEINY community members taking part in a hands-on training activity.",
-      "trainingCopy": "Practical learning and community support help people build knowledge and opportunity.",
-      "certificatesTitle": "Education and opportunity",
-      "certificatesAlt": "Participants and organizers celebrating a community training achievement.",
-      "certificatesCopy": "Recognizing the effort and progress of people taking part in educational programs.",
-      "outreachTitle": "Volunteer outreach",
-      "outreachAlt": "AEINY volunteers working together during a community outreach activity.",
-      "outreachCopy": "Volunteers help connect neighbors with practical resources and support.",
-      "engagementTitle": "Community engagement",
-      "engagementAlt": "AEINY community outreach booth at a local gathering.",
-      "engagementCopy": "A welcoming point of connection for information, conversation and community."
-    },
-    "centerEyebrow": "Community at the center",
+    "eventsLink": "Explore community events",
+    "centerEyebrow": "Community education",
     "centerTitle": "Centro Comunitario Andino",
-    "centerLead": "A community space focused on education, cultural identity and access to information on immigration, labor and human rights.",
-    "centerCopy": "Its programs connect practical education with the needs of immigrant workers and families, helping people navigate life, work and opportunity in New York.",
-    "centerPhotoAlt": "Community members gathered in a Centro Comunitario Andino training classroom.",
-    "topic": {
-      "education": "Education",
-      "workforce": "Workforce",
-      "guidance": "Immigrant guidance",
-      "rights": "Human rights"
+    "centerLead": "Learning that connects people with opportunity.",
+    "centerCopy": "Centro Comunitario Andino is an educational and community space associated with AEINY. Its documented work includes construction training, occupational safety education, cultural identity, and information on migration, labor issues and human rights.",
+    "centerPhotoAlt": "Community members attend a safety training session in a classroom.",
+    "centerCta": "Ask about training and programs",
+    "howEyebrow": "How we work",
+    "howTitle": "Community at the center",
+    "how": {
+      "listen": {
+        "title": "Listen",
+        "copy": "We recognize the needs and experiences of immigrant communities."
+      },
+      "connect": {
+        "title": "Connect",
+        "copy": "We bring people, knowledge and community opportunities together."
+      },
+      "strengthen": {
+        "title": "Strengthen",
+        "copy": "We support learning, cultural continuity and participation."
+      }
     },
-    "centerCta": "Explore our projects",
-    "statementLine1": "Community is more than where we come from.",
-    "statementLine2": "It is what we build together.",
-    "finalEyebrow": "Take part",
-    "finalTitle": "Be part of the work.",
-    "finalCopy": "Community progress is built through participation, collaboration and people willing to lend a hand.",
-    "getInvolved": "Get involved",
-    "contactUs": "Contact us"
+    "finalTitle": "Looking for information or a way to contribute?",
+    "finalCopy": "Connect with AEINY to learn more about its community initiatives and opportunities for participation.",
+    "finalContact": "Contact us",
+    "finalInvolved": "Get involved"
   },
   "projects": {
-    "title": "Projects",
-    "intro": "From New York to Ecuador, Alianza Ecuatoriana Internacional supports initiatives that honor migrant contributions, strengthen community connections and create opportunities for future generations.",
-    "seoTitle": "Our Projects | Alianza Ecuatoriana Internacional",
-    "seoDescription": "Explore Parque del Migrante in Cuenca and community initiatives connecting Ecuadorian migrants in New York with their homeland.",
-    "eyebrow": "Our projects",
-    "heroTitle": "Projects That Connect Communities Across Borders",
-    "heroIntro": "From New York to Ecuador, Alianza Ecuatoriana Internacional supports initiatives that honor migrant contributions, strengthen community connections and create opportunities for future generations.",
-    "parqueEyebrow": "Flagship project · Cuenca, Ecuador",
+    "seoTitle": "Community Projects | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Discover AEINY initiatives including Parque del Migrante in Cuenca and the 1st Cuencano Gathering in New York.",
+    "heroEyebrow": "AEINY projects",
+    "heroTitle": "Ideas rooted in community. Built for lasting meaning.",
+    "heroDescription": "Explore initiatives that connect migration, collective memory, cultural identity and the future of communities in New York and Ecuador.",
+    "introTitle": "Initiatives shaped by shared experience",
+    "introCopy": "AEINY's projects recognize the contributions of migrants, preserve collective memory and create ways for communities in New York and Ecuador to stay connected.",
+    "parqueEyebrow": "Featured project / Cuenca, Ecuador",
+    "parqueLocation": "Cuenca, Ecuador",
     "parqueTitle": "Parque del Migrante",
-    "parqueDescription": "Parque del Migrante is an initiative dedicated to honoring the effort, courage and contribution of Ecuadorian migrants. The project envisions a public place where migration stories, cultural identity and community life can be preserved and shared with future generations.",
+    "parqueLead": "A place of recognition for the courage, work and contributions of Ecuadorian migrants.",
+    "parqueCopy1": "Parque del Migrante is an initiative presented by AEINY to honor the experience and contributions of Ecuadorian migrants. The project envisions a public space in Cuenca dedicated to memory, cultural identity and connection between communities at home and abroad.",
+    "parqueCopy2": "A publicly presented design includes concepts for an entrance, museum, acoustic performance space, fountain and supporting facilities.",
     "visualizationCaption": "Conceptual project visualization",
-    "galleryTitle": "Project visualizations",
+    "visionTitle": "A vision of recognition, memory and connection",
+    "principles": {
+      "recognition": {
+        "title": "Recognition",
+        "copy": "Honoring the work and sacrifices of migrants."
+      },
+      "memory": {
+        "title": "Memory",
+        "copy": "Keeping migration stories visible across generations."
+      },
+      "connection": {
+        "title": "Connection",
+        "copy": "Creating a symbolic bridge between Ecuador and its communities abroad."
+      }
+    },
+    "galleryEyebrow": "The project design",
+    "galleryTitle": "A public space imagined through its details",
     "gallery": {
-      "entrance": "Park entrance",
+      "entrance": "Entrance",
       "museum": "Museum",
-      "amphitheater": "Acoustic shell",
+      "acousticShell": "Acoustic shell",
       "fountain": "Fountain",
-      "services": "Security and services area",
+      "services": "Security and services",
       "aerial": "Aerial view"
     },
-    "supportTitle": "Help Bring This Vision to Life",
-    "supportCopy": "Support an initiative dedicated to recognizing the contribution and legacy of Ecuadorian migrants.",
-    "supportCta": "Support Parque del Migrante",
-    "encuentroEyebrow": "Community dialogue · New York",
-    "encuentroTitle": "1er Encuentro Cuencano en New York",
-    "encuentroDescription": "The First Cuencano Gathering in New York brought community discussions around migration, public safety in Ecuador, entrepreneurship, employment opportunities and future projects for the city of Cuenca. The event involved participation from the Cuencano community, with Cuenca authorities and invited guests included in the official program.",
-    "eventPhotoAlt": "Ecuadorian community members gathered outdoors with Ecuadorian flags.",
-    "eventPhotoCaption": "Community gathering image published on the official event page.",
-    "archivalPosterAlt": "Archival poster for the First Cuencano Gathering in New York.",
-    "archivalPosterCaption": "Archival event poster",
-    "objectivesTitle": "Key Objectives",
-    "objectives": {
-      "migrantTitle": "Migrant Community",
-      "migrantCopy": "Discuss the current situation, needs and challenges facing the migrant community.",
-      "projectsTitle": "Future Projects in Cuenca",
-      "projectsCopy": "Share and discuss initiatives envisioned for the city of Cuenca.",
-      "representationTitle": "Cultural Representation",
-      "representationCopy": "Support the formation of a delegation to represent the community in the Desfile de la Ecuatorianidad."
+    "encuentroEyebrow": "Community initiative / New York",
+    "encuentroTitle": "1st Cuencano Gathering in New York",
+    "encuentroLead": "Connecting the Cuencano community through dialogue, identity and shared opportunities.",
+    "encuentroCopy1": "The first Cuencano gathering in New York brought together members of the community around concerns affecting migrants, opportunities for entrepreneurship and employment, and ideas for future initiatives in Cuenca.",
+    "encuentroCopy2": "Its published objectives included discussing the community's situation, exploring future projects in Cuenca and organizing representation in the Ecuadorian cultural parade.",
+    "encuentroThemes": {
+      "dialogue": "Community dialogue",
+      "opportunity": "Opportunities & entrepreneurship",
+      "representation": "Cultural representation"
     },
-    "eventsCta": "Explore Community Events",
-    "connectionTitle": "Connecting Ecuador and Its Diaspora",
-    "connectionCopy": "These initiatives reflect the importance of preserving cultural roots, recognizing the migrant experience and maintaining lasting connections between Ecuadorians abroad and their communities of origin.",
-    "finalEyebrow": "Community and shared commitment",
-    "finalTitle": "Be Part of What Comes Next",
-    "finalCopy": "Meaningful projects are built through community participation, collaboration and shared commitment.",
-    "involvedCta": "Get Involved",
-    "contactCta": "Contact Us"
+    "eventPhotoAlt": "Community members gathered at the 1st Cuencano Gathering in New York.",
+    "eventPhotoCaption": "A community gathering documented in AEINY's local archive.",
+    "archivalPosterAlt": "Archival poster for the 1st Cuencano Gathering in New York.",
+    "archivalPosterCaption": "Archival event poster",
+    "impactEyebrow": "Beyond individual projects",
+    "impactTitle": "Projects that connect people, places and memory.",
+    "impactCopy": "Whether recognizing the contributions of migrants or creating spaces for community dialogue, AEINY's initiatives seek to preserve shared histories, strengthen connections and support collective participation.",
+    "finalEyebrow": "Support community initiatives",
+    "finalTitle": "Meaningful projects need people who believe in them.",
+    "finalCopy": "Learn how to collaborate with AEINY or support the development of community initiatives.",
+    "finalInvolved": "Get involved",
+    "finalDonate": "Support AEINY"
   },
   "projectParque": {
     "title": "Parque del Migrante",
