@@ -1,3 +1,5 @@
+import { contactInfo } from '../contact'
+
 export type KuriChasqui2026Event = {
   id: string
   slug: string
@@ -69,11 +71,11 @@ export const kuriChasqui2026Event: KuriChasqui2026Event = {
   endDate: 'November 15, 2026',
   time: '14:00 / 2:00 PM',
   venue: 'Centro Comunitario Andino',
-  address: '102-14 37th Ave, 2nd Floor\nCorona, NY 11368\nNew York',
+  address: contactInfo.address,
   organizer: 'Alianza Ecuatoriana Internacional',
   coOrganizer: 'Centro Comunitario Andino',
-  rsvpPhone: '(718) 905-6761',
-  rsvpEmail: 'info.ccandino@gmail.com',
+  rsvpPhone: contactInfo.phone,
+  rsvpEmail: contactInfo.email,
   location: 'New York',
   poster: '/images/kuri-chasqui/kuri-chasqui-2026-poster.jpg',
   featured: true,

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { contactInfo } from '../../data/contact'
 
 type PageMetadataProps = {
   language: string
@@ -63,6 +64,16 @@ export function PageMetadata({
         '@type': 'Organization',
         name: 'Alianza Ecuatoriana Internacional',
         url: 'https://www.aeiny.org/',
+        telephone: contactInfo.phone,
+        email: contactInfo.email,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: contactInfo.addressLine1,
+          addressLocality: 'Corona',
+          addressRegion: 'NY',
+          addressCountry: 'US',
+        },
+        sameAs: [contactInfo.tiktok],
       })
       document.head.append(organizationData)
     }

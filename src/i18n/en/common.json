@@ -720,7 +720,14 @@
   },
   "contact": {
     "title": "Contact",
-    "intro": "We welcome partnerships, inquiries, and collaborations with community organizations and allies."
+    "intro": "We welcome partnerships, inquiries, and collaborations with community organizations and allies.",
+    "generalInquiries": "General inquiries",
+    "partnerships": "Partnerships",
+    "partnershipsCopy": "AEINY welcomes collaborations with institutions, cultural organizations, and community partners.",
+    "whatsapp": "WhatsApp",
+    "followOnTikTok": "Follow AEINY on TikTok",
+    "findUs": "Find us",
+    "getDirections": "Get directions"
   },
   "notFound": {
     "title": "Page not found",

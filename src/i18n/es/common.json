@@ -720,7 +720,14 @@
   },
   "contact": {
     "title": "Contacto",
-    "intro": "Recibimos consultas, alianzas y colaboraciones con organizaciones comunitarias y aliados."
+    "intro": "Recibimos consultas, alianzas y colaboraciones con organizaciones comunitarias y aliados.",
+    "generalInquiries": "Consultas generales",
+    "partnerships": "Alianzas",
+    "partnershipsCopy": "AEINY recibe con agrado colaboraciones con instituciones, organizaciones culturales y aliados comunitarios.",
+    "whatsapp": "WhatsApp",
+    "followOnTikTok": "Sigue a AEINY en TikTok",
+    "findUs": "Cómo llegar",
+    "getDirections": "Cómo llegar"
   },
   "notFound": {
     "title": "Página no encontrada",

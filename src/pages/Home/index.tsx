@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/common/Button";
 import { Container } from "../../components/common/Container";
+import { contactInfo } from "../../data/contact";
 import { kuriChasqui2026Event } from "../../data/events/kuriChasqui2026";
 
 const homeImages = {
@@ -172,7 +173,7 @@ export function HomePage() {
                 {t("home.ctaPrimary")} <ArrowRight size={16} className="ml-2" />
               </Button>
               <a
-                href={`mailto:${kuriChasqui2026Event.rsvpEmail}`}
+                href={contactInfo.emailHref}
                 className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
               >
                 {t("home.rsvpCta")}
@@ -474,17 +475,17 @@ export function HomePage() {
               {t("home.rsvpTitle")}
             </p>
             <a
-              href={`tel:${kuriChasqui2026Event.rsvpPhone.replace(/[^\d+]/g, "")}`}
+              href={contactInfo.phoneHref}
               className="mt-1 inline-block text-lg font-semibold text-(--foreground) underline decoration-(--accent) underline-offset-4"
             >
-              {kuriChasqui2026Event.rsvpPhone}
+              {contactInfo.phone}
             </a>
           </div>
           <a
-            href={`mailto:${kuriChasqui2026Event.rsvpEmail}`}
+            href={contactInfo.emailHref}
             className="inline-flex items-center gap-2 text-sm font-semibold text-(--primary) underline decoration-(--accent) underline-offset-4"
           >
-            {kuriChasqui2026Event.rsvpEmail} <ArrowUpRight size={16} />
+            {contactInfo.email} <ArrowUpRight size={16} />
           </a>
         </Container>
       </section>

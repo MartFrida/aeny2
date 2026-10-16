@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Container } from '../common/Container'
+import { contactInfo } from '../../data/contact'
 
 export function Footer() {
   const { i18n, t } = useTranslation()
@@ -34,12 +35,25 @@ export function Footer() {
           <div>
             <p className="text-xl font-semibold tracking-[0.14em] text-(--foreground)">AEINY</p>
             <p className="mt-4 max-w-md text-sm leading-6 text-(--muted)">{t('footer.tagline')}</p>
+            <address className="mt-4 space-y-1 text-sm not-italic leading-6 text-(--muted)">
+              <p>{contactInfo.addressLine1}</p>
+              <p>{contactInfo.addressLine2}</p>
+              <p>
+                <a href={contactInfo.phoneHref} className="transition hover:text-(--foreground)">{contactInfo.phone}</a>
+                {' · '}
+                <a href={contactInfo.whatsappHref} target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">{t('contact.whatsapp')}</a>
+              </p>
+              <p><a href={contactInfo.emailHref} className="transition hover:text-(--foreground)">{contactInfo.email}</a></p>
+            </address>
             <div className="mt-6 flex items-center gap-4 text-sm text-(--muted)">
               <a href="https://www.facebook.com/alianzaecuatorianaIntofficial" target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
                 Facebook
               </a>
               <a href="https://www.instagram.com/alianzaecuatorianaint/?hl=es" target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
                 Instagram
+              </a>
+              <a href={contactInfo.tiktok} target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
+                TikTok
               </a>
             </div>
           </div>
