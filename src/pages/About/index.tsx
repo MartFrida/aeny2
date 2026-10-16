@@ -250,26 +250,7 @@ export function AboutPage() {
           </div>
         </Container>
       </section>
-
-      <section className="bg-(--background) py-16 md:py-24">
-        <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
-          <div aria-hidden="true" className="relative min-h-64 overflow-hidden rounded-[1.75rem] border border-(--border) bg-[#e6dfd1] p-8 sm:min-h-80">
-            <div className="absolute -left-12 bottom-0 h-52 w-[70%] rounded-[50%] bg-(--primary)/25" />
-            <div className="absolute -right-10 bottom-0 h-64 w-[75%] rounded-[50%] bg-(--primary)/40" />
-            <div className="absolute right-9 top-8 h-20 w-20 rounded-full bg-(--accent)/55" />
-            <div className="absolute bottom-0 left-0 right-0 h-16 border-t border-(--foreground)/10 bg-[#53604e]/70" />
-          </div>
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('about.belongingEyebrow')}
-            </p>
-            <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('about.belongingTitle')}
-            </h2>
-            <p className="mt-5 leading-7 text-(--muted)">{t('about.belongingCopy')}</p>
-          </div>
-        </Container>
-      </section>
+  
 
       <section className="border-t border-(--border) bg-(--surface) py-16 md:py-20">
         <Container>
