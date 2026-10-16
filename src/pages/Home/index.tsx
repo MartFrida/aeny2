@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, CalendarRange } from 'lucide-react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Button } from '../../components/common/Button'
@@ -232,15 +232,13 @@ export function HomePage() {
             ? 'Actividad cultural de la comunidad AEINY'
             : 'AEINY community cultural activity'}
           loading="lazy"
-          className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+          className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
         />
       </div>
     </div>
   </Container>
 </section>
 
-
-      {/* Visual work areas — image-first, minimal copy */}
     
 {/* Visual work areas — 4:3 landscape cards */}
 <section className="border-y border-(--border) bg-(--surface)">
@@ -298,57 +296,6 @@ export function HomePage() {
 </section>
 
 
-      {/* Festival details — retained */}
-      {/* <section className="bg-[#e9dfd2] py-16 md:py-20">
-        <Container className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('home.festivalLabel')}</p>
-            <h2 className="mt-4 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('home.festivalHeading')}
-            </h2>
-            <p className="mt-4 max-w-xl text-lg leading-8 text-(--muted)">{t('home.festivalDescription')}</p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-            <div className="rounded-2xl border border-[rgba(26,30,38,0.08)] bg-[rgba(255,255,255,0.35)] p-5">
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('home.festivalDatesLabel')}</p>
-              <p className="mt-3 text-xl font-semibold text-(--foreground)">{t('home.festivalDatesValue')}</p>
-            </div>
-            <div className="rounded-2xl border border-[rgba(26,30,38,0.08)] bg-[rgba(255,255,255,0.35)] p-5">
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('home.festivalTimeLabel')}</p>
-              <p className="mt-3 text-xl font-semibold text-(--foreground)">{t('home.timeValue')}</p>
-            </div>
-            <div className="rounded-2xl border border-[rgba(26,30,38,0.08)] bg-[rgba(255,255,255,0.35)] p-5">
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('home.festivalVenueLabel')}</p>
-              <p className="mt-3 text-xl font-semibold text-(--foreground)">{kuriChasqui2026Event.venue}</p>
-              <p className="mt-2 whitespace-pre-line text-sm leading-6 text-(--muted)">{kuriChasqui2026Event.address}</p>
-            </div>
-            <div className="rounded-2xl border border-[rgba(26,30,38,0.08)] bg-[rgba(255,255,255,0.35)] p-5">
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('home.festivalOrganizerLabel')}</p>
-              <p className="mt-3 text-lg font-semibold text-(--foreground)">{kuriChasqui2026Event.organizer}</p>
-              <p className="mt-1 text-lg font-semibold text-(--foreground)">{kuriChasqui2026Event.coOrganizer}</p>
-            </div>
-          </div>
-        </Container>
-
-        <Container className="mt-9 flex flex-col gap-4 border-t border-[rgba(26,30,38,0.12)] pt-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3 text-(--foreground)">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-(--surface) text-(--primary)">
-              <CalendarRange size={18} />
-            </span>
-            <div>
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('home.festivalPastEdition')}</p>
-              <Link to={`/${language}/events/kuri-chasqui-2023`} className="text-lg font-semibold text-(--foreground) hover:text-(--primary)">
-                Kuri Chasqui 2023
-              </Link>
-            </div>
-          </div>
-
-          <Button to={festivalPath} className="w-full md:w-auto">
-            {t('home.festivalCta')}
-          </Button>
-        </Container>
-      </section> */}
 
       {/* Featured projects — replaces the old placeholder */}
       <section className="bg-(--background)">
@@ -365,7 +312,7 @@ export function HomePage() {
                   src={homeImages.parque}
                   alt={c.parqueTitle}
                   loading="lazy"
-                  className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]"
+                  className="aspect-16/10 w-full object-cover transition duration-500 group-hover:scale-[1.025]"
                 />
               </div>
               <div className="p-6">
@@ -385,7 +332,7 @@ export function HomePage() {
                   src={homeImages.encuentro}
                   alt={c.encuentroTitle}
                   loading="lazy"
-                  className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]"
+                  className="aspect-16/10 w-full object-cover transition duration-500 group-hover:scale-[1.025]"
                 />
               </div>
               <div className="p-6">
