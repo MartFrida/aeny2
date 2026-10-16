@@ -30,6 +30,17 @@ const currentScheduleEn =
   'Dates and schedules vary. Contact AEINY for the next available class.'
 const classroomImage = '/images/aeiny/workforce-classroom.webp'
 const safetyImage = '/images/aeiny/safety-graduates.webp'
+const banderaImage = '/images/clacess/bandera.webp'
+const electricalImage = '/images/clacess/electricidad.webp'
+const lecturaImage = '/images/clacess/lectura-de-planos.webp'
+const plomeriaImage = '/images/clacess/plomeria.webp'
+const scaffold8Image = '/images/clacess/scaffold-8-16-suspendido.webp'
+const scaffold16Image = '/images/clacess/scaffold-16.webp'
+const scaffold32Image = '/images/clacess/scaffold-32horas-rigging.webp'
+const silicaImage = '/images/clacess/silica-2horas.webp'
+const osha30Image = '/images/clacess/osha-30horas.webp'
+const osha10Image = '/images/clacess/osha-10horas.webp'
+
 
 export const courses: Course[] = [
   {
@@ -65,7 +76,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: safetyImage,
+    image: osha10Image,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -101,7 +112,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: classroomImage,
+    image: osha30Image,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -133,7 +144,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: safetyImage,
+    image: osha30Image,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -228,7 +239,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: classroomImage,
+    image: scaffold8Image,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -259,7 +270,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: classroomImage,
+    image: scaffold16Image,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -291,7 +302,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: classroomImage,
+    image: scaffold32Image,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -326,7 +337,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: safetyImage,
+    image: silicaImage,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -362,7 +373,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: safetyImage,
+    image: banderaImage,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -398,7 +409,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: '/images/aeiny/electrical-training.webp',
+    image: electricalImage,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -434,7 +445,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: classroomImage,
+    image: plomeriaImage,
     sourceUrl: currentInfoUrl,
   },
   {
@@ -470,7 +481,7 @@ export const courses: Course[] = [
     availability: 'contact',
     scheduleEs: currentScheduleEs,
     scheduleEn: currentScheduleEn,
-    image: classroomImage,
+    image: lecturaImage,
     sourceUrl: currentInfoUrl,
   },
   {

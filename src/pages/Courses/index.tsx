@@ -48,6 +48,7 @@ export function CoursesPage() {
         alternateLanguagePaths={{ en: '/en/courses', es: '/es/courses' }}
       />
 
+{/* Hero Section */}
       <section className="relative isolate overflow-hidden bg-(--surface-dark) text-white">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -right-16 -top-20 h-80 w-80 rounded-full border border-white/10 sm:h-96 sm:w-96" />
@@ -94,6 +95,7 @@ export function CoursesPage() {
         </Container>
       </section>
 
+{/* Intro Section */}
       <section className="bg-(--background) py-12 md:py-16">
         <Container className="grid items-center gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-12">
           <div>
@@ -110,6 +112,7 @@ export function CoursesPage() {
         </Container>
       </section>
 
+{/* Course Catalog Section */}
       <section id="course-catalog" className="scroll-mt-24 border-y border-(--border) bg-(--surface) py-12 md:py-16">
         <Container>
           <div className="mb-8 max-w-3xl md:mb-10">
@@ -131,7 +134,7 @@ export function CoursesPage() {
             {t('courses.catalog.resultsCount', { count: visibleCourses.length })}
           </p>
           {visibleCourses.length > 0 ? (
-            <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {visibleCourses.map((course) => (
                 <CourseCard key={course.id} course={course} language={language} />
               ))}
@@ -144,6 +147,7 @@ export function CoursesPage() {
         </Container>
       </section>
 
+{/* Why Choose Us Section */}
       <section className="bg-(--background) py-12 md:py-16">
         <Container className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start md:gap-12">
           <div>
@@ -160,6 +164,7 @@ export function CoursesPage() {
         </Container>
       </section>
 
+{/* Formats Section */}
       <section className="border-y border-(--border) bg-(--surface) py-12 md:py-16">
         <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <div>
@@ -188,6 +193,7 @@ export function CoursesPage() {
         </Container>
       </section>
 
+{/* FAQ Section */}
       <section className="bg-(--background) py-12 md:py-16">
         <Container className="max-w-4xl">
           <div className="mb-6">
