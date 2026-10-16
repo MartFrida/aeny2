@@ -4,7 +4,7 @@
     "ourWork": "Our Work",
     "projects": "Projects",
     "events": "Events",
-    "news": "News",
+    "courses": "Courses",
     "getInvolved": "Get Involved",
     "contact": "Contact",
     "donate": "Donate"
@@ -19,7 +19,6 @@
     "discoverAEINY": "Discover AEINY",
     "exploreFestival": "Explore the Festival",
     "supportFestival": "Support the Festival",
-    "viewAllNews": "View all News & Stories",
     "donate": "Donate",
     "english": "English",
     "spanish": "Español",
@@ -79,9 +78,6 @@
     "rsvpTitle": "Confirm your attendance",
     "supportHeading": "Support our work.",
     "supportDescription": "Help AEINY continue its cultural, educational and community initiatives.",
-    "newsTitle": "News & Stories",
-    "newsDescription": "Stories and updates from the AEINY community, cultural programs, and public initiatives.",
-    "newsViewAll": "View all News & Stories",
     "finalCtaHeading": "Together, culture becomes community.",
     "finalCtaSupport": "Support AEINY",
     "finalCtaGetInvolved": "Get Involved",
@@ -89,7 +85,6 @@
     "ourWorkLabel": "Our Work",
     "festivalLabel": "Festival at a glance",
     "supportLabel": "Support",
-    "newsLabel": "News",
     "titleLabel": "AEINY"
   },
   "about": {
@@ -597,9 +592,123 @@
     "title": "Kuri Chasqui 2023",
     "intro": "A previous festival edition centered on Andean culture, cinema, and community connection."
   },
-  "news": {
-    "title": "News & Stories",
-    "intro": "Updates from our community work, partnerships, and cultural programs."
+  "courses": {
+    "seoTitle": "Construction & Safety Courses | AEINY",
+    "seoDescription": "Spanish-language training in New York including OSHA, SST, scaffold, flagger, silica, electrical, plumbing, blueprint reading and other workforce courses.",
+    "hero": {
+      "eyebrow": "Centro Comunitario Andino",
+      "title": "Training for safer, better-prepared work",
+      "copy": "Safety, construction and skilled-trade training for workers and community members in New York. Programs are primarily offered in Spanish, with in-person, online or hybrid formats depending on the course.",
+      "primary": "Explore courses",
+      "secondary": "Ask about the next class",
+      "imageAlt": "Participants attend a construction safety training session."
+    },
+    "intro": {
+      "eyebrow": "Community training",
+      "title": "Practical knowledge for the next step",
+      "copy": "AEINY and Centro Comunitario Andino provide training built around the real needs of immigrant workers, including construction safety, scaffold training, skilled trades and practical workforce development."
+    },
+    "catalog": {
+      "eyebrow": "Courses",
+      "title": "Training programs",
+      "copy": "Explore programs currently promoted by AEINY. Dates, prices and delivery formats may change, so confirm current details directly with the center before registering.",
+      "resultsCount": "{{count}} courses found",
+      "noResults": "No courses match your search. Try another term or category."
+    },
+    "searchLabel": "Search courses",
+    "filtersLabel": "Filter courses by category",
+    "filters": {
+      "all": "All",
+      "safety": "Safety & OSHA",
+      "scaffold": "Scaffold",
+      "trades": "Skilled Trades",
+      "construction": "Construction Skills"
+    },
+    "categories": {
+      "safety": "Safety & OSHA",
+      "scaffold": "Scaffold",
+      "trades": "Skilled Trades",
+      "construction": "Construction Skills"
+    },
+    "durationHours_one": "{{count}} hour",
+    "durationHours_other": "{{count}} hours",
+    "availability": {
+      "contact": "Contact AEINY for availability"
+    },
+    "coursePhotoAlt": "Training photo illustrating {{course}}",
+    "viewCourse": "View course",
+    "why": {
+      "eyebrow": "Learning & opportunity",
+      "title": "Training built for working communities",
+      "copy": "Programs combine safety education, workforce preparation and technical skills with an accessible approach for New York's Spanish-speaking community."
+    },
+    "formats": {
+      "eyebrow": "Before you enroll",
+      "title": "Formats & enrollment information",
+      "copy": "Course formats may vary by program. Contact AEINY to confirm current availability, delivery format, dates, fees, location and requirements before registering.",
+      "online": {
+        "title": "Online",
+        "copy": "Ask AEINY whether this option is available for the course you are interested in."
+      },
+      "in-person": {
+        "title": "In person",
+        "copy": "Ask AEINY whether this option is available for the course you are interested in."
+      },
+      "hybrid": {
+        "title": "Hybrid",
+        "copy": "Ask AEINY whether this option is available for the course you are interested in."
+      }
+    },
+    "faq": {
+      "eyebrow": "Common questions",
+      "title": "Before getting started",
+      "availability": {
+        "question": "Are courses currently open for enrollment?",
+        "answer": "Courses are organized on different dates throughout the year. Contact AEINY to confirm the next class, schedule, format and availability."
+      },
+      "prices": {
+        "question": "Are prices and schedules fixed?",
+        "answer": "Prices, discounts and promotions may vary by program. Contact AEINY directly for current pricing before registering."
+      },
+      "credentials": {
+        "question": "Does completing a course guarantee a card, certification or license?",
+        "answer": "Some programs relate to cards or safety requirements for construction work. Credential types and requirements depend on the course and each worker's situation; confirm details with AEINY before enrolling."
+      }
+    },
+    "inquiry": {
+      "eyebrow": "Centro Comunitario Andino",
+      "title": "Need current course information?",
+      "copy": "Contact AEINY to ask about course availability, format, dates, fees and enrollment requirements.",
+      "copyWithCourse": "Contact AEINY to ask about current availability and details for {{course}}.",
+      "cta": "Contact AEINY"
+    },
+    "facts": {
+      "duration": "Course duration",
+      "availability": "Current status",
+      "notSpecified": "Not specified"
+    },
+    "formatLabels": {
+      "online": "Online",
+      "in-person": "In person",
+      "hybrid": "Hybrid"
+    },
+    "detail": {
+      "seoTitle": "{{course}} | Courses & Training | AEINY",
+      "breadcrumbLabel": "Breadcrumb",
+      "breadcrumb": "Courses",
+      "backToCatalog": "All courses",
+      "overviewEyebrow": "Course overview",
+      "overviewTitle": "About this course",
+      "learnTitle": "Topics described in the course information",
+      "topicsUnconfirmed": "A detailed topic breakdown was not available in the published course information. Contact AEINY to confirm the current course content.",
+      "factsTitle": "Course information",
+      "formats": "Course format",
+      "formatsContact": "Contact AEINY to confirm the current format.",
+      "upcomingTitle": "Upcoming classes",
+      "upcomingCopy": "Class dates and schedules vary. Contact AEINY to ask about the next available class and confirm current requirements.",
+      "sourceLink": "View current AEINY information",
+      "relatedTitle": "Related courses"
+    }
   },
   "getInvolved": {
     "title": "Get Involved",

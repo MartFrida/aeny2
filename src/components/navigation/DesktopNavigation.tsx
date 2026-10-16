@@ -13,7 +13,7 @@ export function DesktopNavigation({ language }: DesktopNavigationProps) {
     { label: t('nav.ourWork'), href: `/${language}/our-work` },
     { label: t('nav.projects'), href: `/${language}/projects` },
     { label: t('nav.events'), href: `/${language}/events` },
-    { label: t('nav.news'), href: `/${language}/news` },
+    { label: t('nav.courses'), href: `/${language}/courses` },
     { label: t('nav.getInvolved'), href: `/${language}/get-involved` },
     { label: t('nav.contact'), href: `/${language}/contact` },
   ]

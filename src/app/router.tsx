@@ -1,6 +1,7 @@
 import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom'
 import { AppLayout } from './AppLayout'
 import { LegacyFestivalRedirect, LegacyFilmRedirect } from './LegacyFestivalRedirect'
+import { LegacyNewsRedirect } from './LegacyNewsRedirect'
 import { ScrollToTop } from '../components/ScrollToTop'
 import { HomePage } from '../pages/Home'
 import { AboutPage } from '../pages/About'
@@ -11,7 +12,8 @@ import { EventsPage } from '../pages/Events'
 import { AndeanFilmFestival2026Page } from '../pages/Events/AndeanFilmFestival2026Page'
 import { KuriChasquiFilmDetailPage } from '../pages/Events/KuriChasquiFilmDetailPage'
 import { KuriChasqui2023Page } from '../pages/Events/KuriChasqui2023Page'
-import { NewsPage } from '../pages/News'
+import { CoursesPage } from '../pages/Courses'
+import { CourseDetailPage } from '../pages/Courses/CourseDetailPage'
 import { GetInvolvedPage } from '../pages/GetInvolved'
 import { DonatePage } from '../pages/Donate'
 import { ContactPage } from '../pages/Contact'
@@ -51,7 +53,10 @@ export const router = createBrowserRouter([
           { path: 'events/kuri-chasqui-2026', element: <LegacyFestivalRedirect /> },
           { path: 'events/kuri-chasqui-2026/films/:slug', element: <LegacyFilmRedirect /> },
           { path: 'events/kuri-chasqui-2023', element: <KuriChasqui2023Page /> },
-          { path: 'news', element: <NewsPage /> },
+          { path: 'courses', element: <CoursesPage /> },
+          { path: 'courses/:slug', element: <CourseDetailPage /> },
+          { path: 'news', element: <LegacyNewsRedirect /> },
+          { path: 'news/*', element: <LegacyNewsRedirect /> },
           { path: 'get-involved', element: <GetInvolvedPage /> },
           { path: 'donate', element: <DonatePage /> },
           { path: 'contact', element: <ContactPage /> },

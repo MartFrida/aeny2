@@ -93,8 +93,8 @@ export function AboutPage() {
       <section id="identity" className="scroll-mt-24 bg-(--background) py-16 md:py-24">
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -left-3 -top-3 h-24 w-24 rounded-tl-[2rem] border-l border-t border-(--accent)/70" />
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--surface)">
+            <div className="absolute -left-3 -top-3 h-24 w-24 rounded-tl-2rem border-l border-t border-(--accent)/70" />
+            <div className="relative aspect-4/3 overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--surface)">
               <img
                 src="/images/aeiny/about/our-story.webp"
                 alt={t('about.storyPhotoAlt')}

@@ -489,7 +489,6 @@ export function HomePage() {
         </Container>
       </section>
 
-      {/* One clear final CTA instead of multiple text-heavy support/news blocks */}
       <section className="bg-(--background)">
         <Container className="grid gap-8 py-16 md:py-20 lg:grid-cols-[1fr_auto] lg:items-end">
           <div className="max-w-2xl">
