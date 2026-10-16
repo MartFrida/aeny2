@@ -1,20 +1,15 @@
-import { useEffect } from 'react'
 import {
   ArrowDown,
-  ArrowRight,
   ArrowUpRight,
   BookOpen,
-  BriefcaseBusiness,
   HeartHandshake,
-  Landmark,
   Leaf,
-  MessageCircleHeart,
   UsersRound,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
 import { Button } from '../../components/common/Button'
 import { Container } from '../../components/common/Container'
+import { PageMetadata } from '../../components/common/PageMetadata'
 
 const values = [
   { key: 'solidarity', icon: HeartHandshake },
@@ -23,84 +18,7 @@ const values = [
   { key: 'commitment', icon: UsersRound },
 ] as const
 
-const programs = [
-  { key: 'training', icon: BriefcaseBusiness },
-  { key: 'guidance', icon: MessageCircleHeart },
-  { key: 'culture', icon: Leaf },
-  { key: 'projects', icon: Landmark },
-] as const
-
-function OrganizationMetadata({ language, title, description }: {
-  language: string
-  title: string
-  description: string
-}) {
-  useEffect(() => {
-    const canonicalUrl = 'https://www.aeiny.org/about'
-    const previousTitle = document.title
-    const previousLanguage = document.documentElement.lang
-    const metaEntries = [
-      { selector: 'meta[name="description"]', attribute: 'name', value: 'description', content: description },
-      { selector: 'meta[property="og:title"]', attribute: 'property', value: 'og:title', content: title },
-      { selector: 'meta[property="og:description"]', attribute: 'property', value: 'og:description', content: description },
-    ]
-    const previousMeta = metaEntries.map(({ selector, attribute, value, content }) => {
-      const element = document.head.querySelector<HTMLMetaElement>(selector)
-      const previousContent = element?.content
-      const meta = element ?? document.createElement('meta')
-
-      meta.setAttribute(attribute, value)
-      meta.content = content
-
-      if (!element) document.head.append(meta)
-
-      return { meta, previousContent, created: !element }
-    })
-    const canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
-    const previousCanonical = canonical?.href
-    const canonicalLink = canonical ?? document.createElement('link')
-    canonicalLink.rel = 'canonical'
-    canonicalLink.href = canonicalUrl
-    if (!canonical) document.head.append(canonicalLink)
-
-    const structuredData = document.createElement('script')
-    structuredData.type = 'application/ld+json'
-    structuredData.dataset.aboutOrganization = 'true'
-    structuredData.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'Alianza Ecuatoriana Internacional',
-      url: 'https://www.aeiny.org/',
-    })
-    document.head.append(structuredData)
-
-    document.title = title
-    document.documentElement.lang = language
-
-    return () => {
-      document.title = previousTitle
-      document.documentElement.lang = previousLanguage
-      previousMeta.forEach(({ meta, previousContent, created }) => {
-        if (created) {
-          meta.remove()
-        } else if (previousContent !== undefined) {
-          meta.content = previousContent
-        } else {
-          meta.removeAttribute('content')
-        }
-      })
-      if (canonical) {
-        if (previousCanonical) canonical.href = previousCanonical
-        else canonical.removeAttribute('href')
-      } else {
-        canonicalLink.remove()
-      }
-      structuredData.remove()
-    }
-  }, [description, language, title])
-
-  return null
-}
+const alternateLanguagePaths = { en: '/en/about', es: '/es/about' }
 
 export function AboutPage() {
   const { i18n, t } = useTranslation()
@@ -109,10 +27,13 @@ export function AboutPage() {
 
   return (
     <>
-      <OrganizationMetadata
+      <PageMetadata
         language={language}
         title={t('about.seoTitle')}
         description={t('about.seoDescription')}
+        canonicalPath={`${prefix}/about`}
+        alternateLanguagePaths={alternateLanguagePaths}
+        includeOrganizationData
       />
 
       <section className="relative isolate overflow-hidden bg-(--surface-dark) text-white">
@@ -134,20 +55,23 @@ export function AboutPage() {
               {t('about.heroDescription')}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button to="#que-hacemos" className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!">
-                {t('about.heroPrimary')} <ArrowDown size={16} className="ml-2" />
+              <Button
+                to="#identity"
+                className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!"
+              >
+                {t('about.heroPrimary')} <ArrowDown aria-hidden="true" size={16} className="ml-2" />
               </Button>
               <Button
                 to={`${prefix}/get-involved`}
                 variant="secondary"
                 className="border-white/25 bg-white/5 text-white hover:bg-white/10"
               >
-                {t('about.heroSecondary')} <ArrowUpRight size={16} className="ml-2" />
+                {t('about.heroSecondary')} <ArrowUpRight aria-hidden="true" size={16} className="ml-2" />
               </Button>
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-xl">
+          <figure className="relative mx-auto w-full max-w-xl">
             <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-white/15 bg-[#172b35]">
               <img
                 src="/images/aeiny/about/aeiny-team.webp"
@@ -159,14 +83,14 @@ export function AboutPage() {
                 className="absolute inset-0 h-full w-full object-contain"
               />
             </div>
-            <p className="mt-3 text-right text-xs uppercase tracking-[0.16em] text-white/55">
+            <figcaption className="mt-3 text-right text-xs uppercase tracking-[0.16em] text-white/55">
               {t('about.teamPhotoCaption')}
-            </p>
-          </div>
+            </figcaption>
+          </figure>
         </Container>
       </section>
 
-      <section className="bg-(--background) py-16 md:py-24">
+      <section id="identity" className="scroll-mt-24 bg-(--background) py-16 md:py-24">
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
           <div className="relative mx-auto w-full max-w-md">
             <div className="absolute -left-3 -top-3 h-24 w-24 rounded-tl-[2rem] border-l border-t border-(--accent)/70" />
@@ -181,7 +105,7 @@ export function AboutPage() {
                 className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 h-16 w-16 rounded-full border border-(--primary)/30 bg-(--accent-soft)" />
+            <div aria-hidden="true" className="absolute -bottom-4 -right-4 h-16 w-16 rounded-full border border-(--primary)/30 bg-(--accent-soft)" />
           </div>
 
           <div className="max-w-2xl">
@@ -228,9 +152,9 @@ export function AboutPage() {
                   key={key}
                   className={`rounded-[1.5rem] border p-7 md:p-9 ${index === 0 ? 'border-(--border) bg-(--background)' : 'border-(--primary)/25 bg-(--surface)'}`}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
                     {t(`about.${key}Label`)}
-                  </p>
+                  </h3>
                   <p className="mt-5 max-w-xl font-display text-2xl leading-relaxed tracking-[-0.02em] text-(--foreground) md:text-3xl">
                     {t(`about.${key}Copy`)}
                   </p>
@@ -252,12 +176,9 @@ export function AboutPage() {
             </h2>
           </div>
           <div className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map(({ key, icon: Icon }, index) => (
+            {values.map(({ key, icon: Icon }) => (
               <article key={key} className="border-t border-(--border) pt-5">
-                <div className="flex items-center justify-between">
-                  <Icon aria-hidden="true" size={21} strokeWidth={1.6} className="text-(--primary)" />
-                  <span className="font-display text-sm text-(--muted-foreground)">0{index + 1}</span>
-                </div>
+                <Icon aria-hidden="true" size={21} strokeWidth={1.6} className="text-(--primary)" />
                 <h3 className="mt-5 text-lg font-semibold text-(--foreground)">{t(`about.value.${key}Title`)}</h3>
                 <p className="mt-2 text-sm leading-6 text-(--muted)">{t(`about.value.${key}Copy`)}</p>
               </article>
@@ -269,6 +190,7 @@ export function AboutPage() {
       <section className="border-y border-(--border) bg-(--surface) py-12 md:py-16">
         <Container>
           <figure className="overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--background)">
+            <h2 className="sr-only">{t('about.rootsTitle')}</h2>
             <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
               <img
                 src="/images/aeiny/about/our-roots.webp"
@@ -287,98 +209,64 @@ export function AboutPage() {
         </Container>
       </section>
 
-      <section id="que-hacemos" className="scroll-mt-24 border-y border-(--border) bg-(--surface) py-16 md:py-24">
-        <Container>
-          <div className="max-w-3xl">
+      <section className="bg-(--background) py-16 md:py-24">
+        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+          <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('about.programsEyebrow')}
+              {t('about.communityEyebrow')}
             </p>
             <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('about.programsTitle')}
+              {t('about.communityTitle')}
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-(--muted)">
-              {t('about.programsIntro')}
-            </p>
+            <p className="mt-5 text-base leading-8 text-(--muted)">{t('about.communityCopy')}</p>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            {programs.map(({ key, icon: Icon }) => (
-              <article key={key} className="group rounded-2xl border border-(--border) bg-(--background) p-6 transition-colors hover:border-(--primary)/50 md:p-7">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-(--accent-soft) text-(--primary)">
-                  <Icon aria-hidden="true" size={19} strokeWidth={1.7} />
-                </div>
-                <h3 className="mt-5 text-xl font-semibold text-(--foreground)">{t(`about.program.${key}Title`)}</h3>
-                <p className="mt-2 text-sm leading-6 text-(--muted)">{t(`about.program.${key}Copy`)}</p>
-              </article>
-            ))}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--surface)">
+            <img
+              src="/images/aeiny/about/community.webp"
+              alt={t('about.communityPhotoAlt')}
+              width="960"
+              height="720"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+            />
           </div>
         </Container>
       </section>
 
-      <section className="overflow-hidden bg-(--surface-dark) py-16 text-white md:py-24">
-        <Container className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+      <section className="border-y border-(--border) bg-(--surface) py-16 md:py-24">
+        <Container className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--accent)">
-              {t('about.centerEyebrow')}
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
+              {t('about.connectionEyebrow')}
             </p>
-            <h2 className="mt-4 font-display text-4xl tracking-[-0.04em] md:text-5xl">
-              {t('about.centerTitle')}
+            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) md:text-4xl">
+              {t('about.connectionTitle')}
             </h2>
-            <p className="mt-5 font-display text-2xl leading-snug text-white/90">
-              {t('about.centerLead')}
-            </p>
-            <p className="mt-4 max-w-2xl leading-7 text-white/70">{t('about.centerCopy')}</p>
-            <Link
-              to={`${prefix}/our-work`}
-              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-(--accent) transition hover:text-white focus-visible:rounded-sm"
-            >
-              {t('about.centerCta')} <ArrowRight size={16} />
-            </Link>
           </div>
-          <div aria-hidden="true" className="relative min-h-64 overflow-hidden rounded-[1.75rem] border border-white/15 bg-[#172b35] p-8 sm:min-h-80">
-            <div className="absolute right-10 top-8 h-32 w-32 rounded-full border border-(--accent)/35" />
-            <div className="absolute right-16 top-14 h-20 w-20 rounded-full bg-(--accent)/10" />
-            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-linear-to-t from-[#0a151c] to-transparent" />
-            <div className="absolute bottom-0 left-[12%] h-[41%] w-[22%] rounded-t-full border border-white/10 bg-(--primary)/60" />
-            <div className="absolute bottom-0 left-[37%] h-[54%] w-[29%] rounded-t-full border border-white/10 bg-[#79806a]/45" />
-            <div className="absolute bottom-0 right-[8%] h-[34%] w-[24%] rounded-t-full border border-white/10 bg-[#a5794d]/45" />
-            <div className="absolute bottom-7 left-7 flex items-center gap-3 text-white/80">
-              <span className="h-px w-8 bg-(--accent)" />
-              <span className="text-xs font-semibold uppercase tracking-[0.18em]">{t('about.centerVisualLabel')}</span>
-            </div>
+          <div className="space-y-4 leading-7 text-(--muted)">
+            <p>{t('about.connectionCopy1')}</p>
+            <p>{t('about.connectionCopy2')}</p>
           </div>
         </Container>
       </section>
 
       <section className="bg-(--background) py-16 md:py-24">
-        <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
-          <div className="order-2 lg:order-1">
-            <div aria-hidden="true" className="relative min-h-72 overflow-hidden rounded-[1.75rem] border border-(--border) bg-[#e6dfd1] p-7 sm:min-h-80">
-              <div className="absolute -left-12 bottom-0 h-52 w-[70%] rounded-[50%] bg-(--primary)/25" />
-              <div className="absolute -right-10 bottom-0 h-64 w-[75%] rounded-[50%] bg-(--primary)/40" />
-              <div className="absolute right-9 top-8 h-20 w-20 rounded-full bg-(--accent)/55" />
-              <div className="absolute bottom-0 left-0 right-0 h-16 border-t border-(--foreground)/10 bg-[#53604e]/70" />
-              <p className="absolute bottom-5 left-6 text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                {t('about.parkVisualLabel')}
-              </p>
-            </div>
+        <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
+          <div aria-hidden="true" className="relative min-h-64 overflow-hidden rounded-[1.75rem] border border-(--border) bg-[#e6dfd1] p-8 sm:min-h-80">
+            <div className="absolute -left-12 bottom-0 h-52 w-[70%] rounded-[50%] bg-(--primary)/25" />
+            <div className="absolute -right-10 bottom-0 h-64 w-[75%] rounded-[50%] bg-(--primary)/40" />
+            <div className="absolute right-9 top-8 h-20 w-20 rounded-full bg-(--accent)/55" />
+            <div className="absolute bottom-0 left-0 right-0 h-16 border-t border-(--foreground)/10 bg-[#53604e]/70" />
           </div>
-          <div className="order-1 max-w-2xl lg:order-2">
+          <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('about.parkEyebrow')}
+              {t('about.belongingEyebrow')}
             </p>
             <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('about.parkTitle')}
+              {t('about.belongingTitle')}
             </h2>
-            <div className="mt-5 space-y-4 leading-7 text-(--muted)">
-              <p>{t('about.parkCopy1')}</p>
-              <p>{t('about.parkCopy2')}</p>
-            </div>
-            <Link
-              to={`${prefix}/projects/parque-del-migrante`}
-              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-(--primary) transition hover:text-(--foreground) focus-visible:rounded-sm"
-            >
-              {t('about.parkCta')} <ArrowUpRight size={16} />
-            </Link>
+            <p className="mt-5 leading-7 text-(--muted)">{t('about.belongingCopy')}</p>
           </div>
         </Container>
       </section>
@@ -386,38 +274,30 @@ export function AboutPage() {
       <section className="border-t border-(--border) bg-(--surface) py-16 md:py-20">
         <Container>
           <div className="rounded-[2rem] bg-(--primary) px-6 py-12 text-white sm:px-10 md:px-14 md:py-16">
-            <div className="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
-              <div>
-                <div className="max-w-3xl">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                    {t('about.finalEyebrow')}
-                  </p>
-                  <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] md:text-5xl">
-                    {t('about.finalTitle')}
-                  </h2>
-                  <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg">
-                    {t('about.finalDescription')}
-                  </p>
-                </div>
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <Button to={`${prefix}/get-involved`} className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!">
-                    {t('about.finalParticipate')}
-                  </Button>
-                  <Button to={`${prefix}/donate`} variant="secondary" className="border-white/30 bg-white/5 text-white hover:bg-white/10">
-                    {t('about.finalSupport')}
-                  </Button>
-                </div>
-              </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-white/20 bg-(--surface-dark)">
-                <img
-                  src="/images/aeiny/about/community.webp"
-                  alt={t('about.communityPhotoAlt')}
-                  width="960"
-                  height="720"
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
-                />
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                {t('about.finalEyebrow')}
+              </p>
+              <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] md:text-5xl">
+                {t('about.finalTitle')}
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg">
+                {t('about.finalDescription')}
+              </p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Button
+                  to={`${prefix}/get-involved`}
+                  className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!"
+                >
+                  {t('about.finalParticipate')}
+                </Button>
+                <Button
+                  to={`${prefix}/donate`}
+                  variant="secondary"
+                  className="border-white/30 bg-white/5 text-white hover:bg-white/10"
+                >
+                  {t('about.finalSupport')}
+                </Button>
               </div>
             </div>
           </div>
