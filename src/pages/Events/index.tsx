@@ -66,6 +66,53 @@ export function EventsPage() {
         </Container>
       </section>
 
+      <section className="bg-(--surface) py-12 md:py-16">
+        <Container>
+          <article className="grid overflow-hidden rounded-2xl border border-(--border) bg-(--background) md:grid-cols-[0.8fr_1.2fr]">
+            <div className="relative min-h-56 bg-(--surface-dark) text-white md:min-h-full">
+              <div className="flex h-full min-h-56 flex-col justify-between p-6 sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--accent)">
+                  {t("chasqui2026.eyebrow")}
+                </p>
+                <h2 className="mt-6 max-w-md font-display text-3xl leading-tight tracking-[-0.04em] sm:text-4xl">
+                  {t("chasqui2026.title")}
+                </h2>
+                <p className="mt-4 text-sm font-medium text-white/75">
+                  5K / 10K
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col justify-between gap-6 p-5 sm:p-7">
+              <div>
+                <p className="text-sm font-semibold text-(--primary)">
+                  {t("chasqui2026.date")} · 08:00
+                </p>
+                <p className="mt-3 leading-7 text-(--muted)">
+                  {t("chasqui2026.shortLocation")}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-(--muted)">
+                  {t("chasqui2026.organizer")}
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="font-semibold text-(--foreground)">$15 USD</p>
+                <Button
+                  to={`/${language}/events/chasqui-migrante-2026`}
+                  className="w-full justify-center bg-(--primary) text-white hover:bg-(--primary)/90 sm:w-auto"
+                >
+                  {t("chasqui2026.cardCta")}
+                  <ArrowRight
+                    aria-hidden="true"
+                    size={16}
+                    className="ml-2 shrink-0"
+                  />
+                </Button>
+              </div>
+            </div>
+          </article>
+        </Container>
+      </section>
+
       {/* Film Section */}
       <section className="overflow-hidden bg-(--background) py-14 md:py-20 lg:py-24">
         <Container>

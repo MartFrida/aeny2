@@ -30,3 +30,11 @@ If you are developing a production application, we recommend enabling type-aware
 ```
 
 See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+
+## Event registration notifications
+
+For Chasqui Migrante 2026 registrations, configure Netlify Form Notifications in the Netlify dashboard:
+
+**Forms → Form notifications → Add notification → Email notification → `info.ccandino@gmail.com`**
+
+The registration form stores submissions as `chasqui-migrante-2026-registration`. An optional secure payment link can be configured with the `VITE_CHASQUI_PAYMENT_URL` environment variable.

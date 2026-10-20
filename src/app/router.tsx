@@ -12,6 +12,7 @@ import { EventsPage } from '../pages/Events'
 import { AndeanFilmFestival2026Page } from '../pages/Events/AndeanFilmFestival2026Page'
 import { KuriChasquiFilmDetailPage } from '../pages/Events/KuriChasquiFilmDetailPage'
 import { KuriChasqui2023Page } from '../pages/Events/KuriChasqui2023Page'
+import { ChasquiMigrante2026Page } from '../pages/Events/ChasquiMigrante2026Page'
 import { CoursesPage } from '../pages/Courses'
 import { CourseDetailPage } from '../pages/Courses/CourseDetailPage'
 import { GetInvolvedPage } from '../pages/GetInvolved'
@@ -42,6 +43,7 @@ export const router = createBrowserRouter([
           { path: 'projects', element: <ProjectsPage /> },
           { path: 'projects/parque-del-migrante', element: <ParqueDelMigrantePage /> },
           { path: 'events', element: <EventsPage /> },
+          { path: 'events/chasqui-migrante-2026', element: <ChasquiMigrante2026Page /> },
           {
             path: 'events/festival-internacional-de-cine-andino-2026',
             element: <AndeanFilmFestival2026Page />,
