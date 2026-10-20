@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/common/Button";
 import { Container } from "../../components/common/Container";
+import { PageMetadata } from "../../components/common/PageMetadata";
 import { contactInfo } from "../../data/contact";
 import { kuriChasqui2026Event } from "../../data/events/kuriChasqui2026";
 
@@ -98,6 +99,7 @@ export function HomePage() {
   const { i18n, t } = useTranslation();
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
   const c = copy[language];
+  const homePath = `/${language}`;
 
   const festivalPath = `/${language}/events/festival-internacional-de-cine-andino-2026`;
   const donatePath = `/${language}/donate`;
@@ -108,6 +110,13 @@ export function HomePage() {
 
   return (
     <>
+      <PageMetadata
+        language={language}
+        title={t("home.seoTitle")}
+        description={t("home.seoDescription")}
+        canonicalPath={homePath}
+        alternateLanguagePaths={{ en: "/en", es: "/es" }}
+      />
       {/* Festival Hero — keep the festival information prominent */}
       <section className="relative overflow-hidden bg-(--surface-dark) text-white">
         <div className="absolute inset-0 opacity-80">

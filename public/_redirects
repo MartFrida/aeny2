@@ -2,4 +2,10 @@
 /es/events/kuri-chasqui-2026 /es/events/festival-internacional-de-cine-andino-2026 301!
 /en/events/kuri-chasqui-2026/* /en/events/festival-internacional-de-cine-andino-2026/:splat 301!
 /es/events/kuri-chasqui-2026/* /es/events/festival-internacional-de-cine-andino-2026/:splat 301!
+/en /en.html 200
+/en/ /en.html 200
+/en/* /en/:splat.html 200
+/es /es.html 200
+/es/ /es.html 200
+/es/* /es/:splat.html 200
 /*    /index.html    200

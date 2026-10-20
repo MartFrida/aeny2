@@ -38,3 +38,7 @@ For Chasqui Migrante 2026 registrations, configure Netlify Form Notifications in
 **Forms → Form notifications → Add notification → Email notification → `info.ccandino@gmail.com`**
 
 The registration form stores submissions as `chasqui-migrante-2026-registration`. An optional secure payment link can be configured with the `VITE_CHASQUI_PAYMENT_URL` environment variable.
+
+## Social previews and route metadata
+
+The production build runs `scripts/generateSocialPages.mjs` after Vite and writes localized static HTML for each public route. Netlify serves these route-specific HTML files so social crawlers receive page titles, descriptions, canonical URLs, Open Graph and Twitter Card metadata without executing JavaScript. Spanish routes use `/og-image.jpg`; English routes use `/og-image-en.jpg`. Keep this generator and its route metadata in sync when adding public routes.

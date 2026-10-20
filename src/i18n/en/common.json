@@ -25,6 +25,8 @@
     "ourWork": "Our Work"
   },
   "home": {
+    "seoTitle": "Alianza Ecuatoriana Internacional | AEINY",
+    "seoDescription": "From New York, Alianza Ecuatoriana Internacional connects community support, education, culture and wellbeing.",
     "eyebrow": "ALIANZA ECUATORIANA INTERNACIONAL & CENTRO COMUNITARIO ANDINO PRESENT",
     "title": "1st International\nAndean Film Festival\nNew York 2026",
     "subtitle": "Kuri Chasqui — The Golden Messenger Awards 2026",
@@ -302,6 +304,8 @@
     "finalDonate": "Support AEINY"
   },
   "projectParque": {
+    "seoTitle": "Parque del Migrante | AEINY Community Project",
+    "seoDescription": "Discover Parque del Migrante, an AEINY initiative in Cuenca honoring Ecuadorian migrants through memory, cultural identity and community connection.",
     "title": "Parque del Migrante",
     "intro": "A community-centered initiative rooted in cultural belonging, memory, and public space."
   },
@@ -653,6 +657,8 @@
     "followup": "A basic event page for the first public milestone of the new AEINY website."
   },
   "eventKuri2023": {
+    "seoTitle": "Kuri Chasqui 2023 | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Explore the 2023 Kuri Chasqui festival, celebrating Andean culture, cinema and community connection.",
     "title": "Kuri Chasqui 2023",
     "intro": "A previous festival edition centered on Andean culture, cinema, and community connection."
   },
@@ -775,14 +781,20 @@
     }
   },
   "getInvolved": {
+    "seoTitle": "Get Involved | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Find ways to strengthen community and support the mission of Alianza Ecuatoriana Internacional.",
     "title": "Get Involved",
     "intro": "There are many ways to strengthen community and support AEINY's mission."
   },
   "donate": {
+    "seoTitle": "Donate | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Support AEINY's community programs, education, cultural initiatives and the International Andean Film Festival.",
     "title": "Donate",
     "intro": "Support the work of AEINY and the 1st International Andean Film Festival New York 2026."
   },
   "contact": {
+    "seoTitle": "Contact | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Contact Alianza Ecuatoriana Internacional for community support, partnerships and collaboration in New York.",
     "title": "Contact",
     "intro": "We welcome partnerships, inquiries, and collaborations with community organizations and allies.",
     "generalInquiries": "General inquiries",

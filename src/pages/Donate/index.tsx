@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/common/Button'
 import { Container } from '../../components/common/Container'
 import { PageHero } from '../../components/common/PageHero'
+import { PageMetadata } from '../../components/common/PageMetadata'
 import { Section } from '../../components/common/Section'
 
 export function DonatePage() {
@@ -10,6 +11,13 @@ export function DonatePage() {
 
   return (
     <>
+      <PageMetadata
+        language={language}
+        title={t('donate.seoTitle')}
+        description={t('donate.seoDescription')}
+        canonicalPath={`/${language}/donate`}
+        alternateLanguagePaths={{ en: '/en/donate', es: '/es/donate' }}
+      />
       <PageHero eyebrow="Donate" title={t('donate.title')} intro={t('donate.intro')} />
       <Section>
         <Container className="grid gap-6 md:grid-cols-2">

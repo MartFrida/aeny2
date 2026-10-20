@@ -1,13 +1,22 @@
 import { useTranslation } from "react-i18next";
 import { Container } from "../../components/common/Container";
+import { PageMetadata } from "../../components/common/PageMetadata";
 import { Section } from "../../components/common/Section";
 import { contactInfo } from "../../data/contact";
 
 export function ContactPage() {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const language = i18n.resolvedLanguage === "es" ? "es" : "en";
 
   return (
     <>
+      <PageMetadata
+        language={language}
+        title={t("contact.seoTitle")}
+        description={t("contact.seoDescription")}
+        canonicalPath={`/${language}/contact`}
+        alternateLanguagePaths={{ en: "/en/contact", es: "/es/contact" }}
+      />
       <Section>
         <Container className="grid gap-6 md:grid-cols-2">
           <article className="rounded-2xl border border-(--border) bg-(--surface) p-6">

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/generateSocialPages.mjs",
     "lint": "oxlint",
     "sync:festival-images": "node scripts/syncFestivalImages.mjs",
     "preview": "vite preview"

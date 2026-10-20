@@ -1,13 +1,22 @@
 import { useTranslation } from 'react-i18next'
 import { Container } from '../../components/common/Container'
+import { PageMetadata } from '../../components/common/PageMetadata'
 import { PageHero } from '../../components/common/PageHero'
 import { Section } from '../../components/common/Section'
 
 export function GetInvolvedPage() {
-  const { t } = useTranslation()
+  const { i18n, t } = useTranslation()
+  const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
 
   return (
     <>
+      <PageMetadata
+        language={language}
+        title={t('getInvolved.seoTitle')}
+        description={t('getInvolved.seoDescription')}
+        canonicalPath={`/${language}/get-involved`}
+        alternateLanguagePaths={{ en: '/en/get-involved', es: '/es/get-involved' }}
+      />
       <PageHero eyebrow="Get Involved" title={t('getInvolved.title')} intro={t('getInvolved.intro')} />
       <Section>
         <Container className="grid gap-6 md:grid-cols-3">
