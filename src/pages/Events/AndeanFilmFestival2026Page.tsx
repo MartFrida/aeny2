@@ -76,7 +76,7 @@ export function AndeanFilmFestival2026Page() {
               aria-hidden="true"
             />
             <img
-              src="/images/events/festival-andino-2026/kuri-chasqui-2026-poster.webp"
+              src="/images/events/festival-andino-2026/kuri-chasqui-2026-poster-1.jpeg"
               alt={t("home.posterAlt")}
               width={500}
               height={700}
