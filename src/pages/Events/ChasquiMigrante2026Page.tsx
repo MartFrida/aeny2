@@ -1,32 +1,25 @@
-import { useState, type FormEvent } from "react";
 import {
   Award,
   BadgeCheck,
-  CalendarDays,
-  Clock3,
   Droplets,
-  MapPin,
   Shirt,
   Ticket,
   Timer,
   Trophy,
   Apple,
+  ArrowUpRight,
+  QrCode,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Button } from "../../components/common/Button";
 import { Container } from "../../components/common/Container";
 import { PageMetadata } from "../../components/common/PageMetadata";
 
-const formName = "chasqui-migrante-2026-registration";
+const registrationUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfVFE0rTpkwHAUy9J1KRSym-wPTpszgEAx_gWUJo-p7Yh7l7A/viewform?pli=1";
 
 export function ChasquiMigrante2026Page() {
   const { i18n, t } = useTranslation();
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [submissionError, setSubmissionError] = useState("");
-  const paymentUrl = import.meta.env.VITE_CHASQUI_PAYMENT_URL;
-  const securePaymentUrl = paymentUrl?.startsWith("https://") ? paymentUrl : "";
   const englishPath = "/en/events/chasqui-migrante-2026";
   const spanishPath = "/es/events/chasqui-migrante-2026";
   const path = language === "es" ? spanishPath : englishPath;
@@ -40,47 +33,6 @@ export function ChasquiMigrante2026Page() {
     { key: "fruit", icon: Apple },
     { key: "prizes", icon: Trophy },
   ] as const;
-  const eventFacts = [
-    { key: "date", value: t("chasqui2026.fullDate"), icon: CalendarDays },
-    { key: "time", value: "08:00", icon: Clock3 },
-    {
-      key: "location",
-      value: t("chasqui2026.fullLocation"),
-      icon: MapPin,
-    },
-    { key: "distance", value: "5K / 10K", icon: Timer },
-    { key: "registration", value: "$15 USD", icon: Ticket },
-  ] as const;
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitting(true);
-    setSubmissionError("");
-
-    const body = new URLSearchParams();
-    new FormData(event.currentTarget).forEach((value, key) => {
-      if (typeof value === "string") body.append(key, value);
-    });
-
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Registration failed with status ${response.status}`);
-      }
-
-      setSubmitted(true);
-    } catch (error) {
-      console.error("Could not submit Chasqui Migrante registration.", error);
-      setSubmissionError(t("chasqui2026.form.error"));
-    } finally {
-      setSubmitting(false);
-    }
-  }
 
   return (
     <>
@@ -92,58 +44,136 @@ export function ChasquiMigrante2026Page() {
         alternateLanguagePaths={{ en: englishPath, es: spanishPath }}
       />
 
-      <section className="overflow-hidden bg-(--surface-dark) text-white">
-        <Container className="grid gap-10 py-12 md:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-20">
+      {/* Registration Section */}
+      <section
+        id="registration"
+        className="relative scroll-mt-20 overflow-hidden bg-(--surface-dark) text-white"
+      >
+        {/* Decorative background */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+        >
+          <div className="absolute -left-32 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full border border-white/10" />
+          <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full border border-(--accent)/20" />
+          <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-(--accent)/40 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
+        </div>
+
+        <Container className="relative grid gap-10 py-14 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
+          {/* Registration information */}
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--accent)">
-              {t("chasqui2026.eyebrow")}
+              {t("chasqui2026.registrationEyebrow")}
             </p>
-            <h1 className="mt-4 font-display text-4xl leading-[1.04] tracking-[-0.045em] sm:text-5xl md:text-6xl">
-              {t("chasqui2026.title")}
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/75 md:text-lg md:leading-8">
-              {t("chasqui2026.heroDescription")}
+
+            <h2 className="mt-4 max-w-2xl font-display text-4xl leading-[1.04] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl">
+              {language === "es"
+                ? "Inscríbete en Chasqui Migrante"
+                : "Register for Chasqui Migrante"}
+            </h2>
+
+            <p className="mt-5 max-w-xl text-base leading-7 text-white/75 md:text-lg md:leading-8">
+              {language === "es"
+                ? "Forma parte de esta celebración de nuestras raíces. Completa el formulario oficial de inscripción o escanea el código QR con tu teléfono."
+                : "Be part of this celebration of our roots. Complete the official registration form or scan the QR code with your phone."}
             </p>
+
+            {/* Event details */}
             <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-white/80">
-              <span>{t("chasqui2026.date")}</span>
+              <span>20.12.2026</span>
               <span>08:00</span>
-              <span>{t("chasqui2026.city")}</span>
               <span>5K / 10K</span>
-              <span>{t("chasqui2026.registrationPrice")}</span>
+              <span>{t("chasqui2026.city")}</span>
             </div>
+
+            {/* Price highlight */}
+            <div className="mt-8 inline-flex items-center gap-4 rounded-xl border border-white/15 bg-white/5 px-5 py-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+                  {language === "es"
+                    ? "Valor de inscripción"
+                    : "Registration fee"}
+                </p>
+                <p className="mt-1 font-display text-3xl font-semibold text-(--accent)">
+                  $15 USD
+                </p>
+              </div>
+            </div>
+
+            {/* Registration button */}
             <div className="mt-8">
               <a
-                href="#registration"
-                className="inline-flex min-h-11 w-full items-center justify-center rounded-md bg-(--accent) px-5 py-3 text-sm font-semibold text-(--surface-dark) transition-colors hover:bg-(--accent)/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark) sm:w-auto"
+                href={registrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-(--accent) px-7 py-3.5 text-sm font-semibold text-(--surface-dark) transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d79d54] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark) sm:w-auto"
               >
-                {t("chasqui2026.registerCta")}
+                {language === "es"
+                  ? "Abrir formulario de inscripción"
+                  : "Open registration form"}
+                <ArrowUpRight size={17} aria-hidden="true" />
               </a>
             </div>
+
+            <p className="mt-4 text-xs leading-6 text-white/50">
+              {language === "es"
+                ? "Serás redirigido al formulario oficial de Google Forms."
+                : "You will be redirected to the official Google Forms registration page."}
+            </p>
           </div>
-          <aside className="rounded-2xl border border-white/15 bg-white/5 p-5 sm:p-7">
-            <h2 className="font-display text-2xl text-white">
-              {t("chasqui2026.informationTitle")}
-            </h2>
-            <dl className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              {eventFacts.map(({ key, value, icon: Icon }) => (
-                <div
-                  key={key}
-                  className="min-w-0 rounded-xl border border-white/10 bg-black/10 p-4"
-                >
-                  <dt className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-white/60">
-                    <Icon size={16} aria-hidden="true" />
-                    {t(`chasqui2026.facts.${key}`)}
-                  </dt>
-                  <dd className="mt-2 whitespace-pre-line text-sm font-medium leading-6 text-white">
-                    {value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+
+          {/* QR Code Card */}
+          <aside className="relative mx-auto w-full max-w-md rounded-2xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur-sm sm:p-8 lg:max-w-none">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-(--accent)/30 bg-(--accent)/10 text-(--accent)">
+              <QrCode size={23} strokeWidth={1.7} aria-hidden="true" />
+            </div>
+
+            <h3 className="mt-5 font-display text-2xl tracking-[-0.03em] text-white sm:text-3xl">
+              {language === "es" ? "Escanea e inscríbete" : "Scan & register"}
+            </h3>
+
+            <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-white/65">
+              {language === "es"
+                ? "Abre la cámara de tu teléfono y escanea el código para acceder al formulario."
+                : "Open your phone camera and scan the code to access the registration form."}
+            </p>
+
+            <a
+              href={registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={
+                language === "es"
+                  ? "Abrir inscripción mediante código QR"
+                  : "Open registration from QR code"
+              }
+              className="mx-auto mt-7 block w-full max-w-64 rounded-xl bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-4 focus-visible:ring-offset-(--surface-dark)"
+            >
+              <img
+                src="/images/events/chasqui-migrante-2026/registration-qr.jpeg"
+                alt={
+                  language === "es"
+                    ? "Código QR para inscribirse en Chasqui Migrante 2026"
+                    : "QR code for Chasqui Migrante 2026 registration"
+                }
+                width={1600}
+                height={1600}
+                loading="lazy"
+                className="aspect-square w-full object-contain"
+              />
+            </a>
+
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-(--accent)">
+              CHASQUI MIGRANTE 2026
+            </p>
+
+            <p className="mt-2 text-sm text-white/60">5K / 10K · 20.12.2026</p>
           </aside>
         </Container>
       </section>
 
+      {/* Included Items Section */}
       <section className="bg-(--background) py-14 md:py-20">
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
@@ -157,8 +187,7 @@ export function ChasquiMigrante2026Page() {
               {t("chasqui2026.description")}
             </p>
             <p className="mt-5 font-semibold text-(--foreground)">
-              {t("chasqui2026.organizerLabel")}:{" "}
-              {t("chasqui2026.organizer")}
+              {t("chasqui2026.organizerLabel")}: {t("chasqui2026.organizer")}
             </p>
             <a
               href="https://www.finisherdata.com/eventos/chasqui_migrante_2026?id_event=830"
@@ -186,219 +215,6 @@ export function ChasquiMigrante2026Page() {
           </ul>
         </Container>
       </section>
-
-      <section
-        id="registration"
-        className="scroll-mt-20 border-y border-(--border) bg-(--surface) py-14 md:py-20"
-      >
-        <Container className="grid gap-9 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
-              {t("chasqui2026.registrationEyebrow")}
-            </p>
-            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) sm:text-4xl">
-              {t("chasqui2026.registrationTitle")}
-            </h2>
-            <p className="mt-4 leading-7 text-(--muted)">
-              {t("chasqui2026.registrationPrice")}
-            </p>
-            <p className="mt-4 text-sm leading-6 text-(--muted)">
-              {t("chasqui2026.registrationNote")}
-            </p>
-          </div>
-
-          {submitted ? (
-            <div
-              className="rounded-2xl border border-(--border) bg-(--background) p-6 sm:p-8"
-              role="status"
-              aria-live="polite"
-            >
-              <h3 className="font-display text-2xl text-(--foreground)">
-                {t("chasqui2026.form.successTitle")}
-              </h3>
-              <p className="mt-3 leading-7 text-(--muted)">
-                {t("chasqui2026.form.successMessage")}
-              </p>
-              {securePaymentUrl && (
-                <a
-                  href={securePaymentUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-md bg-(--primary) px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-(--primary)/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 sm:w-auto"
-                >
-                  {t("chasqui2026.form.paymentCta")}
-                </a>
-              )}
-            </div>
-          ) : (
-            <form
-              name={formName}
-              method="POST"
-              action="/"
-              data-netlify="true"
-              onSubmit={handleSubmit}
-              className="grid grid-cols-1 gap-4 rounded-2xl border border-(--border) bg-(--background) p-5 sm:grid-cols-2 sm:p-7"
-            >
-              <input type="hidden" name="form-name" value={formName} />
-              <input
-                type="hidden"
-                name="event"
-                value="Chasqui Migrante 5K & 10K 2026"
-              />
-              <input type="hidden" name="price" value="15 USD" />
-
-              <FormField
-                id="firstName"
-                label={t("chasqui2026.form.firstName")}
-                required
-              />
-              <FormField
-                id="lastName"
-                label={t("chasqui2026.form.lastName")}
-                required
-              />
-              <FormField
-                id="email"
-                label={t("chasqui2026.form.email")}
-                type="email"
-                required
-              />
-              <FormField
-                id="phone"
-                label={t("chasqui2026.form.phone")}
-                type="tel"
-                required
-              />
-              <label className="grid gap-2 text-sm font-medium text-(--foreground)">
-                {t("chasqui2026.form.distance")}
-                <select
-                  name="distance"
-                  required
-                  defaultValue=""
-                  className="min-h-11 w-full rounded-md border border-(--border) bg-(--background) px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"
-                >
-                  <option value="" disabled>
-                    {t("chasqui2026.form.selectOption")}
-                  </option>
-                  <option value="5K">5K</option>
-                  <option value="10K">10K</option>
-                </select>
-              </label>
-              <label className="grid gap-2 text-sm font-medium text-(--foreground)">
-                {t("chasqui2026.form.shirtSize")}
-                <select
-                  name="shirtSize"
-                  required
-                  defaultValue=""
-                  className="min-h-11 w-full rounded-md border border-(--border) bg-(--background) px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"
-                >
-                  <option value="" disabled>
-                    {t("chasqui2026.form.selectOption")}
-                  </option>
-                  {["XS", "S", "M", "L", "XL", "XXL"].map((size) => (
-                    <option key={size} value={size}>
-                      {size}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <FormField
-                id="birthDate"
-                label={t("chasqui2026.form.birthDate")}
-                type="date"
-                required
-              />
-              <FormField
-                id="city"
-                label={t("chasqui2026.form.city")}
-              />
-              <FormField
-                id="country"
-                label={t("chasqui2026.form.country")}
-              />
-              <FormField
-                id="emergencyContact"
-                label={t("chasqui2026.form.emergencyContact")}
-                required
-              />
-              <FormField
-                id="emergencyPhone"
-                label={t("chasqui2026.form.emergencyPhone")}
-                type="tel"
-                required
-              />
-
-              <label className="flex items-start gap-3 text-sm leading-6 text-(--foreground) sm:col-span-2">
-                <input
-                  type="checkbox"
-                  name="informationConfirmed"
-                  required
-                  className="mt-1 h-4 w-4 shrink-0 accent-(--primary) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2"
-                />
-                <span>{t("chasqui2026.form.confirmInformation")}</span>
-              </label>
-              <label className="flex items-start gap-3 text-sm leading-6 text-(--foreground) sm:col-span-2">
-                <input
-                  type="checkbox"
-                  name="termsAccepted"
-                  required
-                  className="mt-1 h-4 w-4 shrink-0 accent-(--primary) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2"
-                />
-                <span>{t("chasqui2026.form.acceptTerms")}</span>
-              </label>
-
-              {submissionError && (
-                <p
-                  className="text-sm font-medium text-red-700 sm:col-span-2"
-                  role="alert"
-                  aria-live="assertive"
-                >
-                  {submissionError}
-                </p>
-              )}
-              <Button
-                type="submit"
-                disabled={submitting}
-                className="min-h-11 w-full justify-center bg-(--primary) text-white hover:bg-(--primary)/90 disabled:cursor-wait disabled:opacity-70 sm:col-span-2"
-              >
-                {submitting
-                  ? t("chasqui2026.form.submitting")
-                  : t("chasqui2026.form.submit")}
-              </Button>
-            </form>
-          )}
-        </Container>
-      </section>
     </>
-  );
-}
-
-type FormFieldProps = {
-  id: string;
-  label: string;
-  type?: string;
-  required?: boolean;
-};
-
-function FormField({
-  id,
-  label,
-  type = "text",
-  required = false,
-}: FormFieldProps) {
-  return (
-    <label
-      htmlFor={id}
-      className="grid gap-2 text-sm font-medium text-(--foreground)"
-    >
-      {label}
-      <input
-        id={id}
-        name={id}
-        type={type}
-        required={required}
-        className="min-h-11 w-full rounded-md border border-(--border) bg-(--background) px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"
-      />
-    </label>
   );
 }
