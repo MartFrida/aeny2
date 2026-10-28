@@ -1,43 +1,223 @@
 import {
   ArrowDown,
+  ArrowRight,
   ArrowUpRight,
   BookOpen,
   HeartHandshake,
   Leaf,
   UsersRound,
-} from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { Button } from '../../components/common/Button'
-import { Container } from '../../components/common/Container'
-import { PageMetadata } from '../../components/common/PageMetadata'
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Button } from "../../components/common/Button";
+import { Container } from "../../components/common/Container";
+import { PageMetadata } from "../../components/common/PageMetadata";
 
 const values = [
-  { key: 'solidarity', icon: HeartHandshake },
-  { key: 'identity', icon: Leaf },
-  { key: 'education', icon: BookOpen },
-  { key: 'commitment', icon: UsersRound },
-] as const
+  { key: "solidarity", icon: HeartHandshake },
+  { key: "identity", icon: Leaf },
+  { key: "education", icon: BookOpen },
+  { key: "commitment", icon: UsersRound },
+] as const;
 
-const alternateLanguagePaths = { en: '/en/about', es: '/es/about' }
+const homeImages = {
+  migrantSupport: "/images/home/migrant-support.webp",
+  education: "/images/home/education-training.webp",
+  culture: "/images/home/culture-community.webp",
+  health: "/images/home/comunity.webp",
+  parque: "/images/home/parque-del-migrante-entrada.webp",
+  encuentro: "/images/home/encuentro-cuencano.webp",
+  allhome: "/images/home/home-all.webp",
+} as const;
+
+const copy = {
+  es: {
+    introLabel: "Alianza Ecuatoriana Internacional",
+    introHeading: "Una organización, cinco áreas de trabajo.",
+    introBody:
+      "Desde Nueva York, impulsamos servicios comunitarios, cultura, ayuda humanitaria, proyectos y defensa de derechos.",
+    aboutCta: "Conoce AEINY",
+
+    organizationLabel: "Nuestra organización",
+    organizationTitle: "Una alianza al servicio de la comunidad",
+    organizationIntro:
+      "Alianza Ecuatoriana Internacional integra al Centro Comunitario Andino y a la Fundación Alianza Ecuatoriana Internacional bajo un compromiso común: acompañar a la comunidad migrante y fortalecer sus oportunidades, su identidad y sus derechos.",
+    organizationUnits: [
+      {
+        title: "Centro Comunitario Andino",
+        image: homeImages.education,
+        imageAlt: "Formación y servicios comunitarios del Centro Comunitario Andino",
+        description:
+          "Apoya a migrantes y familias en Nueva York mediante orientación comunitaria y oportunidades de formación, incluidos cursos OSHA y de construcción.",
+        href: "/community-services",
+        cta: "Conoce el Centro",
+      },
+      {
+        title: "Fundación Alianza Ecuatoriana Internacional",
+        image: "/images/events/festival-andino-2026/sponsors/fundacion-alianza.webp",
+        imageAlt: "Logotipo de la Fundación Alianza Ecuatoriana Internacional",
+        description:
+          "Impulsa la ayuda humanitaria y los proyectos sociales y educativos de la Alianza, con el apoyo de donaciones y de la comunidad, para acompañar a personas y familias en situación de vulnerabilidad.",
+        href: "/foundation",
+        cta: "Conoce la Fundación",
+      },
+    ],
+    organizationScope:
+      "Nuestra labor abarca servicios comunitarios, ayuda humanitaria, cultura y patrimonio, proyectos y defensa de derechos. Iniciativas como el Festival Internacional de Cine Andino, la Carrera y Caminata El Chasqui Migrante y el Parque del Migrante forman parte de este trabajo compartido.",
+
+    workLabel: "Nuestro trabajo",
+    workTitle: "Lo que hacemos",
+    workCta: "Ver nuestro trabajo",
+    workAreas: [
+      {
+        title: "Servicios comunitarios",
+        image: homeImages.education,
+        href: "/community-services",
+      },
+      {
+        title: "Cultura y patrimonio",
+        image: homeImages.culture,
+        href: "/culture",
+      },
+      {
+        title: "Fundación y ayuda humanitaria",
+        image: homeImages.migrantSupport,
+        href: "/foundation",
+      },
+      { title: "Proyectos", image: homeImages.parque, href: "/projects" },
+      {
+        title: "Defensa de derechos",
+        image: homeImages.health,
+        href: "/advocacy",
+      },
+    ],
+
+    projectsLabel: "Proyectos destacados",
+    projectsTitle: "De la comunidad, para la comunidad",
+    parqueTitle: "Parque del Migrante",
+    parqueText:
+      "Un espacio en Cuenca en honor al esfuerzo y valentía de los migrantes ecuatorianos.",
+    encuentroTitle: "Encuentro Cuencano en New York",
+    encuentroText:
+      "Un punto de encuentro para comunidad, oportunidades y conexión con Cuenca.",
+    projectsCta: "Ver proyectos",
+
+    communityLabel: "AEINY en acción",
+    communityTitle: "Personas, cultura y comunidad",
+    communityText:
+      "Cada programa nace del encuentro entre migrantes, familias, voluntarios y organizaciones aliadas.",
+
+    supportLabel: "Participa",
+    supportTitle: "Tu apoyo hace posible el siguiente proyecto.",
+    donateCta: "Donar",
+    involvedCta: "Participar",
+  },
+  en: {
+    introLabel: "Alianza Ecuatoriana Internacional",
+    introHeading: "One organization, five areas of work.",
+    introBody:
+      "From New York, we connect community services, culture, humanitarian initiatives, projects and rights advocacy.",
+    aboutCta: "Discover AEINY",
+
+    organizationLabel: "Our organization",
+    organizationTitle: "An alliance serving the community",
+    organizationIntro:
+      "Alianza Ecuatoriana Internacional brings together Centro Comunitario Andino and Fundación Alianza Ecuatoriana Internacional under a shared commitment: to support the migrant community and strengthen its opportunities, identity and rights.",
+    organizationUnits: [
+      {
+        title: "Centro Comunitario Andino",
+        image: homeImages.education,
+        imageAlt: "Training and community services at Centro Comunitario Andino",
+        description:
+          "Supports migrants and families in New York through community guidance and training opportunities, including OSHA and construction courses.",
+        href: "/community-services",
+        cta: "Discover the Center",
+      },
+      {
+        title: "Fundación Alianza Ecuatoriana Internacional",
+        image: "/images/events/festival-andino-2026/sponsors/fundacion-alianza.webp",
+        imageAlt: "Fundación Alianza Ecuatoriana Internacional logo",
+        description:
+          "Advances the Alliance’s humanitarian aid and social and educational projects, with support from donations and the community, to assist individuals and families in vulnerable situations.",
+        href: "/foundation",
+        cta: "Discover the Foundation",
+      },
+    ],
+    organizationScope:
+      "Our work spans community services, humanitarian aid, culture and heritage, projects and rights advocacy. Initiatives such as the Andean International Film Festival, the El Chasqui Migrante Run and Walk, and Parque del Migrante are part of this shared effort.",
+
+    workLabel: "Our work",
+    workTitle: "What we do",
+    workCta: "Explore our work",
+    workAreas: [
+      {
+        title: "Community services",
+        image: homeImages.education,
+        href: "/community-services",
+      },
+      {
+        title: "Culture & heritage",
+        image: homeImages.culture,
+        href: "/culture",
+      },
+      {
+        title: "Foundation & humanitarian aid",
+        image: homeImages.migrantSupport,
+        href: "/foundation",
+      },
+      { title: "Projects", image: homeImages.parque, href: "/projects" },
+      { title: "Rights advocacy", image: homeImages.health, href: "/advocacy" },
+    ],
+
+    projectsLabel: "Featured projects",
+    projectsTitle: "Built by community, for community",
+    parqueTitle: "Parque del Migrante",
+    parqueText:
+      "A space in Cuenca honoring the effort and courage of Ecuadorian migrants.",
+    encuentroTitle: "Encuentro Cuencano in New York",
+    encuentroText:
+      "A meeting point for community, opportunity and connection with Cuenca.",
+    projectsCta: "View projects",
+
+    communityLabel: "AEINY in action",
+    communityTitle: "People, culture and community",
+    communityText:
+      "Every program grows from the connection between migrants, families, volunteers and partner organizations.",
+
+    supportLabel: "Get involved",
+    supportTitle:
+      "Your support helps make the next community project possible.",
+    donateCta: "Donate",
+    involvedCta: "Get involved",
+  },
+} as const;
+
+const alternateLanguagePaths = { en: "/en/about", es: "/es/about" };
 
 export function AboutPage() {
-  const { i18n, t } = useTranslation()
-  const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
-  const prefix = `/${language}`
+  const { i18n, t } = useTranslation();
+  const language = i18n.resolvedLanguage === "es" ? "es" : "en";
+  const prefix = `/${language}`;
+  const c = copy[language];
+  const ourWorkPath = `/${language}/community-services`;
+  const homePath = `/${language}`;
 
   return (
     <>
       <PageMetadata
         language={language}
-        title={t('about.seoTitle')}
-        description={t('about.seoDescription')}
+        title={t("about.seoTitle")}
+        description={t("about.seoDescription")}
         canonicalPath={`${prefix}/about`}
         alternateLanguagePaths={alternateLanguagePaths}
         includeOrganizationData
       />
-
+      {/* Hero Section */}
       <section className="relative isolate overflow-hidden bg-(--surface-dark) text-white">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 overflow-hidden"
+        >
           <div className="absolute -right-20 -top-28 h-96 w-96 rounded-full border border-white/10" />
           <div className="absolute -right-4 top-8 h-72 w-72 rounded-full border border-(--accent)/25" />
           <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
@@ -46,27 +226,29 @@ export function AboutPage() {
         <Container className="relative grid gap-12 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:py-24">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-(--accent)">
-              {t('about.eyebrow')}
+              {t("about.eyebrow")}
             </p>
             <h1 className="mt-5 max-w-3xl font-display text-5xl leading-[1.04] tracking-[-0.055em] text-white sm:text-6xl lg:text-7xl">
-              {t('about.heroTitle')}
+              {t("about.heroTitle")}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">
-              {t('about.heroDescription')}
+              {t("about.heroDescription")}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
                 to="#identity"
                 className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!"
               >
-                {t('about.heroPrimary')} <ArrowDown aria-hidden="true" size={16} className="ml-2" />
+                {t("about.heroPrimary")}{" "}
+                <ArrowDown aria-hidden="true" size={16} className="ml-2" />
               </Button>
               <Button
                 to={`${prefix}/get-involved`}
                 variant="secondary"
                 className="border-white/25 bg-white/5 text-white hover:bg-white/10"
               >
-                {t('about.heroSecondary')} <ArrowUpRight aria-hidden="true" size={16} className="ml-2" />
+                {t("about.heroSecondary")}{" "}
+                <ArrowUpRight aria-hidden="true" size={16} className="ml-2" />
               </Button>
             </div>
           </div>
@@ -75,7 +257,7 @@ export function AboutPage() {
             <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-white/15 bg-[#172b35]">
               <img
                 src="/images/aeiny/about/aeiny-team.webp"
-                alt={t('about.teamPhotoAlt')}
+                alt={t("about.teamPhotoAlt")}
                 width="960"
                 height="960"
                 fetchPriority="high"
@@ -84,20 +266,24 @@ export function AboutPage() {
               />
             </div>
             <figcaption className="mt-3 text-right text-xs uppercase tracking-[0.16em] text-white/55">
-              {t('about.teamPhotoCaption')}
+              {t("about.teamPhotoCaption")}
             </figcaption>
           </figure>
         </Container>
       </section>
 
-      <section id="identity" className="scroll-mt-24 bg-(--background) py-16 md:py-24">
+      {/* Identity Section */}
+      <section
+        id="identity"
+        className="scroll-mt-24 bg-(--background) py-16 md:py-24"
+      >
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
           <div className="relative mx-auto w-full max-w-md">
             <div className="absolute -left-3 -top-3 h-24 w-24 rounded-tl-2rem border-l border-t border-(--accent)/70" />
             <div className="relative aspect-4/3 overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--surface)">
               <img
                 src="/images/aeiny/about/our-story.webp"
-                alt={t('about.storyPhotoAlt')}
+                alt={t("about.storyPhotoAlt")}
                 width="960"
                 height="720"
                 loading="lazy"
@@ -105,40 +291,166 @@ export function AboutPage() {
                 className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
               />
             </div>
-            <div aria-hidden="true" className="absolute -bottom-4 -right-4 h-16 w-16 rounded-full border border-(--primary)/30 bg-(--accent-soft)" />
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-4 -right-4 h-16 w-16 rounded-full border border-(--primary)/30 bg-(--accent-soft)"
+            />
           </div>
 
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('about.identityEyebrow')}
+              {t("about.identityEyebrow")}
             </p>
             <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('about.identityTitle')}
+              {t("about.identityTitle")}
             </h2>
             <div className="mt-6 space-y-4 text-base leading-8 text-(--muted)">
-              <p>{t('about.identityCopy1')}</p>
-              <p>{t('about.identityCopy2')}</p>
-              <p>{t('about.identityCopy3')}</p>
+              <p>{t("about.identityCopy1")}</p>
+              <p>{t("about.identityCopy2")}</p>
+              <p>{t("about.identityCopy3")}</p>
             </div>
           </div>
         </Container>
       </section>
 
+      {/* Organization structure */}
+      <section
+        aria-labelledby="organization-heading"
+        className="bg-(--background) pb-16 md:pb-24"
+      >
+        <Container>
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
+              {c.organizationLabel}
+            </p>
+            <h2
+              id="organization-heading"
+              className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] text-(--foreground) md:text-5xl"
+            >
+              {c.organizationTitle}
+            </h2>
+            <p className="mt-6 text-base leading-8 text-(--muted)">
+              {c.organizationIntro}
+            </p>
+          </div>
+
+          <div className="mt-9 grid gap-6 md:grid-cols-2">
+            {c.organizationUnits.map((unit) => (
+              <article
+                key={unit.href}
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-(--border) bg-(--surface)"
+              >
+                <Link
+                  to={`${prefix}${unit.href}`}
+                  aria-label={unit.cta}
+                  className={`block overflow-hidden ${unit.href === "/foundation" ? "bg-white" : "bg-(--accent-soft)"}`}
+                >
+                  <img
+                    src={unit.image}
+                    alt={unit.imageAlt}
+                    width="960"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                    className={`aspect-4/3 w-full transition-transform duration-500 ${unit.href === "/foundation" ? "object-contain p-6 sm:p-8" : "object-cover group-hover:scale-[1.035]"}`}
+                  />
+                </Link>
+                <div className="flex flex-1 flex-col p-7 md:p-9">
+                  <h3 className="font-display text-2xl tracking-[-0.02em] text-(--foreground) md:text-3xl">
+                    {unit.title}
+                  </h3>
+                  <p className="mt-4 text-base leading-8 text-(--muted)">
+                    {unit.description}
+                  </p>
+                  <Link
+                    to={`${prefix}${unit.href}`}
+                    className="mt-auto inline-flex items-center gap-2 self-start pt-6 text-sm font-semibold text-(--primary) transition hover:opacity-70"
+                  >
+                    {unit.cta}
+                    <ArrowUpRight aria-hidden="true" size={16} />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-8 max-w-4xl text-base leading-8 text-(--muted)">
+            {c.organizationScope}
+          </p>
+        </Container>
+      </section>
+
+      {/* Visual work areas — 4:3 landscape cards */}
+      <section className="border-y border-(--border) bg-(--surface)">
+        <Container className="py-14 md:py-20">
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">
+                {c.workLabel}
+              </p>
+
+              <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
+                {t("homeArchitecture.areaIntro")}
+              </h2>
+            </div>
+
+            <Link
+              to={ourWorkPath}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-(--primary) transition hover:opacity-70"
+            >
+              {c.workCta}
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          {/* 4:3 image gallery */}
+          <div className="mt-9 grid gap-5 sm:grid-cols-2 md:gap-6">
+            {c.workAreas.map((area) => (
+              <Link
+                key={area.title}
+                to={`${homePath}${area.href}`}
+                className="group overflow-hidden rounded-2xl border border-(--border) bg-(--background) transition duration-300 hover:-translate-y-1 hover:shadow-lg md:rounded-3xl"
+              >
+                <div className="overflow-hidden bg-[#e9dfd2]">
+                  <img
+                    src={area.image}
+                    alt={area.title}
+                    loading="lazy"
+                    className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                  />
+                </div>
+
+                <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-5">
+                  <h3 className="text-lg font-semibold leading-snug text-(--foreground) md:text-xl">
+                    {area.title}
+                  </h3>
+
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-(--border) text-(--primary) transition group-hover:border-(--primary) group-hover:bg-(--primary) group-hover:text-white">
+                    <ArrowUpRight size={18} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Mission */}
       <section className="border-y border-(--border) bg-(--surface) py-16 md:py-24">
         <Container>
           <div className="mb-10 max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('about.missionEyebrow')}
+              {t("about.missionEyebrow")}
             </p>
             <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('about.missionHeading')}
+              {t("about.missionHeading")}
             </h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-(--border) bg-(--background)">
+            <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-(--border) bg-(--background)">
               <img
                 src="/images/aeiny/about/our-mission.webp"
-                alt={t('about.missionPhotoAlt')}
+                alt={t("about.missionPhotoAlt")}
                 width="960"
                 height="720"
                 loading="lazy"
@@ -147,10 +459,10 @@ export function AboutPage() {
               />
             </div>
             <div className="grid gap-6">
-              {(['mission', 'vision'] as const).map((key, index) => (
+              {(["mission"] as const).map((key, index) => (
                 <article
                   key={key}
-                  className={`rounded-[1.5rem] border p-7 md:p-9 ${index === 0 ? 'border-(--border) bg-(--background)' : 'border-(--primary)/25 bg-(--surface)'}`}
+                  className={`rounded-3xl border p-7 md:p-9 ${index === 0 ? "border-(--border) bg-(--background)" : "border-(--primary)/25 bg-(--surface)"}`}
                 >
                   <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
                     {t(`about.${key}Label`)}
@@ -169,18 +481,27 @@ export function AboutPage() {
         <Container>
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('about.valuesEyebrow')}
+              {t("about.valuesEyebrow")}
             </p>
             <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('about.valuesTitle')}
+              {t("about.valuesTitle")}
             </h2>
           </div>
           <div className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {values.map(({ key, icon: Icon }) => (
               <article key={key} className="border-t border-(--border) pt-5">
-                <Icon aria-hidden="true" size={21} strokeWidth={1.6} className="text-(--primary)" />
-                <h3 className="mt-5 text-lg font-semibold text-(--foreground)">{t(`about.value.${key}Title`)}</h3>
-                <p className="mt-2 text-sm leading-6 text-(--muted)">{t(`about.value.${key}Copy`)}</p>
+                <Icon
+                  aria-hidden="true"
+                  size={21}
+                  strokeWidth={1.6}
+                  className="text-(--primary)"
+                />
+                <h3 className="mt-5 text-lg font-semibold text-(--foreground)">
+                  {t(`about.value.${key}Title`)}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-(--muted)">
+                  {t(`about.value.${key}Copy`)}
+                </p>
               </article>
             ))}
           </div>
@@ -190,11 +511,11 @@ export function AboutPage() {
       <section className="border-y border-(--border) bg-(--surface) py-12 md:py-16">
         <Container>
           <figure className="overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--background)">
-            <h2 className="sr-only">{t('about.rootsTitle')}</h2>
-            <div className="relative aspect-[4/3] overflow-hidden bg-(--accent-soft)">
+            <h2 className="sr-only">{t("about.rootsTitle")}</h2>
+            <div className="relative aspect-4/3 overflow-hidden bg-(--accent-soft)">
               <img
                 src="/images/aeiny/about/our-roots.webp"
-                alt={t('about.rootsPhotoAlt')}
+                alt={t("about.rootsPhotoAlt")}
                 width="960"
                 height="720"
                 loading="lazy"
@@ -203,27 +524,30 @@ export function AboutPage() {
               />
             </div>
             <figcaption className="px-5 py-4 text-sm leading-6 text-(--muted) sm:px-7">
-              {t('about.rootsPhotoCaption')}
+              {t("about.rootsPhotoCaption")}
             </figcaption>
           </figure>
         </Container>
       </section>
 
+      {/* Community Section */}
       <section className="bg-(--background) py-16 md:py-24">
         <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('about.communityEyebrow')}
+              {t("about.communityEyebrow")}
             </p>
             <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t('about.communityTitle')}
+              {t("about.communityTitle")}
             </h2>
-            <p className="mt-5 text-base leading-8 text-(--muted)">{t('about.communityCopy')}</p>
+            <p className="mt-5 text-base leading-8 text-(--muted)">
+              {t("about.communityCopy")}
+            </p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--surface)">
+          <div className="relative aspect-4/3 overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--surface)">
             <img
               src="/images/aeiny/about/community.webp"
-              alt={t('about.communityPhotoAlt')}
+              alt={t("about.communityPhotoAlt")}
               width="960"
               height="720"
               loading="lazy"
@@ -234,50 +558,50 @@ export function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-(--border) bg-(--surface) py-16 md:py-24">
+      {/* <section className="border-y border-(--border) bg-(--surface) py-16 md:py-24">
         <Container className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('about.connectionEyebrow')}
+              {t("about.connectionEyebrow")}
             </p>
             <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) md:text-4xl">
-              {t('about.connectionTitle')}
+              {t("about.connectionTitle")}
             </h2>
           </div>
           <div className="space-y-4 leading-7 text-(--muted)">
-            <p>{t('about.connectionCopy1')}</p>
-            <p>{t('about.connectionCopy2')}</p>
+            <p>{t("about.connectionCopy1")}</p>
+            <p>{t("about.connectionCopy2")}</p>
           </div>
         </Container>
-      </section>
-  
+      </section> */}
 
+      {/* Build with us */}
       <section className="border-t border-(--border) bg-(--surface) py-16 md:py-20">
         <Container>
-          <div className="rounded-[2rem] bg-(--primary) px-6 py-12 text-white sm:px-10 md:px-14 md:py-16">
+          <div className="rounded-4xl bg-(--primary) px-6 py-12 text-white sm:px-10 md:px-14 md:py-16">
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                {t('about.finalEyebrow')}
+                {t("about.finalEyebrow")}
               </p>
               <h2 className="mt-4 font-display text-4xl leading-tight tracking-[-0.04em] md:text-5xl">
-                {t('about.finalTitle')}
+                {t("about.finalTitle")}
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 md:text-lg">
-                {t('about.finalDescription')}
+                {t("about.finalDescription")}
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Button
                   to={`${prefix}/get-involved`}
                   className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!"
                 >
-                  {t('about.finalParticipate')}
+                  {t("about.finalParticipate")}
                 </Button>
                 <Button
                   to={`${prefix}/donate`}
                   variant="secondary"
                   className="border-white/30 bg-white/5 text-white hover:bg-white/10"
                 >
-                  {t('about.finalSupport')}
+                  {t("about.finalSupport")}
                 </Button>
               </div>
             </div>
@@ -285,5 +609,5 @@ export function AboutPage() {
         </Container>
       </section>
     </>
-  )
+  );
 }

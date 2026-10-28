@@ -780,6 +780,27 @@
       "relatedTitle": "Related courses"
     }
   },
+  "homeArchitecture": {
+    "heroEyebrow": "ALIANZA ECUATORIANA INTERNACIONAL",
+    "heroTitle": "United by community, culture and opportunity.",
+    "heroText": "We support migrant communities through community services, education, culture, humanitarian aid and rights advocacy.",
+    "learn": "Explore our work",
+    "festivalLabel": "UPCOMING · CULTURE & HERITAGE",
+    "areaIntro": "Five areas of work. One shared mission.",
+    "foundationTitle": "Fundación Alianza Ecuatoriana Internacional",
+    "foundationText": "The Foundation is part of AEI and brings together humanitarian aid, educational projects, cultural identity and donations.",
+    "foundationCta": "Explore the Foundation"
+  },
+  "orgStructure": {
+    "title": "One organization, five areas of work",
+    "description": "Alianza Ecuatoriana Internacional encompasses Centro Comunitario Andino and Fundación Alianza Ecuatoriana Internacional. Its work spans community services, culture and heritage, the Foundation, projects and rights advocacy.",
+    "center": "Centro Comunitario Andino",
+    "centerDescription": "AEI’s community services, education and training center in New York.",
+    "foundation": "Fundación Alianza Ecuatoriana Internacional",
+    "foundationDescription": "AEI’s humanitarian, educational, cultural and donation initiatives.",
+    "explore": "Explore",
+    "areasTitle": "Areas of work"
+  },
   "getInvolved": {
     "seoTitle": "Get Involved | Alianza Ecuatoriana Internacional",
     "seoDescription": "Find ways to strengthen community and support the mission of Alianza Ecuatoriana Internacional.",

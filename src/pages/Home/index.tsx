@@ -305,60 +305,54 @@ export function HomePage() {
         </Container>
       </section>
 
-      {/* Visual work areas — 4:3 landscape cards */}
-      <section className="border-y border-(--border) bg-(--surface)">
-        <Container className="py-14 md:py-20">
-          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">
-                {c.workLabel}
-              </p>
-
-              <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-                {c.workTitle}
-              </h2>
+      {/* Event Card */}
+      <section className="bg-(--surface) py-12 md:py-16">
+        <Container>
+          <article className="grid overflow-hidden rounded-2xl border border-(--border) bg-(--background) md:grid-cols-[0.8fr_1.2fr]">
+            <div className="relative min-h-56 bg-(--surface-dark) text-white md:min-h-full">
+              <div className="flex h-full min-h-56 flex-col justify-between p-6 sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--accent)">
+                  {t("chasqui2026.eyebrow")}
+                </p>
+                <h2 className="mt-6 max-w-md font-display text-3xl leading-tight tracking-[-0.04em] sm:text-4xl">
+                  {t("chasqui2026.title")}
+                </h2>
+                <p className="mt-4 text-sm font-medium text-white/75">
+                  5K / 10K
+                </p>
+              </div>
             </div>
-
-            <Link
-              to={ourWorkPath}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-(--primary) transition hover:opacity-70"
-            >
-              {c.workCta}
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-
-          {/* 4:3 image gallery */}
-          <div className="mt-9 grid gap-5 sm:grid-cols-2 md:gap-6">
-            {c.workAreas.map((area) => (
-              <Link
-                key={area.title}
-                to={ourWorkPath}
-                className="group overflow-hidden rounded-2xl border border-(--border) bg-(--background) transition duration-300 hover:-translate-y-1 hover:shadow-lg md:rounded-3xl"
-              >
-                <div className="overflow-hidden bg-[#e9dfd2]">
-                  <img
-                    src={area.image}
-                    alt={area.title}
-                    loading="lazy"
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+            <div className="flex flex-col justify-between gap-6 p-5 sm:p-7">
+              <div>
+                <p className="text-sm font-semibold text-(--primary)">
+                  {t("chasqui2026.date")} · 08:00
+                </p>
+                <p className="mt-3 leading-7 text-(--muted)">
+                  {t("chasqui2026.shortLocation")}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-(--muted)">
+                  {t("chasqui2026.organizer")}
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="font-semibold text-(--foreground)">$15 USD</p>
+                <Button
+                  to={`/${language}/events/chasqui-migrante-2026`}
+                  className="w-full justify-center bg-(--primary) text-white hover:bg-(--primary)/90 sm:w-auto"
+                >
+                  {t("chasqui2026.cardCta")}
+                  <ArrowRight
+                    aria-hidden="true"
+                    size={16}
+                    className="ml-2 shrink-0"
                   />
-                </div>
-
-                <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-5">
-                  <h3 className="text-lg font-semibold leading-snug text-(--foreground) md:text-xl">
-                    {area.title}
-                  </h3>
-
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-(--border) text-(--primary) transition group-hover:border-(--primary) group-hover:bg-(--primary) group-hover:text-white">
-                    <ArrowUpRight size={18} />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
+                </Button>
+              </div>
+            </div>
+          </article>
         </Container>
       </section>
+
 
       {/* Featured projects — replaces the old placeholder */}
       <section className="bg-(--background)">

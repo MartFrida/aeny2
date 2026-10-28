@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, Clapperboard } from "lucide-react";
+import { ArrowDown, ArrowRight, Clapperboard, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/common/Button";
@@ -29,6 +29,17 @@ const festival2026SponsorLogos = [
   { name: "Sisa Pakari", file: "sisa-pakari.webp" },
   { name: "Sonidero", file: "sonidero_vector.webp" },
 ];
+
+const festival2026ContactContent = {
+  es: {
+    title: "Información y consultas",
+    copy: "Para más detalles y cualquier consulta sobre el festival, escríbenos a:",
+  },
+  en: {
+    title: "Festival information and inquiries",
+    copy: "For more details or any questions about the festival, please email us at:",
+  },
+};
 
 const festival2026AwardContent = {
   es: {
@@ -80,6 +91,7 @@ export function AndeanFilmFestival2026Page() {
   const spanishPath = "/es/events/festival-internacional-de-cine-andino-2026";
   const path = language === "es" ? spanishPath : englishPath;
   const awardContent = festival2026AwardContent[language];
+  const contactContent = festival2026ContactContent[language];
 
   return (
     <>
@@ -179,11 +191,21 @@ export function AndeanFilmFestival2026Page() {
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {kuriChasqui2026Films.map((film) => (
-              <FilmCard
+              <div
                 key={film.slug}
-                film={film}
-                to={`${path}/films/${film.slug}`}
-              />
+                className={[
+                  "relative min-w-0 rounded-2xl bg-(--background)",
+                  "shadow-[0_2px_6px_rgba(44,30,20,0.03),0_8px_24px_rgba(44,30,20,0.06)]",
+                  "transition-[transform,translate,scale,box-shadow] duration-300 ease-out motion-reduce:transition-none",
+                  "has-[a[href]]:hover:z-10 has-[a[href]]:hover:shadow-[0_4px_12px_rgba(44,30,20,0.08),0_18px_42px_rgba(44,30,20,0.14)]",
+                  "has-[a[href]]:motion-safe:hover:-translate-y-1 has-[a[href]]:motion-safe:hover:scale-[1.02]",
+                  "has-[a[href]]:focus-within:z-10 has-[a[href]]:focus-within:ring-2 has-[a[href]]:focus-within:ring-(--ring)",
+                  "has-[a[href]]:focus-within:ring-offset-4 has-[a[href]]:focus-within:ring-offset-(--surface)",
+                  "h-full w-full",
+                ].join(" ")}
+              >
+                <FilmCard film={film} to={`${path}/films/${film.slug}`} />
+              </div>
             ))}
           </div>
         </Container>
@@ -211,6 +233,26 @@ export function AndeanFilmFestival2026Page() {
             <p className="mt-5 max-w-3xl text-lg leading-8 text-(--muted)">
               {t("festival2026.aboutCopy")}
             </p>
+
+            <div className="mt-7 flex items-start gap-4 rounded-xl border border-(--accent)/30 bg-(--surface) p-5 sm:p-6">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-(--accent)/15 text-(--primary)">
+                <Mail size={20} aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <h3 className="font-display text-xl tracking-tight text-(--foreground)">
+                  {contactContent.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-(--muted)">
+                  {contactContent.copy}
+                </p>
+                <a
+                  href="mailto:acinpecg@gmail.com"
+                  className="mt-3 inline-block break-all rounded-sm text-base font-semibold text-(--primary) underline decoration-(--accent)/60 underline-offset-4 transition-colors hover:text-(--foreground) hover:decoration-(--primary) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-4 focus-visible:ring-offset-(--surface)"
+                >
+                  acinpecg@gmail.com
+                </a>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
@@ -504,13 +546,12 @@ export function AndeanFilmFestival2026Page() {
             >
               {t("festival2026.donateCta")}
             </Button>
-            <Button
-              to={`/${language}/contact`}
-              variant="secondary"
-              className="border-white/25 text-white hover:bg-white/10"
+            <a
+              href="mailto:acinpecg@gmail.com"
+              className="inline-flex items-center justify-center rounded-md border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
             >
               {t("festival2026.contactCta")}
-            </Button>
+            </a>
           </div>
         </Container>
       </section>
