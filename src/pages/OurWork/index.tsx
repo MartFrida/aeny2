@@ -122,17 +122,7 @@ export function OurWorkPage() {
 
       {/* Two specific community services; Culture is presented in its own section */}
       <section id="servicios" className="scroll-mt-24 border-y border-(--border) bg-(--surface)">
-        <Container className="py-12 md:py-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-            {t('ourWork.servicesEyebrow')}
-          </p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl tracking-[-0.04em] text-(--foreground) sm:text-4xl md:text-5xl">
-            {t('ourWork.servicesTitle')}
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-(--muted)">
-            {t('ourWork.servicesDescription')}
-          </p>
-        </Container>
+       
         {services.map(({ key, id, image, imagePosition, points }, index) => (
           <article
             key={key}

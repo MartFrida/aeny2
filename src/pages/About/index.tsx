@@ -72,23 +72,23 @@ const copy = {
       {
         title: "Servicios comunitarios",
         image: homeImages.education,
-        href: "/community-services",
+        href: "/courses",
       },
       {
         title: "Cultura y patrimonio",
         image: homeImages.culture,
-        href: "/culture",
+        href: "/events",
       },
       {
         title: "Fundación y ayuda humanitaria",
         image: homeImages.migrantSupport,
-        href: "/foundation",
+        href: "/contact",
       },
       { title: "Proyectos", image: homeImages.parque, href: "/projects" },
       {
         title: "Defensa de derechos",
         image: homeImages.health,
-        href: "/advocacy",
+        href: "/our-work",
       },
     ],
 
@@ -153,20 +153,20 @@ const copy = {
       {
         title: "Community services",
         image: homeImages.education,
-        href: "/community-services",
+        href: "/courses",
       },
       {
         title: "Culture & heritage",
         image: homeImages.culture,
-        href: "/culture",
+        href: "/events",
       },
       {
         title: "Foundation & humanitarian aid",
         image: homeImages.migrantSupport,
-        href: "/foundation",
+        href: "/contact",
       },
       { title: "Projects", image: homeImages.parque, href: "/projects" },
-      { title: "Rights advocacy", image: homeImages.health, href: "/advocacy" },
+      { title: "Rights advocacy", image: homeImages.health, href: "/our-work" },
     ],
 
     projectsLabel: "Featured projects",
@@ -199,7 +199,7 @@ export function AboutPage() {
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
   const prefix = `/${language}`;
   const c = copy[language];
-  const ourWorkPath = `/${language}/community-services`;
+  const ourWorkPath = `/${language}/our-work`;
   const homePath = `/${language}`;
 
   return (
