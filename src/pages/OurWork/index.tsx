@@ -6,18 +6,18 @@ import { PageMetadata } from '../../components/common/PageMetadata'
 
 const services = [
   {
-    key: 'migrants',
-    id: 'apoyo-a-migrantes',
-    image: '/images/aeiny/community-outreach-booth.webp',
-    imagePosition: 'object-center',
-    points: ['information', 'rights', 'resources'],
-  },
-  {
     key: 'osha',
     id: 'cursos-osha',
     image: '/images/aeiny/workforce-classroom.webp',
     imagePosition: 'object-[center_40%]',
     points: ['safety', 'prevention', 'skills'],
+  },
+  {
+    key: 'migrants',
+    id: 'apoyo-a-migrantes',
+    image: '/images/aeiny/community-outreach-booth.webp',
+    imagePosition: 'object-center',
+    points: ['information', 'rights', 'resources'],
   },
 ] as const
 
@@ -88,41 +88,9 @@ export function OurWorkPage() {
         </Container>
       </section>
 
-      {/* Centro Comunitario Andino — part of Alianza Ecuatoriana Internacional */}
-      <section id="centro-comunitario" className="scroll-mt-24 bg-(--background) py-14 md:py-20">
-        <Container className="grid items-center gap-9 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t('ourWork.centerEyebrow')}
-            </p>
-            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) sm:text-4xl md:text-5xl">
-              {t('ourWork.centerTitle')}
-            </h2>
-            <p className="mt-5 font-display text-xl leading-snug text-(--foreground) sm:text-2xl">
-              {t('ourWork.centerLead')}
-            </p>
-            <p className="mt-4 text-base leading-7 text-(--muted)">{t('ourWork.centerCopy')}</p>
-            <p className="mt-4 border-l-2 border-(--accent) pl-4 text-sm leading-6 text-(--muted)">
-              {t('ourWork.centerRelationship')}
-            </p>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] border border-(--border) bg-(--accent-soft)">
-            <img
-              src="/images/aeiny/original/12safety-classroom_11zon.webp"
-              alt={t('ourWork.centerPhotoAlt')}
-              className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
-              width="960"
-              height="720"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </Container>
-      </section>
-
-      {/* Two specific community services; Culture is presented in its own section */}
-      <section id="servicios" className="scroll-mt-24 border-y border-(--border) bg-(--surface)">
-       
+      {/* Centro Comunitario Andino services: OSHA first, then migrant support */}
+      <section id="centro-comunitario" className="scroll-mt-24 border-y border-(--border) bg-(--surface)">
+        <span id="servicios" className="block scroll-mt-24" aria-hidden="true" />
         {services.map(({ key, id, image, imagePosition, points }, index) => (
           <article
             key={key}
@@ -135,9 +103,9 @@ export function OurWorkPage() {
                   <span className="mr-3 font-display text-base text-(--accent)">0{index + 1}</span>
                   {t(`ourWork.services.${key}.eyebrow`)}
                 </p>
-                <h3 className="mt-4 font-display text-3xl leading-tight tracking-[-0.04em] text-(--foreground) sm:text-4xl">
+                <h2 className="mt-4 font-display text-3xl leading-tight tracking-[-0.04em] text-(--foreground) sm:text-4xl">
                   {t(`ourWork.services.${key}.title`)}
-                </h3>
+                </h2>
                 <p className="mt-5 font-display text-xl leading-snug text-(--foreground) sm:text-2xl">
                   {t(`ourWork.services.${key}.lead`)}
                 </p>

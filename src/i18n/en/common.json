@@ -235,9 +235,38 @@
         "copy": "We support learning, cultural continuity and participation."
       }
     },
+    "services": {
+      "osha": {
+        "eyebrow": "Education and job skills",
+        "title": "OSHA and Construction Training",
+        "lead": "Practical learning for safer work and greater independence.",
+        "copy": "Centro Comunitario Andino, part of Alianza Ecuatoriana Internacional, promotes construction safety education, including OSHA training. Explore our courses and contact us for information on upcoming classes.",
+        "points": {
+          "safety": "Construction and workplace safety",
+          "prevention": "Workplace risk awareness and prevention",
+          "skills": "Practical skills for working life"
+        },
+        "cta": "View courses",
+        "photoAlt": "Participants attend a workforce training class."
+      },
+      "migrants": {
+        "eyebrow": "Community support",
+        "title": "Migrant Support and Guidance",
+        "lead": "Information and community connections to help people navigate life in New York.",
+        "copy": "Centro Comunitario Andino supports immigrants, workers and families with information on migration, labor rights and community resources. Its work promotes awareness of rights and connections to support within the community.",
+        "points": {
+          "information": "Information and community guidance",
+          "rights": "Awareness of immigrant and labor rights",
+          "resources": "Connections to community resources"
+        },
+        "cta": "Ask about support",
+        "photoAlt": "Community outreach at an AEINY activity."
+      }
+    },
     "finalTitle": "Looking for information or a way to contribute?",
     "finalCopy": "Connect with AEINY to learn more about its community initiatives and opportunities for participation.",
     "finalContact": "Contact us",
+    "finalCourses": "View courses",
     "finalInvolved": "Get involved"
   },
   "projects": {

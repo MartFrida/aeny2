@@ -235,9 +235,38 @@
         "copy": "Apoyamos el aprendizaje, la continuidad cultural y la participación."
       }
     },
+    "services": {
+      "osha": {
+        "eyebrow": "Educación y formación laboral",
+        "title": "Cursos OSHA y construcción",
+        "lead": "Aprendizaje práctico para trabajar con mayor seguridad y autonomía.",
+        "copy": "El Centro Comunitario Andino, que forma parte de Alianza Ecuatoriana Internacional, promueve la formación en seguridad para la construcción, incluida la capacitación OSHA. Consulta los cursos y contáctanos para conocer las próximas clases.",
+        "points": {
+          "safety": "Seguridad en la construcción y el trabajo",
+          "prevention": "Conocimiento y prevención de riesgos laborales",
+          "skills": "Habilidades prácticas para la vida laboral"
+        },
+        "cta": "Ver cursos",
+        "photoAlt": "Participantes asisten a una clase de formación laboral."
+      },
+      "migrants": {
+        "eyebrow": "Apoyo comunitario",
+        "title": "Apoyo y orientación a migrantes",
+        "lead": "Información y vínculos comunitarios para orientarse en la vida en Nueva York.",
+        "copy": "El Centro Comunitario Andino acompaña a personas migrantes, trabajadores y familias mediante información sobre migración, derechos laborales y recursos comunitarios. Su labor promueve el conocimiento de los derechos y los vínculos de apoyo en la comunidad.",
+        "points": {
+          "information": "Información y orientación comunitaria",
+          "rights": "Conocimiento de los derechos migratorios y laborales",
+          "resources": "Conexión con recursos comunitarios"
+        },
+        "cta": "Consultar sobre apoyo",
+        "photoAlt": "Actividad de información y apoyo comunitario de AEINY."
+      }
+    },
     "finalTitle": "¿Buscas información o una forma de contribuir?",
     "finalCopy": "Ponte en contacto con AEINY para conocer sus iniciativas comunitarias y oportunidades de participación.",
     "finalContact": "Contáctanos",
+    "finalCourses": "Ver cursos",
     "finalInvolved": "Participa"
   },
   "projects": {
