@@ -10,12 +10,76 @@ import { kuriChasqui2026Founders } from "../../data/events/kuriChasquiFounders20
 import { FilmCard } from "./FilmCard";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 
+// Files are served from public/images/events/festival-andino-2026/sponsors/.
+const festival2026SponsorLogos = [
+  { name: "ACINPECG", file: "acinpecg.webp" },
+  { name: "Alianza", file: "alianza.webp" },
+  { name: "Andes Film Fest 2026", file: "andes-film-fest-2026.webp" },
+  { name: "Aya", file: "aya_vector.webp" },
+  { name: "Crónica Roja", file: "cronica-roja.webp" },
+  { name: "DC", file: "dc.webp" },
+  {
+    name: "Ecuadorian American Cultural Center",
+    file: "ecuadorian-american-cultural-center.webp",
+  },
+  { name: "Fundación Alianza", file: "fundacion-alianza.webp" },
+  { name: "La Hueca Manabita", file: "la-hueca-manabita.webp" },
+  { name: "Producciones Pachamama", file: "produciones-pachamama.webp" },
+  { name: "Raíz", file: "raiz_vector.webp" },
+  { name: "Sisa Pakari", file: "sisa-pakari.webp" },
+  { name: "Sonidero", file: "sonidero_vector.webp" },
+];
+
+const festival2026AwardContent = {
+  es: {
+    label: "Galardón",
+    title: "El Kury Chasqui",
+    subtitle: "El galardón que honra la grandeza andina en Nueva York",
+    paragraphs: [
+      "El Kury Chasqui —cuyo nombre proviene de la lengua milenaria kichwa y significa «Mensajero de Oro»— es el trofeo oficial de The Andean International Film Fest New York 2026.",
+      "Creado por Amaruk Kayshapanta y Walter Sinche, fundadores y organizadores del festival, este diseño simboliza la grandeza, la historia y la profunda cosmovisión de las culturas originarias de los Andes. Su potente simbología está presente en cada detalle y rinde homenaje al legado ancestral que cruza fronteras: tradiciones, filosofía, ciencias, espiritualidad y arte integral andino.",
+      "Esta prestigiosa estatuilla reconocerá, año tras año, el talento y la excelencia de creadores cinematográficos, productores y actores, así como de toda una industria identitaria que cuenta sus historias desde su propia filosofía de vida. Un reconocimiento a los artistas audiovisuales de todos los géneros y formatos del cine andino.",
+    ],
+    supportIntro:
+      "El éxito de este festival para el arte y la cultura es posible gracias al valioso respaldo de las organizaciones humanitarias y de apoyo a la cultura de la comunidad latinoamericana inmigrante en los Estados Unidos y Europa.",
+    supporters: [
+      "Alianza Ecuatoriana Internacional",
+      "Centro Comunitario Andino",
+      "Fundación Alianza Ecuatoriana Internacional NY",
+      "Producciones Pachamama (Europa)",
+    ],
+    imageAlt: "Estatuillas doradas del Kury Chasqui, el trofeo oficial del festival.",
+    imageCaption: "Kury Chasqui · Mensajero de Oro",
+  },
+  en: {
+    label: "The award",
+    title: "The Kury Chasqui",
+    subtitle: "The award honoring Andean greatness in New York",
+    paragraphs: [
+      "The Kury Chasqui —whose name comes from the ancient Kichwa language and means “Golden Messenger”— is the official trophy of The Andean International Film Fest New York 2026.",
+      "Created by Amaruk Kayshapanta and Walter Sinche, the festival’s founders and organizers, the design embodies the greatness, history, and profound worldview of the Indigenous cultures of the Andes. Every detail carries powerful symbolism, honoring an ancestral legacy that crosses borders: traditions, philosophy, science, spirituality, and holistic Andean art.",
+      "Year after year, this prestigious statuette will honor the talent and excellence of filmmakers, producers, and actors, as well as an entire industry rooted in cultural identity that tells its stories through its own philosophy of life. It celebrates audiovisual artists across all genres and formats of Andean cinema.",
+    ],
+    supportIntro:
+      "The festival’s success in promoting art and culture is made possible by the valued support of humanitarian organizations and those dedicated to the culture of Latin American immigrant communities in the United States and Europe.",
+    supporters: [
+      "Alianza Ecuatoriana Internacional",
+      "Centro Comunitario Andino",
+      "Fundación Alianza Ecuatoriana Internacional NY",
+      "Producciones Pachamama (Europe)",
+    ],
+    imageAlt: "Golden Kury Chasqui statuettes, the festival’s official trophy.",
+    imageCaption: "Kury Chasqui · Golden Messenger",
+  },
+};
+
 export function AndeanFilmFestival2026Page() {
   const { i18n, t } = useTranslation();
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
   const englishPath = "/en/events/festival-internacional-de-cine-andino-2026";
   const spanishPath = "/es/events/festival-internacional-de-cine-andino-2026";
   const path = language === "es" ? spanishPath : englishPath;
+  const awardContent = festival2026AwardContent[language];
 
   return (
     <>
@@ -260,34 +324,71 @@ export function AndeanFilmFestival2026Page() {
       </section>
 
       {/* Awards Section */}
-      <section id="kuri-chasqui-awards" className="bg-[#e9dfd2] scroll-mt-24">
-        <Container className="grid gap-8 py-14 md:py-20 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:gap-16">
-          <div>
+      <section
+        id="kuri-chasqui-awards"
+        aria-labelledby="kury-chasqui-title"
+        className="scroll-mt-24 bg-[#e9dfd2]"
+      >
+        <Container className="py-12 md:py-16">
+          <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
-              {t("festival2026.awardsLabel")}
+              {awardContent.label}
             </p>
-            <h2 className="mt-4 font-display text-3xl leading-tight tracking-[-0.04em] text-(--foreground) md:text-5xl">
-              {t("festival2026.awardsTitle")}
+            <h2
+              id="kury-chasqui-title"
+              className="mt-3 font-display text-3xl leading-tight tracking-[-0.04em] text-(--foreground) md:text-5xl"
+            >
+              {awardContent.title}
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-(--muted)">
-              {t("festival2026.awardsCopy")}
-            </p>
-            <p className="mt-4 max-w-2xl leading-7 text-(--muted)">
-              {t("festival2026.awardsContext")}
+            <p className="mt-4 text-lg leading-8 text-(--primary) md:text-xl">
+              {awardContent.subtitle}
             </p>
           </div>
-          <aside className="border border-(--border) bg-(--background)/70 p-7 md:p-9">
-            <p className="font-display text-3xl tracking-[0.06em] text-(--primary)">
-              KURI CHASQUI
-            </p>
-            <p className="mt-2 text-sm uppercase tracking-[0.16em] text-(--muted)">
-              {t("festival2026.goldenMessenger")}
-            </p>
-            <div className="my-6 h-px w-full bg-(--accent)/60" />
-            <p className="text-sm leading-6 text-(--muted)">
-              {t("festival2026.awardRecognition")}
-            </p>
-          </aside>
+
+          <div className="mt-8 grid items-start gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
+            <figure className="mx-auto w-full max-w-sm lg:max-w-none">
+              <img
+                src="/images/events/festival-andino-2026/premios-9x16.webp"
+                alt={awardContent.imageAlt}
+                width={1143}
+                height={2048}
+                loading="lazy"
+                decoding="async"
+                className="h-auto w-full rounded-lg"
+              />
+              <figcaption className="mt-3 text-xs tracking-wide text-(--muted)">
+                {awardContent.imageCaption}
+              </figcaption>
+            </figure>
+
+            <div className="min-w-0">
+              <div className="space-y-5 text-base leading-7 text-(--muted) md:leading-8">
+                {awardContent.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+
+              <div className="mt-7 border-t border-(--accent)/50 pt-6">
+                <p className="text-sm leading-7 text-(--muted)">
+                  {awardContent.supportIntro}
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {awardContent.supporters.map((organization) => (
+                    <li
+                      key={organization}
+                      className="flex items-start gap-3 text-sm leading-6 text-(--foreground)"
+                    >
+                      <span
+                        className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-(--primary)"
+                        aria-hidden="true"
+                      />
+                      <span>{organization}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -313,6 +414,43 @@ export function AndeanFilmFestival2026Page() {
                   aria-hidden="true"
                 />
                 {t(`festival2026.categories.${index}`)}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* Sponsors and Partners */}
+      <section
+        id="festival-sponsors"
+        aria-labelledby="festival-sponsors-title"
+        className="scroll-mt-24 border-t border-(--border) bg-(--surface)"
+      >
+        <Container className="py-8 md:py-10">
+          <h2
+            id="festival-sponsors-title"
+            className="font-display text-xl tracking-tight text-(--foreground) md:text-2xl"
+          >
+            {language === "es"
+              ? "Patrocinadores y colaboradores"
+              : "Sponsors & Partners"}
+          </h2>
+
+          <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 md:mt-6 md:gap-y-4">
+            {festival2026SponsorLogos.map((logo) => (
+              <li
+                key={logo.file}
+                className="flex h-24 min-w-0 w-[calc((100%_-_1rem)/2)] items-center justify-center sm:w-[calc((100%_-_3rem)/4)] lg:w-[calc((100%_-_6rem)/7)]"
+              >
+                <img
+                  src={`/images/events/festival-andino-2026/sponsors/${logo.file}`}
+                  alt={logo.name}
+                  width={360}
+                  height={220}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-contain"
+                />
               </li>
             ))}
           </ul>
