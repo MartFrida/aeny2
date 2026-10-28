@@ -93,7 +93,7 @@ export function CourseDetailPage() {
             </p>
           </div>
           {course.image ? (
-            <div className="relative aspect-[4/5] overflow-hidden bg-(--surface-dark)">
+            <div className="relative aspect-4/5 overflow-hidden bg-(--surface-dark)">
               <img
                 src={course.image}
                 alt={t("courses.coursePhotoAlt", { course: title })}

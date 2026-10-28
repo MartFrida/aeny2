@@ -1200,5 +1200,97 @@
     "reviewStatus": "needs-review",
     "editorialNote": "La ficha individual indica ficción; en el índice aparece como documental.",
     "synopsisEn": "This drama explores addiction and its roots, addressing domestic abuse, social stigma, gang-related issues and the influence of social media. It also examines suicide and calls for empathy toward people who suffer in isolation."
+  },
+  {
+    "id": 34,
+    "slug": "con-mi-corazon-en-yambo",
+    "title": "Con Mi Corazón en Yambo",
+    "poster": "/images/events/festival-andino-2026/films/yambo-poster.webp",
+    "originalTitle": "Con mi Corazón en Yambo",
+    "titleEn": "With My Heart in Yambo",
+    "year": 2011,
+    "duration": "137 min",
+    "director": [
+      "María Fernanda Restrepo"
+    ],
+    "language": [
+      "Español"
+    ],
+    "subtitles": [
+      "Inglés",
+      "Francés",
+      "Catalán"
+    ],
+    "type": "documentary",
+    "genre": "Documental",
+    "format": "HDV",
+    "filmingFormat": "HDV",
+    "projectionFormat": [
+      "DCP",
+      "Blu-ray"
+    ],
+    "viewersInEcuador": 165000,
+    "synopsisEs": "Un 8 de enero de 1988, cuando tenía 10 años, mis padres se fueron de vacaciones y me dejaron al cuidado de mis hermanos Santiago de 17 y Andrés de 14. Ese día yo tenía una fiesta infantil y ellos debían recogerme. Llegó la noche, y el resto del amanecer estuve en una ventana, esperando. Nunca llegaron. Luego de un año de desconocimiento y angustia descubrimos que ese día mis hermanos fueron torturados, asesinados y desaparecidos por la policía ecuatoriana, sin razón alguna. Sus cuerpos fueron arrojados en la laguna de Yambo. Nunca los encontramos. Este documental es un viaje personal mezclado con la memoria de todo un país marcado por esta historia.",
+    "synopsisEn": "On January 8, 1988, when I was 10 years old, my parents took a vacation and left me with my brothers Santiago and Andres, 17 and 14 years old. That day I went to a friend's birthday party and they were to pick me up. They never arrived. After one year of uncertainty, we discovered that my brothers had been disappeared by the Ecuadorian police for no reason at all. Their bodies were thrown into Lake Yambo. We never found them. This documentary is a personal journey interlaced with the past of an entire country that was marked by this story.",
+    "reviewStatus": "source-transcribed"
+  },
+  {
+    "id": 35,
+    "slug": "el-ultimo-campos",
+    "title": "El Último Campos",
+    "poster": "/images/events/festival-andino-2026/films/el-ultimo-campos-poster.webp",
+    "originalTitle": "El Ultimo Campos",
+    "year": 2018,
+    "completionDate": "2018-05-11",
+    "duration": "19:53",
+    "country": [
+      "Ecuador"
+    ],
+    "language": [
+      "Castellano"
+    ],
+    "director": [
+      "Hernán De la Torre"
+    ],
+    "coAuthors": [
+      "Hernán De la Torre"
+    ],
+    "screenplay": [
+      "Hernán De la Torre"
+    ],
+    "producer": [
+      "Hernán De la Torre"
+    ],
+    "production": [
+      "Atuk Films Producciones"
+    ],
+    "productionCompany": [
+      "Atuk Films Producciones"
+    ],
+    "cinematography": [
+      "Ken Kurichumbi"
+    ],
+    "sound": [
+      "Ariel Chalan"
+    ],
+    "music": [
+      "Hernán De la Torre"
+    ],
+    "editor": [
+      "Hernán De la Torre"
+    ],
+    "cast": [
+      "Jorge Eduardo Campos Vela",
+      "Carmen Guillin",
+      "Esteban Guevara",
+      "Santiago Ayala",
+      "Martín Guevara"
+    ],
+    "rating": "Todo Público",
+    "type": "documentary",
+    "genre": "Cortometraje documental",
+    "synopsisEs": "El Último Campos retrata el final de un legado dentro de una familia dedicada a los conocimientos de ebanistería. El último heredero Jorge Campos es un gran Lutier que a pesar de padecer una disminución auditiva de nacimiento ha dedicado toda su vida a su profesión y sin embargo no ha sido reconocido como tal. Nada ha impedido para que sus instrumentos sean reconocidos a nivel local, nacional e internacional. En el transcurso de esta historia, Jorge Campos, descubrirá uno de sus primeros instrumentos fabricado hace más de 45 años que se exhibe en un museo de una universidad. El Lutier Jorge Campos no piensa abandonar su trabajo mientras no haya alguien que lo suplante e intentará transmitir su conocimiento a uno de sus discípulos, ya que ninguno de los hijos se ha inclinado por esta profesión.",
+    "synopsisEn": "El Último Campos portrays the end of a legacy in a family devoted to cabinetmaking. Jorge Campos, its last heir, is an accomplished luthier who, despite being born with hearing loss, has dedicated his life to his craft without receiving recognition as a luthier. Yet his instruments are known locally, nationally and internationally. During the film, Jorge discovers one of the first instruments he made more than 45 years ago, now displayed in a university museum. He refuses to give up his work until someone can take his place and tries to pass his knowledge on to a disciple, as none of his children has chosen this profession.",
+    "reviewStatus": "source-transcribed"
   }
 ]
