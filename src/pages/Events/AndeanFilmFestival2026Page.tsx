@@ -166,6 +166,26 @@ export function AndeanFilmFestival2026Page() {
           </figure>
         </Container>
       </section>
+        
+         {/* Festival Contact */}
+      <section
+        id="festival-contact"
+        aria-labelledby="festival-contact-title"
+        className="border-b border-(--border) bg-(--background)"
+      >
+        <Container className="flex flex-wrap items-baseline gap-x-2 gap-y-1 py-3 text-sm leading-5">
+          <h2 id="festival-contact-title" className="font-medium text-(--muted)">
+            {contactContent.title}
+          </h2>
+          <a
+            href="mailto:acinpecg@gmail.com"
+            className="rounded-sm font-semibold text-(--primary) underline decoration-(--accent)/60 underline-offset-4 transition-colors hover:text-(--foreground) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--background)"
+          >
+            acinpecg@gmail.com
+          </a>
+        </Container>
+      </section>
+
 
       <FestivalSchedule />
 

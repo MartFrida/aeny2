@@ -104,7 +104,7 @@ export function HomePage() {
   const festivalPath = `/${language}/events/festival-internacional-de-cine-andino-2026`;
   const donatePath = `/${language}/donate`;
   const aboutPath = `/${language}/about`;
-  const ourWorkPath = `/${language}/our-work`;
+  const culturaPath = `/${language}/events`;
   const projectsPath = `/${language}/projects`;
   const getInvolvedPath = `/${language}/get-involved`;
 
@@ -273,7 +273,7 @@ export function HomePage() {
                     : "AEINY community activity"
                 }
                 loading="lazy"
-                className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
               />
 
               <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-(--foreground) shadow-md transition-transform duration-300 group-hover:scale-110">
@@ -282,7 +282,7 @@ export function HomePage() {
             </Link>
 
             <Link
-              to={aboutPath}
+              to={culturaPath}
               aria-label={c.aboutCta}
               className="group relative block overflow-hidden rounded-2xl bg-[#e9dfd2] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--primary) md:rounded-3xl"
             >
@@ -294,7 +294,7 @@ export function HomePage() {
                     : "AEINY community cultural activity"
                 }
                 loading="lazy"
-                className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
               />
 
               <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-(--foreground) shadow-md transition-transform duration-300 group-hover:scale-110">

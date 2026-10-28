@@ -49,7 +49,7 @@ const copy = {
         imageAlt: "Formación y servicios comunitarios del Centro Comunitario Andino",
         description:
           "Apoya a migrantes y familias en Nueva York mediante orientación comunitaria y oportunidades de formación, incluidos cursos OSHA y de construcción.",
-        href: "/community-services",
+        href: "/courses",
         cta: "Conoce el Centro",
       },
       {
@@ -58,7 +58,7 @@ const copy = {
         imageAlt: "Logotipo de la Fundación Alianza Ecuatoriana Internacional",
         description:
           "Impulsa la ayuda humanitaria y los proyectos sociales y educativos de la Alianza, con el apoyo de donaciones y de la comunidad, para acompañar a personas y familias en situación de vulnerabilidad.",
-        href: "/foundation",
+        href: "/contact",
         cta: "Conoce la Fundación",
       },
     ],
@@ -130,7 +130,7 @@ const copy = {
         imageAlt: "Training and community services at Centro Comunitario Andino",
         description:
           "Supports migrants and families in New York through community guidance and training opportunities, including OSHA and construction courses.",
-        href: "/community-services",
+        href: "/courses",
         cta: "Discover the Center",
       },
       {
@@ -139,7 +139,7 @@ const copy = {
         imageAlt: "Fundación Alianza Ecuatoriana Internacional logo",
         description:
           "Advances the Alliance’s humanitarian aid and social and educational projects, with support from donations and the community, to assist individuals and families in vulnerable situations.",
-        href: "/foundation",
+        href: "/contact",
         cta: "Discover the Foundation",
       },
     ],
@@ -254,7 +254,7 @@ export function AboutPage() {
           </div>
 
           <figure className="relative mx-auto w-full max-w-xl">
-            <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-white/15 bg-[#172b35]">
+            <div className="relative aspect-square overflow-hidden rounded-4xl border border-white/15 bg-[#172b35]">
               <img
                 src="/images/aeiny/about/aeiny-team.webp"
                 alt={t("about.teamPhotoAlt")}
@@ -343,7 +343,7 @@ export function AboutPage() {
                 <Link
                   to={`${prefix}${unit.href}`}
                   aria-label={unit.cta}
-                  className={`block overflow-hidden ${unit.href === "/foundation" ? "bg-white" : "bg-(--accent-soft)"}`}
+                  className={`block overflow-hidden ${unit.href === "/contact" ? "bg-white" : "bg-(--accent-soft)"}`}
                 >
                   <img
                     src={unit.image}
@@ -352,7 +352,7 @@ export function AboutPage() {
                     height="720"
                     loading="lazy"
                     decoding="async"
-                    className={`aspect-4/3 w-full transition-transform duration-500 ${unit.href === "/foundation" ? "object-contain p-6 sm:p-8" : "object-cover group-hover:scale-[1.035]"}`}
+                    className={`aspect-4/3 w-full transition-transform duration-500 ${unit.href === "/contact" ? "object-contain p-6 sm:p-8" : "object-cover group-hover:scale-[1.035]"}`}
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-7 md:p-9">
@@ -558,23 +558,7 @@ export function AboutPage() {
         </Container>
       </section>
 
-      {/* <section className="border-y border-(--border) bg-(--surface) py-16 md:py-24">
-        <Container className="grid gap-8 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--primary)">
-              {t("about.connectionEyebrow")}
-            </p>
-            <h2 className="mt-3 font-display text-3xl tracking-[-0.04em] text-(--foreground) md:text-4xl">
-              {t("about.connectionTitle")}
-            </h2>
-          </div>
-          <div className="space-y-4 leading-7 text-(--muted)">
-            <p>{t("about.connectionCopy1")}</p>
-            <p>{t("about.connectionCopy2")}</p>
-          </div>
-        </Container>
-      </section> */}
-
+     
       {/* Build with us */}
       <section className="border-t border-(--border) bg-(--surface) py-16 md:py-20">
         <Container>

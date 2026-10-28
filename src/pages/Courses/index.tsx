@@ -95,23 +95,6 @@ export function CoursesPage() {
         </Container>
       </section>
 
-{/* Intro Section */}
-      <section className="bg-(--background) py-12 md:py-16">
-        <Container className="grid items-center gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-12">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
-              {t('courses.intro.eyebrow')}
-            </p>
-            <h2 className="mt-3 max-w-lg font-display text-3xl leading-tight tracking-[-0.04em] text-(--foreground) sm:text-4xl md:text-5xl">
-              {t('courses.intro.title')}
-            </h2>
-          </div>
-          <p className="max-w-3xl text-base leading-7 text-(--muted) md:text-lg md:leading-8">
-            {t('courses.intro.copy')}
-          </p>
-        </Container>
-      </section>
-
 {/* Course Catalog Section */}
       <section id="course-catalog" className="scroll-mt-24 border-y border-(--border) bg-(--surface) py-12 md:py-16">
         <Container>
