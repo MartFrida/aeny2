@@ -34,6 +34,19 @@
         },
         "cta": "Consultar sobre apoyo",
         "photoAlt": "Actividad de información y apoyo comunitario de AEINY."
+      },
+      "aid": {
+        "eyebrow": "Solidaridad en acción",
+        "title": "Ayuda humanitaria y apoyo a familias",
+        "lead": "La solidaridad se convierte en ayuda concreta para nuestra comunidad.",
+        "copy": "Alianza Ecuatoriana Internacional impulsa acciones solidarias de apoyo a familias, como la entrega de alimentos desde el Centro Comunitario Andino. Conoce estas iniciativas a través de sus historias, fotografías y videos.",
+        "points": {
+          "food": "Jornadas de entrega de alimentos",
+          "families": "Apoyo a familias de la comunidad",
+          "solidarity": "Colaboración y solidaridad comunitaria"
+        },
+        "cta": "Conocer las acciones solidarias",
+        "photoAlt": "Participantes junto a los alimentos preparados para la jornada solidaria del 18 de noviembre de 2025."
       }
     },
     "finalTitle": "¿Buscas información o una forma de contribuir?",

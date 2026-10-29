@@ -10,6 +10,7 @@ const pageLoaders = {
   home: () => import('../pages/Home').then((module) => ({ Component: module.HomePage })),
   about: () => import('../pages/About').then((module) => ({ Component: module.AboutPage })),
   ourWork: () => import('../pages/OurWork').then((module) => ({ Component: module.OurWorkPage })),
+  communityAid: () => import('../pages/OurWork/HumanitarianAidPage').then((module) => ({ Component: module.HumanitarianAidPage })),
   projects: () => import('../pages/Projects').then((module) => ({ Component: module.ProjectsPage })),
   projectParque: () => import('../pages/Projects/ParqueDelMigrantePage').then((module) => ({ Component: module.ParqueDelMigrantePage })),
   events: () => import('../pages/Events').then((module) => ({ Component: module.EventsPage })),

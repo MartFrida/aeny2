@@ -34,6 +34,19 @@
         },
         "cta": "Ask about support",
         "photoAlt": "Community outreach at an AEINY activity."
+      },
+      "aid": {
+        "eyebrow": "Solidarity in action",
+        "title": "Humanitarian Aid and Family Support",
+        "lead": "Turning community solidarity into practical help.",
+        "copy": "Alianza Ecuatoriana Internacional carries out initiatives to support families, including food distributions through Centro Comunitario Andino. Discover these efforts through their stories, photographs and videos.",
+        "points": {
+          "food": "Community food distributions",
+          "families": "Support for local families",
+          "solidarity": "Community partnerships and solidarity"
+        },
+        "cta": "Explore our aid initiatives",
+        "photoAlt": "Participants beside food prepared for the community aid initiative on November 18, 2025."
       }
     },
     "finalTitle": "Looking for information or a way to contribute?",

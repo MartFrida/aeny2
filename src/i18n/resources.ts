@@ -6,6 +6,8 @@ import enabout from './en/about.json'
 import esabout from './es/about.json'
 import enourWork from './en/ourWork.json'
 import esourWork from './es/ourWork.json'
+import encommunityAid from './en/communityAid.json'
+import escommunityAid from './es/communityAid.json'
 import enprojects from './en/projects.json'
 import esprojects from './es/projects.json'
 import enevents from './en/events.json'
@@ -25,6 +27,6 @@ import escontact from './es/contact.json'
 
 // Keep the existing translation keys; each domain owns its own copy.
 export const translations = {
-  en: { ...encommon, ...enhome, ...enabout, ...enourWork, ...enprojects, ...enevents, ...enchasqui2026, ...enfestival2026, ...enfestivalSchedule2026, ...encourses, ...enparticipation, ...encontact },
-  es: { ...escommon, ...eshome, ...esabout, ...esourWork, ...esprojects, ...esevents, ...eschasqui2026, ...esfestival2026, ...esfestivalSchedule2026, ...escourses, ...esparticipation, ...escontact },
+  en: { ...encommon, ...enhome, ...enabout, ...enourWork, ...encommunityAid, ...enprojects, ...enevents, ...enchasqui2026, ...enfestival2026, ...enfestivalSchedule2026, ...encourses, ...enparticipation, ...encontact },
+  es: { ...escommon, ...eshome, ...esabout, ...esourWork, ...escommunityAid, ...esprojects, ...esevents, ...eschasqui2026, ...esfestival2026, ...esfestivalSchedule2026, ...escourses, ...esparticipation, ...escontact },
 } as const

@@ -73,10 +73,10 @@ export function OurWorkPage() {
         </Container>
       </section>
 
-      {/* Centro Comunitario Andino services: OSHA first, then migrant support */}
+      {/* Community services, in the order defined in the shared data */}
       <section id="centro-comunitario" className="scroll-mt-24 border-y border-(--border) bg-(--surface)">
         <span id="servicios" className="block scroll-mt-24" aria-hidden="true" />
-        {services.map(({ key, id, image, imagePosition, points }, index) => (
+        {services.map(({ key, id, image, imagePosition, points, ctaPath }, index) => (
           <article
             key={key}
             id={id}
@@ -106,7 +106,7 @@ export function OurWorkPage() {
                   ))}
                 </ul>
                 <Button
-                  to={`${prefix}/${key === 'osha' ? 'courses' : 'contact'}`}
+                  to={`${prefix}/${ctaPath}`}
                   className="mt-7"
                 >
                   {t(`ourWork.services.${key}.cta`)}

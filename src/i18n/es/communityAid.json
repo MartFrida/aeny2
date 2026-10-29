@@ -1,0 +1,48 @@
+{
+  "communityAid": {
+    "seoTitle": "Ayuda humanitaria y apoyo a familias | AEINY",
+    "seoDescription": "Conoce las acciones solidarias de Alianza Ecuatoriana Internacional: apoyo alimentario a familias, fotografías y videos de sus jornadas comunitarias en Queens.",
+    "back": "Servicios comunitarios",
+    "eyebrow": "Solidaridad en acción",
+    "title": "Ayuda humanitaria y apoyo a familias",
+    "intro": "Acompañar a la comunidad también significa responder a necesidades concretas. Alianza Ecuatoriana Internacional une esfuerzos para acercar ayuda alimentaria a las familias a través del Centro Comunitario Andino.",
+    "heroPrimary": "Conocer las acciones",
+    "heroSecondary": "Consultar sobre ayuda",
+    "initiativesEyebrow": "Nuestra comunidad",
+    "initiativesTitle": "Historias de solidaridad",
+    "initiativesIntro": "Un recorrido por las acciones realizadas y las personas que hacen posible este apoyo comunitario.",
+    "completed": "Acción realizada",
+    "sourceLink": "Ver la publicación original",
+    "archiveNote": "Esta jornada ya se realizó. Para consultar nuevas entregas, fechas y disponibilidad, contacta con el Centro Comunitario Andino.",
+    "initiatives": {
+      "turkeys2025": {
+        "title": "Entrega de pavos para las familias de Queens",
+        "copy": "El 18 de noviembre de 2025, Alianza Ecuatoriana Internacional anunció una entrega de pavos para las familias de la comunidad, gracias a la gestión de la asambleísta Catalina Cruz de Queens.",
+        "details": "La convocatoria se organizó desde el Centro Comunitario Andino, en el segundo piso de 104-08 Roosevelt Avenue, Corona. La publicación indicaba la entrega de un pavo por familia y el contacto directo con el centro para coordinar la recogida.",
+        "location": "Centro Comunitario Andino · Corona, Queens"
+      }
+    },
+    "galleryTitle": "Imágenes de la jornada",
+    "galleryCredit": "Fotografías de la publicación oficial de Alianza Ecuatoriana Internacional del 18 de noviembre de 2025.",
+    "openPhoto": "Ampliar fotografía",
+    "photos": {
+      "community-team": {
+        "alt": "Participantes de la jornada junto a un vehículo con bolsas de alimentos preparadas para la entrega.",
+        "caption": "La ayuda toma forma con el esfuerzo de la comunidad."
+      },
+      "food-distribution": {
+        "alt": "Participantes de la acción solidaria del 18 de noviembre de 2025 con una bolsa de alimentos.",
+        "caption": "Un encuentro de apoyo y cercanía con las familias."
+      }
+    },
+    "videoEyebrow": "Más acciones solidarias",
+    "videoTitle": "La solidaridad también se cuenta en video",
+    "videoCopy": "Conoce otra acción de ayuda a la comunidad a través del video compartido en Facebook.",
+    "videoCta": "Ver video en Facebook",
+    "videoNote": "El video se abre en Facebook, donde puedes consultar la publicación original.",
+    "contactTitle": "¿Necesitas ayuda o quieres colaborar?",
+    "contactCopy": "Contacta con el Centro Comunitario Andino para consultar próximas jornadas de apoyo o conocer cómo contribuir a las acciones solidarias.",
+    "contactCta": "Contactar con el centro",
+    "whatsappCta": "Escribir por WhatsApp"
+  }
+}

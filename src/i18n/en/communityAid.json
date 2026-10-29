@@ -1,0 +1,48 @@
+{
+  "communityAid": {
+    "seoTitle": "Humanitarian Aid and Family Support | AEINY",
+    "seoDescription": "Discover Alianza Ecuatoriana Internacional's community aid initiatives: food support for families, photographs and videos of its community efforts in Queens.",
+    "back": "Community services",
+    "eyebrow": "Solidarity in action",
+    "title": "Humanitarian Aid and Family Support",
+    "intro": "Supporting our community means responding to practical needs. Alianza Ecuatoriana Internacional brings people together to provide food support for families through Centro Comunitario Andino.",
+    "heroPrimary": "Explore the initiatives",
+    "heroSecondary": "Ask about support",
+    "initiativesEyebrow": "Our community",
+    "initiativesTitle": "Stories of solidarity",
+    "initiativesIntro": "A look at past initiatives and the people who make this community support possible.",
+    "completed": "Past initiative",
+    "sourceLink": "View the original post",
+    "archiveNote": "This initiative has already taken place. Contact Centro Comunitario Andino to ask about future distributions, dates and availability.",
+    "initiatives": {
+      "turkeys2025": {
+        "title": "Turkey distribution for families in Queens",
+        "copy": "On November 18, 2025, Alianza Ecuatoriana Internacional announced a turkey distribution for local families, made possible through the efforts of Queens Assemblymember Catalina Cruz.",
+        "details": "The initiative was coordinated through Centro Comunitario Andino, on the second floor of 104-08 Roosevelt Avenue, Corona. The announcement offered one turkey per family and directed people to contact the center to arrange collection.",
+        "location": "Centro Comunitario Andino · Corona, Queens"
+      }
+    },
+    "galleryTitle": "Photos from the initiative",
+    "galleryCredit": "Photographs from Alianza Ecuatoriana Internacional's official post dated November 18, 2025.",
+    "openPhoto": "View larger photo",
+    "photos": {
+      "community-team": {
+        "alt": "Participants beside a vehicle filled with bags of food prepared for distribution.",
+        "caption": "Community effort turns solidarity into practical help."
+      },
+      "food-distribution": {
+        "alt": "Participants in the November 18, 2025 community aid initiative with a bag of food.",
+        "caption": "An opportunity to connect with and support local families."
+      }
+    },
+    "videoEyebrow": "More community aid",
+    "videoTitle": "Sharing solidarity through video",
+    "videoCopy": "Discover another community aid initiative through the video shared on Facebook.",
+    "videoCta": "Watch the video on Facebook",
+    "videoNote": "The video opens on Facebook, where you can view the original post.",
+    "contactTitle": "Need support or want to help?",
+    "contactCopy": "Contact Centro Comunitario Andino to ask about upcoming aid initiatives or find out how to contribute.",
+    "contactCta": "Contact the center",
+    "whatsappCta": "Message us on WhatsApp"
+  }
+}

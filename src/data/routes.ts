@@ -3,6 +3,7 @@ export const publicPageRoutes = [
   { id: 'home', path: '', translationKey: 'home' },
   { id: 'about', path: 'about', translationKey: 'about' },
   { id: 'ourWork', path: 'our-work', translationKey: 'ourWork' },
+  { id: 'communityAid', path: 'our-work/humanitarian-aid', translationKey: 'communityAid' },
   { id: 'projects', path: 'projects', translationKey: 'projects' },
   { id: 'projectParque', path: 'projects/parque-del-migrante', translationKey: 'projectParque' },
   { id: 'events', path: 'events', translationKey: 'events' },
@@ -16,4 +17,5 @@ export const publicPageRoutes = [
 ] as const
 
 export const festivalRoute = publicPageRoutes.find((route) => route.id === 'festival2026')!.path
+export const communityAidRoute = publicPageRoutes.find((route) => route.id === 'communityAid')!.path
 export const filmRoutePrefix = `${festivalRoute}/films/`
