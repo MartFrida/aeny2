@@ -1,12 +1,11 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-import en from './en/common.json'
-import es from './es/common.json'
+import { translations } from './resources'
 
 const resources = {
-  en: { translation: en },
-  es: { translation: es },
+  en: { translation: translations.en },
+  es: { translation: translations.es },
 } as const
 
 i18n.use(initReactI18next).init({

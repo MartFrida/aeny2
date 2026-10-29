@@ -20,11 +20,11 @@ export function KuriChasqui2023Page() {
           es: '/es/events/kuri-chasqui-2023',
         }}
       />
-      <PageHero eyebrow="Past Event" title={t('eventKuri2023.title')} intro={t('eventKuri2023.intro')} />
+      <PageHero eyebrow={t('eventKuri2023.eyebrow')} title={t('eventKuri2023.title')} intro={t('eventKuri2023.intro')} />
       <Section>
         <Container className="max-w-3xl text-(--muted)">
           <p>
-            This page is a placeholder for a previous edition of the festival, with the foundation for future event storytelling and archival content.
+            {t('eventKuri2023.copy')}
           </p>
         </Container>
       </Section>

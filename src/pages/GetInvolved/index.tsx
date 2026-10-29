@@ -17,14 +17,14 @@ export function GetInvolvedPage() {
         canonicalPath={`/${language}/get-involved`}
         alternateLanguagePaths={{ en: '/en/get-involved', es: '/es/get-involved' }}
       />
-      <PageHero eyebrow="Get Involved" title={t('getInvolved.title')} intro={t('getInvolved.intro')} />
+      <PageHero eyebrow={t('getInvolved.eyebrow')} title={t('getInvolved.title')} intro={t('getInvolved.intro')} />
       <Section>
         <Container className="grid gap-6 md:grid-cols-3">
-          {['Donate', 'Volunteer', 'Partner', 'Sponsor'].map((item) => (
+          {(t('getInvolved.options', { returnObjects: true }) as string[]).map((item) => (
             <article key={item} className="rounded-2xl border border-(--border) bg-(--surface) p-6">
               <h2 className="text-xl font-semibold text-(--foreground)">{item}</h2>
               <p className="mt-3 text-(--muted)">
-                This section will support future calls to action and partnership opportunities.
+                {t('getInvolved.optionCopy')}
               </p>
             </article>
           ))}

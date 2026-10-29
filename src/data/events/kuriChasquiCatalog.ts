@@ -31,6 +31,25 @@ export type FestivalFilm = {
   sourceUrl?: string
   reviewStatus?: string
   editorialNote?: string
+  additionalCast?: string[]
+  art?: string[]
+  assistantDirector?: string[]
+  coAuthors?: string[]
+  completionDate?: string
+  fieldProduction?: string[]
+  filmingFormat?: string
+  leadCast?: string[]
+  otherAssistants?: string[]
+  otherCollaborators?: string[]
+  productionAssistant?: string[]
+  projectionFormat?: string[]
+  rating?: string
+  sound?: string[]
+  supportingCast?: string[]
+  synopsisNote?: string
+  taglineEs?: string
+  titleEn?: string
+  viewersInEcuador?: number
 }
 
 export const kuriChasqui2026Films: FestivalFilm[] = catalog

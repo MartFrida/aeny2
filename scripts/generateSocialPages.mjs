@@ -4,16 +4,6 @@ import { createServer } from 'vite'
 
 const root = process.cwd()
 const outputDirectory = path.join(root, 'dist')
-const siteUrl = 'https://aeinyusa.org'
-const locales = {
-  en: JSON.parse(
-    await readFile(path.join(root, 'src/i18n/en/common.json'), 'utf8'),
-  ),
-  es: JSON.parse(
-    await readFile(path.join(root, 'src/i18n/es/common.json'), 'utf8'),
-  ),
-}
-
 const vite = await createServer({
   configFile: path.join(root, 'vite.config.ts'),
   appType: 'custom',
@@ -23,14 +13,28 @@ const vite = await createServer({
 
 let courses
 let films
+let locales
+let publicPageRoutes
+let filmRoutePrefix
+let siteConfig
 try {
   ;({ courses } = await vite.ssrLoadModule('/src/data/courses.ts'))
   ;({ kuriChasqui2026Films: films } = await vite.ssrLoadModule(
     '/src/data/events/kuriChasquiCatalog.ts',
   ))
+  ;({ translations: locales } = await vite.ssrLoadModule('/src/i18n/resources.ts'))
+  ;({ publicPageRoutes, filmRoutePrefix } = await vite.ssrLoadModule('/src/data/routes.ts'))
+  ;({ siteConfig } = await vite.ssrLoadModule('/src/data/site.ts'))
 } finally {
   await vite.close()
 }
+
+const siteUrl = siteConfig.url
+const routes = [
+  ...publicPageRoutes.map((page) => page.path),
+  ...courses.map((course) => `courses/${course.slug}`),
+  ...films.map((film) => `${filmRoutePrefix}${film.slug}`),
+]
 
 const escapeHtml = (value) =>
   String(value)
@@ -80,41 +84,11 @@ function setLink(html, rel, attributes) {
 
 function metadataFor(locale, route) {
   const t = locales[locale]
-  const title = (key) => t[key].seoTitle
-  const description = (key) => t[key].seoDescription
-  const pathRoutes = [
-    ['', title('home'), description('home')],
-    ['about', title('about'), description('about')],
-    ['our-work', title('ourWork'), description('ourWork')],
-    ['projects', title('projects'), description('projects')],
-    [
-      'projects/parque-del-migrante',
-      title('projectParque'),
-      description('projectParque'),
-    ],
-    ['events', title('events'), description('events')],
-    [
-      'events/chasqui-migrante-2026',
-      title('chasqui2026'),
-      description('chasqui2026'),
-    ],
-    [
-      'events/festival-internacional-de-cine-andino-2026',
-      title('festival2026'),
-      description('festival2026'),
-    ],
-    [
-      'events/kuri-chasqui-2023',
-      title('eventKuri2023'),
-      description('eventKuri2023'),
-    ],
-    ['courses', title('courses'), description('courses')],
-    ['get-involved', title('getInvolved'), description('getInvolved')],
-    ['donate', title('donate'), description('donate')],
-    ['contact', title('contact'), description('contact')],
-  ]
-  const direct = pathRoutes.find(([routePath]) => routePath === route)
-  if (direct) return { title: direct[1], description: direct[2] }
+  const page = publicPageRoutes.find((entry) => entry.path === route)
+  if (page) {
+    const copy = t[page.translationKey]
+    return { title: copy.seoTitle, description: copy.seoDescription }
+  }
 
   const course = courses.find((entry) => route === `courses/${entry.slug}`)
   if (course) {
@@ -126,8 +100,7 @@ function metadataFor(locale, route) {
     }
   }
 
-  const filmPrefix =
-    'events/festival-internacional-de-cine-andino-2026/films/'
+  const filmPrefix = filmRoutePrefix
   if (route.startsWith(filmPrefix)) {
     const film = films.find(
       (entry) => route === `${filmPrefix}${entry.slug}`,
@@ -149,11 +122,8 @@ function metadataFor(locale, route) {
 async function writePage(template, locale, route, metadata) {
   const localizedRoute = `/${locale}${route ? `/${route}` : ''}`
   const canonicalUrl = `${siteUrl}${localizedRoute}`
-  const imageUrl = `${siteUrl}/${locale === 'es' ? 'og-image.jpg' : 'og-image-en.jpg'}`
-  const imageAlt =
-    locale === 'es'
-      ? 'Banner de Alianza Ecuatoriana Internacional — AEINY'
-      : 'Alianza Ecuatoriana Internacional — AEINY banner'
+  const imageUrl = `${siteUrl}${siteConfig.socialImages[locale]}`
+  const imageAlt = siteConfig.socialImageAlts[locale]
   let html = template.replace(/<html\b[^>]*>/i, `<html lang="${locale}">`)
   html = html.replace(/<title>[\s\S]*?<\/title>/gi, '')
   html = html.replace('</head>', `  <title>${escapeHtml(metadata.title)}</title>\n  </head>`)
@@ -215,26 +185,6 @@ async function writePage(template, locale, route, metadata) {
 const template = await readFile(path.join(outputDirectory, 'index.html'), 'utf8')
 let pageCount = 0
 for (const locale of ['en', 'es']) {
-  const routes = [
-    '',
-    'about',
-    'our-work',
-    'projects',
-    'projects/parque-del-migrante',
-    'events',
-    'events/chasqui-migrante-2026',
-    'events/festival-internacional-de-cine-andino-2026',
-    'events/kuri-chasqui-2023',
-    'courses',
-    'get-involved',
-    'donate',
-    'contact',
-    ...courses.map((course) => `courses/${course.slug}`),
-    ...films.map(
-      (film) =>
-        `events/festival-internacional-de-cine-andino-2026/films/${film.slug}`,
-    ),
-  ]
   for (const route of routes) {
     const metadata = metadataFor(locale, route)
     if (!metadata) throw new Error(`Missing social metadata for /${locale}/${route}`)
@@ -246,3 +196,15 @@ for (const locale of ['en', 'es']) {
 const englishHome = await readFile(path.join(outputDirectory, 'en.html'), 'utf8')
 await writeFile(path.join(outputDirectory, 'index.html'), englishHome)
 console.log(`Generated localized social metadata for ${pageCount} public routes.`)
+
+const sitemapEntries = ['en', 'es'].flatMap((locale) => routes.map((route) => {
+  const localizedPath = `/${locale}${route ? `/${route}` : ''}`
+  const alternates = ['en', 'es'].map((alternate) =>
+    `    <xhtml:link rel="alternate" hreflang="${alternate}" href="${escapeHtml(`${siteUrl}/${alternate}${route ? `/${route}` : ''}`)}" />`,
+  ).join('\n')
+  return `  <url>\n    <loc>${escapeHtml(`${siteUrl}${localizedPath}`)}</loc>\n${alternates}\n  </url>`
+}))
+await writeFile(path.join(outputDirectory, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemapEntries.join('\n')}\n</urlset>\n`,
+)
+console.log(`Generated sitemap for ${pageCount} public routes.`)

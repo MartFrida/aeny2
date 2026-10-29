@@ -1,0 +1,52 @@
+{
+  "events": {
+    "seoTitle": "Eventos | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Descubre los eventos culturales, educativos y comunitarios organizados y apoyados por Alianza Ecuatoriana Internacional.",
+    "eyebrow": "Comunidad y cultura",
+    "heroTitle": "Un espacio para encontrarnos.",
+    "heroIntro": "Nuestros eventos celebran las raíces, crean vínculos y reúnen a las comunidades ecuatorianas y latinas a través de las generaciones.",
+    "heroPhotoAlt": "Miembros de la comunidad ecuatoriana participan en un desfile cultural.",
+    "featurePhotoAlt": "Participantes llevan banderas ecuatorianas e internacionales durante un desfile comunitario.",
+    "featureEyebrow": "Una tradición comunitaria",
+    "featureTitle": "Celebramos la herencia ecuatoriana",
+    "featureCopy1": "Los desfiles culturales reúnen a los vecinos para compartir la herencia ecuatoriana y celebrar la diversidad de comunidades que forman Nueva York.",
+    "featureCopy2": "Estos encuentros públicos ofrecen oportunidades para compartir tradiciones, conectar generaciones y fortalecer la comunidad.",
+    "keyword": {
+      "music": "Música",
+      "folklore": "Folclore",
+      "dance": "Danza",
+      "tradition": "Tradición",
+      "community": "Comunidad"
+    },
+    "momentsEyebrow": "Más encuentros comunitarios",
+    "momentsTitle": "Reunirnos, aprender y celebrar",
+    "moment": {
+      "celebrationsTitle": "Celebraciones de la comunidad ecuatoriana",
+      "celebrationsCopy": "AEINY participa y apoya encuentros comunitarios y actividades de desfiles ecuatorianos en Queens, fortaleciendo los vínculos con la comunidad latina en general.",
+      "celebrationsPhotoAlt": "Familias y miembros de la comunidad celebran juntos en un encuentro de AEINY.",
+      "gatheringsTitle": "Encuentros comunitarios",
+      "gatheringsCopy": "Los encuentros comunitarios crean espacios para que los vecinos se conecten, compartan experiencias y fortalezcan sus vínculos.",
+      "gatheringsPhotoAlt": "Miembros de la comunidad se reúnen en un evento comunitario de AEINY.",
+      "generationsTitle": "Cultura entre generaciones",
+      "generationsCopy": "Los encuentros culturales ayudan a que las tradiciones crucen fronteras y permiten que las nuevas generaciones mantengan su vínculo con la identidad ecuatoriana.",
+      "generationsPhotoAlt": "Miembros de la comunidad comparten una comida en un encuentro de AEINY."
+    },
+    "filmEyebrow": "Cine y encuentro cultural",
+    "filmTitle": "1° Festival Internacional de Cine Andino New York 2026",
+    "filmCopy": "The Andes International Film Fest New York celebra el cine andino, la identidad y el patrimonio cultural en Nueva York.",
+    "filmDate": "8–15 de noviembre de 2026",
+    "filmCta": "Descubre el festival",
+    "socialEyebrow": "Síguenos",
+    "socialTitle": "Entérate de las novedades.",
+    "socialCopy": "Sigue a Alianza Ecuatoriana Internacional en Facebook para conocer los últimos eventos, anuncios y actividades de la comunidad.",
+    "socialCta": "Síguenos en Facebook"
+  },
+  "eventKuri2023": {
+    "seoTitle": "Kuri Chasqui 2023 | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Conoce el festival Kuri Chasqui 2023, una celebración de la cultura andina, el cine y la conexión comunitaria.",
+    "title": "Kuri Chasqui 2023",
+    "intro": "Una edición anterior del festival centrada en la cultura andina, el cine y la conexión comunitaria.",
+    "eyebrow": "Past Event",
+    "copy": "This page is a placeholder for a previous edition of the festival, with the foundation for future event storytelling and archival content."
+  }
+}

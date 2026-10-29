@@ -1,0 +1,115 @@
+{
+  "courses": {
+    "seoTitle": "Cursos de construcción y seguridad | AEINY",
+    "seoDescription": "Capacitación en español en Nueva York: OSHA, SST, scaffolding, bandera, sílica, electricidad, plomería, lectura de planos y otros cursos para la comunidad trabajadora.",
+    "hero": {
+      "eyebrow": "Centro Comunitario Andino",
+      "title": "Formación para trabajar con más seguridad y preparación",
+      "copy": "AEINY y el Centro Comunitario Andino ofrecen formación orientada a las necesidades reales de trabajadores inmigrantes: seguridad en construcción, scaffolding, oficios técnicos y habilidades para desenvolverse mejor en el sector.",
+      "primary": "Ver cursos",
+      "secondary": "Consultar próxima clase",
+      "imageAlt": "Participantes asisten a una sesión de formación en seguridad para la construcción."
+    },
+    "catalog": {
+      "eyebrow": "Cursos",
+      "title": "Programas de formación",
+      "copy": "Explora los cursos que AEINY promociona actualmente. Las fechas, precios y modalidades pueden cambiar; consulta directamente con el centro antes de inscribirte.",
+      "resultsCount": "{{count}} cursos encontrados",
+      "noResults": "No hay cursos que coincidan con la búsqueda. Prueba otro término o categoría."
+    },
+    "searchLabel": "Buscar cursos",
+    "filtersLabel": "Filtrar cursos por categoría",
+    "filters": {
+      "all": "Todos",
+      "safety": "Seguridad y OSHA",
+      "scaffold": "Scaffolding",
+      "trades": "Oficios técnicos",
+      "construction": "Habilidades de construcción"
+    },
+    "categories": {
+      "safety": "Seguridad y OSHA",
+      "scaffold": "Scaffolding",
+      "trades": "Oficios técnicos",
+      "construction": "Habilidades de construcción"
+    },
+    "durationHours_one": "{{count}} hora",
+    "durationHours_other": "{{count}} horas",
+    "availability": {
+      "contact": "Consulta la disponibilidad con AEINY"
+    },
+    "coursePhotoAlt": "Fotografía de formación relacionada con {{course}}",
+    "viewCourse": "Ver curso",
+    "why": {
+      "eyebrow": "Aprendizaje y oportunidades",
+      "title": "Formación pensada para la comunidad trabajadora",
+      "copy": "Los programas combinan educación en seguridad, preparación laboral y conocimientos técnicos con un enfoque accesible para la comunidad hispanohablante de Nueva York."
+    },
+    "formats": {
+      "eyebrow": "Antes de inscribirte",
+      "title": "Modalidades e información de inscripción",
+      "copy": "Las modalidades pueden variar según el programa. Contacta a AEINY para confirmar la disponibilidad, modalidad, fechas, costos, ubicación y requisitos antes de inscribirte.",
+      "online": {
+        "title": "En línea",
+        "copy": "Consulta con AEINY si esta opción está disponible para el curso que te interesa."
+      },
+      "in-person": {
+        "title": "Presencial",
+        "copy": "Consulta con AEINY si esta opción está disponible para el curso que te interesa."
+      },
+      "hybrid": {
+        "title": "Híbrida",
+        "copy": "Consulta con AEINY si esta opción está disponible para el curso que te interesa."
+      }
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Antes de comenzar",
+      "availability": {
+        "question": "¿Hay cursos abiertos para inscripción actualmente?",
+        "answer": "Los cursos se organizan en diferentes fechas durante el año. Contacta con AEINY para confirmar la próxima clase, horarios, modalidad y disponibilidad."
+      },
+      "prices": {
+        "question": "¿Los precios y horarios son fijos?",
+        "answer": "Los precios, descuentos y promociones pueden variar según el programa. Consulta el valor vigente directamente con AEINY antes de registrarte."
+      },
+      "credentials": {
+        "question": "¿Completar un curso garantiza una tarjeta, certificación o licencia?",
+        "answer": "Algunos programas están relacionados con tarjetas o requisitos de seguridad para trabajos de construcción. El tipo de credencial y los requisitos dependen del curso y de la situación de cada trabajador; confirma los detalles con AEINY antes de inscribirte."
+      }
+    },
+    "inquiry": {
+      "eyebrow": "Centro Comunitario Andino",
+      "title": "¿Necesitas información actual sobre los cursos?",
+      "copy": "Contacta a AEINY para consultar disponibilidad, modalidad, fechas, costos y requisitos de inscripción.",
+      "copyWithCourse": "Contacta a AEINY para consultar la disponibilidad actual y los detalles de {{course}}.",
+      "cta": "Contactar a AEINY"
+    },
+    "facts": {
+      "duration": "Duración del curso",
+      "availability": "Estado actual",
+      "notSpecified": "No especificada"
+    },
+    "formatLabels": {
+      "online": "En línea",
+      "in-person": "Presencial",
+      "hybrid": "Híbrida"
+    },
+    "detail": {
+      "seoTitle": "{{course}} | Cursos y Formación | AEINY",
+      "breadcrumbLabel": "Ruta de navegación",
+      "breadcrumb": "Cursos",
+      "backToCatalog": "Todos los cursos",
+      "overviewEyebrow": "Descripción del curso",
+      "overviewTitle": "Acerca de este curso",
+      "learnTitle": "Temas descritos en la información del curso",
+      "topicsUnconfirmed": "La información publicada no incluye un desglose detallado de temas. Contacta a AEINY para confirmar el contenido actual del curso.",
+      "factsTitle": "Información del curso",
+      "formats": "Modalidad",
+      "formatsContact": "Consulta con AEINY para confirmar la modalidad actual.",
+      "upcomingTitle": "Próximas clases",
+      "upcomingCopy": "Las fechas y los horarios varían. Contacta con AEINY para consultar la próxima clase disponible y confirmar los requisitos vigentes.",
+      "sourceLink": "Ver información actual de AEINY",
+      "relatedTitle": "Cursos relacionados"
+    }
+  }
+}

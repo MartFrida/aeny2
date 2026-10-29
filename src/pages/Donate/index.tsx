@@ -18,12 +18,12 @@ export function DonatePage() {
         canonicalPath={`/${language}/donate`}
         alternateLanguagePaths={{ en: '/en/donate', es: '/es/donate' }}
       />
-      <PageHero eyebrow="Donate" title={t('donate.title')} intro={t('donate.intro')} />
+      <PageHero eyebrow={t('donate.eyebrow')} title={t('donate.title')} intro={t('donate.intro')} />
       <Section>
         <Container className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-(--border) bg-(--surface) p-8">
             <h2 className="text-2xl font-semibold text-(--foreground)">{t('common.supportAEINY')}</h2>
-            <p className="mt-3 text-(--muted)">Support community programs, education, and cultural initiatives.</p>
+            <p className="mt-3 text-(--muted)">{t('donate.communityCopy')}</p>
             <Button to={`/${language}/contact`} className="mt-6">
               {t('common.supportAEINY')}
             </Button>
@@ -31,7 +31,7 @@ export function DonatePage() {
 
           <div className="rounded-2xl border border-(--border) bg-(--surface) p-8">
             <h2 className="text-2xl font-semibold text-(--foreground)">{t('common.supportKuri')}</h2>
-            <p className="mt-3 text-(--muted)">Support the next edition of the Andes International Film Fest New York.</p>
+            <p className="mt-3 text-(--muted)">{t('donate.festivalCopy')}</p>
             <Button to={`/${language}/events/festival-internacional-de-cine-andino-2026`} className="mt-6" variant="secondary">
               {t('common.supportKuri')}
             </Button>

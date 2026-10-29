@@ -1,0 +1,42 @@
+{
+  "festivalSchedule2026": {
+    "eyebrow": "Kuri Chasqui · noviembre de 2026",
+    "title": "Programación del Festival",
+    "dateRange": "8–15 de noviembre de 2026",
+    "dayTabsLabel": "Programación del festival por día",
+    "viewSchedule": "Ver programación",
+    "specialScreening": "Proyección especial",
+    "viewFilmCard": "Ir a la ficha de {{title}}",
+    "days": {
+      "opening": "Día de apertura",
+      "shortFilms": "Cortometrajes",
+      "november10": "10 de noviembre",
+      "november11": "11 de noviembre",
+      "november12": "12 de noviembre",
+      "november13": "13 de noviembre",
+      "november14": "14 de noviembre",
+      "closing": "Día de clausura"
+    },
+    "types": {
+      "film": "Película",
+      "forum": "Foro",
+      "discussion": "Conversatorio",
+      "opening": "Evento de apertura",
+      "ceremony": "Ceremonia de premios",
+      "closing": "Clausura del festival"
+    },
+    "activities": {
+      "opening": "Apertura oficial, foro y encuentro con organizadores, productores y directores",
+      "participantForum": "Foro y conversación con participantes",
+      "directorForum": "Foro con directores, productores y organización",
+      "audienceForum": "Foro y conversación con el público",
+      "filmmakerForum": "Foro con realizadores y organización",
+      "directorMeeting": "Encuentro con directores y productores",
+      "filmmakerAudienceMeeting": "Encuentro con realizadores y público",
+      "filmDiscussion": "Conversatorio y foro sobre la película",
+      "finalMeeting": "Encuentro final con directores, productores, participantes y organización",
+      "awardsCeremony": "Ceremonia de clausura y Entrega de Premios Kuri Chasqui 2026",
+      "festivalClosing": "Finalización oficial del Festival Kuri Chasqui 2026"
+    }
+  }
+}

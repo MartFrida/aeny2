@@ -1,3 +1,4 @@
+import { navigationItems } from '../../data/navigation'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -8,15 +9,10 @@ type DesktopNavigationProps = {
 export function DesktopNavigation({ language }: DesktopNavigationProps) {
   const { t } = useTranslation()
 
-  const items = [
-    { label: t('nav.about'), href: `/${language}/about` },
-    { label: t('nav.ourWork'), href: `/${language}/our-work` },
-    { label: t('nav.projects'), href: `/${language}/projects` },
-    { label: t('nav.events'), href: `/${language}/events` },
-    { label: t('nav.courses'), href: `/${language}/courses` },
-    { label: t('nav.getInvolved'), href: `/${language}/get-involved` },
-    { label: t('nav.contact'), href: `/${language}/contact` },
-  ]
+  const items = navigationItems.map(({ labelKey, path }) => ({
+    label: t(labelKey),
+    href: `/${language}/${path}`,
+  }))
 
   return (
     <nav aria-label="Main navigation" className="hidden items-center gap-6 lg:flex">

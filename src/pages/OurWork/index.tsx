@@ -1,25 +1,10 @@
+import { services } from '../../data/ourWork'
 import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/common/Button'
 import { Container } from '../../components/common/Container'
 import { PageMetadata } from '../../components/common/PageMetadata'
 
-const services = [
-  {
-    key: 'osha',
-    id: 'cursos-osha',
-    image: '/images/aeiny/workforce-classroom.webp',
-    imagePosition: 'object-[center_40%]',
-    points: ['safety', 'prevention', 'skills'],
-  },
-  {
-    key: 'migrants',
-    id: 'apoyo-a-migrantes',
-    image: '/images/aeiny/community-outreach-booth.webp',
-    imagePosition: 'object-center',
-    points: ['information', 'rights', 'resources'],
-  },
-] as const
 
 export function OurWorkPage() {
   const { t, i18n } = useTranslation()

@@ -1,0 +1,91 @@
+{
+  "about": {
+    "seoTitle": "About Us | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Get to know Alianza Ecuatoriana Internacional, a New York community organization rooted in Ecuadorian and Latin American identity, solidarity, and belonging.",
+    "eyebrow": "About us",
+    "heroTitle": "United by our roots. Driven by our community.",
+    "heroDescription": "At Alianza Ecuatoriana Internacional, we work to support, guide, and strengthen Ecuadorian and Latin American communities in New York while sustaining the cultural and human bonds that bring us together.",
+    "heroPrimary": "Get to know us",
+    "heroSecondary": "Join our community",
+    "teamPhotoAlt": "AEINY community members gathered together around a table.",
+    "teamPhotoCaption": "A community connected by shared roots and care",
+    "identityEyebrow": "Our identity",
+    "identityTitle": "Our roots unite us. Our community moves us forward.",
+    "identityCopy1": "Alianza Ecuatoriana Internacional (AEI) is a community organization based in New York, committed to the well-being and development of Ecuadorian and Latin American communities.",
+    "identityCopy2": "Through educational programs, community guidance, cultural activities, and institutional collaboration, we seek to create opportunities and strengthen ties between migrants, their families, and their communities of origin.",
+    "identityCopy3": "Our work connects the needs of people building a life in the United States with recognition of their roots, identity, and contributions to society.",
+    "storyPhotoAlt": "AEINY volunteers and community members gathered with donated food and supplies.",
+    "missionEyebrow": "Our purpose",
+    "missionHeading": "A shared purpose, a vision for the future.",
+    "missionPhotoAlt": "AEINY volunteers sharing essential supplies with community members.",
+    "missionLabel": "Our mission",
+    "missionCopy": "To support and strengthen Ecuadorian and Latin American communities through access to information, education, guidance, and development opportunities, while encouraging community participation, dignity, and solidarity.",
+    "visionLabel": "Our vision",
+    "visionCopy": "An informed, connected, and empowered migrant community with opportunities to thrive and maintain strong ties to its cultural identity and roots.",
+    "valuesEyebrow": "What guides us",
+    "valuesTitle": "The values that bring us together",
+    "rootsTitle": "Our roots, carried together",
+    "rootsPhotoAlt": "Community members celebrating Ecuadorian and Latin American heritage at a cultural parade.",
+    "rootsPhotoCaption": "A shared celebration of Ecuadorian and Latin American identity.",
+    "communityPhotoAlt": "AEINY community members sharing a meal and time together.",
+    "value": {
+      "solidarityTitle": "Solidarity",
+      "solidarityCopy": "We believe in mutual support and in the strength of a community that moves forward together.",
+      "identityTitle": "Cultural identity",
+      "identityCopy": "We value our roots and foster connection across generations and cultures.",
+      "educationTitle": "Education",
+      "educationCopy": "We see knowledge and learning as tools for opening new opportunities.",
+      "commitmentTitle": "Community commitment",
+      "commitmentCopy": "We work to strengthen participation, collaboration, and collective well-being."
+    },
+    "communityEyebrow": "The people at our heart",
+    "communityTitle": "A community shaped by care",
+    "communityCopy": "AEI is built through relationships: neighbors supporting one another, families staying connected, and people finding a sense of belonging across cultures and borders.",
+    "belongingCopy": "We believe everyone deserves to be welcomed with dignity and to have their experiences and contributions recognized. That belief shapes how we listen, build relationships, and move forward together.",
+    "finalEyebrow": "Build with us",
+    "finalTitle": "When a community comes together, opportunities grow.",
+    "finalDescription": "Join a community grounded in solidarity, shared identity, and care for one another.",
+    "finalParticipate": "Get involved",
+    "finalSupport": "Support our mission",
+    "content": {
+      "organizationLabel": "Our organization",
+      "organizationTitle": "An alliance serving the community",
+      "organizationIntro": "Alianza Ecuatoriana Internacional brings together Centro Comunitario Andino and Fundación Alianza Ecuatoriana Internacional under a shared commitment: to support the migrant community and strengthen its opportunities, identity and rights.",
+      "organizationUnits": [
+        {
+          "title": "Centro Comunitario Andino",
+          "imageAlt": "Training and community services at Centro Comunitario Andino",
+          "description": "Supports migrants and families in New York through community guidance and training opportunities, including OSHA and construction courses.",
+          "cta": "Discover the Center"
+        },
+        {
+          "title": "Fundación Alianza Ecuatoriana Internacional",
+          "imageAlt": "Fundación Alianza Ecuatoriana Internacional logo",
+          "description": "Advances the Alliance’s humanitarian aid and social and educational projects, with support from donations and the community, to assist individuals and families in vulnerable situations.",
+          "cta": "Discover the Foundation"
+        }
+      ],
+      "organizationScope": "Our work spans community services, humanitarian aid, culture and heritage, projects and rights advocacy. Initiatives such as the Andean International Film Festival, the El Chasqui Migrante Run and Walk, and Parque del Migrante are part of this shared effort.",
+      "workLabel": "Our work",
+      "workCta": "Explore our work",
+      "workAreas": [
+        {
+          "title": "Community services"
+        },
+        {
+          "title": "Culture & heritage"
+        },
+        {
+          "title": "Foundation & humanitarian aid"
+        },
+        {
+          "title": "Projects"
+        },
+        {
+          "title": "Rights advocacy"
+        }
+      ],
+      "areaIntro": "Five areas of work. One shared mission."
+    }
+  }
+}

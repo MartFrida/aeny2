@@ -1,0 +1,74 @@
+{
+  "projects": {
+    "seoTitle": "Proyectos Comunitarios | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Conoce las iniciativas de AEINY, incluido el Parque del Migrante en Cuenca y el 1er Encuentro Cuencano en New York.",
+    "heroEyebrow": "Proyectos AEINY",
+    "heroTitle": "Ideas que nacen de la comunidad y buscan dejar huella.",
+    "heroDescription": "Conoce iniciativas que conectan la migración, la memoria colectiva, la identidad cultural y el futuro de las comunidades en Nueva York y Ecuador.",
+    "introTitle": "Iniciativas creadas desde experiencias compartidas",
+    "introCopy": "Los proyectos de AEINY reconocen los aportes de las personas migrantes, preservan la memoria colectiva y crean formas de mantener conectadas a las comunidades de Nueva York y Ecuador.",
+    "parqueEyebrow": "Proyecto destacado / Cuenca, Ecuador",
+    "parqueLocation": "Cuenca, Ecuador",
+    "parqueTitle": "Parque del Migrante",
+    "parqueLead": "Un espacio de reconocimiento al esfuerzo, la valentía y los aportes de los migrantes ecuatorianos.",
+    "parqueCopy1": "Parque del Migrante es una iniciativa presentada por AEINY para rendir homenaje a la experiencia y las contribuciones de los migrantes ecuatorianos. El proyecto plantea un espacio público en Cuenca dedicado a la memoria, la identidad cultural y la conexión entre las comunidades dentro y fuera del país.",
+    "parqueCopy2": "El diseño presentado públicamente incluye propuestas de entrada, museo, concha acústica, pileta e instalaciones complementarias.",
+    "visualizationCaption": "Visualización conceptual del proyecto",
+    "visionTitle": "Una visión de reconocimiento, memoria y conexión",
+    "principles": {
+      "recognition": {
+        "title": "Reconocimiento",
+        "copy": "Honrar el trabajo y los sacrificios de las personas migrantes."
+      },
+      "memory": {
+        "title": "Memoria",
+        "copy": "Mantener vivas las historias de la migración entre generaciones."
+      },
+      "connection": {
+        "title": "Conexión",
+        "copy": "Crear un puente simbólico entre Ecuador y sus comunidades en el exterior."
+      }
+    },
+    "galleryEyebrow": "Diseño del proyecto",
+    "galleryTitle": "Un espacio público imaginado a través de sus detalles",
+    "gallery": {
+      "entrance": "Entrada",
+      "museum": "Museo",
+      "acousticShell": "Concha acústica",
+      "fountain": "Pileta",
+      "services": "Seguridad y servicios",
+      "aerial": "Vista aérea"
+    },
+    "encuentroEyebrow": "Iniciativa comunitaria / Nueva York",
+    "encuentroTitle": "1er Encuentro Cuencano en New York",
+    "encuentroLead": "Un encuentro para conectar a la comunidad cuencana mediante el diálogo, la identidad y las oportunidades compartidas.",
+    "encuentroCopy1": "El primer Encuentro Cuencano en Nueva York reunió a miembros de la comunidad en torno a preocupaciones que afectan a las personas migrantes, oportunidades de emprendimiento y empleo, e ideas para futuras iniciativas en Cuenca.",
+    "encuentroCopy2": "Entre sus objetivos publicados estaban dialogar sobre la situación de la comunidad, explorar futuros proyectos en Cuenca y organizar su representación en el desfile de la Ecuatorianidad.",
+    "encuentroThemes": {
+      "dialogue": "Diálogo comunitario",
+      "opportunity": "Oportunidades y emprendimiento",
+      "representation": "Representación cultural"
+    },
+    "eventPhotoAlt": "Miembros de la comunidad reunidos en el 1er Encuentro Cuencano en New York.",
+    "eventPhotoCaption": "Encuentro comunitario documentado en el archivo local de AEINY.",
+    "archivalPosterAlt": "Afiche de archivo del 1er Encuentro Cuencano en New York.",
+    "archivalPosterCaption": "Afiche histórico del encuentro",
+    "impactEyebrow": "Más allá de cada proyecto",
+    "impactTitle": "Proyectos que conectan personas, territorios y memoria.",
+    "impactCopy": "Ya sea reconociendo los aportes de las personas migrantes o creando espacios de diálogo comunitario, las iniciativas de AEINY buscan preservar historias compartidas, fortalecer vínculos y promover la participación colectiva.",
+    "finalEyebrow": "Apoya las iniciativas comunitarias",
+    "finalTitle": "Los proyectos con propósito necesitan personas que crean en ellos.",
+    "finalCopy": "Descubre cómo colaborar con AEINY o apoyar el desarrollo de iniciativas comunitarias.",
+    "finalInvolved": "Participa",
+    "finalDonate": "Apoya a AEINY"
+  },
+  "projectParque": {
+    "seoTitle": "Parque del Migrante | Proyecto comunitario de AEINY",
+    "seoDescription": "Conoce el Parque del Migrante, una iniciativa de AEINY en Cuenca que honra a los migrantes ecuatorianos mediante la memoria, la identidad cultural y la conexión comunitaria.",
+    "title": "Parque del Migrante",
+    "intro": "Una iniciativa centrada en la comunidad, arraigada en la pertenencia cultural, la memoria y el espacio público.",
+    "eyebrow": "Project",
+    "copy1": "This project is part of AEINY’s broader effort to support community memory, belonging, and public cultural space.",
+    "copy2": "The current foundation focuses on the planning and community context behind the project rather than detailed program design."
+  }
+}

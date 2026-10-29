@@ -1,3 +1,4 @@
+import { aboutMedia } from '../../data/about';
 import {
   ArrowDown,
   ArrowRight,
@@ -20,185 +21,15 @@ const values = [
   { key: "commitment", icon: UsersRound },
 ] as const;
 
-const homeImages = {
-  migrantSupport: "/images/home/migrant-support.webp",
-  education: "/images/home/education-training.webp",
-  culture: "/images/home/culture-community.webp",
-  health: "/images/home/comunity.webp",
-  parque: "/images/home/parque-del-migrante-entrada.webp",
-  encuentro: "/images/home/encuentro-cuencano.webp",
-  allhome: "/images/home/home-all.webp",
-} as const;
-
-const copy = {
-  es: {
-    introLabel: "Alianza Ecuatoriana Internacional",
-    introHeading: "Una organización, cinco áreas de trabajo.",
-    introBody:
-      "Desde Nueva York, impulsamos servicios comunitarios, cultura, ayuda humanitaria, proyectos y defensa de derechos.",
-    aboutCta: "Conoce AEINY",
-
-    organizationLabel: "Nuestra organización",
-    organizationTitle: "Una alianza al servicio de la comunidad",
-    organizationIntro:
-      "Alianza Ecuatoriana Internacional integra al Centro Comunitario Andino y a la Fundación Alianza Ecuatoriana Internacional bajo un compromiso común: acompañar a la comunidad migrante y fortalecer sus oportunidades, su identidad y sus derechos.",
-    organizationUnits: [
-      {
-        title: "Centro Comunitario Andino",
-        image: homeImages.education,
-        imageAlt: "Formación y servicios comunitarios del Centro Comunitario Andino",
-        description:
-          "Apoya a migrantes y familias en Nueva York mediante orientación comunitaria y oportunidades de formación, incluidos cursos OSHA y de construcción.",
-        href: "/courses",
-        cta: "Conoce el Centro",
-      },
-      {
-        title: "Fundación Alianza Ecuatoriana Internacional",
-        image: "/images/events/festival-andino-2026/sponsors/fundacion-alianza.webp",
-        imageAlt: "Logotipo de la Fundación Alianza Ecuatoriana Internacional",
-        description:
-          "Impulsa la ayuda humanitaria y los proyectos sociales y educativos de la Alianza, con el apoyo de donaciones y de la comunidad, para acompañar a personas y familias en situación de vulnerabilidad.",
-        href: "/contact",
-        cta: "Conoce la Fundación",
-      },
-    ],
-    organizationScope:
-      "Nuestra labor abarca servicios comunitarios, ayuda humanitaria, cultura y patrimonio, proyectos y defensa de derechos. Iniciativas como el Festival Internacional de Cine Andino, la Carrera y Caminata El Chasqui Migrante y el Parque del Migrante forman parte de este trabajo compartido.",
-
-    workLabel: "Nuestro trabajo",
-    workTitle: "Lo que hacemos",
-    workCta: "Ver nuestro trabajo",
-    workAreas: [
-      {
-        title: "Servicios comunitarios",
-        image: homeImages.education,
-        href: "/courses",
-      },
-      {
-        title: "Cultura y patrimonio",
-        image: homeImages.culture,
-        href: "/events",
-      },
-      {
-        title: "Fundación y ayuda humanitaria",
-        image: homeImages.migrantSupport,
-        href: "/contact",
-      },
-      { title: "Proyectos", image: homeImages.parque, href: "/projects" },
-      {
-        title: "Defensa de derechos",
-        image: homeImages.health,
-        href: "/our-work",
-      },
-    ],
-
-    projectsLabel: "Proyectos destacados",
-    projectsTitle: "De la comunidad, para la comunidad",
-    parqueTitle: "Parque del Migrante",
-    parqueText:
-      "Un espacio en Cuenca en honor al esfuerzo y valentía de los migrantes ecuatorianos.",
-    encuentroTitle: "Encuentro Cuencano en New York",
-    encuentroText:
-      "Un punto de encuentro para comunidad, oportunidades y conexión con Cuenca.",
-    projectsCta: "Ver proyectos",
-
-    communityLabel: "AEINY en acción",
-    communityTitle: "Personas, cultura y comunidad",
-    communityText:
-      "Cada programa nace del encuentro entre migrantes, familias, voluntarios y organizaciones aliadas.",
-
-    supportLabel: "Participa",
-    supportTitle: "Tu apoyo hace posible el siguiente proyecto.",
-    donateCta: "Donar",
-    involvedCta: "Participar",
-  },
-  en: {
-    introLabel: "Alianza Ecuatoriana Internacional",
-    introHeading: "One organization, five areas of work.",
-    introBody:
-      "From New York, we connect community services, culture, humanitarian initiatives, projects and rights advocacy.",
-    aboutCta: "Discover AEINY",
-
-    organizationLabel: "Our organization",
-    organizationTitle: "An alliance serving the community",
-    organizationIntro:
-      "Alianza Ecuatoriana Internacional brings together Centro Comunitario Andino and Fundación Alianza Ecuatoriana Internacional under a shared commitment: to support the migrant community and strengthen its opportunities, identity and rights.",
-    organizationUnits: [
-      {
-        title: "Centro Comunitario Andino",
-        image: homeImages.education,
-        imageAlt: "Training and community services at Centro Comunitario Andino",
-        description:
-          "Supports migrants and families in New York through community guidance and training opportunities, including OSHA and construction courses.",
-        href: "/courses",
-        cta: "Discover the Center",
-      },
-      {
-        title: "Fundación Alianza Ecuatoriana Internacional",
-        image: "/images/events/festival-andino-2026/sponsors/fundacion-alianza.webp",
-        imageAlt: "Fundación Alianza Ecuatoriana Internacional logo",
-        description:
-          "Advances the Alliance’s humanitarian aid and social and educational projects, with support from donations and the community, to assist individuals and families in vulnerable situations.",
-        href: "/contact",
-        cta: "Discover the Foundation",
-      },
-    ],
-    organizationScope:
-      "Our work spans community services, humanitarian aid, culture and heritage, projects and rights advocacy. Initiatives such as the Andean International Film Festival, the El Chasqui Migrante Run and Walk, and Parque del Migrante are part of this shared effort.",
-
-    workLabel: "Our work",
-    workTitle: "What we do",
-    workCta: "Explore our work",
-    workAreas: [
-      {
-        title: "Community services",
-        image: homeImages.education,
-        href: "/courses",
-      },
-      {
-        title: "Culture & heritage",
-        image: homeImages.culture,
-        href: "/events",
-      },
-      {
-        title: "Foundation & humanitarian aid",
-        image: homeImages.migrantSupport,
-        href: "/contact",
-      },
-      { title: "Projects", image: homeImages.parque, href: "/projects" },
-      { title: "Rights advocacy", image: homeImages.health, href: "/our-work" },
-    ],
-
-    projectsLabel: "Featured projects",
-    projectsTitle: "Built by community, for community",
-    parqueTitle: "Parque del Migrante",
-    parqueText:
-      "A space in Cuenca honoring the effort and courage of Ecuadorian migrants.",
-    encuentroTitle: "Encuentro Cuencano in New York",
-    encuentroText:
-      "A meeting point for community, opportunity and connection with Cuenca.",
-    projectsCta: "View projects",
-
-    communityLabel: "AEINY in action",
-    communityTitle: "People, culture and community",
-    communityText:
-      "Every program grows from the connection between migrants, families, volunteers and partner organizations.",
-
-    supportLabel: "Get involved",
-    supportTitle:
-      "Your support helps make the next community project possible.",
-    donateCta: "Donate",
-    involvedCta: "Get involved",
-  },
-} as const;
-
 const alternateLanguagePaths = { en: "/en/about", es: "/es/about" };
+
+type AboutContent = typeof import('../../i18n/en/about.json')['about']['content'];
 
 export function AboutPage() {
   const { i18n, t } = useTranslation();
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
   const prefix = `/${language}`;
-  const c = copy[language];
+  const c = t("about.content", { returnObjects: true }) as AboutContent;
   const ourWorkPath = `/${language}/our-work`;
   const homePath = `/${language}`;
 
@@ -335,7 +166,9 @@ export function AboutPage() {
           </div>
 
           <div className="mt-9 grid gap-6 md:grid-cols-2">
-            {c.organizationUnits.map((unit) => (
+            {c.organizationUnits.map((content, index) => {
+              const unit = { ...content, ...aboutMedia.organizationUnits[index] };
+              return (
               <article
                 key={unit.href}
                 className="group flex h-full flex-col overflow-hidden rounded-3xl border border-(--border) bg-(--surface)"
@@ -371,7 +204,8 @@ export function AboutPage() {
                   </Link>
                 </div>
               </article>
-            ))}
+            );
+            })}
           </div>
 
           <p className="mt-8 max-w-4xl text-base leading-8 text-(--muted)">
@@ -390,7 +224,7 @@ export function AboutPage() {
               </p>
 
               <h2 className="mt-3 font-display text-4xl tracking-[-0.04em] text-(--foreground) md:text-5xl">
-                {t("homeArchitecture.areaIntro")}
+                {c.areaIntro}
               </h2>
             </div>
 
@@ -405,7 +239,9 @@ export function AboutPage() {
 
           {/* 4:3 image gallery */}
           <div className="mt-9 grid gap-5 sm:grid-cols-2 md:gap-6">
-            {c.workAreas.map((area) => (
+            {c.workAreas.map((content, index) => {
+              const area = { ...content, ...aboutMedia.workAreas[index] };
+              return (
               <Link
                 key={area.title}
                 to={`${homePath}${area.href}`}
@@ -430,7 +266,8 @@ export function AboutPage() {
                   </span>
                 </div>
               </Link>
-            ))}
+            );
+            })}
           </div>
         </Container>
       </section>
@@ -546,7 +383,7 @@ export function AboutPage() {
           </div>
           <div className="relative aspect-4/3 overflow-hidden rounded-[1.75rem] border border-(--border) bg-(--surface)">
             <img
-              src="/images/aeiny/about/community.webp"
+              src="/images/aeiny/community-dinner.webp"
               alt={t("about.communityPhotoAlt")}
               width="960"
               height="720"
@@ -558,7 +395,6 @@ export function AboutPage() {
         </Container>
       </section>
 
-     
       {/* Build with us */}
       <section className="border-t border-(--border) bg-(--surface) py-16 md:py-20">
         <Container>

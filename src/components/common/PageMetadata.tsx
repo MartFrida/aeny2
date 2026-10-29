@@ -1,3 +1,4 @@
+import { siteConfig } from '../../data/site'
 import { useEffect } from 'react'
 import { contactInfo } from '../../data/contact'
 
@@ -19,11 +20,10 @@ export function PageMetadata({
   includeOrganizationData = false,
 }: PageMetadataProps) {
   useEffect(() => {
-    const siteUrl = 'https://aeinyusa.org'
-    const imageUrl = `${siteUrl}/${language === 'es' ? 'og-image.jpg' : 'og-image-en.jpg'}`
-    const imageAlt = language === 'es'
-      ? 'Banner de Alianza Ecuatoriana Internacional — AEINY'
-      : 'Alianza Ecuatoriana Internacional — AEINY banner'
+    const siteUrl = siteConfig.url
+    const locale = language === 'es' ? 'es' : 'en'
+    const imageUrl = `${siteUrl}${siteConfig.socialImages[locale]}`
+    const imageAlt = siteConfig.socialImageAlts[locale]
     const previousTitle = document.title
     const previousLanguage = document.documentElement.lang
     const metadata = [
@@ -82,7 +82,7 @@ export function PageMetadata({
         '@context': 'https://schema.org',
         '@type': 'Organization',
         name: 'Alianza Ecuatoriana Internacional',
-        url: 'https://aeinyusa.org/',
+        url: `${siteConfig.url}/`,
         telephone: contactInfo.phone,
         email: contactInfo.email,
         address: {

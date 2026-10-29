@@ -1,44 +1,62 @@
-# React + TypeScript + Vite
+# AEINY website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React, TypeScript, Vite and Tailwind. The existing design and public page URLs are preserved.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm ci
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Validated with Node.js 24. Use `npm ci` to install the versions recorded in `package-lock.json`.
 
-## Event registration notifications
+## Build and check
 
-For Chasqui Migrante 2026 registrations, configure Netlify Form Notifications in the Netlify dashboard:
+```bash
+npm run build
+npm run lint
+npm run audit:project
+```
 
-**Forms → Form notifications → Add notification → Email notification → `info.ccandino@gmail.com`**
+The build creates `dist/`, including localized social metadata and a sitemap for every public route. For manual Netlify deployment, publish the contents of `dist/`. For a Git-connected build, use `npm run build` and publish directory `dist`.
 
-The registration form stores submissions as `chasqui-migrante-2026-registration`. An optional secure payment link can be configured with the `VITE_CHASQUI_PAYMENT_URL` environment variable.
+The HTML generator supplies route-specific metadata for social crawlers. It does not prerender the React page body.
 
-## Social previews and route metadata
+## Where content belongs
 
-The production build runs `scripts/generateSocialPages.mjs` after Vite and writes localized static HTML for each public route. Netlify serves these route-specific HTML files so social crawlers receive page titles, descriptions, canonical URLs, Open Graph and Twitter Card metadata without executing JavaScript. Spanish routes use `/og-image.jpg`; English routes use `/og-image-en.jpg`. Keep this generator and its route metadata in sync when adding public routes.
+- `src/pages/` — page markup and page behavior.
+- `src/components/` — shared presentation, including the reusable Chasqui Migrante card.
+- `src/i18n/en/` and `src/i18n/es/` — interface text grouped by page/domain. `resources.ts` combines them without changing existing translation keys.
+- `src/data/contact.ts` — community center contacts and official social links.
+- `src/data/navigation.ts` — the shared desktop/mobile/footer menu.
+- `src/data/routes.ts` — public routes and their SEO translation keys; shared by the router, metadata generator and sitemap.
+- `src/data/site.ts` — site origin and social preview images.
+- `src/data/home.ts`, `about.ts`, `ourWork.ts`, `projects.ts` — media paths, link destinations and structured page data.
+- `src/data/events/chasquiMigrante2026.ts` — registration links, QR path and common event facts.
+- `src/data/events/kuriChasqui2026.ts` — festival media, contacts and sponsors.
+- `src/data/kuriChasqui2026.json` — the complete bilingual film catalog. Keep this filename: the catalog loader and image maintenance script use it.
+- `src/data/festivalSchedule2026.ts` — daily festival program, translation keys and film IDs.
+- `src/data/events/kuriChasquiFounders2026.ts` — structured bilingual founder biographies.
+- `src/data/courses.ts` — the complete bilingual course catalog.
+- `public/` — assets and hosting files used by the current site. Public URLs remain the same except for two byte-identical image aliases with permanent redirects.
+- `archive/` — unused assets, obsolete translation copy and retired data, retained for reference. This directory is not copied into `dist/`.
+- `docs/AUDIT_RU.md` — audit findings, checks and remaining editorial decisions.
+
+## Updating content
+
+Update both languages for interface text. The audit compares translation keys and interpolation placeholders. Existing English placeholders in Spanish pages have been preserved and are listed in the report.
+
+The event uses the official Google Forms registration URL and the supplied QR image. There is no active internal Netlify registration form.
+
+When adding a page, add it to `publicPageRoutes` in `src/data/routes.ts`, add its lazy loader in `src/app/router.tsx`, and provide its SEO keys. The build generates its metadata and sitemap entry. Course and film detail URLs come directly from their catalogs.
+
+```bash
+npm run audit:project -- --write-inventory
+```
+
+This refreshes `docs/public-assets.csv` with source references to deployed public files. The audit does not delete or rewrite site content.
+
+`npm run sync:festival-images` is a separate, optional maintenance command that updates the film catalog from the files in the festival image directory. Run it only when deliberately updating film imagery and review its changes. It is not part of the production build.
+
+The reviewed archive contains source and retained originals, without installed dependencies, Git history or generated build output. Extract it into a **new, empty directory**; overlaying it on the old tree would leave retired files behind. Keep your existing Git checkout/history separately when transferring the reviewed source into your own repository.

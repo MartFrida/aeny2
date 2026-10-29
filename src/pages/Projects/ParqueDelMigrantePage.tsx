@@ -20,14 +20,14 @@ export function ParqueDelMigrantePage() {
           es: '/es/projects/parque-del-migrante',
         }}
       />
-      <PageHero eyebrow="Project" title={t('projectParque.title')} intro={t('projectParque.intro')} />
+      <PageHero eyebrow={t('projectParque.eyebrow')} title={t('projectParque.title')} intro={t('projectParque.intro')} />
       <Section>
         <Container className="prose max-w-3xl text-(--muted)">
           <p>
-            This project is part of AEINY’s broader effort to support community memory, belonging, and public cultural space.
+            {t('projectParque.copy1')}
           </p>
           <p>
-            The current foundation focuses on the planning and community context behind the project rather than detailed program design.
+            {t('projectParque.copy2')}
           </p>
         </Container>
       </Section>

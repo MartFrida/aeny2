@@ -1,3 +1,4 @@
+import { chasquiMigrante2026, chasquiRegistrationFeeLabel } from '../../data/events/chasquiMigrante2026';
 import {
   Award,
   BadgeCheck,
@@ -14,8 +15,6 @@ import { useTranslation } from "react-i18next";
 import { Container } from "../../components/common/Container";
 import { PageMetadata } from "../../components/common/PageMetadata";
 
-const registrationUrl =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfVFE0rTpkwHAUy9J1KRSym-wPTpszgEAx_gWUJo-p7Yh7l7A/viewform?pli=1";
 
 export function ChasquiMigrante2026Page() {
   const { i18n, t } = useTranslation();
@@ -68,22 +67,18 @@ export function ChasquiMigrante2026Page() {
             </p>
 
             <h2 className="mt-4 max-w-2xl font-display text-4xl leading-[1.04] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl">
-              {language === "es"
-                ? "Inscríbete en Chasqui Migrante"
-                : "Register for Chasqui Migrante"}
+              {t("chasqui2026.registration.title")}
             </h2>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-white/75 md:text-lg md:leading-8">
-              {language === "es"
-                ? "Forma parte de esta celebración de nuestras raíces. Completa el formulario oficial de inscripción o escanea el código QR con tu teléfono."
-                : "Be part of this celebration of our roots. Complete the official registration form or scan the QR code with your phone."}
+              {t("chasqui2026.registration.copy")}
             </p>
 
             {/* Event details */}
             <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-white/80">
-              <span>20.12.2026</span>
-              <span>08:00</span>
-              <span>5K / 10K</span>
+              <span>{chasquiMigrante2026.dateLabel}</span>
+              <span>{chasquiMigrante2026.time}</span>
+              <span>{chasquiMigrante2026.distancesLabel}</span>
               <span>{t("chasqui2026.city")}</span>
             </div>
 
@@ -91,12 +86,10 @@ export function ChasquiMigrante2026Page() {
             <div className="mt-8 inline-flex items-center gap-4 rounded-xl border border-white/15 bg-white/5 px-5 py-4">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
-                  {language === "es"
-                    ? "Valor de inscripción"
-                    : "Registration fee"}
+                  {t("chasqui2026.registration.feeLabel")}
                 </p>
                 <p className="mt-1 font-display text-3xl font-semibold text-(--accent)">
-                  $15 USD
+                  {chasquiRegistrationFeeLabel}
                 </p>
               </div>
             </div>
@@ -104,22 +97,18 @@ export function ChasquiMigrante2026Page() {
             {/* Registration button */}
             <div className="mt-8">
               <a
-                href={registrationUrl}
+                href={chasquiMigrante2026.registrationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-(--accent) px-7 py-3.5 text-sm font-semibold text-(--surface-dark) transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d79d54] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark) sm:w-auto"
               >
-                {language === "es"
-                  ? "Abrir formulario de inscripción"
-                  : "Open registration form"}
+                {t("chasqui2026.registration.formCta")}
                 <ArrowUpRight size={17} aria-hidden="true" />
               </a>
             </div>
 
             <p className="mt-4 text-xs leading-6 text-white/50">
-              {language === "es"
-                ? "Serás redirigido al formulario oficial de Google Forms."
-                : "You will be redirected to the official Google Forms registration page."}
+              {t("chasqui2026.registration.formNote")}
             </p>
           </div>
 
@@ -130,32 +119,26 @@ export function ChasquiMigrante2026Page() {
             </div>
 
             <h3 className="mt-5 font-display text-2xl tracking-[-0.03em] text-white sm:text-3xl">
-              {language === "es" ? "Escanea e inscríbete" : "Scan & register"}
+              {t("chasqui2026.registration.qrTitle")}
             </h3>
 
             <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-white/65">
-              {language === "es"
-                ? "Abre la cámara de tu teléfono y escanea el código para acceder al formulario."
-                : "Open your phone camera and scan the code to access the registration form."}
+              {t("chasqui2026.registration.qrCopy")}
             </p>
 
             <a
-              href={registrationUrl}
+              href={chasquiMigrante2026.registrationUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={
-                language === "es"
-                  ? "Abrir inscripción mediante código QR"
-                  : "Open registration from QR code"
+                t("chasqui2026.registration.qrLinkLabel")
               }
               className="mx-auto mt-7 block w-full max-w-64 rounded-xl bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-4 focus-visible:ring-offset-(--surface-dark)"
             >
               <img
-                src="/images/events/chasqui-migrante-2026/registration-qr.jpeg"
+                src={chasquiMigrante2026.registrationQr}
                 alt={
-                  language === "es"
-                    ? "Código QR para inscribirse en Chasqui Migrante 2026"
-                    : "QR code for Chasqui Migrante 2026 registration"
+                  t("chasqui2026.registration.qrAlt")
                 }
                 width={1600}
                 height={1600}
@@ -168,7 +151,7 @@ export function ChasquiMigrante2026Page() {
               CHASQUI MIGRANTE 2026
             </p>
 
-            <p className="mt-2 text-sm text-white/60">5K / 10K · 20.12.2026</p>
+            <p className="mt-2 text-sm text-white/60">{chasquiMigrante2026.distancesLabel} · {chasquiMigrante2026.dateLabel}</p>
           </aside>
         </Container>
       </section>
@@ -190,7 +173,7 @@ export function ChasquiMigrante2026Page() {
               {t("chasqui2026.organizerLabel")}: {t("chasqui2026.organizer")}
             </p>
             <a
-              href="https://www.finisherdata.com/eventos/chasqui_migrante_2026?id_event=830"
+              href={chasquiMigrante2026.officialUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex min-h-10 items-center rounded-md text-sm font-semibold text-(--primary) underline decoration-(--accent) underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"

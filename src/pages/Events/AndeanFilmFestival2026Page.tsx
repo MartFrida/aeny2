@@ -1,3 +1,4 @@
+import { festival2026SponsorLogos, kuriChasqui2026Event } from '../../data/events/kuriChasqui2026';
 import { ArrowDown, ArrowRight, Clapperboard, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -11,78 +12,9 @@ import { FilmCard } from "./FilmCard";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 
 // Files are served from public/images/events/festival-andino-2026/sponsors/.
-const festival2026SponsorLogos = [
-  { name: "ACINPECG", file: "acinpecg.webp" },
-  { name: "Alianza", file: "alianza.webp" },
-  { name: "Andes Film Fest 2026", file: "andes-film-fest-2026.webp" },
-  { name: "Aya", file: "aya_vector.webp" },
-  { name: "Crónica Roja", file: "cronica-roja.webp" },
-  { name: "DC", file: "dc.webp" },
-  {
-    name: "Ecuadorian American Cultural Center",
-    file: "ecuadorian-american-cultural-center.webp",
-  },
-  { name: "Fundación Alianza", file: "fundacion-alianza.webp" },
-  { name: "La Hueca Manabita", file: "la-hueca-manabita.webp" },
-  { name: "Producciones Pachamama", file: "produciones-pachamama.webp" },
-  { name: "Raíz", file: "raiz_vector.webp" },
-  { name: "Sisa Pakari", file: "sisa-pakari.webp" },
-  { name: "Sonidero", file: "sonidero_vector.webp" },
-];
 
-const festival2026ContactContent = {
-  es: {
-    title: "Información y consultas",
-    copy: "Para más detalles y cualquier consulta sobre el festival, escríbenos a:",
-  },
-  en: {
-    title: "Festival information and inquiries",
-    copy: "For more details or any questions about the festival, please email us at:",
-  },
-};
-
-const festival2026AwardContent = {
-  es: {
-    label: "Galardón",
-    title: "El Kury Chasqui",
-    subtitle: "El galardón que honra la grandeza andina en Nueva York",
-    paragraphs: [
-      "El Kury Chasqui —cuyo nombre proviene de la lengua milenaria kichwa y significa «Mensajero de Oro»— es el trofeo oficial de The Andean International Film Fest New York 2026.",
-      "Creado por Amaruk Kayshapanta y Walter Sinche, fundadores y organizadores del festival, este diseño simboliza la grandeza, la historia y la profunda cosmovisión de las culturas originarias de los Andes. Su potente simbología está presente en cada detalle y rinde homenaje al legado ancestral que cruza fronteras: tradiciones, filosofía, ciencias, espiritualidad y arte integral andino.",
-      "Esta prestigiosa estatuilla reconocerá, año tras año, el talento y la excelencia de creadores cinematográficos, productores y actores, así como de toda una industria identitaria que cuenta sus historias desde su propia filosofía de vida. Un reconocimiento a los artistas audiovisuales de todos los géneros y formatos del cine andino.",
-    ],
-    supportIntro:
-      "El éxito de este festival para el arte y la cultura es posible gracias al valioso respaldo de las organizaciones humanitarias y de apoyo a la cultura de la comunidad latinoamericana inmigrante en los Estados Unidos y Europa.",
-    supporters: [
-      "Alianza Ecuatoriana Internacional",
-      "Centro Comunitario Andino",
-      "Fundación Alianza Ecuatoriana Internacional NY",
-      "Producciones Pachamama (Europa)",
-    ],
-    imageAlt: "Estatuillas doradas del Kury Chasqui, el trofeo oficial del festival.",
-    imageCaption: "Kury Chasqui · Mensajero de Oro",
-  },
-  en: {
-    label: "The award",
-    title: "The Kury Chasqui",
-    subtitle: "The award honoring Andean greatness in New York",
-    paragraphs: [
-      "The Kury Chasqui —whose name comes from the ancient Kichwa language and means “Golden Messenger”— is the official trophy of The Andean International Film Fest New York 2026.",
-      "Created by Amaruk Kayshapanta and Walter Sinche, the festival’s founders and organizers, the design embodies the greatness, history, and profound worldview of the Indigenous cultures of the Andes. Every detail carries powerful symbolism, honoring an ancestral legacy that crosses borders: traditions, philosophy, science, spirituality, and holistic Andean art.",
-      "Year after year, this prestigious statuette will honor the talent and excellence of filmmakers, producers, and actors, as well as an entire industry rooted in cultural identity that tells its stories through its own philosophy of life. It celebrates audiovisual artists across all genres and formats of Andean cinema.",
-    ],
-    supportIntro:
-      "The festival’s success in promoting art and culture is made possible by the valued support of humanitarian organizations and those dedicated to the culture of Latin American immigrant communities in the United States and Europe.",
-    supporters: [
-      "Alianza Ecuatoriana Internacional",
-      "Centro Comunitario Andino",
-      "Fundación Alianza Ecuatoriana Internacional NY",
-      "Producciones Pachamama (Europe)",
-    ],
-    imageAlt: "Golden Kury Chasqui statuettes, the festival’s official trophy.",
-    imageCaption: "Kury Chasqui · Golden Messenger",
-  },
-};
+type FestivalAwardContent = typeof import('../../i18n/en/festival2026.json')['festival2026']['award'];
+type FestivalContactContent = typeof import('../../i18n/en/festival2026.json')['festival2026']['contact'];
 
 export function AndeanFilmFestival2026Page() {
   const { i18n, t } = useTranslation();
@@ -90,8 +22,8 @@ export function AndeanFilmFestival2026Page() {
   const englishPath = "/en/events/festival-internacional-de-cine-andino-2026";
   const spanishPath = "/es/events/festival-internacional-de-cine-andino-2026";
   const path = language === "es" ? spanishPath : englishPath;
-  const awardContent = festival2026AwardContent[language];
-  const contactContent = festival2026ContactContent[language];
+  const awardContent = t("festival2026.award", { returnObjects: true }) as FestivalAwardContent;
+  const contactContent = t("festival2026.contact", { returnObjects: true }) as FestivalContactContent;
 
   return (
     <>
@@ -152,7 +84,7 @@ export function AndeanFilmFestival2026Page() {
               aria-hidden="true"
             />
             <img
-              src="/images/events/festival-andino-2026/kuri-chasqui-2026-poster-1.jpeg"
+              src={kuriChasqui2026Event.detailPoster}
               alt={t("home.posterAlt")}
               width={500}
               height={700}
@@ -178,14 +110,13 @@ export function AndeanFilmFestival2026Page() {
             {contactContent.title}
           </h2>
           <a
-            href="mailto:acinpecg@gmail.com"
+            href={kuriChasqui2026Event.contactEmailHref}
             className="rounded-sm font-semibold text-(--primary) underline decoration-(--accent)/60 underline-offset-4 transition-colors hover:text-(--foreground) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--background)"
           >
-            acinpecg@gmail.com
-          </a>
+                  {kuriChasqui2026Event.contactEmail}
+                </a>
         </Container>
       </section>
-
 
       <FestivalSchedule />
 
@@ -266,10 +197,10 @@ export function AndeanFilmFestival2026Page() {
                   {contactContent.copy}
                 </p>
                 <a
-                  href="mailto:acinpecg@gmail.com"
+                  href={kuriChasqui2026Event.contactEmailHref}
                   className="mt-3 inline-block break-all rounded-sm text-base font-semibold text-(--primary) underline decoration-(--accent)/60 underline-offset-4 transition-colors hover:text-(--foreground) hover:decoration-(--primary) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-4 focus-visible:ring-offset-(--surface)"
                 >
-                  acinpecg@gmail.com
+                  {kuriChasqui2026Event.contactEmail}
                 </a>
               </div>
             </div>
@@ -335,9 +266,7 @@ export function AndeanFilmFestival2026Page() {
                     <details className="group mt-6 border-t border-(--border) pt-5">
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-(--primary) [&::-webkit-details-marker]:hidden">
                         <span>
-                          {language === "es"
-                            ? "Trayectoria y reconocimientos"
-                            : "Experience and Recognition"}
+                          {t("festival2026.founderDetails")}
                         </span>
 
                         <ChevronDown
@@ -370,9 +299,7 @@ export function AndeanFilmFestival2026Page() {
                         rel="noopener noreferrer"
                         className="mt-7 inline-flex items-center gap-2 rounded-md border border-(--primary) px-5 py-3 text-sm font-semibold text-(--primary) transition-colors hover:bg-(--primary) hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"
                       >
-                        {language === "es"
-                          ? "Biografía en Wikipedia"
-                          : "Read on Wikipedia"}
+                        {t("festival2026.wikipediaCta")}
 
                         <ArrowUpRight size={16} aria-hidden="true" />
                       </a>
@@ -410,7 +337,7 @@ export function AndeanFilmFestival2026Page() {
           <div className="mt-8 grid items-start gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
             <figure className="mx-auto w-full max-w-sm lg:max-w-none">
               <img
-                src="/images/events/festival-andino-2026/premios-9x16.webp"
+                src={kuriChasqui2026Event.awardImage}
                 alt={awardContent.imageAlt}
                 width={1143}
                 height={2048}
@@ -493,19 +420,17 @@ export function AndeanFilmFestival2026Page() {
             id="festival-sponsors-title"
             className="font-display text-xl tracking-tight text-(--foreground) md:text-2xl"
           >
-            {language === "es"
-              ? "Patrocinadores y colaboradores"
-              : "Sponsors & Partners"}
+            {t("festival2026.sponsorsTitle")}
           </h2>
 
           <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 md:mt-6 md:gap-y-4">
             {festival2026SponsorLogos.map((logo) => (
               <li
-                key={logo.file}
+                key={logo.src}
                 className="flex h-24 min-w-0 w-[calc((100%_-_1rem)/2)] items-center justify-center sm:w-[calc((100%_-_3rem)/4)] lg:w-[calc((100%_-_6rem)/7)]"
               >
                 <img
-                  src={`/images/events/festival-andino-2026/sponsors/${logo.file}`}
+                  src={logo.src}
                   alt={logo.name}
                   width={360}
                   height={220}
@@ -567,7 +492,7 @@ export function AndeanFilmFestival2026Page() {
               {t("festival2026.donateCta")}
             </Button>
             <a
-              href="mailto:acinpecg@gmail.com"
+              href={kuriChasqui2026Event.contactEmailHref}
               className="inline-flex items-center justify-center rounded-md border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
             >
               {t("festival2026.contactCta")}

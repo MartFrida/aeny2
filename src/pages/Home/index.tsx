@@ -1,3 +1,5 @@
+import { ChasquiMigranteCard } from '../../components/events/ChasquiMigranteCard';
+import { homeImages } from '../../data/home';
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -7,98 +9,12 @@ import { PageMetadata } from "../../components/common/PageMetadata";
 import { contactInfo } from "../../data/contact";
 import { kuriChasqui2026Event } from "../../data/events/kuriChasqui2026";
 
-const homeImages = {
-  migrantSupport: "/images/home/migrant-support.webp",
-  education: "/images/home/education-training.webp",
-  culture: "/images/home/culture-community.webp",
-  health: "/images/home/comunity.webp",
-  parque: "/images/home/parque-del-migrante-entrada.webp",
-  encuentro: "/images/home/encuentro-cuencano.webp",
-  allhome: "/images/home/home-all.webp",
-} as const;
-
-const copy = {
-  es: {
-    introLabel: "Alianza Ecuatoriana Internacional",
-    introHeading: "Comunidad, cultura y oportunidades para migrantes.",
-    introBody:
-      "Trabajamos desde Nueva York conectando apoyo comunitario, educación, cultura y bienestar.",
-    aboutCta: "Conoce AEINY",
-
-    workLabel: "Nuestro trabajo",
-    workTitle: "Lo que hacemos",
-    workCta: "Ver nuestro trabajo",
-    workAreas: [
-      { title: "Apoyo migrante y derechos", image: homeImages.migrantSupport },
-      { title: "Educación y capacitación", image: homeImages.education },
-      { title: "Cultura y patrimonio", image: homeImages.culture },
-      { title: "Salud y comunidad", image: homeImages.health },
-    ],
-
-    projectsLabel: "Proyectos destacados",
-    projectsTitle: "De la comunidad, para la comunidad",
-    parqueTitle: "Parque del Migrante",
-    parqueText:
-      "Un espacio en Cuenca en honor al esfuerzo y valentía de los migrantes ecuatorianos.",
-    encuentroTitle: "Encuentro Cuencano en New York",
-    encuentroText:
-      "Un punto de encuentro para comunidad, oportunidades y conexión con Cuenca.",
-    projectsCta: "Ver proyectos",
-
-    communityLabel: "AEINY en acción",
-    communityTitle: "Personas, cultura y comunidad",
-    communityText:
-      "Cada programa nace del encuentro entre migrantes, familias, voluntarios y organizaciones aliadas.",
-
-    supportLabel: "Participa",
-    supportTitle: "Tu apoyo hace posible el siguiente proyecto.",
-    donateCta: "Donar",
-    involvedCta: "Participar",
-  },
-  en: {
-    introLabel: "Alianza Ecuatoriana Internacional",
-    introHeading: "Community, culture and opportunities for migrants.",
-    introBody:
-      "From New York, we connect community support, education, culture and wellbeing.",
-    aboutCta: "Discover AEINY",
-
-    workLabel: "Our work",
-    workTitle: "What we do",
-    workCta: "Explore our work",
-    workAreas: [
-      { title: "Migrant support & rights", image: homeImages.migrantSupport },
-      { title: "Education & training", image: homeImages.education },
-      { title: "Culture & heritage", image: homeImages.culture },
-      { title: "Community health", image: homeImages.health },
-    ],
-
-    projectsLabel: "Featured projects",
-    projectsTitle: "Built by community, for community",
-    parqueTitle: "Parque del Migrante",
-    parqueText:
-      "A space in Cuenca honoring the effort and courage of Ecuadorian migrants.",
-    encuentroTitle: "Encuentro Cuencano in New York",
-    encuentroText:
-      "A meeting point for community, opportunity and connection with Cuenca.",
-    projectsCta: "View projects",
-
-    communityLabel: "AEINY in action",
-    communityTitle: "People, culture and community",
-    communityText:
-      "Every program grows from the connection between migrants, families, volunteers and partner organizations.",
-
-    supportLabel: "Get involved",
-    supportTitle:
-      "Your support helps make the next community project possible.",
-    donateCta: "Donate",
-    involvedCta: "Get involved",
-  },
-} as const;
+type HomeContent = typeof import('../../i18n/en/home.json')['home']['content'];
 
 export function HomePage() {
   const { i18n, t } = useTranslation();
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
-  const c = copy[language];
+  const c = t("home.content", { returnObjects: true }) as HomeContent;
   const homePath = `/${language}`;
 
   const festivalPath = `/${language}/events/festival-internacional-de-cine-andino-2026`;
@@ -268,9 +184,7 @@ export function HomePage() {
               <img
                 src={homeImages.allhome}
                 alt={
-                  language === "es"
-                    ? "Actividad comunitaria de AEINY"
-                    : "AEINY community activity"
+                  t("home.activityPhotoAlt")
                 }
                 loading="lazy"
                 className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
@@ -289,9 +203,7 @@ export function HomePage() {
               <img
                 src={homeImages.culture}
                 alt={
-                  language === "es"
-                    ? "Actividad cultural de la comunidad AEINY"
-                    : "AEINY community cultural activity"
+                  t("home.culturePhotoAlt")
                 }
                 loading="lazy"
                 className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
@@ -305,54 +217,7 @@ export function HomePage() {
         </Container>
       </section>
 
-      {/* Event Card */}
-      <section className="bg-(--surface) py-12 md:py-16">
-        <Container>
-          <article className="grid overflow-hidden rounded-2xl border border-(--border) bg-(--background) md:grid-cols-[0.8fr_1.2fr]">
-            <div className="relative min-h-56 bg-(--surface-dark) text-white md:min-h-full">
-              <div className="flex h-full min-h-56 flex-col justify-between p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--accent)">
-                  {t("chasqui2026.eyebrow")}
-                </p>
-                <h2 className="mt-6 max-w-md font-display text-3xl leading-tight tracking-[-0.04em] sm:text-4xl">
-                  {t("chasqui2026.title")}
-                </h2>
-                <p className="mt-4 text-sm font-medium text-white/75">
-                  5K / 10K
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col justify-between gap-6 p-5 sm:p-7">
-              <div>
-                <p className="text-sm font-semibold text-(--primary)">
-                  {t("chasqui2026.date")} · 08:00
-                </p>
-                <p className="mt-3 leading-7 text-(--muted)">
-                  {t("chasqui2026.shortLocation")}
-                </p>
-                <p className="mt-3 text-sm leading-6 text-(--muted)">
-                  {t("chasqui2026.organizer")}
-                </p>
-              </div>
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <p className="font-semibold text-(--foreground)">$15 USD</p>
-                <Button
-                  to={`/${language}/events/chasqui-migrante-2026`}
-                  className="w-full justify-center bg-(--primary) text-white hover:bg-(--primary)/90 sm:w-auto"
-                >
-                  {t("chasqui2026.cardCta")}
-                  <ArrowRight
-                    aria-hidden="true"
-                    size={16}
-                    className="ml-2 shrink-0"
-                  />
-                </Button>
-              </div>
-            </div>
-          </article>
-        </Container>
-      </section>
-
+      <ChasquiMigranteCard />
 
       {/* Featured projects — replaces the old placeholder */}
       <section className="bg-(--background)">

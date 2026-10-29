@@ -1,3 +1,5 @@
+import { contactInfo } from './contact'
+
 export type CourseCategory = 'safety' | 'scaffold' | 'trades' | 'construction'
 export type CourseFormat = 'online' | 'in-person' | 'hybrid'
 
@@ -22,7 +24,7 @@ export type Course = {
   sourceUrl: string
 }
 
-export const courseInformationUrl = 'https://www.facebook.com/alianzaecuatorianaIntofficial/'
+export const courseInformationUrl = `${contactInfo.facebook}/`
 const currentInfoUrl = courseInformationUrl
 const currentScheduleEs =
   'Las fechas y horarios varían. Contacta con AEINY para conocer la próxima clase.'

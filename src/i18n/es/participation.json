@@ -1,0 +1,25 @@
+{
+  "getInvolved": {
+    "seoTitle": "Participa | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Descubre cómo fortalecer la comunidad y apoyar la misión de Alianza Ecuatoriana Internacional.",
+    "title": "Participa",
+    "intro": "Hay muchas formas de fortalecer la comunidad y apoyar la misión de AEINY.",
+    "eyebrow": "Get Involved",
+    "options": [
+      "Donate",
+      "Volunteer",
+      "Partner",
+      "Sponsor"
+    ],
+    "optionCopy": "This section will support future calls to action and partnership opportunities."
+  },
+  "donate": {
+    "seoTitle": "Donar | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Apoya los programas comunitarios, la educación, las iniciativas culturales y el Festival Internacional de Cine Andino de AEINY.",
+    "title": "Donar",
+    "intro": "Apoya el trabajo de AEINY y el 1° Festival Internacional de Cine Andino New York 2026.",
+    "eyebrow": "Donate",
+    "communityCopy": "Support community programs, education, and cultural initiatives.",
+    "festivalCopy": "Support the next edition of the Andes International Film Fest New York."
+  }
+}

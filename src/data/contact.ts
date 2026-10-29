@@ -10,5 +10,7 @@ export const contactInfo = {
   whatsappHref: 'https://wa.me/17185765311',
   email: 'info.ccandino@gmail.com',
   emailHref: 'mailto:info.ccandino@gmail.com',
+  facebook: 'https://www.facebook.com/alianzaecuatorianaIntofficial',
+  instagram: 'https://www.instagram.com/alianzaecuatorianaint/?hl=es',
   tiktok: 'https://www.tiktok.com/@alianzaecuatoriana',
 } as const

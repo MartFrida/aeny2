@@ -1,0 +1,91 @@
+{
+  "about": {
+    "seoTitle": "Sobre Nosotros | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Conoce a Alianza Ecuatoriana Internacional, una organización comunitaria en Nueva York con raíces en la identidad ecuatoriana y latinoamericana, la solidaridad y el sentido de pertenencia.",
+    "eyebrow": "Sobre nosotros",
+    "heroTitle": "Unidos por nuestras raíces. Impulsados por nuestra comunidad.",
+    "heroDescription": "En Alianza Ecuatoriana Internacional trabajamos para acompañar, orientar y fortalecer a la comunidad ecuatoriana y latinoamericana en Nueva York, manteniendo vivos los lazos culturales y humanos que nos unen.",
+    "heroPrimary": "Conócenos",
+    "heroSecondary": "Únete a nuestra comunidad",
+    "teamPhotoAlt": "Miembros de la comunidad de AEINY reunidos alrededor de una mesa.",
+    "teamPhotoCaption": "Una comunidad unida por sus raíces y el apoyo mutuo",
+    "identityEyebrow": "Nuestra identidad",
+    "identityTitle": "Nuestras raíces nos unen. Nuestra comunidad nos impulsa.",
+    "identityCopy1": "Alianza Ecuatoriana Internacional (AEI) es una organización comunitaria con sede en Nueva York, comprometida con el bienestar y el desarrollo de la comunidad ecuatoriana y latinoamericana.",
+    "identityCopy2": "A través de programas educativos, orientación comunitaria, actividades culturales y colaboración institucional, buscamos crear oportunidades y fortalecer los vínculos entre las personas migrantes, sus familias y sus comunidades de origen.",
+    "identityCopy3": "Nuestra labor conecta las necesidades de quienes construyen una vida en Estados Unidos con el reconocimiento de sus raíces, su identidad y sus aportaciones a la sociedad.",
+    "storyPhotoAlt": "Voluntarios de AEINY y miembros de la comunidad reunidos con alimentos y artículos donados.",
+    "missionEyebrow": "Nuestro propósito",
+    "missionHeading": "Un propósito compartido, una visión de futuro.",
+    "missionPhotoAlt": "Voluntarios de AEINY entregan artículos esenciales a miembros de la comunidad.",
+    "missionLabel": "Nuestra misión",
+    "missionCopy": "Acompañar y fortalecer a la comunidad ecuatoriana y latinoamericana mediante el acceso a la información, la educación, la orientación y las oportunidades de desarrollo, promoviendo la participación comunitaria, la dignidad y la solidaridad.",
+    "visionLabel": "Nuestra visión",
+    "visionCopy": "Una comunidad migrante informada, conectada y empoderada, con oportunidades para desarrollarse plenamente y mantener vínculos sólidos con su identidad cultural y sus raíces.",
+    "valuesEyebrow": "Lo que nos guía",
+    "valuesTitle": "Los valores que nos unen",
+    "rootsTitle": "Nuestras raíces, siempre presentes",
+    "rootsPhotoAlt": "Miembros de la comunidad celebran la herencia ecuatoriana y latinoamericana en un desfile cultural.",
+    "rootsPhotoCaption": "Una celebración compartida de la identidad ecuatoriana y latinoamericana.",
+    "communityPhotoAlt": "Miembros de la comunidad de AEINY comparten una comida y un momento juntos.",
+    "value": {
+      "solidarityTitle": "Solidaridad",
+      "solidarityCopy": "Creemos en el apoyo mutuo y en la fuerza de una comunidad que camina unida.",
+      "identityTitle": "Identidad cultural",
+      "identityCopy": "Valoramos nuestras raíces y promovemos la conexión entre generaciones y culturas.",
+      "educationTitle": "Educación",
+      "educationCopy": "Reconocemos el conocimiento y la formación como herramientas para abrir nuevas oportunidades.",
+      "commitmentTitle": "Compromiso comunitario",
+      "commitmentCopy": "Trabajamos para fortalecer la participación, la colaboración y el bienestar colectivo."
+    },
+    "communityEyebrow": "Las personas, en el centro",
+    "communityTitle": "Una comunidad que nace del cuidado mutuo",
+    "communityCopy": "AEI se construye a través de las relaciones: vecinos que se apoyan, familias que mantienen sus vínculos y personas que encuentran un sentido de pertenencia entre culturas y fronteras.",
+    "belongingCopy": "Creemos que todas las personas merecen ser recibidas con dignidad y que se reconozcan sus experiencias y aportes. Esa convicción guía nuestra manera de escuchar, crear vínculos y avanzar en comunidad.",
+    "finalEyebrow": "Construyamos juntos",
+    "finalTitle": "Cuando una comunidad se une, las oportunidades crecen.",
+    "finalDescription": "Súmate a una comunidad basada en la solidaridad, la identidad compartida y el cuidado mutuo.",
+    "finalParticipate": "Participa con nosotros",
+    "finalSupport": "Apoya nuestra misión",
+    "content": {
+      "organizationLabel": "Nuestra organización",
+      "organizationTitle": "Una alianza al servicio de la comunidad",
+      "organizationIntro": "Alianza Ecuatoriana Internacional integra al Centro Comunitario Andino y a la Fundación Alianza Ecuatoriana Internacional bajo un compromiso común: acompañar a la comunidad migrante y fortalecer sus oportunidades, su identidad y sus derechos.",
+      "organizationUnits": [
+        {
+          "title": "Centro Comunitario Andino",
+          "imageAlt": "Formación y servicios comunitarios del Centro Comunitario Andino",
+          "description": "Apoya a migrantes y familias en Nueva York mediante orientación comunitaria y oportunidades de formación, incluidos cursos OSHA y de construcción.",
+          "cta": "Conoce el Centro"
+        },
+        {
+          "title": "Fundación Alianza Ecuatoriana Internacional",
+          "imageAlt": "Logotipo de la Fundación Alianza Ecuatoriana Internacional",
+          "description": "Impulsa la ayuda humanitaria y los proyectos sociales y educativos de la Alianza, con el apoyo de donaciones y de la comunidad, para acompañar a personas y familias en situación de vulnerabilidad.",
+          "cta": "Conoce la Fundación"
+        }
+      ],
+      "organizationScope": "Nuestra labor abarca servicios comunitarios, ayuda humanitaria, cultura y patrimonio, proyectos y defensa de derechos. Iniciativas como el Festival Internacional de Cine Andino, la Carrera y Caminata El Chasqui Migrante y el Parque del Migrante forman parte de este trabajo compartido.",
+      "workLabel": "Nuestro trabajo",
+      "workCta": "Ver nuestro trabajo",
+      "workAreas": [
+        {
+          "title": "Servicios comunitarios"
+        },
+        {
+          "title": "Cultura y patrimonio"
+        },
+        {
+          "title": "Fundación y ayuda humanitaria"
+        },
+        {
+          "title": "Proyectos"
+        },
+        {
+          "title": "Defensa de derechos"
+        }
+      ],
+      "areaIntro": "Cinco áreas de trabajo, una misma misión."
+    }
+  }
+}

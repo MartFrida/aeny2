@@ -1,0 +1,40 @@
+{
+  "chasqui2026": {
+    "seoTitle": "Chasqui Migrante 5K & 10K 2026 | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Register for the Chasqui Migrante 5K & 10K on December 20, 2026 in Cuenca, Ecuador. Run or walk in celebration of our roots.",
+    "eyebrow": "Run or walk for your roots",
+    "title": "Chasqui Migrante 5K & 10K 2026",
+    "date": "December 20, 2026",
+    "city": "Cuenca, Ecuador",
+    "shortLocation": "Avenida de los Migrantes · Cuenca, Ecuador",
+    "cardCta": "Register — $15",
+    "includedEyebrow": "Run together",
+    "includedTitle": "Your registration includes",
+    "description": "This December 20, run or walk for your roots at the Chasqui Migrante 5K & 10K. Join us in celebrating our identity, our families, and the pride of carrying our homeland in our hearts.\n\nRegistration includes an event shirt, timing chip, hydration, medal, race bib, certificate, fruit, and eligibility for various prizes.\n\nRegistration fee: $15 USD.\n\nOrganized by Fundación Alianza Ecuatoriana Internacional.",
+    "organizerLabel": "Organizer",
+    "organizer": "Fundación Alianza Ecuatoriana Internacional",
+    "officialEventLink": "View official event information",
+    "included": {
+      "shirt": "Event shirt",
+      "chip": "Timing chip",
+      "hydration": "Hydration",
+      "medal": "Medal",
+      "bib": "Race bib",
+      "certificate": "Certificate",
+      "fruit": "Fruit",
+      "prizes": "Eligibility for various prizes"
+    },
+    "registrationEyebrow": "Join the event",
+    "registration": {
+      "title": "Register for Chasqui Migrante",
+      "copy": "Be part of this celebration of our roots. Complete the official registration form or scan the QR code with your phone.",
+      "feeLabel": "Registration fee",
+      "formCta": "Open registration form",
+      "formNote": "You will be redirected to the official Google Forms registration page.",
+      "qrTitle": "Scan & register",
+      "qrCopy": "Open your phone camera and scan the code to access the registration form.",
+      "qrLinkLabel": "Open registration from QR code",
+      "qrAlt": "QR code for Chasqui Migrante 2026 registration"
+    }
+  }
+}

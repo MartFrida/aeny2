@@ -1,82 +1,68 @@
-import { contactInfo } from '../contact'
+const festivalEmail = 'acinpecg@gmail.com'
 
-export type KuriChasqui2026Event = {
-  id: string
-  slug: string
-  title: string
-  officialName: string
-  subtitle: string
-  startDate: string
-  endDate: string
-  time: string
-  venue: string
-  address: string
-  organizer: string
-  coOrganizer: string
-  rsvpPhone: string
-  rsvpEmail: string
-  location: string
-  poster: string
-  featured: boolean
-}
-
-export type SponsorshipLevel = {
-  name: 'KURI' | 'ANTA' | 'RUMI'
-  levelKey: string
-  roleKey: string
-  benefitKeys: string[]
-}
-
-export const kuriChasquiPillars = [
-  { titleKey: 'rootsTitle', descriptionKey: 'rootsDescription' },
-  { titleKey: 'visibilityTitle', descriptionKey: 'visibilityDescription' },
-  { titleKey: 'memoryTitle', descriptionKey: 'memoryDescription' },
-  { titleKey: 'connectionTitle', descriptionKey: 'connectionDescription' },
-]
-
-export const kuriChasquiCeremony = [
-  { time: '19:30', titleKey: 'ceremonyWelcomeTitle', descriptionKey: 'ceremonyWelcomeDescription' },
-  { time: '20:00', titleKey: 'ceremonyAwardsTitle', descriptionKey: 'ceremonyAwardsDescription' },
-  { time: '21:15', titleKey: 'ceremonyToastTitle', descriptionKey: 'ceremonyToastDescription' },
-]
-
-export const kuriChasquiSponsorshipLevels: SponsorshipLevel[] = [
-  {
-    name: 'KURI',
-    levelKey: 'gold',
-    roleKey: 'presentingSponsor',
-    benefitKeys: ['kuriBenefit1', 'kuriBenefit2', 'kuriBenefit3', 'kuriBenefit4', 'kuriBenefit5'],
-  },
-  {
-    name: 'ANTA',
-    levelKey: 'silver',
-    roleKey: 'officialSponsor',
-    benefitKeys: ['antaBenefit1', 'antaBenefit2', 'antaBenefit3', 'antaBenefit4'],
-  },
-  {
-    name: 'RUMI',
-    levelKey: 'bronze',
-    roleKey: 'communityPartner',
-    benefitKeys: ['rumiBenefit1', 'rumiBenefit2', 'rumiBenefit3'],
-  },
-]
-
-export const kuriChasqui2026Event: KuriChasqui2026Event = {
-  id: 'festival-internacional-de-cine-andino-2026',
+export const kuriChasqui2026Event = {
   slug: 'festival-internacional-de-cine-andino-2026',
-  title: '1st International Andean Film Festival New York 2026',
-  officialName: '1st International Andean Film Festival New York 2026',
-  subtitle: 'Kuri Chasqui — The Golden Messenger',
-  startDate: 'November 8',
-  endDate: 'November 15, 2026',
-  time: '14:00 / 2:00 PM',
   venue: 'Centro Comunitario Andino',
-  address: contactInfo.address,
   organizer: 'Alianza Ecuatoriana Internacional',
   coOrganizer: 'Centro Comunitario Andino',
-  rsvpPhone: contactInfo.phone,
-  rsvpEmail: contactInfo.email,
-  location: 'New York',
-  poster: '/images/kuri-chasqui/kuri-chasqui-2026-poster.jpg',
-  featured: true,
-}
+  poster: '/images/kuri-chasqui/kuri-chasqui-2026-poster.webp',
+  detailPoster: '/images/events/festival-andino-2026/kuri-chasqui-2026-poster-1.webp',
+  awardImage: '/images/events/festival-andino-2026/premios-9x16.webp',
+  contactEmail: festivalEmail,
+  contactEmailHref: `mailto:${festivalEmail}`,
+} as const
+
+export const festival2026SponsorLogos = [
+  {
+    "name": "ACINPECG",
+    "src": "/images/events/festival-andino-2026/sponsors/acinpecg.webp"
+  },
+  {
+    "name": "Alianza",
+    "src": "/images/logo-aeiny.webp"
+  },
+  {
+    "name": "Andes Film Fest 2026",
+    "src": "/images/events/festival-andino-2026/sponsors/andes-film-fest-2026.webp"
+  },
+  {
+    "name": "Aya",
+    "src": "/images/events/festival-andino-2026/sponsors/aya_vector.webp"
+  },
+  {
+    "name": "Crónica Roja",
+    "src": "/images/events/festival-andino-2026/sponsors/cronica-roja.webp"
+  },
+  {
+    "name": "DC",
+    "src": "/images/events/festival-andino-2026/sponsors/dc.webp"
+  },
+  {
+    "name": "Ecuadorian American Cultural Center",
+    "src": "/images/events/festival-andino-2026/sponsors/ecuadorian-american-cultural-center.webp"
+  },
+  {
+    "name": "Fundación Alianza",
+    "src": "/images/events/festival-andino-2026/sponsors/fundacion-alianza.webp"
+  },
+  {
+    "name": "La Hueca Manabita",
+    "src": "/images/events/festival-andino-2026/sponsors/la-hueca-manabita.webp"
+  },
+  {
+    "name": "Producciones Pachamama",
+    "src": "/images/events/festival-andino-2026/sponsors/produciones-pachamama.webp"
+  },
+  {
+    "name": "Raíz",
+    "src": "/images/events/festival-andino-2026/sponsors/raiz_vector.webp"
+  },
+  {
+    "name": "Sisa Pakari",
+    "src": "/images/events/festival-andino-2026/sponsors/sisa-pakari.webp"
+  },
+  {
+    "name": "Sonidero",
+    "src": "/images/events/festival-andino-2026/sponsors/sonidero_vector.webp"
+  }
+] as const

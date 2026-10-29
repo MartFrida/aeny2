@@ -1,3 +1,4 @@
+import { navigationItems } from '../../data/navigation'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Container } from '../common/Container'
@@ -7,15 +8,10 @@ export function Footer() {
   const { i18n, t } = useTranslation()
   const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
 
-  const navigation = [
-    { label: t('nav.about'), href: `/${language}/about` },
-    { label: t('nav.ourWork'), href: `/${language}/our-work` },
-    { label: t('nav.projects'), href: `/${language}/projects` },
-    { label: t('nav.events'), href: `/${language}/events` },
-    { label: t('nav.courses'), href: `/${language}/courses` },
-    { label: t('nav.getInvolved'), href: `/${language}/get-involved` },
-    { label: t('nav.contact'), href: `/${language}/contact` },
-  ]
+  const navigation = navigationItems.map(({ labelKey, path }) => ({
+    label: t(labelKey),
+    href: `/${language}/${path}`,
+  }))
 
   const currentPath = window.location.pathname.replace(/^\/(en|es)(?=\/|$)/, '') || '/'
   const englishPath = `/en${currentPath === '/' ? '' : currentPath}`
@@ -46,10 +42,10 @@ export function Footer() {
               <p><a href={contactInfo.emailHref} className="transition hover:text-(--foreground)">{contactInfo.email}</a></p>
             </address>
             <div className="mt-6 flex items-center gap-4 text-sm text-(--muted)">
-              <a href="https://www.facebook.com/alianzaecuatorianaIntofficial" target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
+              <a href={contactInfo.facebook} target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
                 Facebook
               </a>
-              <a href="https://www.instagram.com/alianzaecuatorianaint/?hl=es" target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
+              <a href={contactInfo.instagram} target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
                 Instagram
               </a>
               <a href={contactInfo.tiktok} target="_blank" rel="noreferrer" className="transition hover:text-(--foreground)">
@@ -60,7 +56,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">Navigation</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('footer.navigation')}</p>
           <ul className="mt-4 space-y-3 text-sm text-(--muted)">
             {navigation.map((item) => (
               <li key={item.href}>
@@ -73,7 +69,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">Featured</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('footer.featured')}</p>
           <div className="mt-4 space-y-4 text-sm text-(--muted)">
             <Link to={`/${language}/events/festival-internacional-de-cine-andino-2026`} className="block font-medium text-(--foreground) hover:text-(--primary)">
               {t('festival2026.title')}
@@ -82,7 +78,7 @@ export function Footer() {
               {t('nav.donate')}
             </Link>
             <div className="pt-3 border-t border-(--border)">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">Languages</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">{t('footer.languages')}</p>
               <div className="mt-3 flex gap-4 text-sm text-(--muted)">
                 <Link to={englishPath} className="hover:text-(--foreground)">{t('common.english')}</Link>
                 <Link to={spanishPath} className="hover:text-(--foreground)">{t('common.spanish')}</Link>

@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { navigationItems } from '../../data/navigation'
+import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../common/Button'
 
@@ -10,22 +11,13 @@ type MobileNavigationProps = {
 
 export function MobileNavigation({ language }: MobileNavigationProps) {
   const { t } = useTranslation()
-  const location = useLocation()
   const [open, setOpen] = useState(false)
 
-  useEffect(() => {
-    setOpen(false)
-  }, [location.pathname])
 
-  const items = [
-    { label: t('nav.about'), href: `/${language}/about` },
-    { label: t('nav.ourWork'), href: `/${language}/our-work` },
-    { label: t('nav.projects'), href: `/${language}/projects` },
-    { label: t('nav.events'), href: `/${language}/events` },
-    { label: t('nav.courses'), href: `/${language}/courses` },
-    { label: t('nav.getInvolved'), href: `/${language}/get-involved` },
-    { label: t('nav.contact'), href: `/${language}/contact` },
-  ]
+  const items = navigationItems.map(({ labelKey, path }) => ({
+    label: t(labelKey),
+    href: `/${language}/${path}`,
+  }))
 
   return (
     <div className="lg:hidden">

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Container } from '../common/Container'
 import { Button } from '../common/Button'
@@ -7,6 +7,7 @@ import { LanguageSwitcher } from '../navigation/LanguageSwitcher'
 import { MobileNavigation } from '../navigation/MobileNavigation'
 
 export function Header() {
+  const { pathname } = useLocation()
   const { i18n, t } = useTranslation()
   const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en'
 
@@ -31,7 +32,7 @@ export function Header() {
               {t('nav.donate')}
             </Button>
           </div>
-          <MobileNavigation language={language} />
+          <MobileNavigation key={pathname} language={language} />
         </div>
       </Container>
     </header>

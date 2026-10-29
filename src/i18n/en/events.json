@@ -1,0 +1,52 @@
+{
+  "events": {
+    "seoTitle": "Events | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Discover cultural, educational and community events organized and supported by Alianza Ecuatoriana Internacional.",
+    "eyebrow": "Community & culture",
+    "heroTitle": "Where community comes together.",
+    "heroIntro": "Our events celebrate heritage, create connections and bring Ecuadorian and Latino communities together across generations.",
+    "heroPhotoAlt": "Ecuadorian community members taking part in a cultural parade.",
+    "featurePhotoAlt": "Participants carrying Ecuadorian and international flags during a community parade.",
+    "featureEyebrow": "A community tradition",
+    "featureTitle": "Celebrating Ecuadorian Heritage",
+    "featureCopy1": "Cultural parades bring neighbors together to share Ecuadorian heritage and celebrate the many communities that make New York home.",
+    "featureCopy2": "These public gatherings create welcoming opportunities to share traditions, connect across generations and build community.",
+    "keyword": {
+      "music": "Music",
+      "folklore": "Folklore",
+      "dance": "Dance",
+      "tradition": "Tradition",
+      "community": "Community"
+    },
+    "momentsEyebrow": "More community moments",
+    "momentsTitle": "Gathering, learning and celebrating",
+    "moment": {
+      "celebrationsTitle": "Ecuadorian Community Celebrations",
+      "celebrationsCopy": "AEINY participates in and supports Ecuadorian community gatherings and parade activities in Queens, strengthening connections across the wider Latino community.",
+      "celebrationsPhotoAlt": "Families and community members celebrating together at an AEINY gathering.",
+      "gatheringsTitle": "Community Gatherings",
+      "gatheringsCopy": "Community gatherings make room for neighbors to connect, share experiences and strengthen local ties.",
+      "gatheringsPhotoAlt": "Community members gathered together at an AEINY community event.",
+      "generationsTitle": "Culture Across Generations",
+      "generationsCopy": "Cultural gatherings help traditions travel across borders and give younger generations a way to stay connected with Ecuadorian identity.",
+      "generationsPhotoAlt": "Community members sharing a meal at an AEINY gathering."
+    },
+    "filmEyebrow": "Cinema and cultural encounter",
+    "filmTitle": "1st International Andean Film Festival New York 2026",
+    "filmCopy": "The Andes International Film Fest New York celebrates Andean cinema, identity and cultural heritage in New York.",
+    "filmDate": "November 8–15, 2026",
+    "filmCta": "Explore the festival",
+    "socialEyebrow": "Follow along",
+    "socialTitle": "See what is happening now.",
+    "socialCopy": "Follow Alianza Ecuatoriana Internacional on Facebook for the latest community events, announcements and activities.",
+    "socialCta": "Follow us on Facebook"
+  },
+  "eventKuri2023": {
+    "seoTitle": "Kuri Chasqui 2023 | Alianza Ecuatoriana Internacional",
+    "seoDescription": "Explore the 2023 Kuri Chasqui festival, celebrating Andean culture, cinema and community connection.",
+    "title": "Kuri Chasqui 2023",
+    "intro": "A previous festival edition centered on Andean culture, cinema, and community connection.",
+    "eyebrow": "Past Event",
+    "copy": "This page is a placeholder for a previous edition of the festival, with the foundation for future event storytelling and archival content."
+  }
+}
