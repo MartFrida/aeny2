@@ -34,7 +34,8 @@
       "qrTitle": "Scan & register",
       "qrCopy": "Open your phone camera and scan the code to access the registration form.",
       "qrLinkLabel": "Open registration from QR code",
-      "qrAlt": "QR code for Chasqui Migrante 2026 registration"
+      "qrAlt": "QR code for Chasqui Migrante 2026 registration",
+      "contactLabel": "Information and contact"
     }
   }
 }

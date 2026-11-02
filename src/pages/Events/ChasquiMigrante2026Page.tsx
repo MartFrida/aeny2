@@ -1,4 +1,7 @@
-import { chasquiMigrante2026, chasquiRegistrationFeeLabel } from '../../data/events/chasquiMigrante2026';
+import {
+  chasquiMigrante2026,
+  chasquiRegistrationFeeLabel,
+} from "../../data/events/chasquiMigrante2026";
 import {
   Award,
   BadgeCheck,
@@ -14,7 +17,6 @@ import {
 import { useTranslation } from "react-i18next";
 import { Container } from "../../components/common/Container";
 import { PageMetadata } from "../../components/common/PageMetadata";
-
 
 export function ChasquiMigrante2026Page() {
   const { i18n, t } = useTranslation();
@@ -110,6 +112,17 @@ export function ChasquiMigrante2026Page() {
             <p className="mt-4 text-xs leading-6 text-white/50">
               {t("chasqui2026.registration.formNote")}
             </p>
+            <div className="mt-6 border-t border-white/15 pt-5">
+              <p className="text-sm text-white/65">
+                {t("chasqui2026.registration.contactLabel")}
+              </p>
+              <a
+                href={chasquiMigrante2026.contactPhoneHref}
+                className="mt-1 inline-flex min-h-11 items-center rounded-sm text-lg font-semibold text-(--accent) underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent)"
+              >
+                {chasquiMigrante2026.contactPhone}
+              </a>
+            </div>
           </div>
 
           {/* QR Code Card */}
@@ -130,16 +143,12 @@ export function ChasquiMigrante2026Page() {
               href={chasquiMigrante2026.registrationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={
-                t("chasqui2026.registration.qrLinkLabel")
-              }
+              aria-label={t("chasqui2026.registration.qrLinkLabel")}
               className="mx-auto mt-7 block w-full max-w-64 rounded-xl bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-4 focus-visible:ring-offset-(--surface-dark)"
             >
               <img
                 src={chasquiMigrante2026.registrationQr}
-                alt={
-                  t("chasqui2026.registration.qrAlt")
-                }
+                alt={t("chasqui2026.registration.qrAlt")}
                 width={1600}
                 height={1600}
                 loading="lazy"
@@ -151,7 +160,10 @@ export function ChasquiMigrante2026Page() {
               CHASQUI MIGRANTE 2026
             </p>
 
-            <p className="mt-2 text-sm text-white/60">{chasquiMigrante2026.distancesLabel} · {chasquiMigrante2026.dateLabel}</p>
+            <p className="mt-2 text-sm text-white/60">
+              {chasquiMigrante2026.distancesLabel} ·{" "}
+              {chasquiMigrante2026.dateLabel}
+            </p>
           </aside>
         </Container>
       </section>

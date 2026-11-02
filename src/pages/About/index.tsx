@@ -1,4 +1,4 @@
-import { aboutMedia } from '../../data/about';
+import { aboutMedia } from "../../data/about";
 import {
   ArrowDown,
   ArrowRight,
@@ -23,7 +23,8 @@ const values = [
 
 const alternateLanguagePaths = { en: "/en/about", es: "/es/about" };
 
-type AboutContent = typeof import('../../i18n/en/about.json')['about']['content'];
+type AboutContent =
+  (typeof import("../../i18n/en/about.json"))["about"]["content"];
 
 export function AboutPage() {
   const { i18n, t } = useTranslation();
@@ -167,44 +168,60 @@ export function AboutPage() {
 
           <div className="mt-9 grid gap-6 md:grid-cols-2">
             {c.organizationUnits.map((content, index) => {
-              const unit = { ...content, ...aboutMedia.organizationUnits[index] };
+              const unit = {
+                ...content,
+                ...aboutMedia.organizationUnits[index],
+              };
               return (
-              <article
-                key={unit.href}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-(--border) bg-(--surface)"
-              >
-                <Link
-                  to={`${prefix}${unit.href}`}
-                  aria-label={unit.cta}
-                  className={`block overflow-hidden ${unit.href === "/contact" ? "bg-white" : "bg-(--accent-soft)"}`}
+                <article
+                  key={unit.href}
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-(--border) bg-(--surface)"
                 >
-                  <img
-                    src={unit.image}
-                    alt={unit.imageAlt}
-                    width="960"
-                    height="720"
-                    loading="lazy"
-                    decoding="async"
-                    className={`aspect-4/3 w-full transition-transform duration-500 ${unit.href === "/contact" ? "object-contain p-6 sm:p-8" : "object-cover group-hover:scale-[1.035]"}`}
-                  />
-                </Link>
-                <div className="flex flex-1 flex-col p-7 md:p-9">
-                  <h3 className="font-display text-2xl tracking-[-0.02em] text-(--foreground) md:text-3xl">
-                    {unit.title}
-                  </h3>
-                  <p className="mt-4 text-base leading-8 text-(--muted)">
-                    {unit.description}
-                  </p>
                   <Link
                     to={`${prefix}${unit.href}`}
-                    className="mt-auto inline-flex items-center gap-2 self-start pt-6 text-sm font-semibold text-(--primary) transition hover:opacity-70"
+                    aria-label={unit.cta}
+                    className={`block overflow-hidden ${unit.href === "/contact" ? "bg-white" : "bg-(--accent-soft)"}`}
                   >
-                    {unit.cta}
-                    <ArrowUpRight aria-hidden="true" size={16} />
+                    <img
+                      src={unit.image}
+                      alt={unit.imageAlt}
+                      width="960"
+                      height="720"
+                      loading="lazy"
+                      decoding="async"
+                      className={`aspect-4/3 w-full transition-transform duration-500 ${unit.href === "/contact" ? "object-contain p-6 sm:p-8" : "object-cover group-hover:scale-[1.035]"}`}
+                    />
                   </Link>
-                </div>
-              </article>
-            );
+                  <div className="flex flex-1 flex-col p-7 md:p-9">
+                    <h3 className="font-display text-2xl tracking-[-0.02em] text-(--foreground) md:text-3xl">
+                      {unit.title}
+                    </h3>
+                    <p className="mt-4 text-base leading-8 text-(--muted)">
+                      {unit.description}
+                    </p>
+                    {index === 1 && (
+                      <div className="mt-5">
+                        <p className="text-sm text-(--muted)">
+                          {c.foundationContactLabel}
+                        </p>
+                        <a
+                          href="tel:+593988842044"
+                          className="mt-1 inline-flex min-h-11 items-center rounded-sm text-lg font-semibold text-(--primary) underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"
+                        >
+                          +593 98 884 2044
+                        </a>
+                      </div>
+                    )}
+                    <Link
+                      to={`${prefix}${unit.href}`}
+                      className="mt-auto inline-flex items-center gap-2 self-start pt-6 text-sm font-semibold text-(--primary) transition hover:opacity-70"
+                    >
+                      {unit.cta}
+                      <ArrowUpRight aria-hidden="true" size={16} />
+                    </Link>
+                  </div>
+                </article>
+              );
             })}
           </div>
 
@@ -242,31 +259,31 @@ export function AboutPage() {
             {c.workAreas.map((content, index) => {
               const area = { ...content, ...aboutMedia.workAreas[index] };
               return (
-              <Link
-                key={area.title}
-                to={`${homePath}${area.href}`}
-                className="group overflow-hidden rounded-2xl border border-(--border) bg-(--background) transition duration-300 hover:-translate-y-1 hover:shadow-lg md:rounded-3xl"
-              >
-                <div className="overflow-hidden bg-[#e9dfd2]">
-                  <img
-                    src={area.image}
-                    alt={area.title}
-                    loading="lazy"
-                    className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
-                  />
-                </div>
+                <Link
+                  key={area.title}
+                  to={`${homePath}${area.href}`}
+                  className="group overflow-hidden rounded-2xl border border-(--border) bg-(--background) transition duration-300 hover:-translate-y-1 hover:shadow-lg md:rounded-3xl"
+                >
+                  <div className="overflow-hidden bg-[#e9dfd2]">
+                    <img
+                      src={area.image}
+                      alt={area.title}
+                      loading="lazy"
+                      className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                    />
+                  </div>
 
-                <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-5">
-                  <h3 className="text-lg font-semibold leading-snug text-(--foreground) md:text-xl">
-                    {area.title}
-                  </h3>
+                  <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-5">
+                    <h3 className="text-lg font-semibold leading-snug text-(--foreground) md:text-xl">
+                      {area.title}
+                    </h3>
 
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-(--border) text-(--primary) transition group-hover:border-(--primary) group-hover:bg-(--primary) group-hover:text-white">
-                    <ArrowUpRight size={18} />
-                  </span>
-                </div>
-              </Link>
-            );
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-(--border) text-(--primary) transition group-hover:border-(--primary) group-hover:bg-(--primary) group-hover:text-white">
+                      <ArrowUpRight size={18} />
+                    </span>
+                  </div>
+                </Link>
+              );
             })}
           </div>
         </Container>

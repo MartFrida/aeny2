@@ -56,7 +56,7 @@
           "title": "Centro Comunitario Andino",
           "imageAlt": "Formación y servicios comunitarios del Centro Comunitario Andino",
           "description": "Apoya a migrantes y familias en Nueva York mediante orientación comunitaria y oportunidades de formación, incluidos cursos OSHA y de construcción.",
-          "cta": "Conoce el Centro"
+          "cta": "Contacto general"
         },
         {
           "title": "Fundación Alianza Ecuatoriana Internacional",
@@ -85,7 +85,8 @@
           "title": "Defensa de derechos"
         }
       ],
-      "areaIntro": "Cinco áreas de trabajo, una misma misión."
+      "areaIntro": "Cinco áreas de trabajo, una misma misión.",
+      "foundationContactLabel": "Contacto de la Fundación"
     }
   }
 }

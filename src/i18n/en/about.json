@@ -62,7 +62,7 @@
           "title": "Fundación Alianza Ecuatoriana Internacional",
           "imageAlt": "Fundación Alianza Ecuatoriana Internacional logo",
           "description": "Advances the Alliance’s humanitarian aid and social and educational projects, with support from donations and the community, to assist individuals and families in vulnerable situations.",
-          "cta": "Discover the Foundation"
+          "cta": "General contact"
         }
       ],
       "organizationScope": "Our work spans community services, humanitarian aid, culture and heritage, projects and rights advocacy. Initiatives such as the Andean International Film Festival, the El Chasqui Migrante Run and Walk, and Parque del Migrante are part of this shared effort.",
@@ -85,7 +85,8 @@
           "title": "Rights advocacy"
         }
       ],
-      "areaIntro": "Five areas of work. One shared mission."
+      "areaIntro": "Five areas of work. One shared mission.",
+      "foundationContactLabel": "Foundation contact"
     }
   }
 }

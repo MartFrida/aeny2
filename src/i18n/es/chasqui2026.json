@@ -34,7 +34,8 @@
       "qrTitle": "Escanea e inscríbete",
       "qrCopy": "Abre la cámara de tu teléfono y escanea el código para acceder al formulario.",
       "qrLinkLabel": "Abrir inscripción mediante código QR",
-      "qrAlt": "Código QR para inscribirse en Chasqui Migrante 2026"
+      "qrAlt": "Código QR para inscribirse en Chasqui Migrante 2026",
+      "contactLabel": "Información y contacto"
     }
   }
 }
