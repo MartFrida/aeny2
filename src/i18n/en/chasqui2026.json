@@ -36,6 +36,15 @@
       "qrLinkLabel": "Open registration from QR code",
       "qrAlt": "QR code for Chasqui Migrante 2026 registration",
       "contactLabel": "Information and contact"
-    }
+    },
+    "payment": {
+  "title": "Payment methods",
+  "copy": "Choose how you would like to pay your registration fee.",
+  "paypalCopy": "Securely pay your registration fee using PayPal.",
+  "paypalCta": "Pay with PayPal",
+  "yuyayCopy": "You can also pay using the Cooperativa Yuyay QR code with a compatible banking app.",
+  "yuyayQrAlt": "Cooperativa Yuyay QR code for registration payment",
+  "yuyayNote": "QR payments require a compatible banking app. Registration will be confirmed after payment verification."
+}
   }
 }

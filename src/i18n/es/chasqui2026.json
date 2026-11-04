@@ -36,6 +36,15 @@
       "qrLinkLabel": "Abrir inscripción mediante código QR",
       "qrAlt": "Código QR para inscribirse en Chasqui Migrante 2026",
       "contactLabel": "Información y contacto"
-    }
+    },
+    "payment": {
+  "title": "Métodos de pago",
+  "copy": "Elige cómo deseas pagar tu inscripción.",
+  "paypalCopy": "Realiza el pago de tu inscripción de forma segura mediante PayPal.",
+  "paypalCta": "Pagar con PayPal",
+  "yuyayCopy": "También puedes pagar mediante el código QR de Cooperativa Yuyay, utilizando una aplicación bancaria compatible.",
+  "yuyayQrAlt": "Código QR de Cooperativa Yuyay para el pago de la inscripción",
+  "yuyayNote": "El pago mediante QR está sujeto a la compatibilidad de tu aplicación bancaria. La inscripción se confirmará después de verificar el pago."
+}
   }
 }

@@ -13,6 +13,7 @@ import {
   Apple,
   ArrowUpRight,
   QrCode,
+  Landmark,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Container } from "../../components/common/Container";
@@ -61,7 +62,7 @@ export function ChasquiMigrante2026Page() {
           <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
         </div>
 
-        <Container className="relative grid gap-10 py-14 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
+        <Container className="relative grid gap-10 py-14 md:py-20 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-10 xl:gap-14">
           {/* Registration information */}
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--accent)">
@@ -108,7 +109,6 @@ export function ChasquiMigrante2026Page() {
                 <ArrowUpRight size={17} aria-hidden="true" />
               </a>
             </div>
-
             <p className="mt-4 text-xs leading-6 text-white/50">
               {t("chasqui2026.registration.formNote")}
             </p>
@@ -125,45 +125,81 @@ export function ChasquiMigrante2026Page() {
             </div>
           </div>
 
-          {/* QR Code Card */}
-          <aside className="relative mx-auto w-full max-w-md rounded-2xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur-sm sm:p-8 lg:max-w-none">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-(--accent)/30 bg-(--accent)/10 text-(--accent)">
-              <QrCode size={23} strokeWidth={1.7} aria-hidden="true" />
-            </div>
-
-            <h3 className="mt-5 font-display text-2xl tracking-[-0.03em] text-white sm:text-3xl">
-              {t("chasqui2026.registration.qrTitle")}
+          {/* Registration and bank QR codes */}
+          <aside className="min-w-0 lg:pt-1" aria-labelledby="chasqui-payment-title">
+            <h3 id="chasqui-payment-title" className="font-display text-2xl tracking-tight text-white sm:text-3xl">
+              {t("chasqui2026.payment.title")}
             </h3>
-
-            <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-white/65">
-              {t("chasqui2026.registration.qrCopy")}
+            <p className="mt-3 text-sm leading-6 text-white/65">
+              {t("chasqui2026.payment.copy")}
             </p>
 
-            <a
-              href={chasquiMigrante2026.registrationUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t("chasqui2026.registration.qrLinkLabel")}
-              className="mx-auto mt-7 block w-full max-w-64 rounded-xl bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-4 focus-visible:ring-offset-(--surface-dark)"
-            >
-              <img
-                src={chasquiMigrante2026.registrationQr}
-                alt={t("chasqui2026.registration.qrAlt")}
-                width={1600}
-                height={1600}
-                loading="lazy"
-                className="aspect-square w-full object-contain"
-              />
-            </a>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+              {/* Official registration QR (not a payment QR) */}
+              <div className="flex min-w-0 flex-col rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-sm sm:p-5">
+                <div className="flex flex-1 flex-col items-center">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-(--accent)/30 bg-(--accent)/10 text-(--accent)">
+                    <QrCode size={22} aria-hidden="true" />
+                  </span>
+                  <h4 className="mt-4 font-display text-xl text-white">
+                    {t("chasqui2026.registration.qrTitle")}
+                  </h4>
+                  <p className="mt-2 text-sm leading-6 text-white/65">
+                    {t("chasqui2026.registration.qrCopy")}
+                  </p>
+                </div>
+                <a
+                  href={chasquiMigrante2026.registrationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t("chasqui2026.registration.qrLinkLabel")}
+                  className="mx-auto mt-6 block w-full max-w-52 rounded-xl bg-white p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent)"
+                >
+                  <img
+                    src={chasquiMigrante2026.registrationQr}
+                    alt={t("chasqui2026.registration.qrAlt")}
+                    width={1600}
+                    height={1600}
+                    loading="lazy"
+                    className="aspect-square w-full object-contain"
+                  />
+                </a>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-(--accent)">
+                  CHASQUI MIGRANTE 2026
+                </p>
+                <p className="mt-2 text-xs text-white/60">
+                  {chasquiMigrante2026.distancesLabel} · {chasquiMigrante2026.dateLabel}
+                </p>
+              </div>
 
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-(--accent)">
-              CHASQUI MIGRANTE 2026
-            </p>
-
-            <p className="mt-2 text-sm text-white/60">
-              {chasquiMigrante2026.distancesLabel} ·{" "}
-              {chasquiMigrante2026.dateLabel}
-            </p>
+              {/* Cooperativa Yuyay payment QR */}
+              <div className="flex min-w-0 flex-col rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-sm sm:p-5">
+                <div className="flex flex-1 flex-col items-center">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-(--accent)/30 bg-(--accent)/10 text-(--accent)">
+                    <Landmark size={22} aria-hidden="true" />
+                  </span>
+                  <h4 className="mt-4 font-display text-xl text-white">
+                    Cooperativa Yuyay
+                  </h4>
+                  <p className="mt-2 text-sm leading-6 text-white/65">
+                    {t("chasqui2026.payment.yuyayCopy")}
+                  </p>
+                </div>
+                <div className="mx-auto mt-6 flex aspect-square w-full max-w-52 items-center justify-center rounded-xl bg-white p-3">
+                  <img
+                    src="/images/events/chasqui-migrante-2026/yuyay-payment-qr.jpeg"
+                    alt={t("chasqui2026.payment.yuyayQrAlt")}
+                    width={342}
+                    height={352}
+                    loading="lazy"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <p className="mt-4 text-xs leading-5 text-white/60">
+                  {t("chasqui2026.payment.yuyayNote")}
+                </p>
+              </div>
+            </div>
           </aside>
         </Container>
       </section>
