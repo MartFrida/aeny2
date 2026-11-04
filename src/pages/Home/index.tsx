@@ -103,13 +103,12 @@ export function HomePage() {
               >
                 {t("home.rsvpCta")}
               </a>
-              <Button
-                to={donatePath}
-                variant="secondary"
-                className="border-white/20 bg-white/5 text-white hover:bg-white/10"
+              <a
+                href={`${festivalPath}#festival-admission`}
+                className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
               >
-                {t("home.ctaSecondary")}
-              </Button>
+                {language === "es" ? "Entrada · US$10" : "Admission · US$10"}
+              </a>
             </div>
 
             <p className="mt-6 text-sm text-white/70">

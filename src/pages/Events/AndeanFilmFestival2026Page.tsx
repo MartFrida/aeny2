@@ -1,7 +1,8 @@
 import { festival2026SponsorLogos, kuriChasqui2026Event } from '../../data/events/kuriChasqui2026';
-import { ArrowDown, ArrowRight, Clapperboard, Mail } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, ChevronDown, Clapperboard, Copy, Mail, Ticket } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../../components/common/Button";
 import { Container } from "../../components/common/Container";
 import { PageMetadata } from "../../components/common/PageMetadata";
@@ -9,19 +10,86 @@ import { FestivalSchedule } from "../../components/festival/FestivalSchedule";
 import { kuriChasqui2026Films } from "../../data/events/kuriChasquiCatalog";
 import { kuriChasqui2026Founders } from "../../data/events/kuriChasquiFounders2026";
 import { FilmCard } from "./FilmCard";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
 
 // Files are served from public/images/events/festival-andino-2026/sponsors/.
 
 type FestivalAwardContent = typeof import('../../i18n/en/festival2026.json')['festival2026']['award'];
 type FestivalContactContent = typeof import('../../i18n/en/festival2026.json')['festival2026']['contact'];
 
+const festivalAdmission = {
+  amount: "US$10",
+  zelleEmail: "w.sinche.ccandino@gmail.com",
+  recipient: "Alianza Ecuatoriana Internacional",
+} as const;
+
+const admissionContent = {
+  es: {
+    label: "Entrada al festival",
+    title: "Sé parte del festival",
+    copy: "Un encuentro con el cine, las historias y la cultura de los Andes en Nueva York.",
+    cta: "Entrada · US$10",
+    method: "A través de Zelle",
+    emailLabel: "Correo asociado a Zelle",
+    recipientLabel: "A nombre de",
+    copyEmail: "Copiar correo",
+    copiedEmail: "Correo copiado",
+    copyError: "No se pudo copiar. Selecciona el correo y cópialo manualmente.",
+    contact: "¿Consultas sobre tu entrada?",
+  },
+  en: {
+    label: "Festival admission",
+    title: "Be part of the festival",
+    copy: "Experience the cinema, stories and culture of the Andes in New York.",
+    cta: "Admission · US$10",
+    method: "Via Zelle",
+    emailLabel: "Zelle email address",
+    recipientLabel: "Recipient name",
+    copyEmail: "Copy email",
+    copiedEmail: "Email copied",
+    copyError: "Unable to copy. Select the email address and copy it manually.",
+    contact: "Questions about your admission?",
+  },
+} as const;
+
 export function AndeanFilmFestival2026Page() {
   const { i18n, t } = useTranslation();
+  const { hash, key } = useLocation();
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
   const englishPath = "/en/events/festival-internacional-de-cine-andino-2026";
   const spanishPath = "/es/events/festival-internacional-de-cine-andino-2026";
   const path = language === "es" ? spanishPath : englishPath;
+  const admission = admissionContent[language];
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
+
+  useEffect(() => {
+    if (hash !== "#festival-admission") return;
+
+    // Wait for route effects (including scroll-to-top) before following the anchor.
+    let scrollFrame = 0;
+    const readyFrame = window.requestAnimationFrame(() => {
+      scrollFrame = window.requestAnimationFrame(() => {
+        document.getElementById("festival-admission")?.scrollIntoView({
+          behavior: "auto",
+          block: "start",
+        });
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(readyFrame);
+      window.cancelAnimationFrame(scrollFrame);
+    };
+  }, [hash, key]);
+
+  async function copyZelleEmail() {
+    try {
+      await navigator.clipboard.writeText(festivalAdmission.zelleEmail);
+      setCopyStatus("copied");
+    } catch {
+      setCopyStatus("error");
+    }
+  }
+
   const awardContent = t("festival2026.award", { returnObjects: true }) as FestivalAwardContent;
   const contactContent = t("festival2026.contact", { returnObjects: true }) as FestivalContactContent;
 
@@ -54,10 +122,24 @@ export function AndeanFilmFestival2026Page() {
             <p className="mt-5 max-w-xl text-base leading-7 text-white/75 md:text-lg">
               {t("festival2026.heroIntro")}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-white/80">
+              <span className="inline-flex items-center gap-2 font-semibold text-(--accent)">
+                <Ticket size={18} aria-hidden="true" />
+                {admission.label} · {festivalAdmission.amount}
+              </span>
+              <span>{admission.method}</span>
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href="#festival-admission"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-(--accent) px-5 py-2.5 text-sm font-semibold text-(--surface-dark) transition-colors hover:bg-[#d79d54] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
+              >
+                <Ticket size={17} aria-hidden="true" />
+                {admission.cta}
+              </a>
               <a
                 href="#official-selection"
-                className="inline-flex items-center justify-center rounded-md bg-(--accent) px-5 py-2.5 text-sm font-semibold text-(--surface-dark) transition-colors hover:bg-[#d79d54] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
+                className="inline-flex items-center justify-center rounded-md border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
               >
                 {t("festival2026.exploreSelection")}
                 <ArrowDown size={16} className="ml-2" />
@@ -158,6 +240,84 @@ export function AndeanFilmFestival2026Page() {
                 <FilmCard film={film} to={`${path}/films/${film.slug}`} />
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Festival Admission */}
+      <section
+        id="festival-admission"
+        aria-labelledby="festival-admission-title"
+        className="scroll-mt-24 border-y border-(--border) bg-(--background)"
+      >
+        <Container className="grid gap-8 py-12 md:py-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
+          <div className="max-w-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
+              {admission.label}
+            </p>
+            <h2
+              id="festival-admission-title"
+              className="mt-3 font-display text-3xl leading-tight tracking-[-0.04em] text-(--foreground) md:text-4xl"
+            >
+              {admission.title}
+            </h2>
+            <p className="mt-4 text-base leading-7 text-(--muted)">
+              {admission.copy}
+            </p>
+            <div className="mt-6 flex items-center gap-3">
+              <Ticket size={24} className="shrink-0 text-(--primary)" aria-hidden="true" />
+              <span className="font-display text-4xl tracking-tight text-(--foreground)">
+                {festivalAdmission.amount}
+              </span>
+            </div>
+          </div>
+
+          <div className="min-w-0 rounded-2xl border border-(--accent)/40 bg-(--surface) p-5 sm:p-7">
+            <h3 className="font-display text-xl text-(--foreground)">
+              {admission.method}
+            </h3>
+            <dl className="mt-5 space-y-5">
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-(--muted)">
+                  {admission.emailLabel}
+                </dt>
+                <dd className="mt-2 select-text break-all text-lg font-semibold leading-7 text-(--foreground)">
+                  {festivalAdmission.zelleEmail}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-(--muted)">
+                  {admission.recipientLabel}
+                </dt>
+                <dd className="mt-2 text-base font-medium leading-6 text-(--foreground)">
+                  {festivalAdmission.recipient}
+                </dd>
+              </div>
+            </dl>
+            <button
+              type="button"
+              onClick={copyZelleEmail}
+              className="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-(--primary) px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-(--primary)/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface) sm:w-auto"
+            >
+              {copyStatus === "copied" ? (
+                <Check size={16} aria-hidden="true" />
+              ) : (
+                <Copy size={16} aria-hidden="true" />
+              )}
+              {admission.copyEmail}
+            </button>
+            <p role="status" aria-live="polite" aria-atomic="true" className="mt-2 min-h-5 text-sm leading-5 text-(--muted)">
+              {copyStatus === "copied" ? admission.copiedEmail : copyStatus === "error" ? admission.copyError : ""}
+            </p>
+            <div className="mt-4 border-t border-(--border) pt-4 text-sm leading-6 text-(--muted)">
+              <p>{admission.contact}</p>
+              <a
+                href={kuriChasqui2026Event.contactEmailHref}
+                className="mt-1 inline-block break-all rounded-sm font-semibold text-(--primary) underline decoration-(--accent)/60 underline-offset-4 hover:text-(--foreground) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring)"
+              >
+                {kuriChasqui2026Event.contactEmail}
+              </a>
+            </div>
           </div>
         </Container>
       </section>
@@ -484,10 +644,17 @@ export function AndeanFilmFestival2026Page() {
               {t("festival2026.ctaCopy")}
             </p>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap md:flex-col">
+            <a
+              href="#festival-admission"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-(--accent) px-5 py-2.5 text-sm font-semibold text-(--surface-dark) transition-colors hover:bg-[#d79d54] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
+            >
+              <Ticket size={17} aria-hidden="true" />
+              {admission.cta}
+            </a>
             <Button
               to={`/${language}/donate`}
-              className="bg-(--accent)! text-(--surface-dark)! hover:bg-[#d79d54]!"
+              className="border border-white/25 bg-transparent! text-white! hover:bg-white/10!"
             >
               {t("festival2026.donateCta")}
             </Button>
