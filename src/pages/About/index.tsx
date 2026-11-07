@@ -1,3 +1,4 @@
+import { AboutCoverage } from "../../components/about/AboutCoverage";
 import { aboutMedia } from "../../data/about";
 import {
   ArrowDown,
@@ -83,6 +84,13 @@ export function AboutPage() {
                 <ArrowUpRight aria-hidden="true" size={16} className="ml-2" />
               </Button>
             </div>
+            <a
+              href="#in-the-news"
+              className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-semibold text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-4 focus-visible:ring-offset-(--surface-dark)"
+            >
+              {language === "es" ? "Nuestra labor en los medios" : "Our work in the media"}
+              <ArrowDown aria-hidden="true" size={16} />
+            </a>
           </div>
 
           <figure className="relative mx-auto w-full max-w-xl">
@@ -411,6 +419,9 @@ export function AboutPage() {
           </div>
         </Container>
       </section>
+
+      {/* Independent press and community coverage */}
+      <AboutCoverage language={language} />
 
       {/* Build with us */}
       <section className="border-t border-(--border) bg-(--surface) py-16 md:py-20">
