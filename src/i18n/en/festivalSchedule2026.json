@@ -26,6 +26,10 @@
       "closing": "Festival closing"
     },
     "activities": {
+      "waltherWelcome": "Welcome remarks by Walther Sinche, director of Alianza Ecuatoriana Internacional and Centro Comunitario Andino and founder of the festival",
+      "amarukRemarks": "Remarks by Amaruk Kayshapanta Anchapaxi, UNESCO Indigenous Cultural Ambassador for the Andes and founder of the festival",
+      "consulRemarks": "Remarks by Gicela Alejandra Andrade, Consul General of Ecuador in New York",
+      "raizEcuadorRemarks": "Remarks by Miguel Ángel Méndez Molina, representing the Ecuadorian chefs of Raíz Ecuador in Europe, official festival sponsors",
       "opening": "Official opening, forum and gathering with organizers, producers and directors",
       "participantForum": "Forum and conversation with participants",
       "directorForum": "Forum with directors, producers and organizers",

@@ -19,6 +19,27 @@ export const festivalSchedule2026: FestivalScheduleDay[] = [
     dayLabelKey: "festivalSchedule2026.days.opening",
     items: [
       {
+        startTime: "14:00",
+        type: "opening",
+        title: "festivalSchedule2026.activities.waltherWelcome",
+      },
+      {
+        startTime: "14:10",
+        type: "opening",
+        title: "festivalSchedule2026.activities.amarukRemarks",
+      },
+      {
+        startTime: "14:20",
+        type: "opening",
+        title: "festivalSchedule2026.activities.consulRemarks",
+      },
+      {
+        startTime: "14:30",
+        type: "opening",
+        title: "festivalSchedule2026.activities.raizEcuadorRemarks",
+      },
+
+      {
         startTime: "15:00",
         endTime: "15:45",
         title: "Cueva de los Tayos",
