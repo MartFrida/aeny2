@@ -12,6 +12,9 @@ import {
   Trophy,
   Apple,
   ArrowUpRight,
+  ArrowDown,
+  CalendarDays,
+  MapPin,
   QrCode,
   Landmark,
 } from "lucide-react";
@@ -19,12 +22,17 @@ import { useTranslation } from "react-i18next";
 import { Container } from "../../components/common/Container";
 import { PageMetadata } from "../../components/common/PageMetadata";
 
+const posterPath = "/images/events/chasqui-migrante-2026/chasqui-migrante-2026-poster.jpeg";
+
 export function ChasquiMigrante2026Page() {
   const { i18n, t } = useTranslation();
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
   const englishPath = "/en/events/chasqui-migrante-2026";
   const spanishPath = "/es/events/chasqui-migrante-2026";
   const path = language === "es" ? spanishPath : englishPath;
+  const posterAlt = language === "es"
+    ? "Cartel oficial de Chasqui Migrante 2026: carrera 5K y 10K en Cuenca, Ecuador"
+    : "Official Chasqui Migrante 2026 poster: 5K and 10K race in Cuenca, Ecuador";
   const includedItems = [
     { key: "shirt", icon: Shirt },
     { key: "chip", icon: Timer },
@@ -45,6 +53,71 @@ export function ChasquiMigrante2026Page() {
         canonicalPath={path}
         alternateLanguagePaths={{ en: englishPath, es: spanishPath }}
       />
+
+      {/* Event poster and introduction */}
+      <section
+        aria-labelledby="chasqui-migrante-title"
+        className="border-b border-(--border) bg-(--surface)"
+      >
+        <Container className="grid gap-8 py-10 sm:gap-10 md:py-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:gap-12 xl:gap-16">
+          <div className="min-w-0 lg:order-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">
+              {t("chasqui2026.eyebrow")}
+            </p>
+            <h1
+              id="chasqui-migrante-title"
+              className="mt-4 max-w-2xl font-display text-4xl leading-[1.04] tracking-[-0.045em] text-(--foreground) sm:text-5xl md:text-6xl"
+            >
+              {t("chasqui2026.title")}
+            </h1>
+            <p className="mt-5 inline-flex rounded-full border border-(--accent)/25 bg-(--accent)/10 px-4 py-2 text-sm font-semibold text-(--primary)">
+              {chasquiMigrante2026.distancesLabel}
+            </p>
+
+            <div className="mt-6 space-y-4">
+              <p className="flex items-start gap-3 text-base font-semibold leading-7 text-(--foreground)">
+                <CalendarDays
+                  aria-hidden="true"
+                  size={21}
+                  className="mt-0.5 shrink-0 text-(--primary)"
+                />
+                <span>{t("chasqui2026.date")} · {chasquiMigrante2026.time}</span>
+              </p>
+              <p className="flex items-start gap-3 text-base leading-7 text-(--muted)">
+                <MapPin
+                  aria-hidden="true"
+                  size={21}
+                  className="mt-0.5 shrink-0 text-(--primary)"
+                />
+                <span>{t("chasqui2026.shortLocation")}</span>
+              </p>
+              <p className="text-sm leading-6 text-(--muted)">
+                {t("chasqui2026.organizer")}
+              </p>
+            </div>
+
+            <a
+              href="#registration"
+              className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-(--primary) px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-(--primary)/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--primary) sm:w-auto"
+            >
+              {t("chasqui2026.cardCta")}
+              <ArrowDown size={17} aria-hidden="true" />
+            </a>
+          </div>
+
+          <figure className="mx-auto w-full max-w-sm rounded-2xl border border-(--border) bg-(--background) p-3 shadow-sm sm:p-4 lg:order-1 lg:max-w-md">
+            <img
+              src={posterPath}
+              alt={posterAlt}
+              width={896}
+              height={1183}
+              fetchPriority="high"
+              decoding="async"
+              className="block h-auto w-full rounded-xl bg-white object-contain"
+            />
+          </figure>
+        </Container>
+      </section>
 
       {/* Registration Section */}
       <section
