@@ -19,7 +19,7 @@ const pageLoaders = {
   eventKuri2023: () => import('../pages/Events/KuriChasqui2023Page').then((module) => ({ Component: module.KuriChasqui2023Page })),
   courses: () => import('../pages/Courses').then((module) => ({ Component: module.CoursesPage })),
   getInvolved: () => import('../pages/GetInvolved').then((module) => ({ Component: module.GetInvolvedPage })),
-  donate: () => import('../pages/Donate').then((module) => ({ Component: module.DonatePage })),
+  donate: () => import('../pages/Donate/donate').then((module) => ({ Component: module.DonatePage })),
   contact: () => import('../pages/Contact').then((module) => ({ Component: module.ContactPage })),
 } as const
 
