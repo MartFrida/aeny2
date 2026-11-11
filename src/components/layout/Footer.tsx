@@ -136,7 +136,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-2 pt-3 sm:mt-5">
+        <div className="mt-4 mb-8 flex flex-wrap items-center justify-between gap-2 pt-3 sm:mt-5">
           <div className="flex shrink-0 items-center sm:gap-1">
             {socialLinks.map(({ icon, label, href }) => (
               <a
