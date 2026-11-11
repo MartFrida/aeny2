@@ -25,7 +25,7 @@ export function Footer() {
             <img
               src="/images/logo-aeiny.webp"
               alt="Alianza Ecuatoriana Internacional"
-              className="h-[76px] w-auto object-contain sm:h-20 md:h-24"
+              className="h-19 w-auto object-contain sm:h-20 md:h-24"
             />
           </Link>
           <div>
