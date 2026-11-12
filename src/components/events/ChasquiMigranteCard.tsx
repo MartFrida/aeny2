@@ -5,7 +5,7 @@ import { Button } from '../common/Button'
 import { Container } from '../common/Container'
 import { chasquiMigrante2026, chasquiRegistrationFeeLabel } from '../../data/events/chasquiMigrante2026'
 
-const posterPath = '/images/events/chasqui-migrante-2026/chasqui-migrante-2026-poster.jpeg'
+const posterPath = '/images/events/chasqui-migrante-2026/chasqui-migrante-2026-poster.jpg'
 
 export function ChasquiMigranteCard() {
   const { i18n, t } = useTranslation()

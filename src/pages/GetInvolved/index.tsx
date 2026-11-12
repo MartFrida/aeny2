@@ -21,6 +21,49 @@ const opportunities = [
   { id: 'sponsor', icon: Sparkles },
 ] as const
 
+const sectionPhotoAlt = {
+  donate: {
+    es: 'Integrantes de la comunidad junto a bolsas y alimentos en una actividad de apoyo de AEINY.',
+    en: 'Community members with bags and food at an AEINY community aid activity.',
+  },
+  volunteer: {
+    es: 'El equipo de AEINY entrega materiales a visitantes en un encuentro comunitario.',
+    en: 'The AEINY team shares materials with visitors at a community outreach event.',
+  },
+  partner: {
+    es: 'Dos integrantes de AEINY colaboran en una mesa de información comunitaria.',
+    en: 'Two AEINY team members work together at a community information table.',
+  },
+  sponsor: {
+    es: 'Un equipo reunido con raciones de comida frente al estandarte de Alianza Ecuatoriana Internacional.',
+    en: 'A team gathered with prepared meals behind the Alianza Ecuatoriana Internacional banner.',
+  },
+} as const
+
+type SectionPhotoProps = {
+  id: keyof typeof sectionPhotoAlt
+  language: 'en' | 'es'
+  sizes: string
+}
+
+function SectionPhoto({ id, language, sizes }: SectionPhotoProps) {
+  const imagePath = `/images/get-involved/${id}`
+
+  return (
+    <img
+      src={`${imagePath}.webp`}
+      srcSet={`${imagePath}-640.webp 640w, ${imagePath}-960.webp 960w, ${imagePath}.webp 1280w`}
+      sizes={sizes}
+      alt={sectionPhotoAlt[id][language]}
+      width={1280}
+      height={960}
+      loading="lazy"
+      decoding="async"
+      className="block h-full w-full object-cover"
+    />
+  )
+}
+
 const focusClass = 'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--primary)'
 const buttonClass = `inline-flex min-h-12 items-center justify-center gap-2 rounded-lg px-5 py-3 text-center text-sm font-semibold transition-colors ${focusClass}`
 const primaryButtonClass = `${buttonClass} bg-(--primary) text-(--primary-foreground) hover:bg-(--primary)/90`
@@ -70,13 +113,20 @@ export function GetInvolvedPage() {
       </div>
 
       <Section id="donate" aria-labelledby="donate-title" className="scroll-mt-24 border-b border-(--border) bg-(--background)">
-        <Container className="grid gap-9 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-16">
-          <div className="max-w-xl">
+        <Container className="grid gap-9 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-start lg:gap-16">
+          <div className="min-w-0 max-w-xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--primary)">{content.donation.eyebrow}</p>
             <h2 id="donate-title" className="mt-3 font-display text-3xl leading-tight tracking-[-0.04em] text-(--foreground) sm:text-4xl">
               {content.donation.title}
             </h2>
             <p className="mt-5 leading-7 text-(--muted)">{content.donation.copy}</p>
+            <figure className="mt-6 aspect-[4/3] overflow-hidden rounded-2xl border border-(--border) bg-(--surface)">
+              <SectionPhoto
+                id="donate"
+                language={language}
+                sizes="(min-width: 1280px) 576px, (min-width: 1024px) calc(57.5vw - 74px), (min-width: 640px) 576px, calc(100vw - 32px)"
+              />
+            </figure>
             <p className="mt-6 text-sm font-semibold text-(--foreground)">{content.donation.supportTitle}</p>
             <ul className="mt-4 space-y-3">
               {content.donation.points.map((point) => (
@@ -97,7 +147,7 @@ export function GetInvolvedPage() {
             </div>
           </div>
 
-          <aside aria-labelledby="donation-qr-title" className="w-full max-w-md justify-self-center rounded-2xl border border-(--primary)/20 bg-(--surface) p-6 text-center sm:p-8 lg:justify-self-end">
+          <aside aria-labelledby="donation-qr-title" className="w-full min-w-0 max-w-md justify-self-center rounded-2xl border border-(--primary)/20 bg-(--surface) p-6 text-center sm:p-8 lg:justify-self-end">
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-(--accent-soft) text-(--primary)">
               <Landmark size={23} strokeWidth={1.7} aria-hidden="true" />
             </span>
@@ -142,35 +192,46 @@ export function GetInvolvedPage() {
             <p className="mt-4 leading-7 text-(--muted)">{content.opportunitiesCopy}</p>
           </div>
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {opportunities.map(({ id, icon: Icon }) => {
               const item = content.opportunities[id]
               return (
-                <article key={id} id={id} aria-labelledby={`${id}-title`} className="flex min-w-0 scroll-mt-24 flex-col rounded-2xl border border-(--border) bg-(--surface) p-6 sm:p-7">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-(--accent-soft) text-(--primary)">
-                    <Icon size={24} strokeWidth={1.7} aria-hidden="true" />
-                  </span>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-(--primary)">{item.eyebrow}</p>
-                  <h3 id={`${id}-title`} className="mt-3 font-display text-2xl leading-tight tracking-[-0.02em] text-(--foreground)">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-6 text-(--muted)">{item.copy}</p>
-                  <ul className="mb-6 mt-5 space-y-3">
-                    {item.points.map((point) => (
-                      <li key={point} className="flex gap-3 text-sm leading-6 text-(--muted)">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-(--primary)" aria-hidden="true" /><span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-auto border-t border-(--border) pt-5">
-                    <p className="text-sm leading-6 text-(--muted)">{item.nextStep}</p>
-                    {id === 'volunteer' ? (
-                      <a href={whatsappLink(item.message)} target="_blank" rel="noopener noreferrer" className={`${primaryButtonClass} mt-5 w-full`}>
-                        <MessageCircle size={18} className="shrink-0" aria-hidden="true" />{item.cta}
-                      </a>
-                    ) : (
-                      <a href={emailLink(item.subject, item.message)} className={`${primaryButtonClass} mt-5 w-full`}>
-                        <Mail size={18} className="shrink-0" aria-hidden="true" />{item.cta}
-                      </a>
-                    )}
+                <article key={id} id={id} aria-labelledby={`${id}-title`} className="flex min-w-0 scroll-mt-24 flex-col overflow-hidden rounded-2xl border border-(--border) bg-(--surface)">
+                  <div className="aspect-[4/3] w-full overflow-hidden bg-(--accent-soft)">
+                    <SectionPhoto
+                      id={id}
+                      language={language}
+                      sizes="(min-width: 1280px) 392px, (min-width: 1024px) calc(33.333vw - 35px), (min-width: 768px) calc(50vw - 35px), (min-width: 640px) calc(100vw - 50px), calc(100vw - 34px)"
+                    />
+                  </div>
+                  <div className="flex min-w-0 flex-1 flex-col p-6 sm:p-7">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--accent-soft) text-(--primary)">
+                        <Icon size={20} strokeWidth={1.7} aria-hidden="true" />
+                      </span>
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-(--primary)">{item.eyebrow}</p>
+                    </div>
+                    <h3 id={`${id}-title`} className="mt-4 font-display text-2xl leading-tight tracking-[-0.02em] text-(--foreground)">{item.title}</h3>
+                    <p className="mt-4 text-sm leading-6 text-(--muted)">{item.copy}</p>
+                    <ul className="mb-6 mt-5 space-y-3">
+                      {item.points.map((point) => (
+                        <li key={point} className="flex gap-3 text-sm leading-6 text-(--muted)">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-(--primary)" aria-hidden="true" /><span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto border-t border-(--border) pt-5">
+                      <p className="text-sm leading-6 text-(--muted)">{item.nextStep}</p>
+                      {id === 'volunteer' ? (
+                        <a href={whatsappLink(item.message)} target="_blank" rel="noopener noreferrer" className={`${primaryButtonClass} mt-5 w-full`}>
+                          <MessageCircle size={18} className="shrink-0" aria-hidden="true" />{item.cta}
+                        </a>
+                      ) : (
+                        <a href={emailLink(item.subject, item.message)} className={`${primaryButtonClass} mt-5 w-full`}>
+                          <Mail size={18} className="shrink-0" aria-hidden="true" />{item.cta}
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </article>
               )

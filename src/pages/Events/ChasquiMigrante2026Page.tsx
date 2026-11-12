@@ -22,7 +22,7 @@ import { useTranslation } from "react-i18next";
 import { Container } from "../../components/common/Container";
 import { PageMetadata } from "../../components/common/PageMetadata";
 
-const posterPath = "/images/events/chasqui-migrante-2026/chasqui-migrante-2026-poster.jpeg";
+const posterPath = "/images/events/chasqui-migrante-2026/chasqui-migrante-2026-poster.jpg";
 
 export function ChasquiMigrante2026Page() {
   const { i18n, t } = useTranslation();
