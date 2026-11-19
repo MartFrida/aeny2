@@ -18,8 +18,8 @@ export const festival2026Winners: readonly Festival2026Winner[] = [
     category: { es: "Mejor Película (Gran Premio)", en: "Best Film (Grand Prize)" },
     winner: "Extraños Seres",
     credits: {
-      es: "Dir. Thomas Pfanner · Alemania\nProd. Amaruk Kayshapanta · Ecuador",
-      en: "Director: Thomas Pfanner · Germany\nProducer: Amaruk Kayshapanta · Ecuador",
+      es: "Dir. Thomas Pfanne · Alemania\nProd. Amaruk Kayshapanta · Ecuador",
+      en: "Director: Thomas Pfanne · Germany\nProducer: Amaruk Kayshapanta · Ecuador",
     },
   },
   {
