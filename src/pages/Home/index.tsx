@@ -24,7 +24,6 @@ const chasquiHeroContent = {
     timeLabel: "Salida",
     venueLabel: "Lugar",
     registerCta: "Inscríbete",
-    videoCta: "Ver video",
     videoTitle: "Video de Chasqui Migrante 5K & 10K 2026 en Facebook",
     posterAlt: "Cartel de Chasqui Migrante 5K & 10K 2026",
     videoCaption: "Chasqui Migrante · Video",
@@ -38,8 +37,7 @@ const chasquiHeroContent = {
     timeLabel: "Start",
     venueLabel: "Location",
     registerCta: "Register",
-    videoCta: "Watch video",
-    videoTitle: "Chasqui Migrante 5K & 10K 2026 video on Facebook",
+        videoTitle: "Chasqui Migrante 5K & 10K 2026 video on Facebook",
     posterAlt: "Chasqui Migrante 5K & 10K 2026 event poster",
     videoCaption: "Chasqui Migrante · Video",
     facebookCta: "Watch on Facebook",
@@ -170,12 +168,7 @@ export function HomePage() {
               >
                 {hero.registerCta} · {chasquiRegistrationFeeLabel}
               </Button>
-              <a
-                href="#home-chasqui-video"
-                className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/25 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--surface-dark)"
-              >
-                {hero.videoCta}
-              </a>
+             
             </div>
             <p className="mt-5 text-sm leading-6 text-white/70">
               {t("chasqui2026.organizer")}
