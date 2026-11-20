@@ -173,7 +173,7 @@ export function Footer() {
               aria-label={language === 'es' ? 'Enviar un correo a MariF' : 'Email MariF'}
               className={`rounded-sm font-semibold text-(--foreground) underline underline-offset-4 transition-colors hover:text-(--primary) ${focusClass}`}
             >
-              {language === 'es' ? 'Diseño y desarrollo web' : 'Web design & development'}{' '}
+              {language === 'es' ? 'MF · Diseño y desarrollo web' : 'MF · Web design & development'}{' '}
             </a>
                        </p>
         </div>
