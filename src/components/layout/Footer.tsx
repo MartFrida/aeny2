@@ -136,7 +136,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-4 mb-8 flex flex-wrap items-center justify-between gap-2 pt-3 sm:mt-5">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-2 pt-3 sm:mt-5">
           <div className="flex shrink-0 items-center sm:gap-1">
             {socialLinks.map(({ icon, label, href }) => (
               <a
@@ -159,6 +159,23 @@ export function Footer() {
           >
             {t('nav.donate')}
           </Link>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-2 border-t border-(--border) pt-4 text-center text-xs leading-5 text-(--muted) sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-6 sm:text-left sm:text-sm">
+          <p>
+            © {new Date().getFullYear()} Alianza Ecuatoriana Internacional.{' '}
+            {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+          </p>
+          <p>
+            {language === 'es' ? 'Diseño y desarrollo web:' : 'Web design & development:'}{' '}
+            <a
+              href="mailto:marfa.dev@gmail.com"
+              aria-label={language === 'es' ? 'Enviar un correo a MariF' : 'Email MariF'}
+              className={`rounded-sm font-semibold text-(--foreground) underline underline-offset-4 transition-colors hover:text-(--primary) ${focusClass}`}
+            >
+              MariF
+            </a>
+          </p>
         </div>
       </Container>
     </footer>

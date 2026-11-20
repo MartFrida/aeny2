@@ -125,7 +125,7 @@ export function HomePage() {
             </p>
             <h1
               id="home-chasqui-title"
-              className="mt-5 break-words font-display text-5xl leading-[1.02] tracking-[-0.05em] text-white sm:text-6xl xl:text-7xl"
+              className="mt-5 wrap-break-word font-display text-5xl leading-[1.02] tracking-[-0.05em] text-white sm:text-6xl xl:text-7xl"
             >
               <span className="block">Chasqui Migrante</span>{" "}
               <span className="mt-2 block text-(--accent)">5K &amp; 10K 2026</span>
