@@ -18,8 +18,8 @@ export const festival2026Winners: readonly Festival2026Winner[] = [
     category: { es: "Mejor Película (Gran Premio)", en: "Best Film (Grand Prize)" },
     winner: "Extraños Seres",
     credits: {
-      es: "Dir. Thomas Pfanne · Alemania\nProd. Amaruk Kayshapanta · Ecuador",
-      en: "Director: Thomas Pfanne · Germany\nProducer: Amaruk Kayshapanta · Ecuador",
+      es: "Dir. Thomas Pfanner · Alemania\nProd. Amaruk Kayshapanta · Ecuador",
+      en: "Director: Thomas Pfanner · Germany\nProducer: Amaruk Kayshapanta · Ecuador",
     },
   },
   {
@@ -194,7 +194,7 @@ export const festival2026Recap = {
     heroIntro:
       "La primera edición ha concluido. Celebramos las películas, las personas y las historias reconocidas con el premio Kury Chasqui, y compartimos el palmarés oficial del festival.",
     winnersCta: "Ver ganadores",
-    pressCta: "Prensa e Instagram",
+    pressCta: "Prensa y publicaciones",
     archiveNotice:
       "El festival ha finalizado. Consulta los ganadores y las publicaciones de esta primera edición.",
     resultsLabel: "Primera edición · New York 2026",
@@ -217,11 +217,13 @@ export const festival2026Recap = {
     pressLabel: "El festival en los medios",
     pressTitle: "Prensa y publicaciones",
     pressIntro:
-      "Cobertura de prensa y reconocimiento del Consulado General del Ecuador en Nueva York a esta primera edición.",
+      "Cobertura de prensa, publicaciones en redes sociales y reconocimiento del Consulado General del Ecuador en Nueva York a esta primera edición.",
     articleType: "Prensa",
     socialType: "Instagram",
+    facebookType: "Facebook",
     articleCta: "Leer publicación",
     instagramCta: "Ver en Instagram",
+    facebookCta: "Ver en Facebook",
     newTab: "Se abre en una pestaña nueva",
     thanksTitle: "Gracias por ser parte de esta primera edición",
     thanksCopy:
@@ -236,7 +238,7 @@ export const festival2026Recap = {
     heroIntro:
       "The first edition has concluded. We celebrate the films, people and stories recognized with the Kury Chasqui award and share the festival’s official winners.",
     winnersCta: "View winners",
-    pressCta: "Press and Instagram",
+    pressCta: "Press and publications",
     archiveNotice:
       "The festival has concluded. Explore the winners and coverage of this first edition.",
     resultsLabel: "First edition · New York 2026",
@@ -258,11 +260,13 @@ export const festival2026Recap = {
     pressLabel: "The festival in the media",
     pressTitle: "Press and publications",
     pressIntro:
-      "Press coverage and recognition of the first edition by the Consulate General of Ecuador in New York.",
+      "Press coverage, social media publications and recognition of the first edition by the Consulate General of Ecuador in New York.",
     articleType: "Press",
     socialType: "Instagram",
+    facebookType: "Facebook",
     articleCta: "Read publication",
     instagramCta: "View on Instagram",
+    facebookCta: "View on Facebook",
     newTab: "Opens in a new tab",
     thanksTitle: "Thank you for being part of our first edition",
     thanksCopy:
@@ -272,12 +276,12 @@ export const festival2026Recap = {
 
 type Festival2026Publication = {
   id: string;
-  kind: "press" | "instagram";
+  kind: "press" | "instagram" | "facebook";
   source: string;
   account?: string;
   href: string;
   date?: string;
-  image: {
+  image?: {
     src: string;
     width: number;
     height: number;
@@ -290,31 +294,9 @@ type Festival2026Publication = {
 // Press previews come from the linked articles. The Instagram account,
 // caption and first-slide image were supplied by the organizers.
 // A relative publication time is not stored as a calendar date.
+// Additional media links supplied on 2026-11-19 use descriptive labels;
+// their publication dates and preview images have not been verified.
 export const festival2026Publications: readonly Festival2026Publication[] = [
-  {
-    id: "instagram-post",
-    kind: "instagram",
-    source: "Consulado General del Ecuador en Nueva York",
-    account: "@cecunuevayork",
-    href: "https://www.instagram.com/p/Df5t-gxFDK0/?img_index=1",
-    image: {
-      src: "/images/events/festival-andino-2026/press/consulado-ecuador-ny-instagram-2026.jpg",
-      width: 1199,
-      height: 1312,
-      alt: {
-        es: "Publicación del Consulado General del Ecuador en Nueva York sobre la primera edición del Festival Internacional de Cine Andino 2026 y el premio Kury Chasqui.",
-        en: "Consulate General of Ecuador in New York post about the first Andean International Film Festival in 2026 and the Kury Chasqui award.",
-      },
-    },
-    title: {
-      es: "El Consulado felicita a los ganadores del Kury Chasqui",
-      en: "The Consulate congratulates the Kury Chasqui award winners",
-    },
-    summary: {
-      es: "El Consulado destaca el talento y la riqueza artística de los pueblos andinos, felicita a los galardonados y reconoce el trabajo de Alianza Ecuatoriana Internacional por impulsar esta primera edición.",
-      en: "The Consulate highlights the talent and artistic richness of the Andean peoples, congratulates the award winners and recognizes Alianza Ecuatoriana Internacional for making this first edition possible.",
-    },
-  },
   {
     id: "queens-latino",
     kind: "press",
@@ -363,5 +345,70 @@ export const festival2026Publications: readonly Festival2026Publication[] = [
       en: "The cultural guide featured the festival in Queens and the Kuri Chasqui awards ceremony.",
     },
   },
-  
+  {
+    id: "instagram-post",
+    kind: "instagram",
+    source: "Consulado General del Ecuador en Nueva York",
+    account: "@cecunuevayork",
+    href: "https://www.instagram.com/p/Df5t-gxFDK0/?img_index=1",
+    image: {
+      src: "/images/events/festival-andino-2026/press/consulado-ecuador-ny-instagram-2026.jpg",
+      width: 1199,
+      height: 1312,
+      alt: {
+        es: "Publicación del Consulado General del Ecuador en Nueva York sobre la primera edición del Festival Internacional de Cine Andino 2026 y el premio Kury Chasqui.",
+        en: "Consulate General of Ecuador in New York post about the first Andean International Film Festival in 2026 and the Kury Chasqui award.",
+      },
+    },
+    title: {
+      es: "El Consulado felicita a los ganadores del Kury Chasqui",
+      en: "The Consulate congratulates the Kury Chasqui award winners",
+    },
+    summary: {
+      es: "El Consulado destaca el talento y la riqueza artística de los pueblos andinos, felicita a los galardonados y reconoce el trabajo de Alianza Ecuatoriana Internacional por impulsar esta primera edición.",
+      en: "The Consulate highlights the talent and artistic richness of the Andean peoples, congratulates the award winners and recognizes Alianza Ecuatoriana Internacional for making this first edition possible.",
+    },
+  },
+  {
+    id: "noticias-hudson-valley-instagram",
+    kind: "instagram",
+    source: "Periódico Noticias Hudson Valley NY",
+    href: "https://www.instagram.com/reel/DflbFvLRAc-/?bqrl=MTY0bHJtNGt6NHAzbA==",
+    title: {
+      es: "Noticias Hudson Valley NY · Video en Instagram",
+      en: "Noticias Hudson Valley NY · Instagram video",
+    },
+    summary: {
+      es: "Ver el video compartido por el periódico Noticias Hudson Valley NY en Instagram.",
+      en: "Watch the video shared by Noticias Hudson Valley NY on Instagram.",
+    },
+  },
+  {
+    id: "latinos-nueva-york-facebook",
+    kind: "facebook",
+    source: "Periódico Latinos en Nueva York",
+    href: "https://www.facebook.com/share/v/1Pb38hdT4c/",
+    title: {
+      es: "Latinos en Nueva York · Video en Facebook",
+      en: "Latinos en Nueva York · Facebook video",
+    },
+    summary: {
+      es: "Ver el video compartido por el periódico Latinos en Nueva York en Facebook.",
+      en: "Watch the video shared by Latinos en Nueva York on Facebook.",
+    },
+  },
+  {
+    id: "periodico-migrantes-facebook",
+    kind: "facebook",
+    source: "Periódico Migrantes",
+    href: "https://www.facebook.com/share/p/1FoJS9Cgmb/",
+    title: {
+      es: "Periódico Migrantes · Publicación en Facebook",
+      en: "Periódico Migrantes · Facebook post",
+    },
+    summary: {
+      es: "Leer la publicación compartida por Periódico Migrantes en Facebook.",
+      en: "Read the post shared by Periódico Migrantes on Facebook.",
+    },
+  },
 ];

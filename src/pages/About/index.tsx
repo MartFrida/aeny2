@@ -9,7 +9,8 @@ import {
   Leaf,
   UsersRound,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "../../components/common/Button";
 import { Container } from "../../components/common/Container";
@@ -29,11 +30,32 @@ type AboutContent =
 
 export function AboutPage() {
   const { i18n, t } = useTranslation();
+  const { hash, key } = useLocation();
   const language = i18n.resolvedLanguage === "es" ? "es" : "en";
   const prefix = `/${language}`;
   const c = t("about.content", { returnObjects: true }) as AboutContent;
   const ourWorkPath = `/${language}/our-work`;
   const homePath = `/${language}`;
+
+  useEffect(() => {
+    if (hash !== "#in-the-news") return;
+
+    // Follow direct section links after route-level scroll effects finish.
+    let scrollFrame = 0;
+    const readyFrame = window.requestAnimationFrame(() => {
+      scrollFrame = window.requestAnimationFrame(() => {
+        document.getElementById("in-the-news")?.scrollIntoView({
+          behavior: "auto",
+          block: "start",
+        });
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(readyFrame);
+      window.cancelAnimationFrame(scrollFrame);
+    };
+  }, [hash, key]);
 
   return (
     <>

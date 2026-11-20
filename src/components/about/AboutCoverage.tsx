@@ -1,12 +1,26 @@
 import { useState } from "react";
 import { ArrowUpRight, ChevronDown, ChevronUp, FileText, Landmark, Newspaper, Play, UsersRound } from "lucide-react";
 import { Container } from "../common/Container";
-import { aboutCoverage, aboutCoverageCopy, type CoverageKind, type CoverageLanguage, type CoverageSource } from "../../data/aboutCoverage.ts";
+import { aboutCoverage, aboutCoverageCopy, type CoverageKind, type CoverageLanguage, type CoverageSource } from "../../data/aboutCoverage";
 
 type CoverageFilter = "all" | CoverageKind;
 const filters: CoverageFilter[] = ["all", "video", "press", "official", "community"];
 const icons = { video: Play, press: Newspaper, official: Landmark, community: UsersRound };
 const INITIAL_COUNT = 8;
+const FEATURED_COVERAGE_ID = "univision-angel-2020";
+
+// Keep the original featured video first, then sort the remaining publications
+// newest first. Year-only items follow dated items from that year; undated
+// publications stay at the end.
+const sortedCoverage = [...aboutCoverage].sort((a, b) => {
+  const aFeatured = a.id === FEATURED_COVERAGE_ID;
+  const bFeatured = b.id === FEATURED_COVERAGE_ID;
+  if (aFeatured !== bFeatured) return aFeatured ? -1 : 1;
+
+  const dateA = a.date ?? String(a.year ?? "");
+  const dateB = b.date ?? String(b.year ?? "");
+  return dateB.localeCompare(dateA);
+});
 
 function PublicationDate({ source, language }: { source: CoverageSource; language: CoverageLanguage }) {
   if (source.date) {
@@ -21,36 +35,21 @@ function PublicationDate({ source, language }: { source: CoverageSource; languag
   return source.year ? <time dateTime={String(source.year)}>{source.year}</time> : null;
 }
 
-function CoveragePreview({ source, language, featured }: { source: CoverageSource; language: CoverageLanguage; featured: boolean }) {
+function CoveragePreview({ source, featured }: { source: CoverageSource; featured: boolean }) {
   const [failed, setFailed] = useState(false);
   const image = source.image;
-  const hasImage = Boolean(image && !failed);
-  const Icon = icons[source.kind];
-  const copy = aboutCoverageCopy[language];
+
+  if (!image || failed) return null;
 
   return (
     <div aria-hidden="true" className={`relative isolate w-full shrink-0 overflow-hidden bg-(--surface-dark) ${featured ? "aspect-video sm:aspect-[2/1]" : "aspect-video"}`}>
-      {hasImage && image ? (
-        <img
-          src={image.src} alt="" width={image.width} height={image.height}
-          loading="lazy" decoding="async" onError={() => setFailed(true)}
-          style={{ objectPosition: image.position ?? "center 35%" }}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035] motion-reduce:transform-none motion-reduce:transition-none"
-        />
-      ) : (
-        <div className="absolute inset-0 flex flex-col justify-between bg-linear-to-br from-(--surface-dark) to-(--primary) p-6 sm:p-7">
-          <div className="pointer-events-none absolute -right-10 -top-12 h-48 w-48 rounded-full border border-white/10" />
-          <div className="pointer-events-none absolute -bottom-12 right-4 h-40 w-40 rounded-full border border-(--accent)/20" />
-          <span className="relative text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">
-            {source.kind === "official" ? copy.documentPreview : copy.originalSource}
-          </span>
-          <div className="relative flex items-end justify-between gap-4">
-            <span className="max-w-[80%] font-display text-xl leading-tight tracking-[-0.025em] text-white sm:text-2xl">{source.publisher}</span>
-            {source.kind !== "video" && <Icon size={29} strokeWidth={1.3} className="shrink-0 text-(--accent)" />}
-          </div>
-        </div>
-      )}
-      {hasImage && <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />}
+      <img
+        src={image.src} alt="" width={image.width} height={image.height}
+        loading="lazy" decoding="async" onError={() => setFailed(true)}
+        style={{ objectPosition: image.position ?? "center 35%", objectFit: image.fit ?? "cover" }}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035] motion-reduce:transform-none motion-reduce:transition-none"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
       {source.kind === "video" && (
         <span className="absolute inset-0 flex items-center justify-center">
           <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/60 bg-(--surface-dark)/75 text-white shadow-lg backdrop-blur-sm transition-colors group-hover:bg-(--primary) sm:h-16 sm:w-16">
@@ -67,7 +66,7 @@ export function AboutCoverage({ language }: { language: CoverageLanguage }) {
   const copy = aboutCoverageCopy[language];
   const [filter, setFilter] = useState<CoverageFilter>("all");
   const [expanded, setExpanded] = useState(false);
-  const selected = aboutCoverage.filter((source) => filter === "all" || source.kind === filter);
+  const selected = sortedCoverage.filter((source) => filter === "all" || source.kind === filter);
   const visible = expanded ? selected : selected.slice(0, INITIAL_COUNT);
 
   function selectFilter(next: CoverageFilter) {
@@ -109,7 +108,7 @@ export function AboutCoverage({ language }: { language: CoverageLanguage }) {
           <div id="about-coverage-results" className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
             {visible.map((source) => {
               const Icon = icons[source.kind];
-              const featured = source.id === "univision-angel-2020";
+              const featured = source.id === FEATURED_COVERAGE_ID;
               const action = source.kind === "video" ? copy.watch : source.kind === "official" ? copy.document : copy.read;
               return (
                 <article key={source.id} className={`min-w-0 overflow-hidden rounded-3xl border transition-colors ${featured ? "border-(--surface-dark) bg-(--surface-dark) text-white sm:col-span-2" : "border-(--border) bg-(--surface) hover:border-(--primary)/45"}`}>
@@ -118,7 +117,7 @@ export function AboutCoverage({ language }: { language: CoverageLanguage }) {
                     aria-label={`${source.title} — ${source.publisher} (${copy.newTab})`}
                     className="group flex h-full flex-col outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-(--ring)"
                   >
-                    <CoveragePreview source={source} language={language} featured={featured} />
+                    <CoveragePreview source={source} featured={featured} />
                     <div className="flex flex-1 flex-col p-6 sm:p-7 md:p-8">
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <span className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold ${featured ? "border-white/20 bg-white/5 text-(--accent)" : "border-(--border) bg-(--background) text-(--primary)"}`}>

@@ -14,13 +14,16 @@ export type CoverageSource = {
   year?: number;
   duration?: string;
   /** A local preview taken from this publication, never an unrelated photo. */
-  image?: { src: string; width: number; height: number; position?: string };
+  image?: { src: string; width: number; height: number; position?: string; fit?: "cover" | "contain" };
   summary: LocalizedText;
   /** An external publication may contain an interview or announcement. */
   note?: LocalizedText;
 };
 
-// Reviewed on 2026-11-07. Original titles are retained in the source language.
+// Original sources reviewed on 2026-11-07.
+// Five additional press links reviewed on 2026-11-20 use direct publisher URLs.
+// Film festival social links are maintained on the festival page.
+// Original titles are retained in the source language.
 // Do not infer founding dates or completed projects from these publications.
 export const aboutCoverage: CoverageSource[] = [
   {
@@ -32,6 +35,77 @@ export const aboutCoverage: CoverageSource[] = [
     summary: {
       es: "Reconocimiento a la labor comunitaria de Walther Sinche y a la entrega de alimentos a más de 12.000 personas durante la pandemia.",
       en: "Recognition of Walther Sinche’s community work and efforts to provide food to more than 12,000 people during the pandemic.",
+    },
+  },
+  {
+    image: {"src":"/images/aeiny/press/facebook-community-invitation-vigilia.jpg","width":800,"height":1200},
+    id: "facebook-community-invitation-1jlg",
+    kind: "community",
+    publisher: "Facebook",
+    title: "Cordialmente invitados",
+    url: "https://www.facebook.com/share/p/1JLgYXSAPG/?mibextid=wwXIfr",
+    date: "2026-11-20",
+    // The invitation text was supplied by the user; no publication date or
+    // preview image could be confirmed from the public link.
+    summary: {
+      es: "Invitación compartida en Facebook. Consulta los detalles y comparte la publicación original.",
+      en: "An invitation shared on Facebook. See the details and share the original post.",
+    },
+  },
+  {
+    image: {"src":"/images/aeiny/press/elpais-brooklyn-collapse-2026.webp","width":1200,"height":800},
+    id: "elpais-brooklyn-collapse-2026", kind: "press", publisher: "EL PAÍS US",
+    title: "“Trabajamos como esclavos en este país y no nos dan seguridad”: rabia y duelo tras el derrumbe mortal en Brooklyn",
+    url: "https://elpais.com/us/2026-11-13/trabajamos-como-esclavos-en-este-pais-y-no-nos-dan-seguridad-rabia-y-duelo-tras-el-derrumbe-mortal-en-brooklyn.html",
+    date: "2026-11-13",
+    summary: {
+      es: "Reportaje con declaraciones de Walter Sinche sobre la protección de trabajadores inmigrantes tras el derrumbe de un edificio en Brooklyn.",
+      en: "A report featuring Walter Sinche’s comments on protecting immigrant workers after a building collapse in Brooklyn.",
+    },
+  },
+  {
+    image: {"src":"/images/aeiny/press/lapatilla-brooklyn-collapse-2026.webp","width":1280,"height":720},
+    id: "lapatilla-brooklyn-collapse-2026", kind: "press", publisher: "La Patilla",
+    title: "Las grietas estaban documentadas meses antes del derrumbe que conmocionó a Brooklyn",
+    url: "https://lapatilla.com/2026/11/13/las-grietas-estaban-documentadas-meses-antes-del-derrumbe-que-conmociono-a-brooklyn/",
+    date: "2026-11-13",
+    summary: {
+      es: "Publicación basada en el reportaje de El Diario NY que recoge las preguntas de Walter Sinche sobre la seguridad en la obra de Brooklyn.",
+      en: "A publication based on the El Diario NY report, featuring Walter Sinche’s questions about safety at the Brooklyn construction site.",
+    },
+    note: { es: "Republicación de El Diario NY.", en: "Republished from El Diario NY." },
+  },
+  {
+    image: {"src":"/images/aeiny/press/diario-brooklyn-collapse-2026.webp","width":1200,"height":799},
+    id: "diario-brooklyn-collapse-2026", kind: "press", publisher: "El Diario NY",
+    title: "Detrás del derrumbe de un edificio en Brooklyn: ¿quién verificó que era seguro seguir excavando?",
+    url: "https://eldiariony.com/2026/11/12/detras-del-derrumbe-de-un-edificio-en-brooklyn-quien-verifico-que-era-seguro-seguir-excavando/",
+    date: "2026-11-12",
+    summary: {
+      es: "El reportaje recoge las declaraciones del directivo de Alianza e instructor de seguridad Walter Sinche sobre inspecciones y protección de trabajadores tras el derrumbe.",
+      en: "The report features Alianza leader and safety instructor Walter Sinche discussing inspections and worker protection following the collapse.",
+    },
+  },
+  {
+    image: {"src":"/images/aeiny/press/manabi-profile-2020.webp","width":1024,"height":683},
+    id: "manabi-profile-2020", kind: "press", publisher: "Revista de Manabí",
+    title: "Un quijote llamado Walter Sinche",
+    url: "https://revistademanabi.com/2020/08/10/un-quijote-llamado-walter-sinche/",
+    date: "2020-08-10",
+    summary: {
+      es: "Perfil de su trayectoria en defensa de la comunidad inmigrante, las campañas de Alianza y la ayuda alimentaria durante la pandemia.",
+      en: "A profile of his immigrant advocacy, Alianza’s community campaigns and food assistance during the pandemic.",
+    },
+  },
+  {
+    image: {"src":"/images/aeiny/press/impacto-profile-2020.webp","width":696,"height":927,"fit":"contain"},
+    id: "impacto-profile-2020", kind: "press", publisher: "Impacto Latino",
+    title: "Walter Sinche, un líder comunitario enfocado en el progreso",
+    url: "https://impactolatino.com/walter-sinche-un-lider-comunitario-enfocado-en-el-progreso/",
+    date: "2020-08-27",
+    summary: {
+      es: "Perfil de Walter Sinche y del trabajo de Alianza y el Centro Comunitario Andino en formación, identidad cultural y defensa de los derechos de inmigrantes.",
+      en: "A profile of Walter Sinche and the work of Alianza and Centro Comunitario Andino in education, cultural identity and immigrant rights advocacy.",
     },
   },
   {
@@ -122,6 +196,7 @@ export const aboutCoverage: CoverageSource[] = [
     },
   },
   {
+    image: {"src":"/images/aeiny/press/nyc-directory.webp","width":1237,"height":696,"fit":"contain"},
     id: "nyc-directory", kind: "official", publisher: "NYC Mayor’s Office of Immigrant Affairs",
     title: "Employment, Training, Financial Empowerment — Resource Directory",
     url: "https://www.nyc.gov/assets/immigrants/downloads/pdf/MOIA-Directory-Employment.pdf#page=23",
@@ -143,6 +218,7 @@ export const aboutCoverage: CoverageSource[] = [
     note: { es: "El documento utiliza el nombre Walter Sinchi Rivera · PDF", en: "The document uses the name Walter Sinchi Rivera · PDF" },
   },
   {
+    image: {"src":"/images/aeiny/press/cuenca-programme-2024.webp","width":772,"height":434,"fit":"contain"},
     id: "cuenca-programme-2024", kind: "official", publisher: "Municipio de Cuenca · Archivo documental",
     title: "Descripción de las actividades a ejecutarse",
     url: "https://www.cuenca.gob.ec/system/files/2024%204296.pdf", year: 2024,
@@ -197,6 +273,7 @@ export const aboutCoverage: CoverageSource[] = [
     },
   },
   {
+    image: {"src":"/images/aeiny/press/impacto-bushwick-2024.webp","width":1280,"height":853},
     id: "impacto-bushwick-2024", kind: "press", publisher: "Impacto Latino",
     title: "Magaly Bustamante, testimonio de la comunidad en Bushwick",
     url: "https://impactolatino.com/magaly-bustamante-testimonio-de-la-comunidad-en-bushwick/",
@@ -207,6 +284,7 @@ export const aboutCoverage: CoverageSource[] = [
     },
   },
   {
+    image: {"src":"/images/aeiny/press/impacto-migrants-2023.webp","width":828,"height":504},
     id: "impacto-migrants-2023", kind: "press", publisher: "Impacto Latino",
     title: "Organizaciones enfrentan sin ayuda éxodo de nuevos inmigrantes",
     url: "https://impactolatino.com/organizaciones-enfrentan-sin-ayuda-exodo-de-nuevos-inmigrantes/", year: 2023,
@@ -216,6 +294,7 @@ export const aboutCoverage: CoverageSource[] = [
     },
   },
   {
+    image: {"src":"/images/aeiny/press/impacto-parque.webp","width":1000,"height":579},
     id: "impacto-parque", kind: "press", publisher: "Impacto Latino",
     title: "Alianza Ecuatoriana Internacional presenta el Parque del Migrante",
     url: "https://impactolatino.com/alianza-ecuatoriana-internacional-presenta-el-parque-del-migrante/",
@@ -308,6 +387,7 @@ export const aboutCoverage: CoverageSource[] = [
     },
   },
   {
+    image: {"src":"/images/aeiny/press/impacto-tps.webp","width":580,"height":350},
     id: "impacto-tps", kind: "press", publisher: "Impacto Latino",
     title: "Concejales de la Ciudad de Nueva York respaldan pedido de TPS para ecuatorianos",
     url: "https://impactolatino.com/concejales-de-la-ciudad-de-nueva-york-respaldan-pedido-de-tps-para-ecuatorianos/",
@@ -317,6 +397,7 @@ export const aboutCoverage: CoverageSource[] = [
     },
   },
   {
+    image: {"src":"/images/aeiny/press/univision-victim-support.webp","width":720,"height":960,"fit":"contain"},
     id: "univision-victim-support", kind: "press", publisher: "Univision 41 Nueva York",
     title: "En condición crítica el ecuatoriano apuñalado en el tren N en Brooklyn",
     url: "https://www.univision.com/local/nueva-york-wxtv/en-condicion-critica-el-ecuatoriano-apunalado-en-el-tren-n-en-brooklyn",
@@ -356,6 +437,7 @@ export const aboutCoverage: CoverageSource[] = [
     },
   },
   {
+    image: {"src":"/images/aeiny/press/queens-inti-raymi.webp","width":300,"height":220},
     id: "queens-inti-raymi", kind: "press", publisher: "Queens Latino",
     title: "Fiesta ecuatoriana del Inti Raymi",
     url: "https://queenslatino.com/fiesta-ecuatoriana-del-inti-raymi/",
@@ -424,6 +506,7 @@ export const aboutCoverage: CoverageSource[] = [
     },
     note: { es: "Archivo · Actividad política personal de 2021.", en: "Archive · Personal political activity in 2021." },
   },
+  
 ];
 
 export const aboutCoverageCopy = {

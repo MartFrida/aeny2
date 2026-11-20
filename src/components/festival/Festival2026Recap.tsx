@@ -198,6 +198,12 @@ export function Festival2026Press({ language }: Festival2026RecapProps) {
           {festival2026Publications.map((publication) => {
             const isInstagram = publication.kind === "instagram";
             const Icon = isInstagram ? InstagramIcon : Newspaper;
+            const publicationType = publication.kind === "facebook"
+              ? content.facebookType
+              : isInstagram ? content.socialType : content.articleType;
+            const publicationCta = publication.kind === "facebook"
+              ? content.facebookCta
+              : isInstagram ? content.instagramCta : content.articleCta;
 
             return (
               <li key={publication.id} className="min-w-0">
@@ -208,21 +214,38 @@ export function Festival2026Press({ language }: Festival2026RecapProps) {
                   className="group flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-(--border) bg-(--background) transition-colors hover:border-(--accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--ring) focus-visible:ring-offset-4 focus-visible:ring-offset-(--surface)"
                 >
                   <div className="relative aspect-[4/3] w-full border-b border-(--border) bg-(--surface)">
-                    <img
-                      src={publication.image.src}
-                      alt={publication.image.alt[language]}
-                      width={publication.image.width}
-                      height={publication.image.height}
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 h-full w-full object-contain p-3"
-                    />
+                    {publication.image ? (
+                      <img
+                        src={publication.image.src}
+                        alt={publication.image.alt[language]}
+                        width={publication.image.width}
+                        height={publication.image.height}
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-contain p-3"
+                      />
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 flex flex-col justify-between gap-5 bg-linear-to-br from-(--surface-dark) to-(--primary) p-6 text-white sm:p-7"
+                      >
+                        <div className="flex items-center justify-between gap-4 text-white/70">
+                          <span className="text-xs font-semibold uppercase tracking-[0.14em]">
+                            {publicationType}
+                          </span>
+                          <Icon size={26} className="shrink-0 text-(--accent)" />
+                        </div>
+                        <span className="break-words font-display text-2xl leading-snug tracking-tight sm:text-3xl">
+                          {publication.source}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col p-5 sm:p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div className="min-w-0">
                         <p className="text-sm font-semibold uppercase tracking-wide text-(--primary)">
-                          {isInstagram ? content.socialType : content.articleType}
+                          {publicationType}
                         </p>
                         <p className="mt-2 font-semibold text-(--foreground)">
                           {publication.source}
@@ -247,7 +270,7 @@ export function Festival2026Press({ language }: Festival2026RecapProps) {
                       {publication.summary[language]}
                     </p>
                     <span className="mt-auto pt-6 text-sm font-semibold text-(--primary) underline decoration-(--accent)/70 underline-offset-4 group-hover:decoration-(--primary)">
-                      {isInstagram ? content.instagramCta : content.articleCta}
+                      {publicationCta}
                     </span>
                     <span className="sr-only"> ({content.newTab})</span>
                   </div>
