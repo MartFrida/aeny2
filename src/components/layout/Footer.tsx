@@ -171,9 +171,9 @@ export function Footer() {
             <a
               href="mailto:marfa.dev@gmail.com"
               aria-label={language === 'es' ? 'Enviar un correo a MariF' : 'Email MariF'}
-              className={`rounded-sm font-semibold text-(--foreground) underline underline-offset-4 transition-colors hover:text-(--primary) ${focusClass}`}
+              className={`rounded-sm font-semibold text-(--foreground) underline underline-offset-4 transition-colors hover:text-(--primary) ${focusClass} mr-12`}
             >
-              {language === 'es' ? 'MF · Diseño y desarrollo web' : 'MF · Web design & development'}{' '}
+              {language === 'es' ? 'Diseño y desarrollo web: MF' : 'Web design & development: MF'}{' '}
             </a>
                        </p>
         </div>
