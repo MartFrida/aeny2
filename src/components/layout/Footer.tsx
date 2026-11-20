@@ -167,15 +167,15 @@ export function Footer() {
             {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
           </p>
           <p>
-            {language === 'es' ? 'Diseño y desarrollo web:' : 'Web design & development:'}{' '}
+           
             <a
               href="mailto:marfa.dev@gmail.com"
               aria-label={language === 'es' ? 'Enviar un correo a MariF' : 'Email MariF'}
               className={`rounded-sm font-semibold text-(--foreground) underline underline-offset-4 transition-colors hover:text-(--primary) ${focusClass}`}
             >
-              MariF
+              {language === 'es' ? 'Diseño y desarrollo web' : 'Web design & development'}{' '}
             </a>
-          </p>
+                       </p>
         </div>
       </Container>
     </footer>
